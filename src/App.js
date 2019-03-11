@@ -5,8 +5,11 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import About from "./About";
 import Home from "./Home";
 import HomePageGrid from "./components/HomePageGrid";
+import SignUp from "./SignUp";
+import Submit from "./Submit";
 
 import "./App.css";
+
 
 class App extends Component {
   render() {
@@ -25,6 +28,11 @@ class App extends Component {
               </div>
             )}
           />
+          <Route exact path="/sign_up" render={props => (
+            <SignUp />
+          )}
+          />
+          <Route exact path="/submit" render={props => (<Submit />)} />
 
           <Footer />
         </div>

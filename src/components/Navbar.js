@@ -19,10 +19,11 @@ const styles = {
   grow: {
     flexGrow: 1,
     textDecoration: 'none',
+    textAlign: 'center',
   },
   menuButton: {
     marginLeft: -12,
-    marginRight: 20
+    
   }
 };
 
