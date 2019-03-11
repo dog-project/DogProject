@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - "stable"
 script:
- - yarn build
+ - npm run build
 install:
   - npm install
   - npm install -g firebase-tools
