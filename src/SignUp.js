@@ -48,6 +48,10 @@ const stateOptions = [
     {
         value: 'CA',
         label: 'CA'
+    },
+    {
+      value: 'VT',
+      label: 'VT'
     }
 ]
 
