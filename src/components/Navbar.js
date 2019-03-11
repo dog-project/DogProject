@@ -57,7 +57,6 @@ function Navbar(props) {
             <Typography variant="h6" color="inherit" className={classes.grow} component={Link} to="/">
               The Dog Project
             </Typography>
-            
           </Toolbar>
         </AppBar>
       </div>
