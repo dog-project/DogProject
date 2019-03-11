@@ -6,7 +6,10 @@ script:
 install:
   - npm install
   - npm install -g firebase-tools
-after_success:
-  - firebase deploy --token $FIREBASE_TOKEN
+deploy:
+  provider: firebase
+  token:
+    secure: "JRdVKFMm5wY/CCDkQMAJwaiFE553u8XxsIpig3Ry+ehadySFikS7v6Nyjgg7jhkO3jaeIpBlXwvB309J6VHSnUC8cEbkpREwe+TwovS7m8XlnXKPp7f+o/qz5XW4sXctTFGuFk7jtll9HUy88nB4gL8Ow2q3YwVEIZE9pZim8iDYXHfx01IJwjUtyOCQZiZwSZP3XbsyjqCDHXEtXFXoYfnIIp5Pkfgd7NppYlTcKgZyISL1LJfIemTbBxJJXAqXnRtGTgVlnLxG4e8slQk9JENroRxsRkp4x59TVNjefbXnirbfdZsPCbZnu+8HV/3xVHTrCwps7aahRIiXK8o7sg5BVlSGXBdyI4KjAAOFKE9GC+F/XeMZOCSi4exm9GmFv3zWAsSBZAAY2I6QtXPFOqa0b/zu9E/LxZXE0jzoSvXfJcCqEa/Q2ybhOkd1TNJUmfVdTzJNQ9zOKF1DVTIirVXsRqWaBsm6a2K1AKgULUBydS8HSGFDctFY9uBtBIcRCezljE13oN7FXqUyLpxolBIkaKAXxRIPS6cVqpm+mRgk6rDPZ3Z4rql0w1t26G1SRg6YUuOXve5zXjkkprnzHruvn+noIIR9xp3YydIQpK/XucUOpveM8ugCudvc+yKdaaX2Z3WsscD2vO/QFA+j9xNAeFXo9t9TfxX4Qpy4Kw4="
+  project: "the-dog-project"
 notifications:
   slack: nuphilosophy:DF9RFkQP3ojK6NqRPY0FOOSk
