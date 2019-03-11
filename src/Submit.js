@@ -3,15 +3,15 @@ import PropTypes from "prop-types";
 //import classNames from "classnames";
 import { withStyles } from "@material-ui/core/styles";
 //import MenuItem from "@material-ui/core/MenuItem";
-import TextField from "@material-ui/core/TextField";
+
 import Grid from "@material-ui/core/Grid";
-import InputBase from "@material-ui/core/InputBase";
-import { Paper, Button } from "@material-ui/core";
-import RulesDialog from "./components/RulesDialog";
+
 import Divider from "@material-ui/core/Divider";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
+
+import ImageUpload from "./components/ImageUpload";
 
 const styles = theme => ({
   root: {
@@ -49,13 +49,25 @@ const styles = theme => ({
   input: {
     display: 'none',
   },
+  rightIcon: {
+    marginLeft: theme.spacing.unit,
+  },
 });
 
 export class Submit extends Component {
   state = {
-    id: 0,
-    picURL: ""
+    image: null
   };
+
+  onChange = (e) => {
+      console.log(e.target.pic);
+      const file = e.target.pic;
+      
+      this.setState( {pic: file });
+
+      console.log(this.state)
+  }
+
 
   render() {
     const { classes } = this.props;
@@ -72,23 +84,9 @@ export class Submit extends Component {
           </ListItem>
           <Divider />
           <ListItem className={classes.container}>
-            
-              <input
-                accept="image/*"
-                className={classes.input}
-                id="contained-button-file"
-                multiple
-                type="file"
-              />
-              <label htmlFor="contained-button-file">
-                <Button
-                  variant="contained"
-                  component="span"
-                  className={classes.button}
-                >
-                  Upload
-                </Button>
-              </label>
+
+              <ImageUpload />
+
           </ListItem>
         </List>
       </Grid>

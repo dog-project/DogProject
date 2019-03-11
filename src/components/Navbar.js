@@ -9,7 +9,7 @@ import Typography from "@material-ui/core/Typography";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { Link } from 'react-router-dom';
 
-import NavMenu from './NavMenu';
+import DrawerNav from "./DrawerNav";
 
 
 const styles = {
@@ -53,7 +53,7 @@ function Navbar(props) {
       <div className={classes.root}>
         <AppBar position="static">
           <Toolbar>
-            <NavMenu />
+            <DrawerNav />
             <Typography variant="h6" color="inherit" className={classes.grow} component={Link} to="/">
               The Dog Project
             </Typography>

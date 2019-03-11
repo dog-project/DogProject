@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
+import AboutCategories from "./components/AboutCategories";
 
 const styles = theme => ({
   root: {
@@ -11,6 +12,9 @@ const styles = theme => ({
     paddingBottom: theme.spacing.unit * 2,
   },
   div: {
+    paddingTop: '30px',
+  },
+  categoryPanel: {
     paddingTop: '30px',
   }
 });
@@ -28,6 +32,8 @@ function About(props) {
           Say stuff here
         </Typography>
       </Paper>
+
+      <AboutCategories />
     </div>
   );
 }

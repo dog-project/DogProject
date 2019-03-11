@@ -8,6 +8,7 @@ import HomePageGrid from "./components/HomePageGrid";
 import SignUp from "./SignUp";
 import Submit from "./Submit";
 
+
 import "./App.css";
 
 
@@ -17,6 +18,7 @@ class App extends Component {
       <Router>
         <div>
           <Navbar />
+
           <Route exact path="/about" render={props => <About />} />
           <Route
             exact
