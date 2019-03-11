@@ -31,6 +31,7 @@ class DrawerNav extends React.Component {
     this.setState({
       [side]: open
     });
+    
   };
 
   render() {

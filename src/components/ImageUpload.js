@@ -17,6 +17,7 @@ class ImageUpload extends React.Component {
 	}
 
     render() {
+		
         return (
             <ImageUploader
                 	withIcon={true}

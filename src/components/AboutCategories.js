@@ -82,6 +82,7 @@ class AboutCategories extends React.Component {
           </ExpansionPanelDetails>
         </ExpansionPanel>
       </div>
+      
     );
   }
 }
