@@ -12,7 +12,7 @@ function Home(props) {
     <div className={classes.div}>
       <Paper className={classes.root} elevation={1}>
         <Typography variant="h5" component="h3">
-          Welcome to The Dog Project
+          Welcome to The Dog Project!
         </Typography>
         <Typography component="p">
           Click here to do stuff
