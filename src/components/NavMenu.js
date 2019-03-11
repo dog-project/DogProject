@@ -4,6 +4,7 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import DrawerNav from "./DrawerNav";
 
 import { Link } from 'react-router-dom'
 
@@ -35,16 +36,7 @@ class NavMenu extends React.Component {
             <MenuIcon />
           </IconButton>
         </Button>
-        <Menu
-          id="simple-menu"
-          anchorEl={anchorEl}
-          open={Boolean(anchorEl)}
-          onClose={this.handleClose}
-        >
-          <MenuItem onClick={this.handleClose}component={Link} to="/">Home</MenuItem>
-          <MenuItem onClick={this.handleClose}component={Link} to="/about">About </MenuItem>
-          <MenuItem onClick={this.handleClose}component={Link} to="/submit">Submit Your Dog!</MenuItem>
-        </Menu>
+        <DrawerNav />
       </div>
     );
   }

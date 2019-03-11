@@ -11,6 +11,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import HomeIcon from "@material-ui/icons/Home";
 import InfoIcon from "@material-ui/icons/Info";
 import BackupIcon from "@material-ui/icons/Backup";
+import { Link } from 'react-router-dom'
 
 const styles = {
   list: {
@@ -39,19 +40,19 @@ class DrawerNav extends React.Component {
     const sideList = (
       <div className={classes.list}>
         <List>
-            <ListItem>
+            <ListItem component={Link} to="/">
                 <ListItemIcon>
                     <HomeIcon />
                 </ListItemIcon>
             <ListItemText primary="Home" />
             </ListItem>
-            <ListItem>
+            <ListItem component={Link} to="/about">
                 <ListItemIcon>
                     <InfoIcon />
                 </ListItemIcon>
             <ListItemText primary="About" />
             </ListItem>
-            <ListItem>
+            <ListItem component={Link} to="/submit">
                 <ListItemIcon>
                     <BackupIcon />
                 </ListItemIcon>
