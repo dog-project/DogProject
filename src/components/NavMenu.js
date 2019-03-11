@@ -43,6 +43,7 @@ class NavMenu extends React.Component {
         >
           <MenuItem onClick={this.handleClose}component={Link} to="/">Home</MenuItem>
           <MenuItem onClick={this.handleClose}component={Link} to="/about">About </MenuItem>
+          <MenuItem onClick={this.handleClose}component={Link} to="/sign_up">Sign Up </MenuItem>
         </Menu>
       </div>
     );
