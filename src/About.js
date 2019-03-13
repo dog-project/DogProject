@@ -4,19 +4,31 @@ import { withStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import AboutCategories from "./components/AboutCategories";
+import ViewsTable from "./components/ViewsTable";
 
 const styles = theme => ({
   root: {
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
-    marginBottom: '30px'
+    marginBottom: "30px"
   },
   div: {
     paddingTop: "30px"
   },
   categoryPanel: {
     paddingTop: "30px"
+  },
+  viewsTable: {
+    marginLeft: '50%',
+  },
+  categoriesPaper: {
+    maxWidth: 600,
+    display: 'inline-block',
+    ...theme.mixins.gutters(),
+    paddingTop: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 2,
+    marginBottom: "30px"
   }
 });
 
@@ -37,7 +49,7 @@ function About(props) {
           tried to uncover.
         </Typography>
       </Paper>
-      <Paper className={classes.root} elevation={1}>
+      <Paper className={ classes.categoriesPaper} elevation={1}>
         <Typography variant="h5" component="h3">
           RISE Presentation
         </Typography>
@@ -50,6 +62,10 @@ function About(props) {
       </Paper>
 
       <AboutCategories />
+
+      <div className={classes.viewsTable}>
+        <ViewsTable className={classes.viewsTable} />
+      </div>
     </div>
   );
 }
