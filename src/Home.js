@@ -11,11 +11,11 @@ function Home(props) {
   return (
     <div className={classes.div}>
       <Paper className={classes.root} elevation={1}>
-        <Typography variant="h5" component="h3">
-          Welcome to The Dog Project!
+        <Typography variant="h3" component="h3" className={ classes.header }>
+          Welcome to The Cute Dog Project!
         </Typography>
-        <Typography component="p">
-          Click here to do stuff
+        <Typography component="p" className={ classes.paragraph }>
+          We are running a research experiment that aims at answering a few questions about our social choice processes and consequently, our views on cute dogs. 
         </Typography>
       </Paper>
     </div>
@@ -32,6 +32,13 @@ const styles = theme => ({
   },
   div: {
     paddingTop: '30px',
+  },
+  header: {
+    textAlign: 'center',
+    marginBottom: '20px',
+  },
+  paragraph: {
+    textAlign: 'center',
   }
 });
 

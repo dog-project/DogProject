@@ -39,6 +39,8 @@ class Footer extends React.Component {
         <BottomNavigationAction label="Home" icon={<HomeIcon />} component={Link} to="/"/>
         <BottomNavigationAction label="About" icon={<InfoIcon />} component={Link} to="/about"/>
 
+
+
       </BottomNavigation>
     );
   }

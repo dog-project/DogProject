@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import About from "./About";
 import Home from "./Home";
 import HomePageGrid from "./components/HomePageGrid";
 import SignUp from "./SignUp";
 import Submit from "./Submit";
-
+import Vote from "./Vote";
+import ThankYou from "./components/ThankYou";
 
 import "./App.css";
 
@@ -30,13 +30,12 @@ class App extends Component {
               </div>
             )}
           />
-          <Route exact path="/sign_up" render={props => (
-            <SignUp />
-          )}
-          />
-          <Route exact path="/submit" render={props => (<Submit />)} />
+          <Route exact path="/sign-up" render={props => <SignUp />} />
+          <Route exact path="/vote" render={props => <Vote />} />
+          <Route exact path="/submit" render={props => <Submit />} />
+          <Route exact path="/thank-you" render={props => <ThankYou />} />
 
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </Router>
     );

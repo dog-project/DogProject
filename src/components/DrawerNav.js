@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
-import Button from "@material-ui/core/Button";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
@@ -12,11 +11,15 @@ import HomeIcon from "@material-ui/icons/Home";
 import InfoIcon from "@material-ui/icons/Info";
 import BackupIcon from "@material-ui/icons/Backup";
 import { Link } from 'react-router-dom'
+import { IconButton } from "@material-ui/core";
 
 const styles = {
   list: {
     width: 250
   },
+  colorAlternative: {
+    color: "#ffffff"
+  }
 
 };
 
@@ -50,13 +53,19 @@ class DrawerNav extends React.Component {
                 <ListItemIcon>
                     <InfoIcon />
                 </ListItemIcon>
-            <ListItemText primary="About" />
+            <ListItemText primary="The Philosophical Stuff" />
             </ListItem>
             <ListItem component={Link} to="/submit">
                 <ListItemIcon>
                     <BackupIcon />
                 </ListItemIcon>
             <ListItemText primary="Submit Your Dog" />
+            </ListItem>
+            <ListItem component={Link} to="/vote">
+                <ListItemIcon>
+                    <BackupIcon />
+                </ListItemIcon>
+            <ListItemText primary="Vote" />
             </ListItem>
 
         </List>
@@ -67,11 +76,11 @@ class DrawerNav extends React.Component {
 
     return (
       <div>
-        <Button onClick={this.toggleDrawer("left", true)}>
- 
+        <IconButton onClick={this.toggleDrawer("left", true)} style={classes.icon} color="alternative">
+
             <MenuIcon color="alternative" />
 
-        </Button>
+        </IconButton>
         <Drawer
           open={this.state.left}
           onClose={this.toggleDrawer("left", false)}

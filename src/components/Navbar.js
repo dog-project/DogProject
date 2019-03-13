@@ -14,12 +14,14 @@ import DrawerNav from "./DrawerNav";
 
 const styles = {
   root: {
-    flexGrow: 1
+    flexGrow: 1,
+    
   },
   grow: {
     flexGrow: 1,
     textDecoration: 'none',
     textAlign: 'center',
+    marginLeft: -50,
   },
   menuButton: {
     marginLeft: -12,
@@ -40,6 +42,9 @@ const theme = createMuiTheme({
       main: "#0044ff",
       // dark: will be calculated from palette.secondary.main,
       contrastText: "#ffcc00"
+    },
+    alternative: {
+      main: "#ffffff",
     }
     // error: will use the default color
   }
@@ -55,7 +60,7 @@ function Navbar(props) {
           <Toolbar>
             <DrawerNav />
             <Typography variant="h6" color="inherit" className={classes.grow} component={Link} to="/">
-              The Dog Project
+              The Cute Dog Project
             </Typography>
           </Toolbar>
         </AppBar>

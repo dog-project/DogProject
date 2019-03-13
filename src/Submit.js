@@ -10,8 +10,9 @@ import Divider from "@material-ui/core/Divider";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
-
-import ImageUpload from "./components/ImageUpload";
+import Input from "@material-ui/core/Input";
+import { withRouter } from "react-router-dom";
+import Button from "@material-ui/core/Button";
 
 const styles = theme => ({
   root: {
@@ -26,7 +27,8 @@ const styles = theme => ({
   },
   textField: {
     marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit
+    marginRight: theme.spacing.unit,
+    width: '50%'
   },
   dense: {
     marginTop: 16
@@ -44,30 +46,33 @@ const styles = theme => ({
     mozBorderRadius: "15px"
   },
   button: {
-    margin: theme.spacing.unit,
+    margin: theme.spacing.unit
   },
   input: {
-    display: 'none',
+    display: "none"
   },
   rightIcon: {
-    marginLeft: theme.spacing.unit,
-  },
+    marginLeft: theme.spacing.unit
+  }
 });
 
 export class Submit extends Component {
   state = {
-    image: null
+    email: "",
+    pic: null,
+    picURL: ""
   };
 
-  onChange = (e) => {
-      console.log(e.target.pic);
-      const file = e.target.pic;
-      
-      this.setState( {pic: file });
+  onChange = e => {
+    e.preventDefault();
+    this.setState({ [e.target.name]: e.target.value });
+  };
 
-      console.log(this.state)
-  }
-
+  onSubmit = e => {
+    e.preventDefault();
+    console.log(this.state);
+    this.props.history.push("/thank-you");
+  };
 
   render() {
     const { classes } = this.props;
@@ -83,11 +88,41 @@ export class Submit extends Component {
             </ListItemText>
           </ListItem>
           <Divider />
-          <ListItem className={classes.container}>
+          <form onSubmit={this.onSubmit.bind(this)}>
+            <ListItem className={classes.container}>
+              <Input
+                id="outlined-email-input"
+                label="Email"
+                className={classes.textField}
+                type="email"
+                name="email"
+                autoComplete="email"
+                margin="normal"
+                variant="outlined"
+                placeholder="Email"
+                onChange={this.onChange}
+                required
+              />
+            </ListItem>
+            <ListItem>
+              <Input
+                id="outlined-file-input"
+                label="pic"
+                className={classes.textField}
+                type="file"
+                accept="image/*"
+                name="pic"
+                margin="normal"
+                variant="outlined"
+                onChange={this.onChange}
+                required
+              />
+            </ListItem>
 
-              <ImageUpload />
-
-          </ListItem>
+            <Button variant="contained" type="submit" onSubmit={this.onSubmit}>
+              Submit
+            </Button>
+          </form>
         </List>
       </Grid>
     );
@@ -98,4 +133,4 @@ Submit.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Submit);
+export default withRouter(withStyles(styles)(Submit));

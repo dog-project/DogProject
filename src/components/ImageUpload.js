@@ -13,6 +13,7 @@ class ImageUpload extends React.Component {
 		this.setState({
             pictures: this.state.pictures.concat(pictureFiles),
 		});
+		console.log(this.state);
 		
 	}
 

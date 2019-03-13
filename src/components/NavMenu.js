@@ -6,7 +6,6 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import DrawerNav from "./DrawerNav";
 
-import { Link } from 'react-router-dom'
 
 class NavMenu extends React.Component {
   state = {
@@ -32,7 +31,7 @@ class NavMenu extends React.Component {
           aria-haspopup="true"
           onClick={this.handleClick}
         >
-          <IconButton style={style} color="inherit" aria-label="Menu">
+          <IconButton style={style} aria-label="Menu">
             <MenuIcon />
           </IconButton>
         </Button>
@@ -46,6 +45,7 @@ const style = {
     menuButton: {
       marginLeft: -12,
       marginRight: 20,
+      color: "#ffffff"
     },
   };
 

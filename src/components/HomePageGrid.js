@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import { Typography } from '@material-ui/core';
 
 const styles = theme => ({
   root: {
@@ -22,11 +23,19 @@ function HomePageGrid(props) {
   return (
     <div className={classes.root}>
       <Grid container spacing={24}>
-        <Grid item xs={6}>
-          <Paper className={classes.paper}>Click Here To See The Dogs</Paper>
+        <Grid item lg={6} xs={12}>
+          <Paper className={classes.paper}>
+          <Typography variant="h5">
+            Why research social choice?
+          </Typography>
+          </Paper>
         </Grid>
-        <Grid item xs={6}>
-          <Paper className={classes.paper}>Click Here To Vote</Paper>
+        <Grid item lg={6} xs={12}>
+          <Paper className={classes.paper}>
+          <Typography variant="h5">
+            What do cute dogs have to do with this?
+          </Typography>
+          </Paper>
         </Grid>
       </Grid>
     </div>
