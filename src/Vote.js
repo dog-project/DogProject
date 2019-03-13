@@ -129,14 +129,19 @@ export class Vote extends Component {
                 onChange={this.handleChange}
               >
                 <FormControlLabel
-                  value="Dog A"
+                  value="A"
                   control={<Radio />}
                   label="Dog A"
                 />
                 <FormControlLabel
-                  value="Dog B"
+                  value="B"
                   control={<Radio />}
                   label="Dog B"
+                />
+                <FormControlLabel
+                  value="C"
+                  control={<Radio />}
+                  label="Tie"
                 />
               </RadioGroup>
               <Button variant="contained" type="submit">

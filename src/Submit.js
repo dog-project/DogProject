@@ -13,6 +13,11 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Input from "@material-ui/core/Input";
 import { withRouter } from "react-router-dom";
 import Button from "@material-ui/core/Button";
+import Radio from "@material-ui/core/Radio";
+import RadioGroup from "@material-ui/core/RadioGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import FormLabel from "@material-ui/core/FormLabel";
+import Checkbox from '@material-ui/core/Checkbox';
 
 const styles = theme => ({
   root: {
@@ -28,7 +33,8 @@ const styles = theme => ({
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
-    width: '50%'
+    width: '100%',
+    minWidth: '50%'
   },
   dense: {
     marginTop: 16
@@ -59,19 +65,38 @@ const styles = theme => ({
 export class Submit extends Component {
   state = {
     email: "",
+    dog_age: "",
+    dog_breed: "",
+    dog_weight: null,
     pic: null,
-    picURL: ""
+    picURL: "",
+    checked1: false,
+    checked2: false,
+    checked3: false
   };
+
+  uploadImage = e => {
+    //upload the image to the database and get its ID in return to be sent with the save request
+  }
+
+  sendToAPI = () => {
+    //send the data to the API and emsure 200 response
+    alert('not implemented yet: save in database')
+  }
 
   onChange = e => {
     e.preventDefault();
     this.setState({ [e.target.name]: e.target.value });
   };
 
+  onCheck = name => event => {
+    this.setState({ [name]: event.target.checked });
+  };
+
   onSubmit = e => {
     e.preventDefault();
     console.log(this.state);
-    this.props.history.push("/thank-you");
+    this.sendToAPI();
   };
 
   render() {
@@ -79,16 +104,29 @@ export class Submit extends Component {
     return (
       <Grid container className={classes.wrapper}>
         <List>
-          <h2>Welcome to the Submission page for submitting a Dog</h2>
+          <h2>Dog Submission</h2>
           <ListItem>
             <ListItemText>
-              We are accepting anonymous submissions. In order to run a fair
-              contest, we are only asking for a picture of the dog but it must
-              abide by the following guidelines...
+            <p>
+              We are currently accepting anonymous submissions from Northeastern Philosophy Department Members who currently meet one of the following qualifications:
+            </p>
+            <ul>
+              <li>Philosophy Department Faculty Member</li>
+              <li>Phliosophy Combined Major</li>
+              <li>PPE Major</li>
+            </ul>
+            </ListItemText>
+          </ListItem>
+          <ListItem>
+            <ListItemText>
+            <p>
+              *Some other details about the contest*
+            </p>
             </ListItemText>
           </ListItem>
           <Divider />
           <form onSubmit={this.onSubmit.bind(this)}>
+            <h3>Your Information</h3>
             <ListItem className={classes.container}>
               <Input
                 id="outlined-email-input"
@@ -104,6 +142,72 @@ export class Submit extends Component {
                 required
               />
             </ListItem>
+            <h3>Your Dog's Information</h3>
+            <ListItem>
+              <Input
+                id="outlined-age-input"
+                label="Dog Age (In Human Years)"
+                className={classes.textField}
+                type="text"
+                name="dogAge"
+                margin="normal"
+                variant="outlined"
+                placeholder="Dog Age (In Human Years)"
+                onChange={this.onChange}
+                required
+              />
+            </ListItem>
+            <ListItem>
+              <Input
+                id="outlined-breed-input"
+                label="Dog Breed"
+                className={classes.textField}
+                type="text"
+                name="dogBreed"
+                margin="normal"
+                variant="outlined"
+                placeholder="Dog Breed"
+                onChange={this.onChange}
+                required
+              />
+            </ListItem>
+            <FormLabel style={{textAlign: 'left'}}>Dog's Weight Range (Lbs)</FormLabel>
+            <ListItem>
+              <RadioGroup
+                aria-label="Dog's Weight Range (Lbs)"
+                name="dogWeight"
+                className={classes.group}
+                onChange={this.onChange}
+                style={{display: 'inline', margin: 'auto'}}
+                required
+              >
+                <FormControlLabel
+                  value="12"
+                  control={<Radio />}
+                  label="0-12"
+                />
+                <FormControlLabel
+                  value="25"
+                  control={<Radio />}
+                  label="13-25"
+                />
+                <FormControlLabel
+                  value="50"
+                  control={<Radio />}
+                  label="26-50"
+                />
+                <FormControlLabel
+                  value="100"
+                  control={<Radio />}
+                  label="51-100"
+                />
+                <FormControlLabel
+                  value="100plus"
+                  control={<Radio />}
+                  label="100+"
+                />
+              </RadioGroup>
+            </ListItem>
             <ListItem>
               <Input
                 id="outlined-file-input"
@@ -118,7 +222,42 @@ export class Submit extends Component {
                 required
               />
             </ListItem>
-
+            <h3>User Agreements</h3>
+            <ListItem style={{display: 'block'}}>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={this.state.checked1}
+                    onChange={this.onCheck('checked1')}
+                    value="checked1"
+                    required
+                  />
+                }
+                label="I certify that this dog is owned by me or my direct family, or that  live with this dog"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={this.state.checked2}
+                    onChange={this.onCheck('checked2')}
+                    value="checked2"
+                    required
+                  />
+                }
+                label="I certify that I own the image, submitted above, of my dog, and I grant Northeastern University the rights to redistribute this image as they see fit"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={this.state.checked3}
+                    onChange={this.onCheck('checked3')}
+                    value="checked3"
+                    required
+                  />
+                }
+                label="I certify that this image was taken recently and accurately reflects the current appearence of my dog"
+              />
+            </ListItem>
             <Button variant="contained" type="submit" onSubmit={this.onSubmit}>
               Submit
             </Button>
