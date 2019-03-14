@@ -23,7 +23,7 @@ function HomePageGrid(props) {
   return (
     <div className={classes.root}>
       <Grid container spacing={24}>
-        <Grid item lg={6} xs={12}>
+        <Grid item md={6} xs={12}>
           <Paper className={classes.paper}>
           <Typography variant="h5" style={{marginBottom: "25px"}}>
             Why research social choice?
@@ -36,7 +36,7 @@ function HomePageGrid(props) {
           </Typography>
           </Paper>
         </Grid>
-        <Grid item lg={6} xs={12}>
+        <Grid item md={6} xs={12}>
           <Paper className={classes.paper}>
           <Typography variant="h5"  style={{marginBottom: "25px"}}>
             What do cute dogs have to do with this?

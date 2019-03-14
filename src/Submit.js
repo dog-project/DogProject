@@ -59,6 +59,10 @@ const styles = theme => ({
   },
   rightIcon: {
     marginLeft: theme.spacing.unit
+  },
+  radioButtons: {
+    display: 'inline',
+    justifyContent: 'center'
   }
 });
 
@@ -172,8 +176,8 @@ export class Submit extends Component {
               />
             </ListItem>
             <FormLabel style={{textAlign: 'left'}}>Dog's Weight Range (lbs)</FormLabel>
-            <ListItem>
-              <RadioGroup
+            <ListItem style={{justifyContent: 'center'}}>
+              {/* <RadioGroup
                 aria-label="Dog's Weight Range (Lbs)"
                 name="dogWeight"
                 className={classes.group}
@@ -184,6 +188,7 @@ export class Submit extends Component {
                   value="12"
                   control={<Radio />}
                   label="0-12"
+                  required
                   
                 />
                 <FormControlLabel
@@ -210,7 +215,14 @@ export class Submit extends Component {
                   label="100+"
                   
                 />
-              </RadioGroup>
+              </RadioGroup> */}
+              
+              <label><input type="radio" name="dog-weight" value="0-12" required />0-12</label>
+              <label><input type="radio" name="dog-weight" value="13-25" />13-25</label>
+              <label><input type="radio" name="dog-weight" value="26-50" />26-25</label>
+              <label><input type="radio" name="dog-weight" value="51-100" />51-100</label>
+              <label><input type="radio" name="dog-weight" value="100+" />100+</label>
+
             </ListItem>
             <ListItem>
               <Input
