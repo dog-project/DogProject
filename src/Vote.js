@@ -141,7 +141,7 @@ export class Vote extends Component {
                 <FormControlLabel
                   value="C"
                   control={<Radio />}
-                  label="Tie"
+                  label="I am indifferent"
                 />
               </RadioGroup>
               <Button variant="contained" type="submit">

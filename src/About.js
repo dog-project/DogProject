@@ -5,6 +5,7 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import AboutCategories from "./components/AboutCategories";
 import ViewsTable from "./components/ViewsTable";
+import Grid from "@material-ui/core/Grid";
 
 const styles = theme => ({
   root: {
@@ -17,14 +18,14 @@ const styles = theme => ({
     paddingTop: "30px"
   },
   categoryPanel: {
-    paddingTop: "30px"
+    
   },
   viewsTable: {
-    marginLeft: '50%',
+    
   },
   categoriesPaper: {
-    maxWidth: 600,
-    display: 'inline-block',
+    
+    display: "inline-block",
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
@@ -49,23 +50,38 @@ function About(props) {
           tried to uncover.
         </Typography>
       </Paper>
-      <Paper className={ classes.categoriesPaper} elevation={1}>
-        <Typography variant="h5" component="h3">
-          RISE Presentation
-        </Typography>
-        <Typography component="p">
-          We presented at Northeastern's RISE Expo 2019. Here is a little more
-          about the why we ran this project, how we approached the application,
-          what we aim to got from our results, and what the impacts of our
-          findings were
-        </Typography>
-      </Paper>
+      <Grid container spacing={24}>
+        <Grid item xs={12} md={6}>
+          <Paper className={classes.categoriesPaper} elevation={1}>
+            <Typography variant="h5" component="h3">
+              RISE Presentation
+            </Typography>
+            <Typography component="p">
+              We presented at Northeastern's RISE Expo 2019. Here is a little
+              more about the why we ran this project, how we approached the
+              application, what we aim to got from our results, and what the
+              impacts of our findings were
+            </Typography>
+          </Paper>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <AboutCategories />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Paper className={classes.categoriesPaper} elevation={1}>
+            <Typography variant="h5" component="h3">
+              Philosophical Views of Cuteness
+            </Typography>
+            <Typography component="p">
+              We had to discern between what views of cuteness we might uncover through this experiment. The "Philosophical Views" table gives a brief example of how each view would characterize Cuteness.
+            </Typography>
+          </Paper>
+        </Grid>
 
-      <AboutCategories />
-
-      <div className={classes.viewsTable}>
-        <ViewsTable className={classes.viewsTable} />
-      </div>
+        <Grid item xs={12} md={6}>
+          <ViewsTable  />
+        </Grid>
+      </Grid>
     </div>
   );
 }

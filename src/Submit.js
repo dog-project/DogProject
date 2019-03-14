@@ -171,7 +171,7 @@ export class Submit extends Component {
                 required
               />
             </ListItem>
-            <FormLabel style={{textAlign: 'left'}}>Dog's Weight Range (Lbs)</FormLabel>
+            <FormLabel style={{textAlign: 'left'}}>Dog's Weight Range (lbs)</FormLabel>
             <ListItem>
               <RadioGroup
                 aria-label="Dog's Weight Range (Lbs)"
@@ -179,32 +179,36 @@ export class Submit extends Component {
                 className={classes.group}
                 onChange={this.onChange}
                 style={{display: 'inline', margin: 'auto'}}
-                required
-              >
+             >
                 <FormControlLabel
                   value="12"
                   control={<Radio />}
                   label="0-12"
+                  
                 />
                 <FormControlLabel
                   value="25"
                   control={<Radio />}
                   label="13-25"
+                  
                 />
                 <FormControlLabel
                   value="50"
                   control={<Radio />}
                   label="26-50"
+                  
                 />
                 <FormControlLabel
                   value="100"
                   control={<Radio />}
                   label="51-100"
+                  
                 />
                 <FormControlLabel
                   value="100plus"
                   control={<Radio />}
                   label="100+"
+                  
                 />
               </RadioGroup>
             </ListItem>
