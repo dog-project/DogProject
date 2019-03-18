@@ -30,10 +30,10 @@ function createData(view, sentence) {
 }
 
 const rows = [
-  createData("Realist", "Sentence A"),
-  createData("Inter-Subjectivist", "Sentence B"),
-  createData("Non-Cognitivist", "Sentence C"),
-  createData("Subjectivist", "Sentence D")
+  createData("Realist (Objective)", "... a property that exists in the thing itself"),
+  createData("Intersubjective", "... what people agree to be cute"),
+  createData("Non-Cognitive (Emotive)", `... whatever makes me say "Aww!"`),
+  createData("Subjective", "... in the eye of the beholder")
 ];
 
 function ViewsTable(props) {
@@ -43,8 +43,8 @@ function ViewsTable(props) {
       <Table className={classes.table}>
         <TableHead>
           <TableRow>
-            <TableCell>Philosophical View</TableCell>
-            <TableCell align="left">Their view on Cuteness</TableCell>
+            <TableCell>Conception of Cuteness</TableCell>
+            <TableCell align="left">According to this conception, cuteness is...</TableCell>
 
           </TableRow>
         </TableHead>
