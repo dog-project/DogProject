@@ -69,7 +69,7 @@ function Home(props) {
             submitted in a pairwise voting function.
           </Typography>
         </Paper>
-        <Grid container spacing={24}>
+        {/* <Grid container spacing={24}>
           <Grid item xs={12} md={6}>
             <Paper className={classes.categoriesPaper}>
               <Typography component="p">
@@ -93,8 +93,8 @@ function Home(props) {
                 </Button>
               </MuiThemeProvider>
             </Paper>
-          </Grid>
-          <Grid item xs={12} md={6}>
+          </Grid> */}
+          <Grid item xs={12} >
             <Paper className={classes.categoriesPaper} elevation={1}>
               <Typography component="h4">
                 If you came to this website and thought to yourself, "No doubt,
@@ -115,7 +115,7 @@ function Home(props) {
               </MuiThemeProvider>
             </Paper>
           </Grid>
-        </Grid>
+        
       </div>
     </MuiThemeProvider>
   );
@@ -139,7 +139,7 @@ const styles = theme => ({
     textAlign: "center"
   },
   categoriesPaper: {
-    display: "inline-block",
+    
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,

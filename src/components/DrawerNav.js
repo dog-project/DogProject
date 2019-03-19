@@ -58,12 +58,12 @@ class DrawerNav extends React.Component {
                 </ListItemIcon>
             <ListItemText primary="Home" className={ classes.text }/>
             </ListItem>
-            <ListItem component={Link} to="/about" className={ classes.item }>
+            {/* <ListItem component={Link} to="/about" className={ classes.item }>
                 <ListItemIcon>
                     <InfoIcon />
                 </ListItemIcon>
             <ListItemText primary="About our Project" className={ classes.text }/>
-            </ListItem>
+            </ListItem> */}
             <ListItem component={Link} to="/submit" className={ classes.item }>
                 <ListItemIcon>
                     <BackupIcon />

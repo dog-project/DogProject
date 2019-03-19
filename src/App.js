@@ -20,7 +20,7 @@ class App extends Component {
         <div>
           <Navbar />
           <Switch>
-            <Route exact path="/about" render={props => <About />} />
+            {/* <Route exact path="/about" render={props => <About />} /> */}
             <Route
               exact
               path="/"
@@ -31,7 +31,7 @@ class App extends Component {
                 </div>
               )}
             />
-            <Route exact path="/sign-up" render={props => <SignUp />} />
+            {/* <Route exact path="/sign-up" render={props => <SignUp />} /> */}
             {/* <Route exact path="/vote" render={props => <Vote />} /> */}
             <Route exact path="/submit" render={props => <Submit />} />
             <Route exact path="/thank-you" render={props => <ThankYou />} />
