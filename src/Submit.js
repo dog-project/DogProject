@@ -17,8 +17,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Input from "@material-ui/core/Input";
 import { withRouter } from "react-router-dom";
 import Button from "@material-ui/core/Button";
-import Radio from "@material-ui/core/Radio";
-import RadioGroup from "@material-ui/core/RadioGroup";
+
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormLabel from "@material-ui/core/FormLabel";
 import Checkbox from "@material-ui/core/Checkbox";
@@ -94,7 +93,9 @@ export class Submit extends Component {
     picURL: "",
     checked1: false,
     checked2: false,
-    checked3: false
+    checked3: false,
+    checked4: false,
+    checked5: false,
   };
 
   uploadImage = e => {
@@ -104,7 +105,6 @@ export class Submit extends Component {
   sendToAPI = e => {
     //send the data to the API and emsure 200 response
     alert("not implemented yet: save in database");
-
   };
 
   onChange = e => {
@@ -173,6 +173,13 @@ export class Submit extends Component {
                       Photo Quality: Must be taken by a smartphone. No DSLR
                     </li>
                   </ul>
+                  <br />
+                  Your submission does not guarantee that your dog will be a
+                  part of The Cute Dog Project Vote Phase. We are limiting the
+                  amount of dogs in the contest as we see fit. All faculty dogs
+                  will be guaranteed a spot in the voting contest and the
+                  remaining spots might be chosen on a first-come-first-serve
+                  basis, by a random generator, or by the group.
                 </p>
               </ListItemText>
             </ListItem>
@@ -313,7 +320,7 @@ export class Submit extends Component {
                       required
                     />
                   }
-                  label="I certify that this dog is owned by me or my direct family, or that  live with this dog"
+                  label="I certify that this dog is owned by me or my direct family, or that I live with this dog"
                 />
                 <FormControlLabel
                   control={
@@ -324,7 +331,7 @@ export class Submit extends Component {
                       required
                     />
                   }
-                  label="I certify that I own the image, submitted above, of my dog, and I grant Northeastern University the rights to redistribute this image as they see fit"
+                  label="I certify that I own the image, submitted above, of my dog, and I grant the runners of this contest the rights to redistribute this image as they see fit in perpetiuity without restricton"
                 />
                 <FormControlLabel
                   control={
@@ -336,6 +343,30 @@ export class Submit extends Component {
                     />
                   }
                   label="I certify that this image was taken recently and accurately reflects the current appearence of my dog"
+                />
+                <br />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={this.state.checked4}
+                      onChange={this.onCheck("checked4")}
+                      value="checked4"
+                      required
+                    />
+                  }
+                  label="I certify that I meet all the criteria for submission"
+                />
+                <br />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={this.state.checked5}
+                      onChange={this.onCheck("checked5")}
+                      value="checked5"
+                      required
+                    />
+                  }
+                  label="I certify that I am 18 years of age or older"
                 />
               </ListItem>
               <Button
