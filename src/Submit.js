@@ -20,6 +20,8 @@ import Button from "@material-ui/core/Button";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormLabel from "@material-ui/core/FormLabel";
 import Checkbox from "@material-ui/core/Checkbox";
+import Radio from "@material-ui/core/Radio";
+import RadioGroup from "@material-ui/core/RadioGroup";
 import red from "@material-ui/core/colors/red";
 import grey from "@material-ui/core/colors/grey";
 
@@ -85,11 +87,11 @@ const theme = createMuiTheme({
 export class Submit extends Component {
   state = {
     email: "",
-    dog_age: "",
+    dog_years: null,
+    dog_months: null,
     dog_breed: "",
     dog_weight: null,
     pic: null,
-    picURL: "",
     checked1: false,
     checked2: false,
     checked3: false,
@@ -117,8 +119,14 @@ export class Submit extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    console.log(e);
-    this.sendToAPI();
+    console.log(e, this.state);
+    this.sendToAPI({
+      user_email: this.state.email,
+      dog_age: this.state.dog_age,
+      dog_weight: this.state.dog_weight,
+      dog_breed: this.state.dog_breed,
+      image: this.state.pic
+    });
   };
 
   render() {
@@ -204,13 +212,25 @@ export class Submit extends Component {
               <ListItem>
                 <Input
                   id="outlined-age-input"
-                  label="Dog Age (In Human Years)"
+                  label="Dog Age In (Human) Years"
                   className={classes.textField}
-                  type="text"
-                  name="dogAge"
+                  type="number"
+                  name="dog_years"
                   margin="normal"
                   variant="outlined"
-                  placeholder="Dog Age (In Human Years)"
+                  placeholder="Years Old"
+                  onChange={this.onChange}
+                  required
+                />
+                <Input
+                  id="outlined-age-input"
+                  label="Dog Age In (Human) Months"
+                  className={classes.textField}
+                  type="number"
+                  name="dog_months"
+                  margin="normal"
+                  variant="outlined"
+                  placeholder="Months Old"
                   onChange={this.onChange}
                   required
                 />
@@ -221,7 +241,7 @@ export class Submit extends Component {
                   label="Dog Breed"
                   className={classes.textField}
                   type="text"
-                  name="dogBreed"
+                  name="dog_breed"
                   margin="normal"
                   variant="outlined"
                   placeholder="Dog Breed"
@@ -233,66 +253,64 @@ export class Submit extends Component {
                 Dog's Weight Range (lbs)
               </FormLabel>
               <ListItem style={{ justifyContent: "center" }}>
-                {/* <RadioGroup
-                aria-label="Dog's Weight Range (Lbs)"
-                name="dogWeight"
-                className={classes.group}
-                onChange={this.onChange}
-                style={{display: 'inline', margin: 'auto'}}
-             >
-                <FormControlLabel
-                  value="12"
-                  control={<Radio />}
-                  label="0-12"
-                  required
-                  
-                />
-                <FormControlLabel
-                  value="25"
-                  control={<Radio />}
-                  label="13-25"
-                  
-                />
-                <FormControlLabel
-                  value="50"
-                  control={<Radio />}
-                  label="26-50"
-                  
-                />
-                <FormControlLabel
-                  value="100"
-                  control={<Radio />}
-                  label="51-100"
-                  
-                />
-                <FormControlLabel
-                  value="100plus"
-                  control={<Radio />}
-                  label="100+"
-                  
-                />
-              </RadioGroup> */}
+                <RadioGroup
+                  aria-label="Dog's Weight Range (Lbs)"
+                  name="dog_weight"
+                  className={classes.group}
+                  onChange={this.onChange}
+                  style={{display: 'inline', margin: 'auto'}}
+                >
+                  <FormControlLabel
+                    value="1"
+                    control={<Radio required/>}
+                    label="0-12"
+                  />
+                  <FormControlLabel
+                    value="2"
+                    control={<Radio />}
+                    label="13-25"
 
-                <label>
-                  <input type="radio" name="dog-weight" value="0" required />
+                  />
+                  <FormControlLabel
+                    value="3"
+                    control={<Radio />}
+                    label="26-50"
+
+                  />
+                  <FormControlLabel
+                    value="4"
+                    control={<Radio />}
+                    label="51-100"
+
+                  />
+                  <FormControlLabel
+                    value="5"
+                    control={<Radio />}
+                    label="100+"
+
+                  />
+                </RadioGroup>
+
+                {/*<label style={{padding: "0 15px"}}>
+                  <input type="radio" name="dog_weight" value="0" required />
                   0-12
                 </label>
-                <label>
+                <label style={{padding: "0 15px"}}>
                   <input type="radio" name="dog-weight" value="1" />
                   13-25
                 </label>
-                <label>
+                <label style={{padding: "0 15px"}}>
                   <input type="radio" name="dog-weight" value="2" />
                   26-50
                 </label>
-                <label>
+                <label style={{padding: "0 15px"}}>
                   <input type="radio" name="dog-weight" value="3" />
                   51-100
                 </label>
-                <label>
+                <label style={{padding: "0 15px"}}>
                   <input type="radio" name="dog-weight" value="4" />
                   100+
-                </label>
+                </label>*/}
               </ListItem>
               <ListItem>
                 <Input
