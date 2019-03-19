@@ -38,7 +38,7 @@ function ThankYou(props) {
       <Paper className={ classes.root }>
         <Typography variant="h3" >
           Thank you for your submission! We will contact you via email after the
-          submission period has concluded.
+          submission period has concluded if we are going to use your dog in the contest.
         </Typography>
         <br />
         <br />
