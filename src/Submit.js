@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 //import classNames from "classnames";
-import { withStyles, MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import {
+  withStyles,
+  MuiThemeProvider,
+  createMuiTheme
+} from "@material-ui/core/styles";
 //import MenuItem from "@material-ui/core/MenuItem";
 
 import Grid from "@material-ui/core/Grid";
@@ -55,8 +59,8 @@ const styles = theme => ({
   },
   button: {
     margin: theme.spacing.unit,
-    '&:hover' : {
-      backgroundColor: grey[900],
+    "&:hover": {
+      backgroundColor: grey[900]
     }
   },
   input: {
@@ -140,7 +144,35 @@ export class Submit extends Component {
             </ListItem>
             <ListItem>
               <ListItemText>
-                <p>*Some other details about the contest*</p>
+                <p>
+                  These are the rules pertaining to the photograph of your dog
+                  that you are allowed to submit. Please read them carefully.
+                  Any violations of these rules will automatically disqualify
+                  your dog from the contest.
+                </p>
+                <p>
+                  <ul>
+                    <li>
+                      Recency: Within the last two months if dog is older than 1
+                      year / Within last week if dog is under 1 year
+                    </li>
+                    <li>
+                      Props: No props. This means no toys, costumes, or any
+                      other objects in the foreground besides the dog
+                    </li>
+                    <li>
+                      Location: Wherever you can take a picture of your dog
+                      without a distracting background.
+                    </li>
+                    <li>
+                      Examples: Against a plain wall, on a plainly colored floor
+                      or rug, front yard, dog park (not busy)
+                    </li>
+                    <li>
+                      Photo Quality: Must be taken by a smartphone. No DSLR
+                    </li>
+                  </ul>
+                </p>
               </ListItemText>
             </ListItem>
             <Divider />
@@ -310,7 +342,7 @@ export class Submit extends Component {
                 type="submit"
                 onSubmit={this.onSubmit}
                 color="primary"
-                className={ classes.button }
+                className={classes.button}
               >
                 Submit
               </Button>
