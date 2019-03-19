@@ -42,7 +42,7 @@ function ThankYou(props) {
         </Typography>
         <br />
         <br />
-        <Typography variant="h3">
+        {/* <Typography variant="h3">
           In the meanwhile, if you would like to learn more about why we are doing what we are doing, you can visit our About Page to read about the philosophy behind The Cute Dog Project
         </Typography>
         <MuiThemeProvider theme={theme}>
@@ -56,7 +56,7 @@ function ThankYou(props) {
                 >
                   Go to the About Page
                 </Button>
-              </MuiThemeProvider>
+              </MuiThemeProvider> */}
 
 
       </Paper>
