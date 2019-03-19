@@ -26,12 +26,12 @@ class App extends Component {
             render={props => (
               <div>
                 <Home />
-                <HomePageGrid />
+                {/* <HomePageGrid /> */}
               </div>
             )}
           />
           <Route exact path="/sign-up" render={props => <SignUp />} />
-          <Route exact path="/vote" render={props => <Vote />} />
+          {/* <Route exact path="/vote" render={props => <Vote />} /> */}
           <Route exact path="/submit" render={props => <Submit />} />
           <Route exact path="/thank-you" render={props => <ThankYou />} />
 

@@ -1,12 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
+import {
+  withStyles,
+  MuiThemeProvider,
+  createMuiTheme
+} from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import AboutCategories from "./components/AboutCategories";
 import ViewsTable from "./components/ViewsTable";
 import Grid from "@material-ui/core/Grid";
 import VotingMethodsTable from "./components/VotingMethodsTable";
+import { Link } from "react-router-dom";
+import Button from "@material-ui/core/Button";
+import red from "@material-ui/core/colors/red";
 
 const styles = theme => ({
   root: {
@@ -25,8 +32,32 @@ const styles = theme => ({
     display: "inline-block",
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing.unit * 2,
-    paddingBottom: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 2
     //marginBottom: "30px"
+  },
+  submitButton: {
+    ...theme.mixins.gutters(),
+    paddingTop: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 2,
+    textAlign: "center",
+    marginLeft: "25%",
+    marginRight: "25%"
+  },
+  button: {
+    marginTop: "20px",
+    marginBottom: "15px",
+    '&:hover': {
+      backgroundColor: "#212121"
+    }
+  }
+});
+
+const theme = createMuiTheme({
+  palette: {
+    primary: red
+  },
+  typography: {
+    useNextVariants: true
   }
 });
 
@@ -35,42 +66,6 @@ function About(props) {
 
   return (
     <div className={classes.div}>
-      <Paper className={classes.root} elevation={6}>
-        <Typography variant="h5" component="h3">
-          What is The Cute Dog Project
-        </Typography>
-        <Typography component="p">
-          <br />
-          We are a research group within the Philosophy department at
-          Northeastern University that started from an argument between three
-          professors over who has the cutest dog? Instead of argue until the end
-          of time (as philosophers will do), the three decided to set their
-          differences aside and let philosophy answer the question. It was
-          decided that a voting contest would need to be put in place to not
-          only answer the question of who has the cutest dog between those three
-          professors but also who has the cutest dog in the entirety of the
-          Philosophy Department at Northeastern, and next the entire University
-          of Northeastern, and hopefully one day, the entire world. To answer
-          this simple question of "Who has the cutest dog?" we had to decide on
-          a few things.
-          <ul>
-            <li>
-              How are democratic processes used in group decisions to resolve
-              disputes?
-            </li>
-            <li>What would our voting procedure be?</li>
-            <li>How do we define cuteness and can we even define it?</li>
-            <li>
-              Who would be allowed to submit photos and who would be allowed to
-              vote?
-            </li>
-            <li>
-              How does this question help us uncover answers about generalized
-              social choice theories and voting procedures?
-            </li>
-          </ul>
-        </Typography>
-      </Paper>
       <Grid container spacing={24}>
         <Grid item xs={12} md={6}>
           <Paper className={classes.categoriesPaper} elevation={1}>
@@ -84,7 +79,7 @@ function About(props) {
             </Typography>
           </Paper>
         </Grid>
-        <Grid item xs={12} md={6} className={ classes.table }>
+        <Grid item xs={12} md={6} className={classes.table}>
           <ViewsTable />
         </Grid>
         <Grid item xs={12} md={6}>
@@ -99,7 +94,7 @@ function About(props) {
             </Typography>
           </Paper>
         </Grid>
-        <Grid item xs={12} md={6} className={ classes.table }>
+        <Grid item xs={12} md={6} className={classes.table}>
           <VotingMethodsTable />
         </Grid>
         <Grid item xs={12} md={6}>
@@ -117,8 +112,29 @@ function About(props) {
             </Typography>
           </Paper>
         </Grid>
-        <Grid item xs={12} md={6} className={ classes.table }>
+        <Grid item xs={12} md={6} className={classes.table}>
           <AboutCategories />
+        </Grid>
+
+        <Grid item xs={8} md={12}>
+          <Paper className={classes.submitButton} elevation={1}>
+            <Typography component="h4">
+              If you would like to Submit your dog into the contest, you can go
+              to the submit page here
+            </Typography>
+            <MuiThemeProvider theme={theme}>
+              <Button
+                size="large"
+                color="primary"
+                variant="contained"
+                component={Link}
+                to="/submit"
+                className={classes.button}
+              >
+                Submit Your Dog!
+              </Button>
+            </MuiThemeProvider>
+          </Paper>
         </Grid>
       </Grid>
     </div>

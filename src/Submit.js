@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 //import classNames from "classnames";
-import { withStyles } from "@material-ui/core/styles";
+import { withStyles, MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 //import MenuItem from "@material-ui/core/MenuItem";
 
 import Grid from "@material-ui/core/Grid";
@@ -17,7 +17,9 @@ import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormLabel from "@material-ui/core/FormLabel";
-import Checkbox from '@material-ui/core/Checkbox';
+import Checkbox from "@material-ui/core/Checkbox";
+import red from "@material-ui/core/colors/red";
+import grey from "@material-ui/core/colors/grey";
 
 const styles = theme => ({
   root: {
@@ -33,8 +35,8 @@ const styles = theme => ({
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
-    width: '100%',
-    minWidth: '50%'
+    width: "100%",
+    minWidth: "50%"
   },
   dense: {
     marginTop: 16
@@ -52,7 +54,10 @@ const styles = theme => ({
     mozBorderRadius: "15px"
   },
   button: {
-    margin: theme.spacing.unit
+    margin: theme.spacing.unit,
+    '&:hover' : {
+      backgroundColor: grey[900],
+    }
   },
   input: {
     display: "none"
@@ -61,8 +66,17 @@ const styles = theme => ({
     marginLeft: theme.spacing.unit
   },
   radioButtons: {
-    display: 'inline',
-    justifyContent: 'center'
+    display: "inline",
+    justifyContent: "center"
+  }
+});
+
+const theme = createMuiTheme({
+  palette: {
+    primary: red
+  },
+  typography: {
+    useNextVariants: true
   }
 });
 
@@ -81,12 +95,12 @@ export class Submit extends Component {
 
   uploadImage = e => {
     //upload the image to the database and get its ID in return to be sent with the save request
-  }
+  };
 
   sendToAPI = () => {
     //send the data to the API and emsure 200 response
-    alert('not implemented yet: save in database')
-  }
+    alert("not implemented yet: save in database");
+  };
 
   onChange = e => {
     e.preventDefault();
@@ -106,78 +120,81 @@ export class Submit extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <Grid container className={classes.wrapper}>
-        <List>
-          <h2>Dog Submission</h2>
-          <ListItem>
-            <ListItemText>
-            <p>
-              We are currently accepting anonymous submissions from Northeastern Philosophy Department Members who currently meet one of the following qualifications:
-            </p>
-            <ul>
-              <li>Philosophy Department Faculty Member</li>
-              <li>Phliosophy Combined Major</li>
-              <li>PPE Major</li>
-            </ul>
-            </ListItemText>
-          </ListItem>
-          <ListItem>
-            <ListItemText>
-            <p>
-              *Some other details about the contest*
-            </p>
-            </ListItemText>
-          </ListItem>
-          <Divider />
-          <form onSubmit={this.onSubmit.bind(this)}>
-            <h3>Your Information</h3>
-            <ListItem className={classes.container}>
-              <Input
-                id="outlined-email-input"
-                label="Email"
-                className={classes.textField}
-                type="email"
-                name="email"
-                autoComplete="email"
-                margin="normal"
-                variant="outlined"
-                placeholder="Email"
-                onChange={this.onChange}
-                required
-              />
-            </ListItem>
-            <h3>Your Dog's Information</h3>
+      <MuiThemeProvider theme={theme}>
+        <Grid container className={classes.wrapper}>
+          <List>
+            <h2>Dog Submission</h2>
             <ListItem>
-              <Input
-                id="outlined-age-input"
-                label="Dog Age (In Human Years)"
-                className={classes.textField}
-                type="text"
-                name="dogAge"
-                margin="normal"
-                variant="outlined"
-                placeholder="Dog Age (In Human Years)"
-                onChange={this.onChange}
-                required
-              />
+              <ListItemText>
+                <p>
+                  We are currently accepting anonymous submissions from
+                  Northeastern Philosophy Department Members who currently meet
+                  one of the following qualifications:
+                </p>
+                <ul>
+                  <li>Philosophy Department Faculty Member</li>
+                  <li>Phliosophy Combined Major</li>
+                  <li>PPE Major</li>
+                </ul>
+              </ListItemText>
             </ListItem>
             <ListItem>
-              <Input
-                id="outlined-breed-input"
-                label="Dog Breed"
-                className={classes.textField}
-                type="text"
-                name="dogBreed"
-                margin="normal"
-                variant="outlined"
-                placeholder="Dog Breed"
-                onChange={this.onChange}
-                required
-              />
+              <ListItemText>
+                <p>*Some other details about the contest*</p>
+              </ListItemText>
             </ListItem>
-            <FormLabel style={{textAlign: 'left'}}>Dog's Weight Range (lbs)</FormLabel>
-            <ListItem style={{justifyContent: 'center'}}>
-              {/* <RadioGroup
+            <Divider />
+            <form onSubmit={this.onSubmit.bind(this)}>
+              <h3>Your Information</h3>
+              <ListItem className={classes.container}>
+                <Input
+                  id="outlined-email-input"
+                  label="Email"
+                  className={classes.textField}
+                  type="email"
+                  name="email"
+                  autoComplete="email"
+                  margin="normal"
+                  variant="outlined"
+                  placeholder="Email"
+                  onChange={this.onChange}
+                  required
+                />
+              </ListItem>
+              <h3>Your Dog's Information</h3>
+              <ListItem>
+                <Input
+                  id="outlined-age-input"
+                  label="Dog Age (In Human Years)"
+                  className={classes.textField}
+                  type="text"
+                  name="dogAge"
+                  margin="normal"
+                  variant="outlined"
+                  placeholder="Dog Age (In Human Years)"
+                  onChange={this.onChange}
+                  required
+                />
+              </ListItem>
+              <ListItem>
+                <Input
+                  id="outlined-breed-input"
+                  label="Dog Breed"
+                  className={classes.textField}
+                  type="text"
+                  name="dogBreed"
+                  margin="normal"
+                  variant="outlined"
+                  placeholder="Dog Breed"
+                  onChange={this.onChange}
+                  required
+                />
+              </ListItem>
+              <FormLabel style={{ textAlign: "left" }}>
+                Dog's Weight Range (lbs)
+              </FormLabel>
+              <ListItem style={{ justifyContent: "center" }}>
+                {/* <RadioGroup
                 aria-label="Dog's Weight Range (Lbs)"
                 name="dogWeight"
                 className={classes.group}
@@ -216,70 +233,91 @@ export class Submit extends Component {
                   
                 />
               </RadioGroup> */}
-              
-              <label><input type="radio" name="dog-weight" value="0-12" required />0-12</label>
-              <label><input type="radio" name="dog-weight" value="13-25" />13-25</label>
-              <label><input type="radio" name="dog-weight" value="26-50" />26-25</label>
-              <label><input type="radio" name="dog-weight" value="51-100" />51-100</label>
-              <label><input type="radio" name="dog-weight" value="100+" />100+</label>
 
-            </ListItem>
-            <ListItem>
-              <Input
-                id="outlined-file-input"
-                label="pic"
-                className={classes.textField}
-                type="file"
-                accept="image/*"
-                name="pic"
-                margin="normal"
-                variant="outlined"
-                onChange={this.onChange}
-                required
-              />
-            </ListItem>
-            <h3>User Agreements</h3>
-            <ListItem style={{display: 'block'}}>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={this.state.checked1}
-                    onChange={this.onCheck('checked1')}
-                    value="checked1"
-                    required
-                  />
-                }
-                label="I certify that this dog is owned by me or my direct family, or that  live with this dog"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={this.state.checked2}
-                    onChange={this.onCheck('checked2')}
-                    value="checked2"
-                    required
-                  />
-                }
-                label="I certify that I own the image, submitted above, of my dog, and I grant Northeastern University the rights to redistribute this image as they see fit"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={this.state.checked3}
-                    onChange={this.onCheck('checked3')}
-                    value="checked3"
-                    required
-                  />
-                }
-                label="I certify that this image was taken recently and accurately reflects the current appearence of my dog"
-              />
-            </ListItem>
-            <Button variant="contained" type="submit" onSubmit={this.onSubmit}>
-              Submit
-            </Button>
-          </form>
-        </List>
-      </Grid>
+                <label>
+                  <input type="radio" name="dog-weight" value="0-12" required />
+                  0-12
+                </label>
+                <label>
+                  <input type="radio" name="dog-weight" value="13-25" />
+                  13-25
+                </label>
+                <label>
+                  <input type="radio" name="dog-weight" value="26-50" />
+                  26-25
+                </label>
+                <label>
+                  <input type="radio" name="dog-weight" value="51-100" />
+                  51-100
+                </label>
+                <label>
+                  <input type="radio" name="dog-weight" value="100+" />
+                  100+
+                </label>
+              </ListItem>
+              <ListItem>
+                <Input
+                  id="outlined-file-input"
+                  label="pic"
+                  className={classes.textField}
+                  type="file"
+                  accept="image/*"
+                  name="pic"
+                  margin="normal"
+                  variant="outlined"
+                  onChange={this.onChange}
+                  required
+                />
+              </ListItem>
+              <h3>User Agreements</h3>
+              <ListItem style={{ display: "block" }}>
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={this.state.checked1}
+                      onChange={this.onCheck("checked1")}
+                      value="checked1"
+                      required
+                    />
+                  }
+                  label="I certify that this dog is owned by me or my direct family, or that  live with this dog"
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={this.state.checked2}
+                      onChange={this.onCheck("checked2")}
+                      value="checked2"
+                      required
+                    />
+                  }
+                  label="I certify that I own the image, submitted above, of my dog, and I grant Northeastern University the rights to redistribute this image as they see fit"
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={this.state.checked3}
+                      onChange={this.onCheck("checked3")}
+                      value="checked3"
+                      required
+                    />
+                  }
+                  label="I certify that this image was taken recently and accurately reflects the current appearence of my dog"
+                />
+              </ListItem>
+              <Button
+                variant="contained"
+                type="submit"
+                onSubmit={this.onSubmit}
+                color="primary"
+                className={ classes.button }
+              >
+                Submit
+              </Button>
+            </form>
+          </List>
+        </Grid>
+      </MuiThemeProvider>
     );
   }
 }

@@ -9,7 +9,6 @@ import ListItemText from "@material-ui/core/ListItemText";
 import MenuIcon from '@material-ui/icons/Menu';
 import HomeIcon from "@material-ui/icons/Home";
 import InfoIcon from "@material-ui/icons/Info";
-import AssignmentIcon from "@material-ui/icons/Assignment";
 import BackupIcon from "@material-ui/icons/Backup";
 import { Link } from 'react-router-dom'
 import { IconButton } from "@material-ui/core";
@@ -20,6 +19,15 @@ const styles = {
   },
   colorAlternative: {
     color: "#ffffff"
+  },
+  item: {
+    '&:hover': {
+      backgroundColor: '#bdbdbd',
+      
+    }
+  },
+  text: {
+
   }
 
 };
@@ -44,30 +52,30 @@ class DrawerNav extends React.Component {
     const sideList = (
       <div className={classes.list}>
         <List>
-            <ListItem component={Link} to="/">
+            <ListItem component={Link} to="/" className={ classes.item }>
                 <ListItemIcon>
                     <HomeIcon />
                 </ListItemIcon>
-            <ListItemText primary="Home" />
+            <ListItemText primary="Home" className={ classes.text }/>
             </ListItem>
-            <ListItem component={Link} to="/about">
+            <ListItem component={Link} to="/about" className={ classes.item }>
                 <ListItemIcon>
                     <InfoIcon />
                 </ListItemIcon>
-            <ListItemText primary="The Philosophical Stuff" />
+            <ListItemText primary="About our Project" className={ classes.text }/>
             </ListItem>
-            <ListItem component={Link} to="/submit">
+            <ListItem component={Link} to="/submit" className={ classes.item }>
                 <ListItemIcon>
                     <BackupIcon />
                 </ListItemIcon>
-            <ListItemText primary="Submit Your Dog" />
+            <ListItemText primary="Submit Your Dog" className={ classes.text }/>
             </ListItem>
-            <ListItem component={Link} to="/vote">
+            {/* <ListItem component={Link} to="/vote" className={ classes.item }>
                 <ListItemIcon>
                     <AssignmentIcon />
                 </ListItemIcon>
             <ListItemText primary="Vote" />
-            </ListItem>
+            </ListItem> */}
 
         </List>
       </div>
