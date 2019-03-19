@@ -267,23 +267,23 @@ export class Submit extends Component {
               </RadioGroup> */}
 
                 <label>
-                  <input type="radio" name="dog-weight" value="0-12" required />
+                  <input type="radio" name="dog-weight" value="0" required />
                   0-12
                 </label>
                 <label>
-                  <input type="radio" name="dog-weight" value="13-25" />
+                  <input type="radio" name="dog-weight" value="1" />
                   13-25
                 </label>
                 <label>
-                  <input type="radio" name="dog-weight" value="26-50" />
-                  26-25
+                  <input type="radio" name="dog-weight" value="2" />
+                  26-50
                 </label>
                 <label>
-                  <input type="radio" name="dog-weight" value="51-100" />
+                  <input type="radio" name="dog-weight" value="3" />
                   51-100
                 </label>
                 <label>
-                  <input type="radio" name="dog-weight" value="100+" />
+                  <input type="radio" name="dog-weight" value="4" />
                   100+
                 </label>
               </ListItem>
