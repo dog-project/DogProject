@@ -40,8 +40,8 @@ const styles = theme => ({
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
     textAlign: "center",
-    marginLeft: "25%",
-    marginRight: "25%"
+    // marginLeft: "25%",
+    // marginRight: "25%"
   },
   button: {
     marginTop: "20px",
@@ -116,7 +116,7 @@ function About(props) {
           <AboutCategories />
         </Grid>
 
-        <Grid item xs={8} md={12}>
+        <Grid item xs={12} >
           <Paper className={classes.submitButton} elevation={1}>
             <Typography component="h4">
               If you would like to Submit your dog into the contest, you can go

@@ -101,9 +101,10 @@ export class Submit extends Component {
     //upload the image to the database and get its ID in return to be sent with the save request
   };
 
-  sendToAPI = () => {
+  sendToAPI = e => {
     //send the data to the API and emsure 200 response
     alert("not implemented yet: save in database");
+
   };
 
   onChange = e => {
@@ -117,7 +118,7 @@ export class Submit extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    console.log(this.state);
+    console.log(e);
     this.sendToAPI();
   };
 
