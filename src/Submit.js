@@ -102,6 +102,7 @@ export class Submit extends Component {
   };
 
   sendToAPI = e => {
+    const redirect = this.props;
     fetch("https://us-east1-dog-project-234515.cloudfunctions.net/submit_dog", {
       method: "POST",
       headers: {
@@ -119,7 +120,7 @@ export class Submit extends Component {
       if (response.status !== 200) {
         alert('A ' + response.status + ' error occurred. Please try again or contact us at northeasterndogproject@gmail.com');
       } else {
-        //TODO this.props.history.push("/thank-you");
+        redirect.history.push("/thank-you");
       }
     });
   };
@@ -219,7 +220,7 @@ export class Submit extends Component {
               </ListItemText>
             </ListItem>
             <Divider />
-            <form onSubmit={this.onSubmit.bind(this)}>
+            <form onSubmit={this.onSubmit.bind(this)} action="/thank-you">
               <h3>Your Information</h3>
               <ListItem className={classes.container}>
                 <Input
