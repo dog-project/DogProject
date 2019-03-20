@@ -24,6 +24,7 @@ import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import red from "@material-ui/core/colors/red";
 import grey from "@material-ui/core/colors/grey";
+import axios from "axios";
 
 const styles = theme => ({
   root: {
@@ -96,16 +97,22 @@ export class Submit extends Component {
     checked2: false,
     checked3: false,
     checked4: false,
-    checked5: false,
-  };
-
-  uploadImage = e => {
-    //upload the image to the database and get its ID in return to be sent with the save request
+    checked5: false
   };
 
   sendToAPI = e => {
     //send the data to the API and emsure 200 response
-    alert("not implemented yet: save in database");
+    console.log(e.dog_weight);
+    axios.post("https://us-east1-dog-project-234515.cloudfunctions.net/submit_dog", {
+      image: e.image,
+      dog_age: e.dog_age,
+      dog_breed: e.dog_breed,
+      dog_weight: e.dog_weight,
+      user_email: e.email,
+    }).then(id => 
+      console.log(id)
+    );
+
   };
 
   onChange = e => {
@@ -119,15 +126,27 @@ export class Submit extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    console.log(e, this.state);
-    this.sendToAPI({
-      user_email: this.state.email,
-      dog_age: this.state.dog_age,
-      dog_weight: this.state.dog_weight,
-      dog_breed: this.state.dog_breed,
-      image: this.state.pic
+
+    var file = e.target.pic.files[0];
+    this.getBase64(file).then(data => {
+      this.sendToAPI({
+        user_email: this.state.email,
+        dog_age: (this.state.dog_years * 12 + this.state.dog_months),
+        dog_weight: this.state.dog_weight,
+        dog_breed: this.state.dog_breed,
+        image: data
+      });
     });
   };
+
+  getBase64(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = error => reject(error);
+    });
+  }
 
   render() {
     const { classes } = this.props;
@@ -258,36 +277,32 @@ export class Submit extends Component {
                   name="dog_weight"
                   className={classes.group}
                   onChange={this.onChange}
-                  style={{display: 'inline', margin: 'auto'}}
+                  style={{ display: "inline", margin: "auto" }}
                 >
                   <FormControlLabel
-                    value="1"
-                    control={<Radio required/>}
+                    value="0"
+                    control={<Radio required />}
                     label="0-12"
+                  />
+                  <FormControlLabel
+                    value="1"
+                    control={<Radio />}
+                    label="13-25"
                   />
                   <FormControlLabel
                     value="2"
                     control={<Radio />}
-                    label="13-25"
-
+                    label="26-50"
                   />
                   <FormControlLabel
                     value="3"
                     control={<Radio />}
-                    label="26-50"
-
+                    label="51-100"
                   />
                   <FormControlLabel
                     value="4"
                     control={<Radio />}
-                    label="51-100"
-
-                  />
-                  <FormControlLabel
-                    value="5"
-                    control={<Radio />}
                     label="100+"
-
                   />
                 </RadioGroup>
 

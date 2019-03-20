@@ -57,8 +57,6 @@ function ThankYou(props) {
                   Go to the About Page
                 </Button>
               </MuiThemeProvider> */}
-
-
       </Paper>
     </div>
   );
