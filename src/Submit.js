@@ -106,8 +106,8 @@ export class Submit extends Component {
     fetch("https://us-east1-dog-project-234515.cloudfunctions.net/submit_dog", {
       method: "POST",
       headers: {
-        Accept: "application/json",
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*"
       },
       body: {
         image: e.image,
@@ -345,6 +345,9 @@ export class Submit extends Component {
                   onChange={this.onChange}
                   required
                 />
+              </ListItem>
+              <ListItem style={{textAlign: "left", paddingLeft: "25px"}}>
+                *We will display your image as a square. If you don't upload a square image, we will crop your photo into a square as we best see fit.
               </ListItem>
               <h3>User Agreements</h3>
               <ListItem style={{ display: "block" }}>
