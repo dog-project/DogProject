@@ -87,6 +87,7 @@ const theme = createMuiTheme({
 
 export class Submit extends Component {
   state = {
+    submit_pending: false,
     email: "",
     dog_years: null,
     dog_months: null,
@@ -101,23 +102,26 @@ export class Submit extends Component {
   };
 
   sendToAPI = e => {
-    //send the data to the API and emsure 200 response
-    console.log(e.dog_weight);
     fetch("https://us-east1-dog-project-234515.cloudfunctions.net/submit_dog", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*"
+        "Content-Type": "application/json"
       },
-      body: {
-        image: e.image,
+      body: JSON.stringify({
+        user_email: e.user_email,
         dog_age: e.dog_age,
         dog_breed: e.dog_breed,
         dog_weight: e.dog_weight,
-        user_email: e.email
+        image: e.image,
+      })
+    }).then(function(response) {
+      console.log(response)
+      if (response.status !== 200) {
+        alert('A ' + response.status + ' error occurred. Please try again or contact us at northeasterndogproject@gmail.com');
+      } else {
+        //TODO this.props.history.push("/thank-you");
       }
-    })
-      .then(id => console.log(id));
+    });
   };
 
   onChange = e => {
@@ -131,7 +135,7 @@ export class Submit extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-
+    this.setState({submit_pending: true});
     var file = e.target.pic.files[0];
     this.getBase64(file).then(data => {
       this.sendToAPI({
@@ -169,7 +173,7 @@ export class Submit extends Component {
                 </p>
                 <ul>
                   <li>Philosophy Department Faculty Member</li>
-                  <li>Phliosophy Combined Major</li>
+                  <li>Phliosophy Major, or Combined Major</li>
                   <li>PPE Major</li>
                 </ul>
               </ListItemText>
@@ -196,7 +200,7 @@ export class Submit extends Component {
                       Location: Wherever you can take a picture of your dog
                       without a distracting background.
                     </li>
-                    <li>
+                    <li style={{paddingLeft: "15px"}}>
                       Examples: Against a plain wall, on a plainly colored floor
                       or rug, front yard, dog park (not busy)
                     </li>
@@ -220,14 +224,14 @@ export class Submit extends Component {
               <ListItem className={classes.container}>
                 <Input
                   id="outlined-email-input"
-                  label="Email"
+                  label="Northeastern Email"
                   className={classes.textField}
                   type="email"
                   name="email"
                   autoComplete="email"
                   margin="normal"
                   variant="outlined"
-                  placeholder="Email"
+                  placeholder="Northeastern Email"
                   onChange={this.onChange}
                   required
                 />
