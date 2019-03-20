@@ -103,16 +103,21 @@ export class Submit extends Component {
   sendToAPI = e => {
     //send the data to the API and emsure 200 response
     console.log(e.dog_weight);
-    axios.post("https://us-east1-dog-project-234515.cloudfunctions.net/submit_dog", {
-      image: e.image,
-      dog_age: e.dog_age,
-      dog_breed: e.dog_breed,
-      dog_weight: e.dog_weight,
-      user_email: e.email,
-    }).then(id => 
-      console.log(id)
-    );
-
+    fetch("https://us-east1-dog-project-234515.cloudfunctions.net/submit_dog", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: {
+        image: e.image,
+        dog_age: e.dog_age,
+        dog_breed: e.dog_breed,
+        dog_weight: e.dog_weight,
+        user_email: e.email
+      }
+    })
+      .then(id => console.log(id));
   };
 
   onChange = e => {
@@ -131,7 +136,7 @@ export class Submit extends Component {
     this.getBase64(file).then(data => {
       this.sendToAPI({
         user_email: this.state.email,
-        dog_age: (this.state.dog_years * 12 + this.state.dog_months),
+        dog_age: this.state.dog_years * 12 + this.state.dog_months,
         dog_weight: this.state.dog_weight,
         dog_breed: this.state.dog_breed,
         image: data
