@@ -174,7 +174,7 @@ export class Submit extends Component {
                 </p>
                 <ul>
                   <li>Philosophy Department Faculty Member</li>
-                  <li>Phliosophy Major, or Combined Major</li>
+                  <li>Phliosophy Major, Combined Major, or Minor</li>
                   <li>PPE Major</li>
                 </ul>
               </ListItemText>
@@ -191,7 +191,7 @@ export class Submit extends Component {
                   <ul>
                     <li>
                       Recency: Within the last two months if dog is older than 1
-                      year / Within last week if dog is under 1 year
+                      year / Within the last week if dog is under 1 year
                     </li>
                     <li>
                       Props: No props. This means no toys, costumes, or any
@@ -199,7 +199,7 @@ export class Submit extends Component {
                     </li>
                     <li>
                       Location: Wherever you can take a picture of your dog
-                      without a distracting background.
+                      without a distracting background
                     </li>
                     <li style={{paddingLeft: "15px"}}>
                       Examples: Against a plain wall, on a plainly colored floor
@@ -215,7 +215,11 @@ export class Submit extends Component {
                   amount of dogs in the contest as we see fit. All faculty dogs
                   will be guaranteed a spot in the voting contest and the
                   remaining spots might be chosen on a first-come-first-serve
-                  basis, by a random generator, or by the group.
+                  basis. We reserve the right to disqualify any submissions
+                  based on violation of our submission guidelines as decided
+                  by our Quality Control Subcommittee. While there is no
+                  disqualification appeals process, you may contact us via
+                  email for questions regarding your submission status.
                 </p>
               </ListItemText>
             </ListItem>
@@ -378,16 +382,17 @@ export class Submit extends Component {
                   }
                   label="I certify that I own the image, submitted above, of my dog, and I grant the runners of this contest the rights to redistribute this image as they see fit in perpetiuity without restricton"
                 />
+                <br />
                 <FormControlLabel
                   control={
                     <Checkbox
                       checked={this.state.checked3}
                       onChange={this.onCheck("checked3")}
-                      value="checked3"
+                      value="checked4"
                       required
                     />
                   }
-                  label="I certify that this image was taken recently and accurately reflects the current appearence of my dog"
+                  label="I certify that I meet all the criteria for submission outlined above"
                 />
                 <br />
                 <FormControlLabel
@@ -395,11 +400,11 @@ export class Submit extends Component {
                     <Checkbox
                       checked={this.state.checked4}
                       onChange={this.onCheck("checked4")}
-                      value="checked4"
+                      value="checked5"
                       required
                     />
                   }
-                  label="I certify that I meet all the criteria for submission"
+                  label="I certify that I am 18 years of age or older"
                 />
                 <br />
                 <FormControlLabel
@@ -411,8 +416,10 @@ export class Submit extends Component {
                       required
                     />
                   }
-                  label="I certify that I am 18 years of age or older"
+                  style={{marginRight: '3px'}}
+                  label="I have read the"
                 />
+                <a class="MuiTypography-body2-253 MuiFormControlLabel-label-330" target="_blank" href="privacy-policy">privacy policy</a>
               </ListItem>
               <Button
                 variant="contained"

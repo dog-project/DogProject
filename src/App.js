@@ -7,6 +7,7 @@ import HomePageGrid from "./components/HomePageGrid";
 import SignUp from "./SignUp";
 import Submit from "./Submit";
 import Vote from "./Vote";
+import PrivacyPolicy from "./PrivacyPolicy";
 import ThankYou from "./components/ThankYou";
 
 import "./App.css";
@@ -35,6 +36,7 @@ class App extends Component {
             {/* <Route exact path="/vote" render={props => <Vote />} /> */}
             <Route exact path="/submit" render={props => <Submit />} />
             <Route exact path="/thank-you" render={props => <ThankYou />} />
+            <Route exact path="/privacy-policy" render={props => <PrivacyPolicy />} />
             <Route component={NoMatch} />
           </Switch>
 
