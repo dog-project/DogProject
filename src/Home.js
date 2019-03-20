@@ -60,10 +60,10 @@ function Home(props) {
             </ul>
             To answer our questions, and consequently find the cutest dog, we
             will run our project in two phases. The first phase is "The Submit
-            Page" which will run from Wednesday, March 20th through Wednesday,
-            March 27th, during which time, we will be accepting submissions for
-            the contest. The next phase is "The Vote Phase" which will run from
-            *insert date here* to *insert date here*. During that time, you can
+            Page" which will run from Wednesday, March 20th through Sunday,
+            March 31st, during which time, we will be accepting submissions for
+            the contest. The next phase is "The Vote Phase" which will begin on
+            April 1st. During that time, you can
             return back to the website where you will be directed to a Sign-Up
             page, which after will allow you to vote on a subset of the dogs
             submitted in a pairwise voting function.
@@ -115,7 +115,7 @@ function Home(props) {
               </MuiThemeProvider>
             </Paper>
           </Grid>
-        
+
       </div>
     </MuiThemeProvider>
   );
@@ -139,7 +139,7 @@ const styles = theme => ({
     textAlign: "center"
   },
   categoriesPaper: {
-    
+
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
