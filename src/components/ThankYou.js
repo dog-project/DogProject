@@ -1,18 +1,7 @@
 import React from "react";
 import { Typography, Paper } from "@material-ui/core";
-import { withStyles, MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import { Button } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { withStyles, createMuiTheme } from "@material-ui/core/styles";
 import red from "@material-ui/core/colors/red";
-
-const theme = createMuiTheme({
-  palette: {
-    primary: red,
-  },
-  typography: {
-    useNextVariants: true
-  }
-});
 
 const styles = theme => ({
   root: {

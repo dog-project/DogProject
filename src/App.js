@@ -1,12 +1,8 @@
 import React, { Component } from "react";
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import About from "./About";
 import Home from "./Home";
-import HomePageGrid from "./components/HomePageGrid";
-import SignUp from "./SignUp";
 import Submit from "./Submit";
-import Vote from "./Vote";
 import PrivacyPolicy from "./PrivacyPolicy";
 import ThankYou from "./components/ThankYou";
 

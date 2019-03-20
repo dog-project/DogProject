@@ -5,14 +5,10 @@ import {
   MuiThemeProvider,
   createMuiTheme
 } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
-import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
-import { Button } from "@material-ui/core";
-import { Link } from "react-router-dom";
 import red from "@material-ui/core/colors/red";
 import grey from "@material-ui/core/colors/grey";
 

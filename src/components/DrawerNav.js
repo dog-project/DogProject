@@ -8,7 +8,6 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import MenuIcon from '@material-ui/icons/Menu';
 import HomeIcon from "@material-ui/icons/Home";
-import InfoIcon from "@material-ui/icons/Info";
 import BackupIcon from "@material-ui/icons/Backup";
 import { Link } from 'react-router-dom'
 import { IconButton } from "@material-ui/core";
@@ -23,7 +22,7 @@ const styles = {
   item: {
     '&:hover': {
       backgroundColor: '#bdbdbd',
-      
+
     }
   },
   text: {
