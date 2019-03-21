@@ -30,7 +30,7 @@ function Home(props) {
 
           <Typography component="p">
             <br />
-            We are a research group within the Philosophy department at
+            We are a research group within the Philosophy & Religion department at
             Northeastern University that started from an argument between three
             professors over who has the cutest dog? Instead of argue until the
             end of time (as philosophers will do), the three decided to set
@@ -38,7 +38,7 @@ function Home(props) {
             was decided that a voting contest would need to be put in place to
             not only answer the question of who has the cutest dog between those
             three professors but also who has the cutest dog in the entirety of
-            the Philosophy Department at Northeastern, and next the entire
+            the Philosophy & Religion Department at Northeastern, and next the entire
             University of Northeastern, and hopefully one day, the entire world.
             To answer this simple question of "Who has the cutest dog?" we had
             to decide on a few things.
