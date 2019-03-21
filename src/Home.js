@@ -79,12 +79,14 @@ function Home(props) {
            The final phase is "The Analysis and Interpretation Phase." During that
             time, you can return to the website to find out the winner, learn
             about our methodology, and see how different voting and social
-            choice methods could have generated different results. Thank you for
-             your time helping us, finally, settle a philosophers' debate.
+            choice methods could have generated different results.
+          </p>
+          <p>
+          Thank you for your time helping us, finally, settle a philosophers' debate.
           </p>
         </Paper>
         <Grid item xs={12} >
-          <Paper className={classes.categoriesPaper} elevation={1}>
+          <Paper className={classes.categoriesPaper} elevation={3}>
             <Typography component="h4">
               If you came to this website and thought to yourself, "No doubt,
               my dog is the cutest", and would like to submit your dog to our
@@ -102,6 +104,17 @@ function Home(props) {
                 Submit Your Dog!
               </Button>
             </MuiThemeProvider>
+          </Paper>
+        </Grid>
+      </div>
+      <div className={classes.div}>
+        <Grid item xs={12} >
+          <Paper className={classes.categoriesPaper} elevation={2}>
+            <Typography component="h4">
+              If you have questions or would like more information about the
+              Cute Dog Project please contact
+              us via <a target="_blank" href="mailto:northeasterndogproject@gmail.com">email</a>
+            </Typography>
           </Paper>
         </Grid>
       </div>

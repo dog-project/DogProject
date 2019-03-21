@@ -174,7 +174,7 @@ export class Submit extends Component {
                 </p>
                 <ul>
                   <li>Philosophy & Religion Department Faculty or Staff Member</li>
-                  <li>Phliosophy Major, Combined Major, or Minor</li>
+                  <li>Phliosophy or Religion Major, Combined Major, or Minor (including Ethics Minor)</li>
                   <li>PPE Major</li>
                 </ul>
               </ListItemText>
@@ -201,10 +201,14 @@ export class Submit extends Component {
                       Location: Wherever you can take a picture of your dog
                       without a distracting background
                     </li>
-                    <li style={{paddingLeft: "15px"}}>
+                  </ul>
+                  <ul style={{marginLeft: '25px'}}>
+                    <li>
                       Examples: Against a plain wall, on a plainly colored floor
                       or rug, front yard, dog park (not busy)
                     </li>
+                  </ul>
+                  <ul>
                     <li>
                       Photo Quality: Must be taken by a smartphone. No DSLR
                     </li>
@@ -217,8 +221,8 @@ export class Submit extends Component {
                   disqualify any submissions based on violation of our
                   submission guidelines as decided by our Quality Control
                   Subcommittee. While there is no disqualification appeals
-                  process, you may contact us via email for questions regarding
-                  your submission status.
+                  process, you may <a target="_blank" href="mailto:northeasterndogproject@gmail.com">contact us
+                  via email</a> for questions regarding your submission status.
                 </p>
               </ListItemText>
             </ListItem>
