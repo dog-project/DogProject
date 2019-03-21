@@ -173,7 +173,7 @@ export class Submit extends Component {
                   one of the following qualifications:
                 </p>
                 <ul>
-                  <li>Philosophy Department Faculty or Staff Member</li>
+                  <li>Philosophy & Religion Department Faculty or Staff Member</li>
                   <li>Phliosophy Major, Combined Major, or Minor</li>
                   <li>PPE Major</li>
                 </ul>
@@ -211,15 +211,14 @@ export class Submit extends Component {
                   </ul>
                   <br />
                   Your submission does not guarantee that your dog will be a
-                  part of The Cute Dog Project Vote Phase. We are limiting the
-                  amount of dogs in the contest as we see fit. All faculty and staff dogs
-                  will be guaranteed a spot in the voting contest and the
-                  remaining spots might be chosen on a first-come-first-serve
-                  basis. We reserve the right to disqualify any submissions
-                  based on violation of our submission guidelines as decided
-                  by our Quality Control Subcommittee. While there is no
-                  disqualification appeals process, you may contact us via
-                  email for questions regarding your submission status.
+                  part of The Cute Dog Project Vote Phase. There is a cap on
+                  the number of dogs in the contest that will be filled on a
+                  first-come-first-serve basis. We reserve the right to
+                  disqualify any submissions based on violation of our
+                  submission guidelines as decided by our Quality Control
+                  Subcommittee. While there is no disqualification appeals
+                  process, you may contact us via email for questions regarding
+                  your submission status.
                 </p>
               </ListItemText>
             </ListItem>
@@ -356,7 +355,7 @@ export class Submit extends Component {
                 />
               </ListItem>
               <ListItem style={{textAlign: "left", paddingLeft: "25px"}}>
-                *We will display your image as a square. If you don't upload a square image, we will crop your photo into a square as we best see fit.
+                *We will display your image as a square. If you don't upload a square image, we will crop your photo into a square as best we can.
               </ListItem>
               <h3>User Agreements</h3>
               <ListItem style={{ display: "block" }}>
@@ -380,7 +379,7 @@ export class Submit extends Component {
                       required
                     />
                   }
-                  label="I certify that I own the image, submitted above, of my dog, and I grant the runners of this contest the rights to redistribute this image as they see fit in perpetiuity without restricton"
+                  label="I certify that I own the image, submitted above, of my dog, and I grant the runners of this contest the rights described in the privacy policy"
                 />
                 <br />
                 <FormControlLabel

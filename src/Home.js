@@ -67,9 +67,20 @@ function Home(props) {
           <p>
             Thus, determining whose dog is the cutest has required us to design a system informed by democratic theory, social choice theory, value theory, critical theory, philosophy of science, and information ethics. It has required us to grapple with the same sorts of issues that arise in democratic practice and social decision-making in other contexts – for example, selecting a presidential candidate from a crowded primary field or selecting applicants for admission to a competitive university.
           </p>
-          <p>But now, finally, it is time to launch!</p>
+          <p>But now, it is time to launch!</p>
           <p>
-            To answer our questions, and find the cutest dog, we will run our project in two phases. The first phase is "The Submit Phase" which will run from Wednesday, March 20th through Sunday, March 31st, during which time, we will be accepting submissions for the contest. The next phase is "The Vote Phase" which will begin on April 1st. During that time, you can return to the website where you may cast votes on pairs of dogs to help us determine which dogs are cuter than others and, finally, settle a philosophers' debate.
+          To answer our questions, and find the cutest dog, we will run our
+          project in three phases. The first phase is "The Submit Phase" which
+          will run from Wednesday, March 20th through Sunday, March 31st, during
+           which time, we will be accepting submissions for the contest. The
+           next phase is "The Vote Phase" which will begin on April 1st. During
+           that time, you can return to the website where you may cast votes on
+           pairs of dogs to help us determine which dogs are cuter than others.
+           The final phase is "The Analysis and Interpretation Phase." During that
+            time, you can return to the website to find out the winner, learn
+            about our methodology, and see how different voting and social
+            choice methods could have generated different results. Thank you for
+             your time helping us, finally, settle a philosophers' debate.
           </p>
         </Paper>
         <Grid item xs={12} >
