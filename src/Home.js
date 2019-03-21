@@ -113,7 +113,7 @@ function Home(props) {
             <Typography component="h4">
               If you have questions or would like more information about the
               Cute Dog Project please contact
-              us via <a target="_blank" href="mailto:northeasterndogproject@gmail.com">email</a>
+              us via <a rel="noopener noreferrer" target="_blank" href="mailto:northeasterndogproject@gmail.com">email</a>
             </Typography>
           </Paper>
         </Grid>

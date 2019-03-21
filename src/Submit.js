@@ -221,7 +221,7 @@ export class Submit extends Component {
                   disqualify any submissions based on violation of our
                   submission guidelines as decided by our Quality Control
                   Subcommittee. While there is no disqualification appeals
-                  process, you may <a target="_blank" href="mailto:northeasterndogproject@gmail.com">contact us
+                  process, you may <a rel="noopener noreferrer" target="_blank" href="mailto:northeasterndogproject@gmail.com">contact us
                   via email</a> for questions regarding your submission status.
                 </p>
               </ListItemText>
