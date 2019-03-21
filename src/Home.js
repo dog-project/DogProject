@@ -63,6 +63,8 @@ function Home(props) {
               How does this question help us uncover answers about generalized
               social choice theories and voting procedures?
             </li>
+            <li>How do we control for possible social and cultural biases?</li>
+            <li>How do we collect and manage voting data in ways that are secure and respect privacy?</li>
           </ul>
           <p>
             Thus, determining whose dog is the cutest has required us to design a system informed by democratic theory, social choice theory, value theory, critical theory, philosophy of science, and information ethics. It has required us to grapple with the same sorts of issues that arise in democratic practice and social decision-making in other contexts – for example, selecting a presidential candidate from a crowded primary field or selecting applicants for admission to a competitive university.
@@ -87,11 +89,11 @@ function Home(props) {
         </Paper>
         <Grid item xs={12} >
           <Paper className={classes.categoriesPaper} elevation={3}>
-            <Typography component="h4">
+            <p>
               If you came to this website and thought to yourself, "No doubt,
               my dog is the cutest", and would like to submit your dog to our
               contest, please visit our Submit Page!
-            </Typography>
+            </p>
             <MuiThemeProvider theme={theme}>
               <Button
                 size="large"
@@ -110,11 +112,11 @@ function Home(props) {
       <div className={classes.div}>
         <Grid item xs={12} >
           <Paper className={classes.categoriesPaper} elevation={2}>
-            <Typography component="h4">
+            <p>
               If you have questions or would like more information about the
               Cute Dog Project please contact
               us via <a rel="noopener noreferrer" target="_blank" href="mailto:northeasterndogproject@gmail.com">email</a>
-            </Typography>
+            </p>
           </Paper>
         </Grid>
       </div>

@@ -168,7 +168,7 @@ export class Submit extends Component {
             <ListItem>
               <ListItemText>
                 <p>
-                  We are currently accepting anonymous submissions from
+                  We are currently accepting submissions from
                   Northeastern Philosophy & Religion Department Members who currently meet
                   one of the following qualifications:
                 </p>
