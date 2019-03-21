@@ -173,7 +173,7 @@ export class Submit extends Component {
                   one of the following qualifications:
                 </p>
                 <ul>
-                  <li>Philosophy Department Faculty Member</li>
+                  <li>Philosophy Department Faculty or Staff Member</li>
                   <li>Phliosophy Major, Combined Major, or Minor</li>
                   <li>PPE Major</li>
                 </ul>
@@ -212,7 +212,7 @@ export class Submit extends Component {
                   <br />
                   Your submission does not guarantee that your dog will be a
                   part of The Cute Dog Project Vote Phase. We are limiting the
-                  amount of dogs in the contest as we see fit. All faculty dogs
+                  amount of dogs in the contest as we see fit. All faculty and staff dogs
                   will be guaranteed a spot in the voting contest and the
                   remaining spots might be chosen on a first-come-first-serve
                   basis. We reserve the right to disqualify any submissions
