@@ -53,7 +53,7 @@ function PrivacyPolicy(props) {
 
               <h3>Security</h3>
               <p>We take precautions to protect your information. When you submit sensitive information via the website, your information is protected both online and offline.</p>
-              <p style={{textAlign: 'center'}}><b>If you feel that we are not abiding by this privacy policy, you should contact us immediately via email.</b></p>
+              <p style={{textAlign: 'center'}}><b>If you feel that we are not abiding by this privacy policy, you should contact us immediately via <a rel="noopener noreferrer" target="_blank" href="mailto:northeasterndogproject@gmail.com">email</a>.</b></p>
             </ListItemText>
           </ListItem>
         </List>
