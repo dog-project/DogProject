@@ -10,6 +10,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import HomeIcon from "@material-ui/icons/Home";
 import InfoIcon from "@material-ui/icons/Info";
 import BackupIcon from "@material-ui/icons/Backup";
+import AssignmentIcon from "@material-ui/icons/Assignment";
 import { Link } from 'react-router-dom'
 import { IconButton } from "@material-ui/core";
 
@@ -64,18 +65,18 @@ class DrawerNav extends React.Component {
                 </ListItemIcon>
             <ListItemText primary="About our Project" className={ classes.text }/>
             </ListItem> */}
-            <ListItem component={Link} to="/submit" className={ classes.item }>
+            {/* <ListItem component={Link} to="/submit" className={ classes.item }>
                 <ListItemIcon>
                     <BackupIcon />
                 </ListItemIcon>
             <ListItemText primary="Submit Your Dog" className={ classes.text }/>
-            </ListItem>
-            {/* <ListItem component={Link} to="/vote" className={ classes.item }>
+            </ListItem> */}
+            <ListItem component={Link} to="/vote" className={ classes.item }>
                 <ListItemIcon>
                     <AssignmentIcon />
                 </ListItemIcon>
             <ListItemText primary="Vote" />
-            </ListItem> */}
+            </ListItem>
 
         </List>
       </div>
