@@ -25,7 +25,6 @@ import RadioGroup from "@material-ui/core/RadioGroup";
 import red from "@material-ui/core/colors/red";
 import grey from "@material-ui/core/colors/grey";
 
-
 const styles = theme => ({
   root: {
     padding: "2px 4px",
@@ -113,12 +112,16 @@ export class Submit extends Component {
         dog_age: e.dog_age,
         dog_breed: e.dog_breed,
         dog_weight: e.dog_weight,
-        image: e.image,
+        image: e.image
       })
     }).then(function(response) {
-      console.log(response)
+      console.log(response);
       if (response.status !== 200) {
-        alert('A ' + response.status + ' error occurred. Please try again or contact us at northeasterndogproject@gmail.com');
+        alert(
+          "A " +
+            response.status +
+            " error occurred. Please try again or contact us at northeasterndogproject@gmail.com"
+        );
       } else {
         redirect.history.push("/thank-you");
       }
@@ -136,7 +139,7 @@ export class Submit extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    this.setState({submit_pending: true});
+    this.setState({ submit_pending: true });
     var file = e.target.pic.files[0];
     this.getBase64(file).then(data => {
       this.sendToAPI({
@@ -168,13 +171,18 @@ export class Submit extends Component {
             <ListItem>
               <ListItemText>
                 <p>
-                  We are currently accepting submissions from
-                  Northeastern Philosophy & Religion Department Members who currently meet
+                  We are currently accepting submissions from Northeastern
+                  Philosophy & Religion Department Members who currently meet
                   one of the following qualifications:
                 </p>
                 <ul>
-                  <li>Philosophy & Religion Department Faculty or Staff Member</li>
-                  <li>Phliosophy or Religion Major, Combined Major, or Minor (including Ethics Minor)</li>
+                  <li>
+                    Philosophy & Religion Department Faculty or Staff Member
+                  </li>
+                  <li>
+                    Phliosophy or Religion Major, Combined Major, or Minor
+                    (including Ethics Minor)
+                  </li>
                   <li>PPE Major</li>
                 </ul>
               </ListItemText>
@@ -202,7 +210,7 @@ export class Submit extends Component {
                       without a distracting background
                     </li>
                   </ul>
-                  <ul style={{marginLeft: '25px'}}>
+                  <ul style={{ marginLeft: "25px" }}>
                     <li>
                       Examples: Against a plain wall, on a plainly colored floor
                       or rug, front yard, dog park (not busy)
@@ -210,19 +218,29 @@ export class Submit extends Component {
                   </ul>
                   <ul>
                     <li>
-                      Photo Quality: Must be taken by a smartphone. No DSLR
+                      Photo Quality: Must be taken by a smartphone. No DSLR. No
+                      significant alterations to the photograph.
                     </li>
                   </ul>
                   <br />
                   Your submission does not guarantee that your dog will be a
-                  part of The Cute Dog Project Vote Phase. There is a cap on
-                  the number of dogs in the contest that will be filled on a
+                  part of The Cute Dog Project Vote Phase. There is a cap on the
+                  number of dogs in the contest that will be filled on a
                   first-come-first-serve basis. We reserve the right to
                   disqualify any submissions based on violation of our
                   submission guidelines as decided by our Quality Control
-                  Subcommittee. While there is no disqualification appeals
-                  process, you may <a rel="noopener noreferrer" target="_blank" href="mailto:northeasterndogproject@gmail.com">contact us
-                  via email</a> for questions regarding your submission status.
+                  Subcommittee. The Quality Control Committee can also
+                  disqualify any submissions that violate the spirit of the
+                  competition. While there is no disqualification appeals
+                  process, you may{" "}
+                  <a
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="mailto:northeasterndogproject@gmail.com"
+                  >
+                    contact us via email
+                  </a>{" "}
+                  for questions regarding your submission status.
                 </p>
               </ListItemText>
             </ListItem>
@@ -358,8 +376,10 @@ export class Submit extends Component {
                   required
                 />
               </ListItem>
-              <ListItem style={{textAlign: "left", paddingLeft: "25px"}}>
-                *We will display your image as a square. If you don't upload a square image, we will crop your photo into a square as best we can.
+              <ListItem style={{ textAlign: "left", paddingLeft: "25px" }}>
+                *We will display your image as a square. If you don't upload a
+                square image, we will crop your photo into a square as best we
+                can.
               </ListItem>
               <h3>User Agreements</h3>
               <ListItem style={{ display: "block" }}>
@@ -419,10 +439,16 @@ export class Submit extends Component {
                       required
                     />
                   }
-                  style={{marginRight: '3px'}}
+                  style={{ marginRight: "3px" }}
                   label="I have read the"
                 />
-                <a class="MuiTypography-body2-253 MuiFormControlLabel-label-330" target="_blank" href="privacy-policy">privacy policy</a>
+                <a
+                  class="MuiTypography-body2-253 MuiFormControlLabel-label-330"
+                  target="_blank"
+                  href="privacy-policy"
+                >
+                  privacy policy
+                </a>
               </ListItem>
               <Button
                 variant="contained"
