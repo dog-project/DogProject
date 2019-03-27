@@ -6,6 +6,7 @@ import Home from "./Home";
 import HomePageGrid from "./components/HomePageGrid";
 import SignUp from "./SignUp";
 import Submit from "./Submit";
+import Demographics from "./Demographics";
 import Vote from "./Vote";
 import ThankYou from "./components/ThankYou";
 
@@ -32,9 +33,10 @@ class App extends Component {
               )}
             />
             <Route exact path="/sign-up" render={props => <SignUp />} /> */}
-             <Route exact path="/vote" render={props => <Vote />} />
+            <Route exact path="/demographics" render={props => <Demographics />} />
+            <Route exact path="/vote" render={props => <Vote />} />
             {/* <Route exact path="/submit" render={props => <Submit />} /> */}
-            <Route exact path="/thank-you" render={props => <ThankYou />} /> 
+            <Route exact path="/thank-you" render={props => <ThankYou />} />
             <Route component={NoMatch} />
           </Switch>
 
