@@ -19,6 +19,8 @@ import FormLabel from "@material-ui/core/FormLabel";
 import Button from "@material-ui/core/Button";
 import { withRouter } from "react-router-dom";
 
+import VoteInner from "./VoteInner";
+
 const styles = theme => ({
   root: {
     flexGrow: 1,
@@ -85,56 +87,46 @@ const styles = theme => ({
 });
 
 class Vote extends Component {
-  state = {
-    dog1id: [],
-    dog2id: [],
-    vote: [],
-    dog1pics: [],
-    dog2pics: [],
-    currDog1Pic: "",
-    currDog2Pic: "",
-    counter: 1,
-    value: ""
-  };
-  constructor() {
-    super();
-    //make api call and set dog pics and ids
-    for (var i = 0; i < 5; i++) {
-      this.state.dog1id[i] = 1;
-      this.state.dog2id[i] = 2;
-      if (i % 2 === 0) {
-        this.state.dog1pics[i] = require("./dogpics/riley.jpg");
-        this.state.dog2pics[i] = require("./dogpics/karen.jpg");
-      } else {
-        this.state.dog1pics[i] = require("./dogpics/karen.jpg");
-        this.state.dog2pics[i] = require("./dogpics/riley.jpg");
-      }
+  constructor(props) {
+    super(props);
+    this.state = {
+      dog1id: 'dog1',
+      dog2id: 'dog2',
+      vote: null,
+      userId: props.userId
     }
-    this.state.currDog1Pic = this.state.dog1pics[0];
-    this.state.currDog2Pic = this.state.dog2pics[0];
   }
 
   handleChange = event => {
-    this.setState({ value: event.target.value });
+    console.log(event)
+    this.setState({ vote: event.target.value });
   };
 
-  onClick = () => {
-    this.state.vote.push(this.state.value);
-    this.setState({ value : "" });
-    this.setState({ counter: (this.state.counter + 1) });
-    
-    if (this.state.counter === 5) {
-      this.sendToAPI();
+  onSubmit = () => {
+    if (this.state.vote) {
+      this.sendVoteToAPI();
     } else {
-      console.log(this.state.counter);
-      this.setState({ currDog1Pic: this.state.dog1pics[this.state.counter] });
-      this.setState({ currDog2Pic: this.state.dog2pics[this.state.counter] });
+      console.log(this.state);
     }
   };
 
-  sendToAPI() {
-    //console.log(this.state);
-    this.props.history.push("/thank-you");
+  sendVoteToAPI() {
+    /*fetch("https://us-east1-dog-project-234515.cloudfunctions.net/submit_vote", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        dog1_id: this.state.dog1id,
+        dog2_id: this.state.dog2id,
+        winner: vote,
+        user: this.state.userId
+      })
+    }).then(function(response) {
+      console.log(response)
+    });*/
+    console.log(this.state)
+    this.setState({dog1id: 'dog2', dog2id: 'dog1', vote: null});
   }
 
   render() {
@@ -144,68 +136,13 @@ class Vote extends Component {
         <Paper className={classes.paper}>
           <Typography variant="h3">Vote Page</Typography>
         </Paper>
-        <Grid container spacing={24} className={classes.grid}>
-          <Grid item sm={6} xs={12} className={classes.gridContent1}>
-            <Card className={classes.card}>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  alt="Contemplative Reptile"
-                  className={classes.media}
-                  image={this.state.currDog1Pic}
-                  title="DogA"
-                />
-
-                <CardContent>Dog A</CardContent>
-              </CardActionArea>
-            </Card>
-          </Grid>
-
-          <Grid item sm={6} xs={12} className={classes.gridContent2}>
-            <Card className={classes.card}>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  alt="Contemplative Reptile"
-                  className={classes.media}
-                  image={this.state.currDog2Pic}
-                  title="DogB"
-                />
-
-                <CardContent>Dog B</CardContent>
-              </CardActionArea>
-            </Card>
-          </Grid>
-        </Grid>
-        <Grid item xs={12} className={classes.form}>
-          <form component="fieldset">
-            <FormLabel component="legend" className={classes.label}>
-              <Typography variant="h6">Which dog is cuter?</Typography>
-            </FormLabel>
-            <RadioGroup
-              aria-label="Which dog is cuter?"
-              name="cuteVote"
-              className={classes.group}
-              value={this.state.value}
-              onChange={this.handleChange}
-            >
-              <FormControlLabel
-                value="1"
-                control={<Radio required />}
-                label="Dog A"
-              />
-              <FormControlLabel value="2" control={<Radio />} label="Dog B" />
-              <FormControlLabel
-                value="0"
-                control={<Radio />}
-                label="I am indifferent"
-              />
-            </RadioGroup>
-            <Button variant="contained" onClick={this.onClick}>
-              Submit
-            </Button>
-          </form>
-        </Grid>
+        <VoteInner
+          dog1id={this.state.dog1id}
+          dog2id={this.state.dog2id}
+          vote={this.state.vote}
+          handleVote={this.handleChange}
+          onSubmit={() => this.onSubmit}
+        />
       </div>
     );
   }
@@ -213,7 +150,6 @@ class Vote extends Component {
 
 Vote.propTypes = {
   classes: PropTypes.object.isRequired,
-
 };
 
 export default withRouter(withStyles(styles)(Vote));

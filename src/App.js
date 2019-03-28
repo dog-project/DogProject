@@ -3,7 +3,8 @@ import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./Home";
 import Submit from "./Submit";
-import PrivacyPolicy from "./PrivacyPolicy";
+import Demographics from "./Demographics";
+import Vote from "./Vote";
 import ThankYou from "./components/ThankYou";
 
 import "./App.css";
@@ -28,11 +29,11 @@ class App extends Component {
                 </div>
               )}
             />
-            {/* <Route exact path="/sign-up" render={props => <SignUp />} /> */}
-            {/* <Route exact path="/vote" render={props => <Vote />} /> */}
-            <Route exact path="/submit" render={props => <Submit />} />
+            <Route exact path="/sign-up" render={props => <SignUp />} /> */}
+            <Route exact path="/demographics" render={props => <Demographics />} />
+            <Route exact path="/vote" render={props => <Vote />} />
+            {/* <Route exact path="/submit" render={props => <Submit />} /> */}
             <Route exact path="/thank-you" render={props => <ThankYou />} />
-            <Route exact path="/privacy-policy" render={props => <PrivacyPolicy />} />
             <Route component={NoMatch} />
           </Switch>
 

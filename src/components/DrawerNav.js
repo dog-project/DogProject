@@ -70,7 +70,7 @@ class DrawerNav extends React.Component {
                 </ListItemIcon>
             <ListItemText primary="Submit Your Dog" className={ classes.text }/>
             </ListItem> */}
-            <ListItem component={Link} to="/vote" className={ classes.item }>
+            <ListItem component={Link} to="/demographics" className={ classes.item }>
                 <ListItemIcon>
                     <AssignmentIcon />
                 </ListItemIcon>
