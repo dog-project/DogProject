@@ -7,7 +7,6 @@ import {
   TableRow,
   Paper
 } from "@material-ui/core";
-import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 
 const styles = theme => ({

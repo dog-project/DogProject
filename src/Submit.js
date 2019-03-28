@@ -168,13 +168,13 @@ export class Submit extends Component {
             <ListItem>
               <ListItemText>
                 <p>
-                  We are currently accepting anonymous submissions from
-                  Northeastern Philosophy Department Members who currently meet
+                  We are currently accepting submissions from
+                  Northeastern Philosophy & Religion Department Members who currently meet
                   one of the following qualifications:
                 </p>
                 <ul>
-                  <li>Philosophy Department Faculty Member</li>
-                  <li>Phliosophy Major, or Combined Major</li>
+                  <li>Philosophy & Religion Department Faculty or Staff Member</li>
+                  <li>Phliosophy or Religion Major, Combined Major, or Minor (including Ethics Minor)</li>
                   <li>PPE Major</li>
                 </ul>
               </ListItemText>
@@ -191,7 +191,7 @@ export class Submit extends Component {
                   <ul>
                     <li>
                       Recency: Within the last two months if dog is older than 1
-                      year / Within last week if dog is under 1 year
+                      year / Within the last week if dog is under 1 year
                     </li>
                     <li>
                       Props: No props. This means no toys, costumes, or any
@@ -199,23 +199,30 @@ export class Submit extends Component {
                     </li>
                     <li>
                       Location: Wherever you can take a picture of your dog
-                      without a distracting background.
+                      without a distracting background
                     </li>
-                    <li style={{paddingLeft: "15px"}}>
+                  </ul>
+                  <ul style={{marginLeft: '25px'}}>
+                    <li>
                       Examples: Against a plain wall, on a plainly colored floor
                       or rug, front yard, dog park (not busy)
                     </li>
+                  </ul>
+                  <ul>
                     <li>
                       Photo Quality: Must be taken by a smartphone. No DSLR
                     </li>
                   </ul>
                   <br />
                   Your submission does not guarantee that your dog will be a
-                  part of The Cute Dog Project Vote Phase. We are limiting the
-                  amount of dogs in the contest as we see fit. All faculty dogs
-                  will be guaranteed a spot in the voting contest and the
-                  remaining spots might be chosen on a first-come-first-serve
-                  basis, by a random generator, or by the group.
+                  part of The Cute Dog Project Vote Phase. There is a cap on
+                  the number of dogs in the contest that will be filled on a
+                  first-come-first-serve basis. We reserve the right to
+                  disqualify any submissions based on violation of our
+                  submission guidelines as decided by our Quality Control
+                  Subcommittee. While there is no disqualification appeals
+                  process, you may <a rel="noopener noreferrer" target="_blank" href="mailto:northeasterndogproject@gmail.com">contact us
+                  via email</a> for questions regarding your submission status.
                 </p>
               </ListItemText>
             </ListItem>
@@ -352,7 +359,7 @@ export class Submit extends Component {
                 />
               </ListItem>
               <ListItem style={{textAlign: "left", paddingLeft: "25px"}}>
-                *We will display your image as a square. If you don't upload a square image, we will crop your photo into a square as we best see fit.
+                *We will display your image as a square. If you don't upload a square image, we will crop your photo into a square as best we can.
               </ListItem>
               <h3>User Agreements</h3>
               <ListItem style={{ display: "block" }}>
@@ -376,18 +383,19 @@ export class Submit extends Component {
                       required
                     />
                   }
-                  label="I certify that I own the image, submitted above, of my dog, and I grant the runners of this contest the rights to redistribute this image as they see fit in perpetiuity without restricton"
+                  label="I certify that I own the image, submitted above, of my dog, and I grant the runners of this contest the rights described in the privacy policy"
                 />
+                <br />
                 <FormControlLabel
                   control={
                     <Checkbox
                       checked={this.state.checked3}
                       onChange={this.onCheck("checked3")}
-                      value="checked3"
+                      value="checked4"
                       required
                     />
                   }
-                  label="I certify that this image was taken recently and accurately reflects the current appearence of my dog"
+                  label="I certify that I meet all the criteria for submission outlined above"
                 />
                 <br />
                 <FormControlLabel
@@ -395,11 +403,11 @@ export class Submit extends Component {
                     <Checkbox
                       checked={this.state.checked4}
                       onChange={this.onCheck("checked4")}
-                      value="checked4"
+                      value="checked5"
                       required
                     />
                   }
-                  label="I certify that I meet all the criteria for submission"
+                  label="I certify that I am 18 years of age or older"
                 />
                 <br />
                 <FormControlLabel
@@ -411,8 +419,10 @@ export class Submit extends Component {
                       required
                     />
                   }
-                  label="I certify that I am 18 years of age or older"
+                  style={{marginRight: '3px'}}
+                  label="I have read the"
                 />
+                <a class="MuiTypography-body2-253 MuiFormControlLabel-label-330" target="_blank" href="privacy-policy">privacy policy</a>
               </ListItem>
               <Button
                 variant="contained"

@@ -28,94 +28,97 @@ function Home(props) {
             Welcome to The Cute Dog Project
           </Typography>
 
-          <Typography component="p">
-            <br />
-            We are a research group within the Philosophy department at
-            Northeastern University that started from an argument between three
-            professors over who has the cutest dog? Instead of argue until the
-            end of time (as philosophers will do), the three decided to set
-            their differences aside and let philosophy answer the question. It
-            was decided that a voting contest would need to be put in place to
-            not only answer the question of who has the cutest dog between those
-            three professors but also who has the cutest dog in the entirety of
-            the Philosophy Department at Northeastern, and next the entire
-            University of Northeastern, and hopefully one day, the entire world.
-            To answer this simple question of "Who has the cutest dog?" we had
-            to decide on a few things.
-            <ul>
-              <li>
-                How are democratic processes used in group decisions to resolve
-                disputes?
-              </li>
-              <li>What would our voting procedure be?</li>
-              <li>How do we define cuteness and can we even define it?</li>
-              <li>
-                Who would be allowed to submit photos and who would be allowed
-                to vote?
-              </li>
-              <li>
-                How does this question help us uncover answers about generalized
-                social choice theories and voting procedures?
-              </li>
-            </ul>
-            To answer our questions, and consequently find the cutest dog, we
-            will run our project in two phases. The first phase is "The Submit
-            Page" which will run from Wednesday, March 20th through Wednesday,
-            March 27th, during which time, we will be accepting submissions for
-            the contest. The next phase is "The Vote Phase" which will run from
-            *insert date here* to *insert date here*. During that time, you can
-            return back to the website where you will be directed to a Sign-Up
-            page, which after will allow you to vote on a subset of the dogs
-            submitted in a pairwise voting function.
-          </Typography>
+          <p>
+            We are a student research group within the Philosophy & Religion
+            Department at Northeastern University conducting a project to
+            determine who in the Department has the cutest dog, a topic about
+            which there has been long-standing and passionate disagreement.
+            Instead of arguing until the end of time (as philosophers will do),
+            three professors decided to set their differences aside and let us
+            try to answer the question in a philosophically and scientifically
+            rigorous way. This was the origin of the Cute Dog Project.
+          </p>
+          <p>
+            One reputable method of settling disputes is to vote. We decided
+            that a voting contest should be put in place to settle whose dog
+            is cutest in the entirety of the Philosophy & Religion Department
+            (students, faculty and staff) at Northeastern. Eventually, we hope
+            to extend this to the entire university and beyond. However,
+            answering the apparently simple question of "Who has the cutest
+            dog?" actually requires answers to several other difficult
+            questions, such as:
+          </p>
+          <ul>
+            <li>
+              How are democratic processes used in group decisions to resolve
+              disputes?
+            </li>
+            <li>What would our voting procedure be?</li>
+            <li>How do we define cuteness and can we even define it?</li>
+            <li>
+              Who would be allowed to submit photos and who would be allowed
+              to vote?
+            </li>
+            <li>
+              How does this question help us uncover answers about generalized
+              social choice theories and voting procedures?
+            </li>
+            <li>How do we control for possible social and cultural biases?</li>
+            <li>How do we collect and manage voting data in ways that are secure and respect privacy?</li>
+          </ul>
+          <p>
+            Thus, determining whose dog is the cutest has required us to design a system informed by democratic theory, social choice theory, value theory, critical theory, philosophy of science, and information ethics. It has required us to grapple with the same sorts of issues that arise in democratic practice and social decision-making in other contexts – for example, selecting a presidential candidate from a crowded primary field or selecting applicants for admission to a competitive university.
+          </p>
+          <p>But now, it is time to launch!</p>
+          <p>
+          To answer our questions, and find the cutest dog, we will run our
+          project in three phases. The first phase is "The Submit Phase" which
+          will run from Wednesday, March 20th through Sunday, March 31st, during
+           which time, we will be accepting submissions for the contest. The
+           next phase is "The Vote Phase" which will begin on April 1st. During
+           that time, you can return to the website where you may cast votes on
+           pairs of dogs to help us determine which dogs are cuter than others.
+           The final phase is "The Analysis and Interpretation Phase." During that
+            time, you can return to the website to find out the winner, learn
+            about our methodology, and see how different voting and social
+            choice methods could have generated different results.
+          </p>
+          <p>
+          Thank you for your time helping us, finally, settle a philosophers' debate.
+          </p>
         </Paper>
-        {/* <Grid container spacing={24}>
-          <Grid item xs={12} md={6}>
-            <Paper className={classes.categoriesPaper}>
-              <Typography component="p">
-                We spent a lot of time discussing the philosophical aspects of
-                this voting contest, such as "What is Cuteness?", "What should
-                be our voting system?", "How does the contest impact other
-                democratic situations?". If you would like to read more about
-                our discussions and reasoning behind our decisions, check out
-                our About Page.
-              </Typography>
-              <MuiThemeProvider theme={theme}>
-                <Button
-                  size="large"
-                  color="primary"
-                  variant="contained"
-                  component={Link}
-                  to="/about"
-                  className={classes.button}
-                >
-                  Go to the About Page
-                </Button>
-              </MuiThemeProvider>
-            </Paper>
-          </Grid> */}
-          <Grid item xs={12} >
-            <Paper className={classes.categoriesPaper} elevation={1}>
-              <Typography component="h4">
-                If you came to this website and thought to yourself, "No doubt,
-                my dog is the cutest", and would like to submit your dog to our
-                contest, please visit our Submit Page!
-              </Typography>
-              <MuiThemeProvider theme={theme}>
-                <Button
-                  size="large"
-                  color="primary"
-                  variant="contained"
-                  component={Link}
-                  to="/submit"
-                  className={classes.button}
-                >
-                  Submit Your Dog!
-                </Button>
-              </MuiThemeProvider>
-            </Paper>
-          </Grid>
-        
+        <Grid item xs={12} >
+          <Paper className={classes.categoriesPaper} elevation={3}>
+            <p>
+              If you came to this website and thought to yourself, "No doubt,
+              my dog is the cutest", and would like to submit your dog to our
+              contest, please visit our Submit Page!
+            </p>
+            <MuiThemeProvider theme={theme}>
+              <Button
+                size="large"
+                color="primary"
+                variant="contained"
+                component={Link}
+                to="/submit"
+                className={classes.button}
+              >
+                Submit Your Dog!
+              </Button>
+            </MuiThemeProvider>
+          </Paper>
+        </Grid>
+      </div>
+      <div className={classes.div}>
+        <Grid item xs={12} >
+          <Paper className={classes.categoriesPaper} elevation={2}>
+            <p>
+              If you have questions or would like more information about the
+              Cute Dog Project please contact
+              us via <a rel="noopener noreferrer" target="_blank" href="mailto:northeasterndogproject@gmail.com">email</a>
+            </p>
+          </Paper>
+        </Grid>
       </div>
     </MuiThemeProvider>
   );
@@ -139,7 +142,7 @@ const styles = theme => ({
     textAlign: "center"
   },
   categoriesPaper: {
-    
+
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
