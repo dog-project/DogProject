@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import BioCard from "./components/BioCard";
+import BioCard from "./BioCard";
 import { Grid, Paper, Typography } from "@material-ui/core";
 import { withStyles, MuiThemeProvider } from "@material-ui/core/styles";
 import PropTypes from "prop-types";
@@ -35,22 +35,22 @@ class TeamPage extends Component {
         </Paper>
         <Grid container spacing={24} className={ classes.grid }>
           <Grid item xs={12} md={4}>
-            <BioCard name="Sam Merkovitz" bio="This is the bio" image="dog1.jpg"/>
+            <BioCard name="Sam Merkovitz" bio="This is the bio" image="dog1"/>
           </Grid>
           <Grid item xs={12} md={4}>
-            <BioCard name="Charlie Haviland" bio="This is the bio" image="./dogpics/riley.jpg"/>
+            <BioCard name="Charlie Haviland" bio="This is the bio" image="dog1"/>
           </Grid>
           <Grid item xs={12} md={4}>
-            <BioCard name="Julian Zucker" bio="This is the bio" image="./dogpics/riley.jpg"/>
+            <BioCard name="Julian Zucker" bio="This is the bio" image="dog1"/>
           </Grid>
           <Grid item xs={12} md={4}>
-            <BioCard name="Danny Rassaby" bio="This is the bio" image="./dogpics/riley.jpg"/>
+            <BioCard name="Danny Rassaby" bio="This is the bio" image="dog1"/>
           </Grid>
           <Grid item xs={12} md={4}>
-            <BioCard name="Mike Nelson" bio="This is the bio" image="./dogpics/riley.jpg"/>
+            <BioCard name="Mike Nelson" bio="This is the bio" image="dog1"/>
           </Grid>
           <Grid item xs={12} md={4}>
-            <BioCard name="Andy Aronson" bio="This is the bio" image="./dogpics/riley.jpg"/>
+            <BioCard name="Andy Aronson" bio="This is the bio" image="dog1"/>
           </Grid>
         </Grid>
       </div>

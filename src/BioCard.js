@@ -26,22 +26,23 @@ class BioCard extends Component {
   }
   render() {
     const { classes } = this.props;
-    const img = this.props.image
+    const img = this.props.image;
     return (
       <Card className={classes.card}>
-        
-            {/* <CardMedia
-              component="img"
-              className={classes.media}
-              src={require('/public/images/'+this.props.image+'.jpg')}
-              title="Team Member"
-            /> */}
+        <CardActionArea>
+          <CardMedia
+            component="img"
+            alt="Team Member"
+            className={classes.media}
+            src={"/images/" + this.props.image + ".jpg"}
+            title="Team Member"
+          />
 
           <CardContent>
             <p>{this.props.name}</p>
             <p>{this.props.bio}</p>
           </CardContent>
-       
+        </CardActionArea>
       </Card>
     );
   }
