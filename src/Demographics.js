@@ -22,9 +22,9 @@ import FormLabel from "@material-ui/core/FormLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
+import TextField from "@material-ui/core/TextField";
 import red from "@material-ui/core/colors/red";
 import grey from "@material-ui/core/colors/grey";
-
 
 const styles = theme => ({
   root: {
@@ -51,9 +51,8 @@ const styles = theme => ({
   },
   wrapper: {
     marginTop: "30px",
-    justifyContent: "center",
-    alignItems: "center",
-    textAlign: "center",
+    paddingLeft: "15px",
+    paddingRight: "15px",
     border: "2px solid black",
     borderRadius: "15px",
     mozBorderRadius: "15px"
@@ -70,9 +69,8 @@ const styles = theme => ({
   rightIcon: {
     marginLeft: theme.spacing.unit
   },
-  radioButtons: {
-    display: "inline",
-    justifyContent: "center"
+  group: {
+    display: "flex"
   }
 });
 
@@ -87,33 +85,34 @@ const theme = createMuiTheme({
 
 export class Demographics extends Component {
   state = {
-    email: "",
-    dog_years: null,
-    dog_months: null,
-    dog_breed: "",
-    dog_weight: null,
-    pic: null,
-    checked1: false,
-    checked2: false,
-    checked3: false,
-    checked4: false,
-    checked5: false
+    gender: "",
+    age: "",
+    neu_affiliation: "",
+    education_level: "",
+    location: ""
   };
 
   sendToAPI = e => {
     const redirect = this.props;
-    fetch("https://us-east1-dog-project-234515.cloudfunctions.net/submit_user", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        //Demographics Info
-      })
-    }).then(function(response) {
-      console.log(response)
+    fetch(
+      "https://us-east1-dog-project-234515.cloudfunctions.net/submit_user",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          //Demographics Info
+        })
+      }
+    ).then(function(response) {
+      console.log(response);
       if (response.status !== 200) {
-        alert('A ' + response.status + ' error occurred. Please try again or contact us at northeasterndogproject@gmail.com');
+        alert(
+          "A " +
+            response.status +
+            " error occurred. Please try again or contact us at northeasterndogproject@gmail.com"
+        );
       } else {
         redirect.history.push({
           pathname: "/vote",
@@ -140,7 +139,7 @@ export class Demographics extends Component {
       dog_weight: this.state.dog_weight,
       dog_breed: this.state.dog_breed
     });
-  }
+  };
 
   render() {
     const { classes } = this.props;
@@ -148,235 +147,188 @@ export class Demographics extends Component {
       <MuiThemeProvider theme={theme}>
         <Grid container className={classes.wrapper}>
           <List>
-            <h2>Dog Submission</h2>
+            <h2>Demographic Information</h2>
             <ListItem>
               <ListItemText>
-                <p>
-                  We are currently accepting anonymous submissions from
-                  Northeastern Philosophy Department Members who currently meet
-                  one of the following qualifications:
-                </p>
-                <ul>
-                  <li>Philosophy Department Faculty Member</li>
-                  <li>Phliosophy Major, or Combined Major</li>
-                  <li>PPE Major</li>
-                </ul>
-              </ListItemText>
-            </ListItem>
-            <ListItem>
-              <ListItemText>
-                <p>
-                  These are the rules pertaining to the photograph of your dog
-                  that you are allowed to submit. Please read them carefully.
-                  Any violations of these rules will automatically disqualify
-                  your dog from the contest.
-                </p>
-                <p>
-                  <ul>
-                    <li>
-                      Recency: Within the last two months if dog is older than 1
-                      year / Within last week if dog is under 1 year
-                    </li>
-                    <li>
-                      Props: No props. This means no toys, costumes, or any
-                      other objects in the foreground besides the dog
-                    </li>
-                    <li>
-                      Location: Wherever you can take a picture of your dog
-                      without a distracting background.
-                    </li>
-                    <li style={{paddingLeft: "15px"}}>
-                      Examples: Against a plain wall, on a plainly colored floor
-                      or rug, front yard, dog park (not busy)
-                    </li>
-                    <li>
-                      Photo Quality: Must be taken by a smartphone. No DSLR
-                    </li>
-                  </ul>
-                  <br />
-                  Your submission does not guarantee that your dog will be a
-                  part of The Cute Dog Project Vote Phase. We are limiting the
-                  amount of dogs in the contest as we see fit. All faculty dogs
-                  will be guaranteed a spot in the voting contest and the
-                  remaining spots might be chosen on a first-come-first-serve
-                  basis, by a random generator, or by the group.
-                </p>
+                Collecting some demographic information
               </ListItemText>
             </ListItem>
             <Divider />
             <form onSubmit={this.onSubmit.bind(this)} action="/thank-you">
-              <h3>Your Information</h3>
-              <ListItem className={classes.container}>
-                <Input
-                  id="outlined-email-input"
-                  label="Northeastern Email"
-                  className={classes.textField}
-                  type="email"
-                  name="email"
-                  autoComplete="email"
-                  margin="normal"
-                  variant="outlined"
-                  placeholder="Northeastern Email"
-                  onChange={this.onChange}
-                  required
-                />
-              </ListItem>
-              <h3>Your Dog's Information</h3>
-              <ListItem>
-                <Input
-                  id="outlined-age-input"
-                  label="Dog Age In (Human) Years"
-                  className={classes.textField}
-                  type="number"
-                  name="dog_years"
-                  margin="normal"
-                  variant="outlined"
-                  placeholder="Years Old"
-                  onChange={this.onChange}
-                  required
-                />
-                <Input
-                  id="outlined-age-input"
-                  label="Dog Age In (Human) Months"
-                  className={classes.textField}
-                  type="number"
-                  name="dog_months"
-                  margin="normal"
-                  variant="outlined"
-                  placeholder="Months Old"
-                  onChange={this.onChange}
-                  required
-                />
-              </ListItem>
-              <ListItem>
-                <Input
-                  id="outlined-breed-input"
-                  label="Dog Breed"
-                  className={classes.textField}
-                  type="text"
-                  name="dog_breed"
-                  margin="normal"
-                  variant="outlined"
-                  placeholder="Dog Breed"
-                  onChange={this.onChange}
-                  required
-                />
-              </ListItem>
-              <FormLabel style={{ textAlign: "left" }}>
-                Dog's Weight Range (lbs)
-              </FormLabel>
-              <ListItem style={{ justifyContent: "center" }}>
+              <h3>Gender Identity</h3>
+              <ListItem className={classes.group}>
                 <RadioGroup
-                  aria-label="Dog's Weight Range (Lbs)"
-                  name="dog_weight"
+                  aria-label="Do you currently identify as:"
+                  name="gender"
                   className={classes.group}
                   onChange={this.onChange}
-                  style={{ display: "inline", margin: "auto" }}
                 >
                   <FormControlLabel
-                    value="0"
+                    value="M"
                     control={<Radio required />}
-                    label="0-12"
+                    label="Male"
                   />
                   <FormControlLabel
-                    value="1"
+                    value="F"
                     control={<Radio />}
-                    label="13-25"
+                    label="Female"
                   />
-                  <FormControlLabel
-                    value="2"
-                    control={<Radio />}
-                    label="26-50"
-                  />
-                  <FormControlLabel
-                    value="3"
-                    control={<Radio />}
-                    label="51-100"
-                  />
-                  <FormControlLabel
-                    value="4"
-                    control={<Radio />}
-                    label="100+"
+
+                  <Input
+                    id="outlined-gender-input"
+                    className={classes.textField}
+                    type="text"
+                    name="gender"
+                    margin="normal"
+                    variant="outlined"
+                    onChange={this.onChange}
+                    placeholder="Other, please specify"
                   />
                 </RadioGroup>
               </ListItem>
+              <h3>Your age</h3>
               <ListItem>
                 <Input
-                  id="outlined-file-input"
-                  label="pic"
+                  id="outlined-age-input"
+                  placeholder="How old are you as of today?"
                   className={classes.textField}
-                  type="file"
-                  accept="image/*"
-                  name="pic"
+                  type="number"
+                  name="age"
                   margin="normal"
                   variant="outlined"
                   onChange={this.onChange}
                   required
                 />
               </ListItem>
-              <ListItem style={{textAlign: "left", paddingLeft: "25px"}}>
-                *We will display your image as a square. If you don't upload a square image, we will crop your photo into a square as we best see fit.
+              <h3>Northeastern Affiliation</h3>
+              <h4>
+                Are you affiliated with Northeastern as either a student or
+                faculty member?
+              </h4>
+              <ListItem>
+                <FormLabel />
+                <RadioGroup
+                  aria-label="Are you affiliated with Northeastern as either a student or faculty member?"
+                  name="neu_affiliation"
+                  className={classes.group}
+                  onChange={this.onChange}
+                >
+                  <FormControlLabel
+                    value="Y"
+                    control={<Radio required />}
+                    label="Yes"
+                  />
+                  <FormControlLabel value="N" control={<Radio />} label="No" />
+                </RadioGroup>
               </ListItem>
-              <h3>User Agreements</h3>
-              <ListItem style={{ display: "block" }}>
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={this.state.checked1}
-                      onChange={this.onCheck("checked1")}
-                      value="checked1"
-                      required
-                    />
-                  }
-                  label="I certify that this dog is owned by me or my direct family, or that I live with this dog"
-                />
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={this.state.checked2}
-                      onChange={this.onCheck("checked2")}
-                      value="checked2"
-                      required
-                    />
-                  }
-                  label="I certify that I own the image, submitted above, of my dog, and I grant the runners of this contest the rights to redistribute this image as they see fit in perpetiuity without restricton"
-                />
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={this.state.checked3}
-                      onChange={this.onCheck("checked3")}
-                      value="checked3"
-                      required
-                    />
-                  }
-                  label="I certify that this image was taken recently and accurately reflects the current appearence of my dog"
-                />
-                <br />
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={this.state.checked4}
-                      onChange={this.onCheck("checked4")}
-                      value="checked4"
-                      required
-                    />
-                  }
-                  label="I certify that I meet all the criteria for submission"
-                />
-                <br />
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={this.state.checked5}
-                      onChange={this.onCheck("checked5")}
-                      value="checked5"
-                      required
-                    />
-                  }
-                  label="I certify that I am 18 years of age or older"
-                />
+              <h3>Education Level</h3>
+              <h4>What is your current education level?</h4>
+              <ListItem>
+                <FormLabel />
+                <RadioGroup
+                  aria-label="Current Education Level"
+                  name="education_level"
+                  className={classes.group}
+                  onChange={this.onChange}
+                >
+                  <FormControlLabel
+                    value="some_high"
+                    control={<Radio required />}
+                    label="Some High School"
+                  />
+                  <FormControlLabel
+                    value="high_school"
+                    control={<Radio required />}
+                    label="High School Diploma or Equivalent"
+                  />
+                  <FormControlLabel
+                    value="vocation"
+                    control={<Radio required />}
+                    label="Vocational Training"
+                  />
+                  <FormControlLabel
+                    value="some_college"
+                    control={<Radio required />}
+                    label="Some College"
+                  />
+                  <FormControlLabel
+                    value="associate"
+                    control={<Radio required />}
+                    label="Associate's Degree"
+                  />
+                  <FormControlLabel
+                    value="bachelor"
+                    control={<Radio required />}
+                    label="Bachelor's Degree"
+                  />
+                  <FormControlLabel
+                    value="post_undergrad"
+                    control={<Radio required />}
+                    label="Post Undergraduate Education (Master's, Specialist, Doctorate"
+                  />
+
+                  <Input
+                    id="outlined-gender-input"
+                    className={classes.textField}
+                    type="text"
+                    name="education_level"
+                    margin="normal"
+                    variant="outlined"
+                    onChange={this.onChange}
+                    placeholder="Other, please specify"
+                  />
+                </RadioGroup>
               </ListItem>
+
+              <h3>Location</h3>
+              <h4>Where do you call home?</h4>
+
+              <ListItem>
+                <RadioGroup
+                  aria-label="Home"
+                  name="location"
+                  className={classes.group}
+                  onChange={this.onChange}
+                >
+                  <FormControlLabel
+                    value="midwest"
+                    control={<Radio required />}
+                    label="Midwest (Illinois, Indiana, Iowa, Kansas, Michigan, Minnesota, Missouri, Nebraska, Ohio, North Dakota, South Dakota, Wisconsin)"
+                  />
+                  <FormControlLabel
+                    value="northeast"
+                    control={<Radio required />}
+                    label="Northeast (Connecticut, Maine, Massachusetts, New Hampshire, New Jersey, New York, Pennsylvania, Rhode Island, Vermont)"
+                  />
+                  <FormControlLabel
+                    value="south"
+                    control={<Radio required />}
+                    label="South (Arkansas, Alabama, Delaware, District of Columbia, Florida, Georgia, Kentucky, Louisiana, Maryland, Mississippi, North Carolina, Oklahoma, South Carolina, Tennessee, Texas, Virginia, West Virginia)"
+                  />
+                  <FormControlLabel
+                    value="west"
+                    control={<Radio required />}
+                    label="West (Alaska, Arizona, California, Colorado, Hawaii, Idaho, Montana, Nevada, New Mexico, Oregon, Utah, Washington, Wyoming)"
+                  />
+                  <FormControlLabel
+                    value="puerto_rico_or_similar"
+                    control={<Radio required />}
+                    label="Puerto Rico or other U.S. territories"
+                  />
+
+                  <Input
+                    id="outlined-gender-input"
+                    className={classes.textField}
+                    type="text"
+                    name="location"
+                    margin="normal"
+                    variant="outlined"
+                    onChange={this.onChange}
+                    placeholder="Other, please specify"
+                  />
+                </RadioGroup>
+              </ListItem>
+              <ListItem />
               <Button
                 variant="contained"
                 type="submit"

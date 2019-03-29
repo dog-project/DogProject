@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import {
   Card,
   CardActionArea,
@@ -15,32 +15,40 @@ const styles = {
   },
   media: {
     // ⚠️ object-fit is not supported by IE 11.
-    objectFit: "cover"
+    objectFit: "cover",
+    height: 140
   }
 };
 
-function BioCard(props) {
-  const { classes } = props;
-  return (
-    <Card className={classes.card}>
-      <CardActionArea>
-        <CardMedia
-          component={props.image}
-          alt="Contemplative Reptile"
-          className={classes.media}
-          height="140"
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          {props.name}
-          {props.bio}
-        </CardContent>
-      </CardActionArea>
-    </Card>
-  );
+class BioCard extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    const { classes } = this.props;
+    const img = this.props.image
+    return (
+      <Card className={classes.card}>
+        
+            {/* <CardMedia
+              component="img"
+              className={classes.media}
+              src={require('/public/images/'+this.props.image+'.jpg')}
+              title="Team Member"
+            /> */}
+
+          <CardContent>
+            <p>{this.props.name}</p>
+            <p>{this.props.bio}</p>
+          </CardContent>
+       
+      </Card>
+    );
+  }
 }
 
-
+BioCard.propTypes = {
+  classes: PropTypes.object.isRequired
+};
 
 export default withStyles(styles)(BioCard);

@@ -1,15 +1,65 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import BioCard from "./components/BioCard";
+import { Grid, Paper, Typography } from "@material-ui/core";
+import { withStyles, MuiThemeProvider } from "@material-ui/core/styles";
+import PropTypes from "prop-types";
 
-export class TeamPage extends Component {
+const styles = theme => ({
+  root: {
+
+  },
+  header: {
+    marginTop: "25px",
+    marginBoton: "40px",
+    padding: "25px",
+    textAlign: "center"
+  }, 
+  grid: {
+    [theme.breakpoints.up("sm")]: {
+      marginTop: "30px",
+      paddingLeft: "30px"
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "30px"
+    }
+  }
+});
+
+class TeamPage extends Component {
   render() {
+    const { classes } = this.props;
     return (
-      <div>
-          <BioCard person={{ name: <p>Sam Merkovitz</p>, bio : <p>This is my Bio</p>, image : ""}} />
-        
+      <div className={classes.root}>
+        <Paper className={ classes.header }>
+          <Typography variant="h2">Meet The Team</Typography>
+        </Paper>
+        <Grid container spacing={24} className={ classes.grid }>
+          <Grid item xs={12} md={4}>
+            <BioCard name="Sam Merkovitz" bio="This is the bio" image="dog1.jpg"/>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <BioCard name="Charlie Haviland" bio="This is the bio" image="./dogpics/riley.jpg"/>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <BioCard name="Julian Zucker" bio="This is the bio" image="./dogpics/riley.jpg"/>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <BioCard name="Danny Rassaby" bio="This is the bio" image="./dogpics/riley.jpg"/>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <BioCard name="Mike Nelson" bio="This is the bio" image="./dogpics/riley.jpg"/>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <BioCard name="Andy Aronson" bio="This is the bio" image="./dogpics/riley.jpg"/>
+          </Grid>
+        </Grid>
       </div>
-    )
+    );
   }
 }
 
-export default TeamPage
+TeamPage.propTypes = {
+  classes: PropTypes.object.isRequired
+};
+
+export default withStyles(styles)(TeamPage);

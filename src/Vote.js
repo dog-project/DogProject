@@ -105,6 +105,7 @@ class Vote extends Component {
   onSubmit = () => {
     if (this.state.vote) {
       this.sendVoteToAPI();
+      
     } else {
       console.log(this.state);
     }

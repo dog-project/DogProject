@@ -6,8 +6,11 @@ import Submit from "./Submit";
 import Demographics from "./Demographics";
 import Vote from "./Vote";
 import ThankYou from "./components/ThankYou";
+import SignUp from "./SignUp";
+import TeamPage from "./TeamPage";
 
 import "./App.css";
+
 
 const NoMatch = () => <h1>404 Page Not Found</h1>;
 
@@ -34,6 +37,7 @@ class App extends Component {
             <Route exact path="/vote" render={props => <Vote />} />
             {/* <Route exact path="/submit" render={props => <Submit />} /> */}
             <Route exact path="/thank-you" render={props => <ThankYou />} />
+            <Route exact path="/meet-the-team" render={props => <TeamPage />} />
             <Route component={NoMatch} />
           </Switch>
 
