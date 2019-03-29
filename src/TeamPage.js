@@ -26,6 +26,12 @@ const styles = theme => ({
 });
 
 class TeamPage extends Component {
+
+  componentDidMount() {
+    window.scroll(0,0);
+  };
+
+  
   render() {
     const { classes } = this.props;
     return (

@@ -130,6 +130,10 @@ class Vote extends Component {
     this.setState({dog1id: 'dog2', dog2id: 'dog1', vote: null});
   }
 
+  componentDidMount() {
+    window.scroll(0,0);
+  };
+
   render() {
     const { classes } = this.props;
     return (

@@ -19,10 +19,10 @@ import { withRouter } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormLabel from "@material-ui/core/FormLabel";
-import Checkbox from "@material-ui/core/Checkbox";
+//import Checkbox from "@material-ui/core/Checkbox";
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
-import TextField from "@material-ui/core/TextField";
+//import TextField from "@material-ui/core/TextField";
 import red from "@material-ui/core/colors/red";
 import grey from "@material-ui/core/colors/grey";
 
@@ -90,6 +90,10 @@ export class Demographics extends Component {
     neu_affiliation: "",
     education_level: "",
     location: ""
+  };
+
+  componentDidMount() {
+    window.scroll(0,0);
   };
 
   sendToAPI = e => {
@@ -164,12 +168,12 @@ export class Demographics extends Component {
                   onChange={this.onChange}
                 >
                   <FormControlLabel
-                    value="M"
+                    value="Masculine"
                     control={<Radio required />}
                     label="Male"
                   />
                   <FormControlLabel
-                    value="F"
+                    value="Feminine"
                     control={<Radio />}
                     label="Female"
                   />
@@ -214,16 +218,20 @@ export class Demographics extends Component {
                   onChange={this.onChange}
                 >
                   <FormControlLabel
-                    value="Y"
+                    value="N"
                     control={<Radio required />}
-                    label="Yes"
+                    label="No"
                   />
-                  <FormControlLabel value="N" control={<Radio />} label="No" />
+                  <FormControlLabel value="Current Student" control={<Radio />} label="Current Student" />
+                  <FormControlLabel value="Alumni" control={<Radio />} label="Alumni" />
+                  <FormControlLabel value="Faculty" control={<Radio />} label="Faculty" />
+                  <FormControlLabel value="Staff" control={<Radio />} label="Staff" />
                 </RadioGroup>
               </ListItem>
               <h3>Education Level</h3>
               <h4>What is your current education level?</h4>
               <ListItem>
+
                 <FormLabel />
                 <RadioGroup
                   aria-label="Current Education Level"
@@ -232,37 +240,42 @@ export class Demographics extends Component {
                   onChange={this.onChange}
                 >
                   <FormControlLabel
-                    value="some_high"
+                    value="0"
+                    control={<Radio required />}
+                    label="No High School"
+                  />
+                  <FormControlLabel
+                    value="1"
                     control={<Radio required />}
                     label="Some High School"
                   />
                   <FormControlLabel
-                    value="high_school"
+                    value="2"
                     control={<Radio required />}
                     label="High School Diploma or Equivalent"
                   />
                   <FormControlLabel
-                    value="vocation"
+                    value="3"
                     control={<Radio required />}
                     label="Vocational Training"
                   />
                   <FormControlLabel
-                    value="some_college"
+                    value="4"
                     control={<Radio required />}
                     label="Some College"
                   />
                   <FormControlLabel
-                    value="associate"
+                    value="5"
                     control={<Radio required />}
                     label="Associate's Degree"
                   />
                   <FormControlLabel
-                    value="bachelor"
+                    value="6"
                     control={<Radio required />}
                     label="Bachelor's Degree"
                   />
                   <FormControlLabel
-                    value="post_undergrad"
+                    value="7"
                     control={<Radio required />}
                     label="Post Undergraduate Education (Master's, Specialist, Doctorate"
                   />

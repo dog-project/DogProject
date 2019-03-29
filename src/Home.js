@@ -72,13 +72,9 @@ function Home(props) {
           <p>But now, it is time to launch!</p>
           <p>
           To answer our questions, and find the cutest dog, we will run our
-          project in three phases. The first phase is "The Submit Phase" which
-          will run from Wednesday, March 20th through Sunday, March 31st, during
-           which time, we will be accepting submissions for the contest. The
-           next phase is "The Vote Phase" which will begin on April 1st. During
-           that time, you can return to the website where you may cast votes on
-           pairs of dogs to help us determine which dogs are cuter than others.
-           The final phase is "The Analysis and Interpretation Phase." During that
+          project in three phases. The first phase was "The Submit Phase", where we accepted submissions for our contest. "The Submit Phase" has officially ended and we are collecting votes now. You may cast votes on
+           pairs of dogs to help us determine which dogs are cuter than others. After this phase, "The Vote Phase", is over,
+           the final phase, "The Analysis and Interpretation Phase.", will commence. During that
             time, you can return to the website to find out the winner, learn
             about our methodology, and see how different voting and social
             choice methods could have generated different results.
@@ -90,9 +86,7 @@ function Home(props) {
         <Grid item xs={12} >
           <Paper className={classes.categoriesPaper} elevation={3}>
             <p>
-              If you came to this website and thought to yourself, "No doubt,
-              my dog is the cutest", and would like to submit your dog to our
-              contest, please visit our Submit Page!
+              If you would like to vote on our dogs, you can go to the vote page here!
             </p>
             <MuiThemeProvider theme={theme}>
               <Button
@@ -100,10 +94,10 @@ function Home(props) {
                 color="primary"
                 variant="contained"
                 component={Link}
-                to="/submit"
+                to="/demographics"
                 className={classes.button}
               >
-                Submit Your Dog!
+                Vote!
               </Button>
             </MuiThemeProvider>
           </Paper>
