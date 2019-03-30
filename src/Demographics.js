@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router";
 import PropTypes from "prop-types";
 //import classNames from "classnames";
 import {
@@ -89,24 +90,37 @@ export class Demographics extends Component {
     age: "",
     neu_affiliation: "",
     education_level: "",
-    location: ""
+    location: "",
+    dog_ownership: false,
+    redirect_to_vote: false,
+    voter_id: null
   };
 
   componentDidMount() {
     window.scroll(0,0);
   };
 
-  sendToAPI = e => {
+  proceedToVote(id) {
+    this.setState({redirect_to_vote: true, voter_id: id});
+  }
+
+  sendToAPI = () => {
     const redirect = this.props;
+    const that = this; // I laughed out loud at this https://stackoverflow.com/questions/49684217/how-to-use-fetch-api-in-react-to-setstate
     fetch(
-      "https://us-east1-dog-project-234515.cloudfunctions.net/submit_user",
+      "https://us-east1-dog-project-234515.cloudfunctions.net/register_voter",
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          //Demographics Info
+          "gender_identity": this.state.gender,
+          "age": parseInt(this.state.age),
+          "education": parseInt(this.state.education_level),
+          "location": this.state.location,
+          "dog_ownership": this.state.dog_ownership,
+          "northeastern_relationship": this.state.neu_affiliation,
         })
       }
     ).then(function(response) {
@@ -118,10 +132,7 @@ export class Demographics extends Component {
             " error occurred. Please try again or contact us at northeasterndogproject@gmail.com"
         );
       } else {
-        redirect.history.push({
-          pathname: "/vote",
-          state: { userId: response.data.userId } //something like this
-        });
+        that.setState({redirect_to_vote: true, voter_id: response.voter_uuid});
       }
     });
   };
@@ -137,16 +148,15 @@ export class Demographics extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    this.sendToAPI({
-      user_email: this.state.email,
-      dog_age: this.state.dog_years * 12 + this.state.dog_months,
-      dog_weight: this.state.dog_weight,
-      dog_breed: this.state.dog_breed
-    });
+    this.sendToAPI();
   };
 
   render() {
     const { classes } = this.props;
+    const redirectToVote = this.state.redirect_to_vote;
+    if (redirectToVote) {
+      return <Redirect to={{ pathname: "/vote", state: { userId: this.state.voter_id}}} />
+    }
     return (
       <MuiThemeProvider theme={theme}>
         <Grid container className={classes.wrapper}>
@@ -158,7 +168,7 @@ export class Demographics extends Component {
               </ListItemText>
             </ListItem>
             <Divider />
-            <form onSubmit={this.onSubmit.bind(this)} action="/thank-you">
+            <form onSubmit={this.onSubmit.bind(this)}>
               <h3>Gender Identity</h3>
               <ListItem className={classes.group}>
                 <RadioGroup
@@ -169,7 +179,7 @@ export class Demographics extends Component {
                 >
                   <FormControlLabel
                     value="Masculine"
-                    control={<Radio required />}
+                    control={<Radio /*required*/ />}
                     label="Male"
                   />
                   <FormControlLabel
@@ -218,8 +228,8 @@ export class Demographics extends Component {
                   onChange={this.onChange}
                 >
                   <FormControlLabel
-                    value="N"
-                    control={<Radio required />}
+                    value="No"
+                    control={<Radio /*required*/ />}
                     label="No"
                   />
                   <FormControlLabel value="Current Student" control={<Radio />} label="Current Student" />
@@ -241,54 +251,43 @@ export class Demographics extends Component {
                 >
                   <FormControlLabel
                     value="0"
-                    control={<Radio required />}
+                    control={<Radio /*required*/ />}
                     label="No High School"
                   />
                   <FormControlLabel
                     value="1"
-                    control={<Radio required />}
+                    control={<Radio />}
                     label="Some High School"
                   />
                   <FormControlLabel
                     value="2"
-                    control={<Radio required />}
+                    control={<Radio />}
                     label="High School Diploma or Equivalent"
                   />
                   <FormControlLabel
                     value="3"
-                    control={<Radio required />}
+                    control={<Radio />}
                     label="Vocational Training"
                   />
                   <FormControlLabel
                     value="4"
-                    control={<Radio required />}
+                    control={<Radio />}
                     label="Some College"
                   />
                   <FormControlLabel
                     value="5"
-                    control={<Radio required />}
+                    control={<Radio />}
                     label="Associate's Degree"
                   />
                   <FormControlLabel
                     value="6"
-                    control={<Radio required />}
+                    control={<Radio />}
                     label="Bachelor's Degree"
                   />
                   <FormControlLabel
                     value="7"
-                    control={<Radio required />}
+                    control={<Radio />}
                     label="Post Undergraduate Education (Master's, Specialist, Doctorate"
-                  />
-
-                  <Input
-                    id="outlined-gender-input"
-                    className={classes.textField}
-                    type="text"
-                    name="education_level"
-                    margin="normal"
-                    variant="outlined"
-                    onChange={this.onChange}
-                    placeholder="Other, please specify"
                   />
                 </RadioGroup>
               </ListItem>
@@ -304,28 +303,28 @@ export class Demographics extends Component {
                   onChange={this.onChange}
                 >
                   <FormControlLabel
-                    value="midwest"
-                    control={<Radio required />}
+                    value="Midwest"
+                    control={<Radio /*required*/ />}
                     label="Midwest (Illinois, Indiana, Iowa, Kansas, Michigan, Minnesota, Missouri, Nebraska, Ohio, North Dakota, South Dakota, Wisconsin)"
                   />
                   <FormControlLabel
-                    value="northeast"
-                    control={<Radio required />}
+                    value="Northeast"
+                    control={<Radio />}
                     label="Northeast (Connecticut, Maine, Massachusetts, New Hampshire, New Jersey, New York, Pennsylvania, Rhode Island, Vermont)"
                   />
                   <FormControlLabel
-                    value="south"
-                    control={<Radio required />}
+                    value="South"
+                    control={<Radio />}
                     label="South (Arkansas, Alabama, Delaware, District of Columbia, Florida, Georgia, Kentucky, Louisiana, Maryland, Mississippi, North Carolina, Oklahoma, South Carolina, Tennessee, Texas, Virginia, West Virginia)"
                   />
                   <FormControlLabel
                     value="west"
-                    control={<Radio required />}
+                    control={<Radio />}
                     label="West (Alaska, Arizona, California, Colorado, Hawaii, Idaho, Montana, Nevada, New Mexico, Oregon, Utah, Washington, Wyoming)"
                   />
                   <FormControlLabel
-                    value="puerto_rico_or_similar"
-                    control={<Radio required />}
+                    value="Puerto Rico Or Similar"
+                    control={<Radio />}
                     label="Puerto Rico or other U.S. territories"
                   />
 
@@ -349,7 +348,7 @@ export class Demographics extends Component {
                 color="primary"
                 className={classes.button}
               >
-                Submit
+                Continue
               </Button>
             </form>
           </List>
