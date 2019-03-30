@@ -105,7 +105,7 @@ class VoteInner extends Component {
                   alt="Dog A"
                   className={classes.media}
                   value={this.props.dog1id}
-                  src={'/images/'+this.props.dog1id+'.jpg'}
+                  src={'/images/dogs'+this.props.dog1id+'.jpg'}
                   title="DogA"
                 />
 
@@ -122,7 +122,7 @@ class VoteInner extends Component {
                   alt="Dog B"
                   className={classes.media}
                   value={this.props.dog2id}
-                  src={'/images/'+this.props.dog2id+'.jpg'}
+                  src={'/images/dogs'+this.props.dog2id+'.jpg'}
                   title="DogB"
                 />
 

@@ -16,7 +16,7 @@ const styles = {
   media: {
     // ⚠️ object-fit is not supported by IE 11.
     objectFit: "cover",
-    height: 140
+    //height: 140
   }
 };
 
@@ -34,7 +34,7 @@ class BioCard extends Component {
             component="img"
             alt="Team Member"
             className={classes.media}
-            src={"/images/" + this.props.image + ".jpg"}
+            src={"/images/team/" + this.props.image + ".jpg"}
             title="Team Member"
           />
 
