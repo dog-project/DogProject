@@ -93,7 +93,9 @@ export class Demographics extends Component {
     location: "",
     dog_ownership: false,
     redirect_to_vote: false,
-    voter_id: null
+    voter_id: null,
+    dog1id: null,
+    dog2id: null
   };
 
   componentDidMount() {
@@ -124,16 +126,22 @@ export class Demographics extends Component {
         })
       }
     ).then(function(response) {
-      console.log(response);
       if (response.status !== 200) {
         alert(
           "A " +
             response.status +
             " error occurred. Please try again or contact us at northeasterndogproject@gmail.com"
         );
-      } else {
-        that.setState({redirect_to_vote: true, voter_id: response.voter_uuid});
       }
+
+      response.json().then(function(data) {
+        that.setState({
+          voter_id: data.voter_uuid,
+          dog1id: data.dog1,
+          dog2id: data.dog2,
+          redirect_to_vote: true
+        });
+      });
     });
   };
 
@@ -155,7 +163,13 @@ export class Demographics extends Component {
     const { classes } = this.props;
     const redirectToVote = this.state.redirect_to_vote;
     if (redirectToVote) {
-      return <Redirect to={{ pathname: "/vote", state: { userId: this.state.voter_id}}} />
+      return <Redirect to={{
+        pathname: "/vote",
+        state: {
+          userId: this.state.voter_id,
+          dog1id: this.state.dog1id,
+          dog2id: this.state.dog2id
+        }}} />
     }
     return (
       <MuiThemeProvider theme={theme}>

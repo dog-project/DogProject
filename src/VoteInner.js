@@ -105,7 +105,7 @@ class VoteInner extends Component {
                   alt="Dog A"
                   className={classes.media}
                   value={this.props.dog1id}
-                  src={'/images/dogs'+this.props.dog1id+'.jpg'}
+                  src={'/images/dogs/'+this.props.dog1id+'.jpg'}
                   title="DogA"
                 />
 
@@ -122,7 +122,7 @@ class VoteInner extends Component {
                   alt="Dog B"
                   className={classes.media}
                   value={this.props.dog2id}
-                  src={'/images/dogs'+this.props.dog2id+'.jpg'}
+                  src={'/images/dogs/'+this.props.dog2id+'.jpg'}
                   title="DogB"
                 />
 
@@ -143,20 +143,20 @@ class VoteInner extends Component {
               onChange={this.props.handleVote}
             >
               <FormControlLabel
-                value={this.props.dog1id}
-                checked={this.state.vote == this.props.dog1id}
+                value={String(this.props.dog1id)}
+                //checked={parseInt(this.props.vote) == this.props.dog1id}
                 control={<Radio required />}
                 label="Dog A"
               />
               <FormControlLabel
-                value={this.props.dog2id}
-                checked={this.state.vote == this.props.dog2id}
+                value={String(this.props.dog2id)}
+                //checked={parseInt(this.props.vote) == this.props.dog2id}
                 control={<Radio />}
                 label="Dog B"
               />
               <FormControlLabel
                 value="0"
-                checked={this.state.vote == "0"}
+                //checked={this.props.vote == "0"}
                 control={<Radio />}
                 label="I am indifferent"
               />

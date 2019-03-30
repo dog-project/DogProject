@@ -90,29 +90,30 @@ class Vote extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dog1id: 'dog1',
-      dog2id: 'dog2',
-      vote: null,
-      userId: props.userId
+      userId: this.props.location.state.userId,
+      dog1id: this.props.location.state.dog1id,
+      dog2id: this.props.location.state.dog2id,
+      vote: null
     }
   }
 
   handleChange = event => {
     console.log(event)
-    this.setState({ vote: event.target.value });
+    this.setState({ vote: parseInt(event.target.value) });
   };
 
   onSubmit = () => {
-    if (this.state.vote) {
+    if (this.state.vote !== null) {
       this.sendVoteToAPI();
-      
+
     } else {
       console.log(this.state);
     }
   };
 
   sendVoteToAPI() {
-    /*fetch("https://us-east1-dog-project-234515.cloudfunctions.net/submit_vote", {
+    const that = this;
+    fetch("https://us-east1-dog-project-234515.cloudfunctions.net/submit_vote", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -120,14 +121,26 @@ class Vote extends Component {
       body: JSON.stringify({
         dog1_id: this.state.dog1id,
         dog2_id: this.state.dog2id,
-        winner: vote,
-        user: this.state.userId
+        winner: this.state.vote,
+        voter_uuid: this.state.userId
       })
     }).then(function(response) {
-      console.log(response)
-    });*/
-    console.log(this.state)
-    this.setState({dog1id: 'dog2', dog2id: 'dog1', vote: null});
+      if (response.status !== 200) {
+        alert(
+          "A " +
+            response.status +
+            " error occurred. Please contact us at northeasterndogproject@gmail.com"
+        );
+      }
+
+      response.json().then(function(data) {
+        that.setState({
+          dog1id: data.dog1,
+          dog2id: data.dog2,
+          vote: null,
+        });
+      });
+    });
   }
 
   componentDidMount() {
