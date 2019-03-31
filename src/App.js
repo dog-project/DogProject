@@ -36,7 +36,7 @@ class App extends Component {
             <Route exact path="/demographics" render={props => <Demographics />} />
             <Route exact path="/vote" render={props => <Vote />} />
             {/* <Route exact path="/submit" render={props => <Submit />} /> */}
-            <Route exact path="/thank-you" render={props => <ThankYou />} />
+            {/* <Route exact path="/thank-you" render={props => <ThankYou />} /> */}
             <Route exact path="/meet-the-team" render={props => <TeamPage />} />
             <Route component={NoMatch} />
           </Switch>
