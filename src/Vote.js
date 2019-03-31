@@ -94,18 +94,17 @@ class Vote extends Component {
       dog1id: this.props.location.state.dog1id,
       dog2id: this.props.location.state.dog2id,
       vote: null
-    }
+    };
   }
 
   handleChange = event => {
-    console.log(event)
+    console.log(event);
     this.setState({ vote: parseInt(event.target.value) });
   };
 
   onSubmit = () => {
     if (this.state.vote !== null) {
       this.sendVoteToAPI();
-
     } else {
       console.log(this.state);
     }
@@ -113,39 +112,42 @@ class Vote extends Component {
 
   sendVoteToAPI() {
     const that = this;
-    fetch("https://us-east1-dog-project-234515.cloudfunctions.net/submit_vote", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        dog1_id: this.state.dog1id,
-        dog2_id: this.state.dog2id,
-        winner: this.state.vote,
-        voter_uuid: this.state.userId
-      })
-    }).then(function(response) {
+    fetch(
+      "https://us-east1-dog-project-234515.cloudfunctions.net/submit_vote",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          dog1_id: this.state.dog1id,
+          dog2_id: this.state.dog2id,
+          winner: this.state.vote,
+          voter_uuid: this.state.userId
+        })
+      }
+    ).then(function(response) {
       if (response.status !== 200) {
         alert(
           "A " +
             response.status +
             " error occurred. Please contact us at northeasterndogproject@gmail.com"
         );
-      }
-
-      response.json().then(function(data) {
-        that.setState({
-          dog1id: data.dog1,
-          dog2id: data.dog2,
-          vote: null,
+      } else {
+        response.json().then(function(data) {
+          that.setState({
+            dog1id: data.dog1,
+            dog2id: data.dog2,
+            vote: null
+          });
         });
-      });
+      }
     });
   }
 
   componentDidMount() {
-    window.scroll(0,0);
-  };
+    window.scroll(0, 0);
+  }
 
   render() {
     const { classes } = this.props;
@@ -167,7 +169,7 @@ class Vote extends Component {
 }
 
 Vote.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 export default withRouter(withStyles(styles)(Vote));

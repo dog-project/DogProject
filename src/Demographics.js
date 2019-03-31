@@ -301,7 +301,7 @@ export class Demographics extends Component {
                   <FormControlLabel
                     value="7"
                     control={<Radio />}
-                    label="Post Undergraduate Education (Master's, Specialist, Doctorate"
+                    label="Post Undergraduate Education (Master's, Specialist, Doctorate)"
                   />
                 </RadioGroup>
               </ListItem>

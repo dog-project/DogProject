@@ -105,6 +105,7 @@ class VoteInner extends Component {
                   alt="Dog A"
                   className={classes.media}
                   value={this.props.dog1id}
+                  
                   src={'/images/dogs/'+this.props.dog1id+'.jpg'}
                   title="DogA"
                 />
@@ -155,7 +156,7 @@ class VoteInner extends Component {
                 label="Dog B"
               />
               <FormControlLabel
-                value="0"
+                value="-1"
                 //checked={this.props.vote == "0"}
                 control={<Radio />}
                 label="I am indifferent"
