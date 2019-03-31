@@ -144,8 +144,8 @@ export class Submit extends Component {
     this.getBase64(file).then(data => {
       this.sendToAPI({
         user_email: this.state.email,
-        dog_age: this.state.dog_years * 12 + this.state.dog_months,
-        dog_weight: this.state.dog_weight,
+        dog_age: parseInt(this.state.dog_years) * 12 + parseInt(this.state.dog_months),
+        dog_weight: parseInt(this.state.dog_weight),
         dog_breed: this.state.dog_breed,
         image: data
       });
