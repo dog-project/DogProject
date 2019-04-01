@@ -23,16 +23,16 @@ class App extends Component {
               path="/"
               render={props => (
                 <div>
-                  <Home />
+                  <ThankYou />
                   {/* <HomePageGrid /> */}
                 </div>
               )}
             />
             {/* <Route exact path="/sign-up" render={props => <SignUp />} /> */}
             {/* <Route exact path="/vote" render={props => <Vote />} /> */}
-            <Route exact path="/submit" render={props => <Submit />} />
+            {/* <Route exact path="/submit" render={props => <Submit />} />
             <Route exact path="/thank-you" render={props => <ThankYou />} />
-            <Route exact path="/privacy-policy" render={props => <PrivacyPolicy />} />
+            <Route exact path="/privacy-policy" render={props => <PrivacyPolicy />} /> */}
             <Route component={NoMatch} />
           </Switch>
 

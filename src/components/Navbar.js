@@ -58,7 +58,7 @@ function Navbar(props) {
       <div className={classes.root}>
         <AppBar position="static">
           <Toolbar>
-            <DrawerNav />
+            {/* <DrawerNav /> */}
             <Typography variant="h6" color="inherit" className={classes.grow} component={Link} to="/">
               The Cute Dog Project
             </Typography>

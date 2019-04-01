@@ -25,11 +25,18 @@ function ThankYou(props) {
     <div>
       <Paper className={ classes.root }>
         <Typography variant="h3" >
-          Thank you for your submission! We will contact you via email after the
-          submission period has concluded if we are going to use your dog in the contest.
+          We are no longer accepting submissions and are currently in the process of choosing the dogs that will be in the contest. Please check back soon to start voting!
         </Typography>
         <br />
         <br />
+        </Paper>
+        <Paper className={classes.root} elevation={2}>
+            <p>
+              If you have questions or would like more information about the
+              Cute Dog Project please contact
+              us via <a rel="noopener noreferrer" target="_blank" href="mailto:northeasterndogproject@gmail.com">email</a>
+            </p>
+          </Paper>
         {/* <Typography variant="h3">
           In the meanwhile, if you would like to learn more about why we are doing what we are doing, you can visit our About Page to read about the philosophy behind The Cute Dog Project
         </Typography>
@@ -45,7 +52,7 @@ function ThankYou(props) {
                   Go to the About Page
                 </Button>
               </MuiThemeProvider> */}
-      </Paper>
+
     </div>
   );
 }
