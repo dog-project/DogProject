@@ -86,12 +86,12 @@ const theme = createMuiTheme({
 
 export class Demographics extends Component {
   state = {
-    gender: "",
-    age: "",
-    neu_affiliation: "",
-    education_level: "",
-    location: "",
-    dog_ownership: false,
+    gender: null,
+    age: null,
+    neu_affiliation:null,
+    education_level: null,
+    location: null,
+    dog_ownership: null,
     redirect_to_vote: false,
     voter_id: null,
     dog1id: null,
@@ -107,8 +107,18 @@ export class Demographics extends Component {
   }
 
   sendToAPI = () => {
-    const redirect = this.props;
+    
     const that = this; // I laughed out loud at this https://stackoverflow.com/questions/49684217/how-to-use-fetch-api-in-react-to-setstate
+    var age = null; 
+    var education= null;
+    if (this.state.age !== null){
+      age = parseInt(this.state.age);
+    }
+
+    if (this.state.education_level !== null){
+      education = parseInt(this.state.education_level);
+    }
+
     fetch(
       "https://us-east1-dog-project-234515.cloudfunctions.net/register_voter",
       {
@@ -118,8 +128,8 @@ export class Demographics extends Component {
         },
         body: JSON.stringify({
           "gender_identity": this.state.gender,
-          "age": parseInt(this.state.age),
-          "education": parseInt(this.state.education_level),
+          "age": age,
+          "education": education,
           "location": this.state.location,
           "dog_ownership": this.state.dog_ownership,
           "northeastern_relationship": this.state.neu_affiliation,
@@ -225,7 +235,7 @@ export class Demographics extends Component {
                   margin="normal"
                   variant="outlined"
                   onChange={this.onChange}
-                  required
+                  // required
                 />
               </ListItem>
               <h3>Northeastern Affiliation</h3>

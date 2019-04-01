@@ -3,7 +3,6 @@ import {
   Card,
   CardActionArea,
   CardMedia,
-  Typography,
   CardContent,
   withStyles
 } from "@material-ui/core";
@@ -21,12 +20,9 @@ const styles = {
 };
 
 class BioCard extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     const { classes } = this.props;
-    const img = this.props.image;
+    
     return (
       <Card className={classes.card}>
         <CardActionArea>

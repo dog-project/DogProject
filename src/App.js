@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./Home";
-import Submit from "./Submit";
+
 import Demographics from "./Demographics";
 import Vote from "./Vote";
-import ThankYou from "./components/ThankYou";
+
 import SignUp from "./SignUp";
 import TeamPage from "./TeamPage";
 
