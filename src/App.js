@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./Home";
-import Submit from "./Submit";
-import PrivacyPolicy from "./PrivacyPolicy";
+// import Home from "./Home";
+// import Submit from "./Submit";
+// import PrivacyPolicy from "./PrivacyPolicy";
 import ThankYou from "./components/ThankYou";
 
 import "./App.css";
