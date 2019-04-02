@@ -188,7 +188,7 @@ export class Demographics extends Component {
             <h2>Demographic Information</h2>
             <ListItem>
               <ListItemText>
-                Collecting some demographic information
+                Please feel free to provide your demographic information. We are trying to get an idea of our voting population. All the fields are optional.
               </ListItemText>
             </ListItem>
             <Divider />
