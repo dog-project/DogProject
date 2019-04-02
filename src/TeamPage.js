@@ -30,7 +30,7 @@ const sam = {
 
 const charlie = {
   name: "Charlie Haviland",
-  bio: "Badly allergic to dogs"
+  bio: "Charlie is a 5th year Computer Science & Finance Combined Major and Ethics Minor primarily involved with designing and implementing the front-end of this website, as well as solving broader issues that arise in any voting process. Despite his love for dogs he was born badly allergic to all dogs (even hypo-allergenic ones) and hopes to someday grow out of his allergy and own a dog."
 };
 
 const julian = {
