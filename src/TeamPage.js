@@ -78,7 +78,7 @@ const dan = {
 const jackie = {
   name: "Jackson Reimer",
   bio:
-    "Jackson Reimer is a 4th year Politics, Philosophy and Economics major. As teaching assistant for the Cute Dog Project, he has been primarily involved in project management tasks ensuring that different teams are communicating with one another and working towards aligned goals. This has included matching people to assignments that leverage their unique skill set and ensuring that each member of the team is aware of each other’s contributions. Jackson owns a 10 year old mini-golden doodle puppy named Chester who’s loving zeal and polite demeanor leave him second to none in the city of Los Angeles."
+    "Jackson Reimer is a 4th year Politics, Philosophy and Economics major. As teaching assistant for the Cute Dog Project, he has been primarily involved in project management tasks ensuring that different teams are communicating with one another and working towards aligned goals. Jackson owns a 10 year old mini-golden doodle puppy named Chester who’s loving zeal and polite demeanor leave him second to none in the city of Los Angeles."
 };
 
 const keshav = {

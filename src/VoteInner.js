@@ -87,11 +87,12 @@ class VoteInner extends Component {
     super(props);
     this.state = {
       vote: props.vote
-    }
+    };
   }
 
   render() {
     const { classes } = this.props;
+    //const indifferent = "-1";
     return (
       <div>
         <Grid container spacing={24} className={classes.grid}>
@@ -140,6 +141,7 @@ class VoteInner extends Component {
               name="cuteVote"
               className={classes.group}
               onChange={this.props.handleVote}
+              value={this.state.initialVote}
             >
               <FormControlLabel
                 value={String(this.props.dog1id)}
@@ -154,7 +156,7 @@ class VoteInner extends Component {
                 label="Dog B"
               />
               <FormControlLabel
-                value="-1"
+                value={this.props.indifferent}
                 //checked={this.props.vote == "0"}
                 control={<Radio />}
                 label="I am indifferent"
