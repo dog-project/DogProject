@@ -331,26 +331,31 @@ export class Demographics extends Component {
                     control={<Radio /*required*/ />}
                     label="Midwest (Illinois, Indiana, Iowa, Kansas, Michigan, Minnesota, Missouri, Nebraska, Ohio, North Dakota, South Dakota, Wisconsin)"
                   />
+                  <br />
                   <FormControlLabel
                     value="Northeast"
                     control={<Radio />}
                     label="Northeast (Connecticut, Maine, Massachusetts, New Hampshire, New Jersey, New York, Pennsylvania, Rhode Island, Vermont)"
                   />
+                  <br />
                   <FormControlLabel
                     value="South"
                     control={<Radio />}
                     label="South (Arkansas, Alabama, Delaware, District of Columbia, Florida, Georgia, Kentucky, Louisiana, Maryland, Mississippi, North Carolina, Oklahoma, South Carolina, Tennessee, Texas, Virginia, West Virginia)"
                   />
+                  <br />
                   <FormControlLabel
-                    value="west"
+                    value="West"
                     control={<Radio />}
                     label="West (Alaska, Arizona, California, Colorado, Hawaii, Idaho, Montana, Nevada, New Mexico, Oregon, Utah, Washington, Wyoming)"
                   />
+                  <br />
                   <FormControlLabel
                     value="Puerto Rico Or Similar"
                     control={<Radio />}
                     label="Puerto Rico or other U.S. territories"
                   />
+                  <br />
 
                   <Input
                     id="outlined-gender-input"
