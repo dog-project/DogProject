@@ -4,7 +4,8 @@ import {
   CardActionArea,
   CardMedia,
   CardContent,
-  withStyles
+  withStyles,
+  Typography
 } from "@material-ui/core";
 import PropTypes from "prop-types";
 
@@ -35,8 +36,8 @@ class BioCard extends Component {
           />
 
           <CardContent>
-            <p>{this.props.name}</p>
-            <p>{this.props.bio}</p>
+            <Typography gutterBottom variant="h5" component="h2">{this.props.name}</Typography>
+            <Typography component="p">{this.props.bio}</Typography>
           </CardContent>
         </CardActionArea>
       </Card>
