@@ -179,7 +179,7 @@ class TeamPage extends Component {
           <Grid item s={6} md={3}>
             <BioCard name={yifan.name} bio={yifan.bio} image="yifan-wang" />
           </Grid>
-          <Grid item s={6} md={3} xs={12}>
+          <Grid item>
             <Paper elevation={3} className={classes.root}>
               <Typography variant="h6">
                 The Cute Dog Project was supported by the Rossetti Family
