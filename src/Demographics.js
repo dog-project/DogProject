@@ -109,6 +109,7 @@ export class Demographics extends Component {
   validDateData() {
     var validData = false;
     var age = parseInt(this.state.age);
+    education = parseInt(this.state.education_level);
 
     if (age< 18) {
       alert("You must be 18 years or older to vote");
@@ -119,6 +120,11 @@ export class Demographics extends Component {
     else {
       validData = true;
     }
+
+
+    // if (this.state.neu_affiliation !== null) {
+    //   if (this.state.neu_affiliation === "Current Student" && this.state.education)
+    // }
 
     return validData;
   }
@@ -136,6 +142,7 @@ export class Demographics extends Component {
     if (this.state.education_level !== null) {
       education = parseInt(this.state.education_level);
     }
+
 
 
 
