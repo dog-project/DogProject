@@ -146,7 +146,7 @@ class TeamPage extends Component {
         </Grid>
 
         <Grid item s={6} md={3}>
-          <BioCard name={jackie.name} bio={jackie.bio} image="jackie-reimer" />
+          <BioCard name={jackie.name} bio={jackie.bio} image="jackson-reimer" />
         </Grid>
         <Grid item s={6} md={3}>
           <BioCard name={julian.name} bio={julian.bio} image="julian-zucker" />
