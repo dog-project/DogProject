@@ -109,7 +109,7 @@ export class Demographics extends Component {
   validDateData() {
     var validData = false;
     var age = parseInt(this.state.age);
-    education = parseInt(this.state.education_level);
+    
 
     if (age< 18) {
       alert("You must be 18 years or older to vote");
@@ -225,6 +225,8 @@ export class Demographics extends Component {
                 Please feel free to provide your demographic information. We are
                 trying to get an idea of our voting population. All the fields
                 are optional. All information is anonymous.
+
+                You must be 18 years or older to participate
               </ListItemText>
             </ListItem>
             <Divider />
