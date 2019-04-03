@@ -81,7 +81,8 @@ class Vote extends Component {
       userId: this.props.location.state.userId,
       dog1id: this.props.location.state.dog1id,
       dog2id: this.props.location.state.dog2id,
-      vote: null
+      vote: null,
+      indifferent: "-1"
     };
   }
 
@@ -123,11 +124,15 @@ class Vote extends Component {
         );
       } else {
         response.json().then(function(data) {
-          that.setState({
-            dog1id: data.dog1,
-            dog2id: data.dog2,
-            vote: null
-          });
+          if (data) {
+            that.setState({
+              dog1id: data.dog1,
+              dog2id: data.dog2,
+              vote: null
+            });
+          } else {
+            //thank you for voting
+          }
         });
       }
     });
@@ -148,6 +153,7 @@ class Vote extends Component {
           dog1id={this.state.dog1id}
           dog2id={this.state.dog2id}
           vote={this.state.vote}
+          indifferent={this.state.indifferent}
           handleVote={this.handleChange}
           onSubmit={() => this.onSubmit}
         />

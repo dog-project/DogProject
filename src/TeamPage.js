@@ -70,12 +70,15 @@ const chris = {
     "Christopher is a fourth-year Philosophy and Environmental Studies Combined Major. He will be graduating in August of 2019. His primary interests in Philosophy include environmental ethics and transcendental metaphysics. His favorite dog breed is the Alaskan Malamute."
 };
 
-const dan = {};
+const dan = {
+  name: "Daniel O'Leary",
+  bio: "Daniel O'Leary is a fifth year studying Philosophy and Political Science. After graduating he plans to attend law school. As a part of the Dog Project, Daniel has worked on understanding what type of property cuteness is, and how to design a voting system to select dogs for that property."
+};
 
 const jackie = {
   name: "Jackson Reimer",
   bio:
-    "Jackson Reimer is a 4th year Politics, Philosophy and Economics major. As teaching assistant for the Cute Dog Project, he has been primarily involved in project management tasks ensuring that different teams are communicating with one another and working towards aligned goals. This has included matching people to assignments that leverage their unique skill set and ensuring that each member of the team is aware of each other’s contributions. Jackson owns a 10 year old mini-golden doodle puppy named Chester who’s loving zeal and polite demeanor leave him second to none in the city of Los Angeles."
+    "Jackson Reimer is a 4th year Politics, Philosophy and Economics major. As teaching assistant for the Cute Dog Project, he has been primarily involved in project management tasks ensuring that different teams are communicating with one another and working towards aligned goals. Jackson owns a 10 year old mini-golden doodle puppy named Chester who’s loving zeal and polite demeanor leave him second to none in the city of Los Angeles."
 };
 
 const keshav = {
@@ -135,7 +138,7 @@ class TeamPage extends Component {
           <BioCard name={chris.name} bio={chris.bio} image="chris-osborne" />
         </Grid>
         <Grid item s={6} md={3}>
-          <BioCard name={dan.name} bio={dan.bio} image="placeholder" />
+          <BioCard name={dan.name} bio={dan.bio} image="dan-o'leary" />
         </Grid>
 
         <Grid item s={6} md={3}>

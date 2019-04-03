@@ -88,7 +88,7 @@ export class Demographics extends Component {
   state = {
     gender: null,
     age: null,
-    neu_affiliation:null,
+    neu_affiliation: null,
     education_level: null,
     location: null,
     dog_ownership: null,
@@ -99,60 +99,82 @@ export class Demographics extends Component {
   };
 
   componentDidMount() {
-    window.scroll(0,0);
-  };
+    window.scroll(0, 0);
+  }
 
   proceedToVote(id) {
-    this.setState({redirect_to_vote: true, voter_id: id});
+    this.setState({ redirect_to_vote: true, voter_id: id });
+  }
+
+  validDateData() {
+    var validData = false;
+    var age = parseInt(this.state.age);
+
+    if (age< 18) {
+      alert("You must be 18 years or older to vote");
+    }
+    else if (age > 120) {
+      alert("You are too old to vote, please alert the Guinness Book of World Records")
+    }
+    else {
+      validData = true;
+    }
+
+    return validData;
   }
 
   sendToAPI = () => {
-    
     const that = this; // I laughed out loud at this https://stackoverflow.com/questions/49684217/how-to-use-fetch-api-in-react-to-setstate
-    var age = null; 
-    var education= null;
-    if (this.state.age !== null){
+    var age = null;
+    var education = null;
+    var validData = this.validDateData();
+    if (this.state.age !== null) {
       age = parseInt(this.state.age);
+
     }
 
-    if (this.state.education_level !== null){
+    if (this.state.education_level !== null) {
       education = parseInt(this.state.education_level);
     }
 
-    fetch(
-      "https://us-east1-dog-project-234515.cloudfunctions.net/register_voter",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          "gender_identity": this.state.gender,
-          "age": age,
-          "education": education,
-          "location": this.state.location,
-          "dog_ownership": this.state.dog_ownership,
-          "northeastern_relationship": this.state.neu_affiliation,
-        })
-      }
-    ).then(function(response) {
-      if (response.status !== 200) {
-        alert(
-          "A " +
-            response.status +
-            " error occurred. Please try again or contact us at northeasterndogproject@gmail.com"
-        );
-      }
 
-      response.json().then(function(data) {
-        that.setState({
-          voter_id: data.voter_uuid,
-          dog1id: data.dog1,
-          dog2id: data.dog2,
-          redirect_to_vote: true
+
+    if (validData) {
+      fetch(
+        "https://us-east1-dog-project-234515.cloudfunctions.net/register_voter",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            gender_identity: this.state.gender,
+            age: age,
+            education: education,
+            location: this.state.location,
+            dog_ownership: this.state.dog_ownership,
+            northeastern_relationship: this.state.neu_affiliation
+          })
+        }
+      ).then(function(response) {
+        if (response.status !== 200) {
+          alert(
+            "A " +
+              response.status +
+              " error occurred. Please try again or contact us at northeasterndogproject@gmail.com"
+          );
+        }
+
+        response.json().then(function(data) {
+          that.setState({
+            voter_id: data.voter_uuid,
+            dog1id: data.dog1,
+            dog2id: data.dog2,
+            redirect_to_vote: true
+          });
         });
       });
-    });
+    }
   };
 
   onChange = e => {
@@ -173,13 +195,18 @@ export class Demographics extends Component {
     const { classes } = this.props;
     const redirectToVote = this.state.redirect_to_vote;
     if (redirectToVote) {
-      return <Redirect to={{
-        pathname: "/vote",
-        state: {
-          userId: this.state.voter_id,
-          dog1id: this.state.dog1id,
-          dog2id: this.state.dog2id
-        }}} />
+      return (
+        <Redirect
+          to={{
+            pathname: "/vote",
+            state: {
+              userId: this.state.voter_id,
+              dog1id: this.state.dog1id,
+              dog2id: this.state.dog2id
+            }
+          }}
+        />
+      );
     }
     return (
       <MuiThemeProvider theme={theme}>
@@ -188,7 +215,9 @@ export class Demographics extends Component {
             <h2>Demographic Information</h2>
             <ListItem>
               <ListItemText>
-                Collecting some demographic information
+                Please feel free to provide your demographic information. We are
+                trying to get an idea of our voting population. All the fields
+                are optional. All information is anonymous.
               </ListItemText>
             </ListItem>
             <Divider />
@@ -256,16 +285,31 @@ export class Demographics extends Component {
                     control={<Radio /*required*/ />}
                     label="No"
                   />
-                  <FormControlLabel value="Current Student" control={<Radio />} label="Current Student" />
-                  <FormControlLabel value="Alumni" control={<Radio />} label="Alumni" />
-                  <FormControlLabel value="Faculty" control={<Radio />} label="Faculty" />
-                  <FormControlLabel value="Staff" control={<Radio />} label="Staff" />
+                  <FormControlLabel
+                    value="Current Student"
+                    control={<Radio />}
+                    label="Current Student"
+                  />
+                  <FormControlLabel
+                    value="Alumni"
+                    control={<Radio />}
+                    label="Alumni"
+                  />
+                  <FormControlLabel
+                    value="Faculty"
+                    control={<Radio />}
+                    label="Faculty"
+                  />
+                  <FormControlLabel
+                    value="Staff"
+                    control={<Radio />}
+                    label="Staff"
+                  />
                 </RadioGroup>
               </ListItem>
               <h3>Education Level</h3>
               <h4>What is your current education level?</h4>
               <ListItem>
-
                 <FormLabel />
                 <RadioGroup
                   aria-label="Current Education Level"
