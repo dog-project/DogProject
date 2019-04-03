@@ -1,5 +1,6 @@
 {
   "projects": {
-    "the-dog-project": "the-dog-project"
+    "the-dog-project": "the-dog-project",
+    "staging": "the-dog-project-staging"
   }
 }

@@ -132,11 +132,15 @@ class Vote extends Component {
         );
       } else {
         response.json().then(function(data) {
-          that.setState({
-            dog1id: data.dog1,
-            dog2id: data.dog2,
-            vote: null
-          });
+          if (data) {
+            that.setState({
+              dog1id: data.dog1,
+              dog2id: data.dog2,
+              vote: null
+            });
+          } else {
+            //thank you for voting
+          }
         });
       }
     });

@@ -83,17 +83,8 @@ const styles = theme => ({
 });
 
 class VoteInner extends Component {
-  state = {
-    vote: null
-  }
-  componentDidMount() {
-    this.setState({vote: null});
-  }
-
-
   render() {
     const { classes } = this.props;
-    //const indifferent = "-1";
     return (
       <div>
         <Grid container spacing={24} className={classes.grid}>
@@ -145,23 +136,20 @@ class VoteInner extends Component {
               name="cuteVote"
               className={classes.group}
               onChange={this.props.handleVote}
-              value={this.state.vote}
+              value={String(this.props.vote)}
             >
               <FormControlLabel
                 value={String(this.props.dog1id)}
-                //checked={parseInt(this.props.vote) == this.props.dog1id}
                 control={<Radio required />}
                 label="Dog A"
               />
               <FormControlLabel
                 value={String(this.props.dog2id)}
-                //checked={parseInt(this.props.vote) == this.props.dog2id}
                 control={<Radio />}
                 label="Dog B"
               />
               <FormControlLabel
-                value="-1"
-                //checked={this.props.vote == "0"}
+                value={this.props.indifferent}
                 control={<Radio />}
                 label="I am indifferent"
               />
