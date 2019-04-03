@@ -12,7 +12,7 @@ import PropTypes from "prop-types";
 const styles = {
   card: {
     maxWidth: 345,
-    height: 700,
+    height: 620,
   },
   media: {
     // ⚠️ object-fit is not supported by IE 11.
@@ -24,7 +24,7 @@ const styles = {
 class BioCard extends Component {
   render() {
     const { classes } = this.props;
-    
+
     return (
       <Card className={classes.card}>
         <CardActionArea>

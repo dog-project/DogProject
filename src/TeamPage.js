@@ -50,7 +50,7 @@ const julian = {
 const danny = {
   name: "Daniel Rassaby",
   bio:
-    "I’m Daniel Rassaby, a current third year Computer Science student. I’m also getting minors in math and ethics. I joined the dog project so I can combine a lot of the things I love, from writing some of the backend code for this website to discussions of mathematical representation of preferences to philosophical reasoning about meaning and categorization. Outside of the dog project, I can often be found listening to podcasts, traveling, and trying new foods.  I  don’t have a favorite dog breed, but I usually like big dogs the most. Feel free to check out my website if you want to know more about me: https://danielrassaby.com."
+    "Daniel Rassaby is a third year Computer Science student, also getting minors in math and ethics. He joined the dog project to combine a lot of the things he loves, from writing some of the backend code for this website, to discussing the mathematical representation of preferences, to philosophical reasoning about meaning and categorization. Outside of the dog project, he can often be found listening to podcasts, traveling, and trying new foods. He doesn’t have a favorite dog breed, but  likes big dogs the most."
 };
 
 const mike = {
@@ -179,7 +179,7 @@ class TeamPage extends Component {
           <Grid item s={6} md={3}>
             <BioCard name={yifan.name} bio={yifan.bio} image="yifan-wang" />
           </Grid>
-          <Grid item xs={12}>
+          <Grid item s={6} md={3} xs={12}>
             <Paper elevation={3} className={classes.root}>
               <Typography variant="h6">
                 The Cute Dog Project was supported by the Rossetti Family
