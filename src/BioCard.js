@@ -11,12 +11,13 @@ import PropTypes from "prop-types";
 
 const styles = {
   card: {
-    maxWidth: 345
+    maxWidth: 345,
+    height: 700,
   },
   media: {
     // ⚠️ object-fit is not supported by IE 11.
     objectFit: "cover",
-    //height: 140
+    height: 300
   }
 };
 
