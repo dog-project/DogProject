@@ -1,11 +1,14 @@
 import React, { Component } from "react";
-import {
-  Paper,
-  Typography
-} from "@material-ui/core";
+import { Paper, Typography, Grid } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  FacebookIcon,
+  TwitterIcon
+} from "react-share";
 
 import VoteInner from "./VoteInner";
 
@@ -71,6 +74,11 @@ const styles = theme => ({
   },
   label: {
     marginLeft: -30
+  },
+  shareButtons: {
+    justifyContent: "center",
+    padding: theme.spacing.unit * 2,
+    display: "flex"
   }
 });
 
@@ -153,6 +161,26 @@ class Vote extends Component {
           handleVote={this.handleChange}
           onSubmit={() => this.onSubmit}
         />
+
+        <Paper className={classes.paper}>
+          <Grid container spacing={24}>
+            <Grid item xs={12} className={classes.shareButtons}>
+              <TwitterShareButton
+                url="https://socialchoice.nuphilosophy.com"
+                via="I just voted in The Cute Dog Project. You can too!"
+              >
+                <TwitterIcon size={32} rect={true} />
+              </TwitterShareButton>
+              <FacebookShareButton
+                url="https://socialchoice.nuphilosophy.com"
+                via="I just voted in The Cute Dog Project. You can too!"
+                style={{ paddingLeft: "10px" }}
+              >
+                <FacebookIcon size={32} rect={true} />
+              </FacebookShareButton>
+            </Grid>
+          </Grid>
+        </Paper>
       </div>
     );
   }

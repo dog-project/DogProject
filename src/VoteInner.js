@@ -83,12 +83,13 @@ const styles = theme => ({
 });
 
 class VoteInner extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      vote: props.vote
-    };
+  state = {
+    vote: null
   }
+  componentDidMount() {
+    this.setState({vote: null});
+  }
+
 
   render() {
     const { classes } = this.props;
@@ -104,8 +105,7 @@ class VoteInner extends Component {
                   alt="Dog A"
                   className={classes.media}
                   value={this.props.dog1id}
-
-                  src={'/images/dogs/'+this.props.dog1id+'.png'}
+                  src={"/images/dogs/" + this.props.dog1id + ".png"}
                   title="DogA"
                 />
 
@@ -122,7 +122,7 @@ class VoteInner extends Component {
                   alt="Dog B"
                   className={classes.media}
                   value={this.props.dog2id}
-                  src={'/images/dogs/'+this.props.dog2id+'.png'}
+                  src={"/images/dogs/" + this.props.dog2id + ".png"}
                   title="DogB"
                 />
 
@@ -132,7 +132,11 @@ class VoteInner extends Component {
           </Grid>
         </Grid>
         <Grid item xs={12} className={classes.form}>
-          <form component="fieldset">
+          <form
+            component="fieldset"
+            action=""
+            onSubmit={this.props.onSubmit().bind(this)}
+          >
             <FormLabel component="legend" className={classes.label}>
               <Typography variant="h6">Which dog is cuter?</Typography>
             </FormLabel>
@@ -141,7 +145,7 @@ class VoteInner extends Component {
               name="cuteVote"
               className={classes.group}
               onChange={this.props.handleVote}
-              value={this.state.initialVote}
+              value={this.state.vote}
             >
               <FormControlLabel
                 value={String(this.props.dog1id)}
@@ -156,7 +160,7 @@ class VoteInner extends Component {
                 label="Dog B"
               />
               <FormControlLabel
-                value={this.props.indifferent}
+                value="-1"
                 //checked={this.props.vote == "0"}
                 control={<Radio />}
                 label="I am indifferent"
@@ -173,8 +177,7 @@ class VoteInner extends Component {
 }
 
 VoteInner.propTypes = {
-  classes: PropTypes.object.isRequired,
-
+  classes: PropTypes.object.isRequired
 };
 
 export default withRouter(withStyles(styles)(VoteInner));
