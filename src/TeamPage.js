@@ -49,7 +49,8 @@ const julian = {
 
 const danny = {
   name: "Daniel Rassaby",
-  bio: "I’m Daniel Rassaby, a current third year Computer Science student. I’m also getting minors in math and ethics. I joined the dog project so I can combine a lot of the things I love, from writing some of the backend code for this website to discussions of mathematical representation of preferences to philosophical reasoning about meaning and categorization. Outside of the dog project, I can often be found listening to podcasts, traveling, and trying new foods.  I  don’t have a favorite dog breed, but I usually like big dogs the most. Feel free to check out my website if you want to know more about me: https://danielrassaby.com."
+  bio:
+    "I’m Daniel Rassaby, a current third year Computer Science student. I’m also getting minors in math and ethics. I joined the dog project so I can combine a lot of the things I love, from writing some of the backend code for this website to discussions of mathematical representation of preferences to philosophical reasoning about meaning and categorization. Outside of the dog project, I can often be found listening to podcasts, traveling, and trying new foods.  I  don’t have a favorite dog breed, but I usually like big dogs the most. Feel free to check out my website if you want to know more about me: https://danielrassaby.com."
 };
 
 const mike = {
@@ -72,7 +73,8 @@ const chris = {
 
 const dan = {
   name: "Daniel O'Leary",
-  bio: "Daniel O'Leary is a fifth year studying Philosophy and Political Science. After graduating he plans to attend law school. As a part of the Dog Project, Daniel has worked on understanding what type of property cuteness is, and how to design a voting system to select dogs for that property."
+  bio:
+    "Daniel O'Leary is a fifth year studying Philosophy and Political Science. After graduating he plans to attend law school. As a part of the Dog Project, Daniel has worked on understanding what type of property cuteness is, and how to design a voting system to select dogs for that property."
 };
 
 const jackie = {
@@ -122,54 +124,66 @@ class TeamPage extends Component {
         <Paper className={classes.header}>
           <Typography variant="h2">Meet The Team</Typography>
         </Paper>
-        <Grid container spacing={24} className={ classes.grid }>
-        <Grid item s={6} md={3}>
-          <BioCard name={andy.name} bio={andy.bio} image="andy-aronson" />
-        </Grid>
+        <Grid container spacing={24} className={classes.grid}>
+          <Grid item s={6} md={3}>
+            <BioCard name={andy.name} bio={andy.bio} image="andy-aronson" />
+          </Grid>
 
-        <Grid item s={6} md={3}>
-          <BioCard
-            name={charlie.name}
-            bio={charlie.bio}
-            image="charlie-haviland"
-          />
-        </Grid>
-        <Grid item s={6} md={3}>
-          <BioCard name={chris.name} bio={chris.bio} image="chris-osborne" />
-        </Grid>
-        <Grid item s={6} md={3}>
-          <BioCard name={dan.name} bio={dan.bio} image="dan-o'leary" />
-        </Grid>
+          <Grid item s={6} md={3}>
+            <BioCard
+              name={charlie.name}
+              bio={charlie.bio}
+              image="charlie-haviland"
+            />
+          </Grid>
+          <Grid item s={6} md={3}>
+            <BioCard name={chris.name} bio={chris.bio} image="chris-osborne" />
+          </Grid>
+          <Grid item s={6} md={3}>
+            <BioCard name={dan.name} bio={dan.bio} image="dan-o'leary" />
+          </Grid>
 
-        <Grid item s={6} md={3}>
-          <BioCard name={danny.name} bio={danny.bio} image="danny-rassaby" />
-        </Grid>
+          <Grid item s={6} md={3}>
+            <BioCard name={danny.name} bio={danny.bio} image="danny-rassaby" />
+          </Grid>
 
-        <Grid item s={6} md={3}>
-          <BioCard name={jackie.name} bio={jackie.bio} image="jackie-reimer" />
-        </Grid>
-        <Grid item s={6} md={3}>
-          <BioCard name={julian.name} bio={julian.bio} image="julian-zucker" />
-        </Grid>
-        <Grid item s={6} md={3}>
-          <BioCard name={keshav.name} bio={keshav.bio} image="keshav-sharma" />
-        </Grid>
-        <Grid item s={6} md={3}>
-          <BioCard name={mac.name} bio={mac.bio} image="mac-d'leeuwen" />
-        </Grid>
-        <Grid item s={6} md={3}>
-          <BioCard
-            name={mikaela.name}
-            bio={mikaela.bio}
-            image="mikaela-gluck"
-          />
-        </Grid>
-        <Grid item s={6} md={3}>
-          <BioCard name={mike.name} bio={mike.bio} image="mike-nelson" />
-        </Grid>
-        <Grid item s={6} md={3}>
-          <BioCard name={samHa.name} bio={samHa.bio} image="sam-haas" />
-        </Grid>
+          <Grid item s={6} md={3}>
+            <BioCard
+              name={jackie.name}
+              bio={jackie.bio}
+              image="jackie-reimer"
+            />
+          </Grid>
+          <Grid item s={6} md={3}>
+            <BioCard
+              name={julian.name}
+              bio={julian.bio}
+              image="julian-zucker"
+            />
+          </Grid>
+          <Grid item s={6} md={3}>
+            <BioCard
+              name={keshav.name}
+              bio={keshav.bio}
+              image="keshav-sharma"
+            />
+          </Grid>
+          <Grid item s={6} md={3}>
+            <BioCard name={mac.name} bio={mac.bio} image="mac-d'leeuwen" />
+          </Grid>
+          <Grid item s={6} md={3}>
+            <BioCard
+              name={mikaela.name}
+              bio={mikaela.bio}
+              image="mikaela-gluck"
+            />
+          </Grid>
+          <Grid item s={6} md={3}>
+            <BioCard name={mike.name} bio={mike.bio} image="mike-nelson" />
+          </Grid>
+          <Grid item s={6} md={3}>
+            <BioCard name={samHa.name} bio={samHa.bio} image="sam-haas" />
+          </Grid>
           <Grid item s={6} md={3}>
             <BioCard name={sam.name} bio={sam.bio} image="sam-merkovitz" />
           </Grid>
@@ -180,10 +194,9 @@ class TeamPage extends Component {
           <Grid item xs={12}>
             <Paper elevation={3} className={classes.root}>
               <Typography variant="h6">
-                This research was supervised by Rory Smead, Associate Professor
-                of Philosophy and Rossetti Professor for the Humanities, and
-                funded by the Rossetti Family Program for the Advancement of
-                Humanities.
+                The Cute Dog Project was supported by the Rossetti Family
+                Program for the Advancement of Humanities and the Ethics
+                Institute.
               </Typography>
             </Paper>
           </Grid>
