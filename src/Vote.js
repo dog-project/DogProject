@@ -126,7 +126,9 @@ class Vote extends Component {
         })
       }
     ).then(function(response) {
-      if (response.status !== 200) {
+      if (response.status >= 500 && this.state.voteCount > 320) {
+        that.props.history.push("/thank-you");
+      } else if (response.status !== 200) {
         alert(
           "A " +
             response.status +

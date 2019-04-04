@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Navbar from "./components/Navbar";
+import Navbar from "./components/ThankYou";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./Home";
 
@@ -28,6 +29,7 @@ class App extends Component {
             <Route exact path="/vote" render={props => <Vote />} />
             <Route exact path="/meet-the-team" render={props => <TeamPage />} />
             <Route exact path="/privacy-policy" render={props => <PrivacyPolicy />} />
+            <Route exact path="/thank-you" render={props => <ThankYou />} />
             <Route component={NoMatch} />
           </Switch>
         </div>
