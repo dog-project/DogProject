@@ -180,8 +180,9 @@ class Vote extends Component {
           <Grid container spacing={24}>
             <Grid item xs={12} className={classes.shareButtons}>
               <TwitterShareButton
-                url="https://socialchoice.nuphilosophy.com"
-                via="I just voted in The Cute Dog Project. You can too!"
+                title= "I just voted in The Cute Dog Project. You can too!"
+                url="I just voted in The Cute Dog Project. You can too!"
+                via=" https://socialchoice.nuphilosophy.com"
               >
                 <TwitterIcon size={32} rect={true} />
               </TwitterShareButton>
