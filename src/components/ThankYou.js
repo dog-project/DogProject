@@ -13,7 +13,7 @@ const styles = theme => ({
   },
   button: {
     margin: "20px",
-    '&:hover': {
+    "&:hover": {
       backgroundColor: "#212121"
     }
   }
@@ -23,36 +23,30 @@ function ThankYou(props) {
   const { classes } = props;
   return (
     <div>
-      <Paper className={ classes.root }>
-        <Typography variant="h3" >
-          We are no longer accepting submissions and are currently in the process of choosing the dogs that will be in the contest. Please check back soon to start voting!
+      <Paper className={classes.root}>
+        <Typography variant="h4">
+          You have voted on all the dogs! Thank you for voting in our contest!
+          In the coming weeks, we will be compiling and analyzing all our voting
+          information and will display our results on this web site. Please
+          check back in the next couple weeks to see the final results of our
+          voting contest!
         </Typography>
         <br />
         <br />
-        </Paper>
-        <Paper className={classes.root} elevation={2}>
-            <p>
-              If you have questions or would like more information about the
-              Cute Dog Project please contact
-              us via <a rel="noopener noreferrer" target="_blank" href="mailto:northeasterndogproject@gmail.com">email</a>
-            </p>
-          </Paper>
-        {/* <Typography variant="h3">
-          In the meanwhile, if you would like to learn more about why we are doing what we are doing, you can visit our About Page to read about the philosophy behind The Cute Dog Project
-        </Typography>
-        <MuiThemeProvider theme={theme}>
-                <Button
-                  size="large"
-                  color="primary"
-                  variant="contained"
-                  component={Link}
-                  to="/about"
-                  className={classes.button}
-                >
-                  Go to the About Page
-                </Button>
-              </MuiThemeProvider> */}
-
+      </Paper>
+      <Paper className={classes.root} elevation={2}>
+        <p>
+          If you have questions or would like more information about the Cute
+          Dog Project please contact us via{" "}
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="mailto:northeasterndogproject@gmail.com"
+          >
+            email
+          </a>
+        </p>
+      </Paper>
     </div>
   );
 }
