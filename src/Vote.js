@@ -1,22 +1,16 @@
 import React, { Component } from "react";
-import {
-  Paper,
-  Grid,
-  Card,
-  CardMedia,
-  CardContent,
-  CardActionArea,
-  Typography
-} from "@material-ui/core";
+import { Paper, Typography, Grid } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import PropTypes from "prop-types";
-import Radio from "@material-ui/core/Radio";
-import RadioGroup from "@material-ui/core/RadioGroup";
+import { withRouter } from "react-router-dom";
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  FacebookIcon,
+  TwitterIcon
+} from "react-share";
 
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import FormControl from "@material-ui/core/FormControl";
-import FormLabel from "@material-ui/core/FormLabel";
-import Button from "@material-ui/core/Button";
+import VoteInner from "./VoteInner";
 
 const styles = theme => ({
   root: {
@@ -33,19 +27,36 @@ const styles = theme => ({
     textAlign: "center"
   },
   media: {
-    width: 250,
-    height: 250
+    [theme.breakpoints.up("xs")]: {
+      maxHeight: 600,
+      maxWidth: 500
+    },
+    [theme.breakpoints.down("xs")]: {
+      maxHeight: 300,
+      maxWidth: 250
+    }
   },
   card: {
     alignItems: "center",
-    maxHeight: 300,
-    maxWidth: 250,
+    [theme.breakpoints.up("xs")]: {
+      maxHeight: 600,
+      maxWidth: 500
+    },
+    [theme.breakpoints.down("xs")]: {
+      maxHeight: 350,
+      maxWidth: 300
+    },
     display: "flex",
     marginLeft: "15%",
     marginRight: "15%"
   },
-  gridContent: {
-    alignItems: "center",
+  gridContent1: {
+    justifyContent: "center",
+    padding: theme.spacing.unit * 2,
+    display: "flex"
+  },
+  gridContent2: {
+    justifyContent: "center",
     padding: theme.spacing.unit * 2,
     display: "flex"
   },
@@ -53,102 +64,128 @@ const styles = theme => ({
     alignItems: "center",
     display: "flex"
   },
-  formControl: {
-    marginTop: theme.spacing.unit * 3,
-    marginLeft: theme.spacing.unit * 3,
-    margin: theme.spacing.unit * 3,
-    paddingLeft: "25%"
+  form: {
+    justifyContent: "center",
+    padding: theme.spacing.unit * 2,
+    display: "flex"
   },
   group: {
     margin: `${theme.spacing.unit}px 0`
   },
   label: {
     marginLeft: -30
+  },
+  shareButtons: {
+    justifyContent: "center",
+    padding: theme.spacing.unit * 2,
+    display: "flex"
   }
 });
 
-export class Vote extends Component {
-  state = {
-    value: ""
-  };
+class Vote extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      userId: this.props.location.state.userId,
+      dog1id: this.props.location.state.dog1id,
+      dog2id: this.props.location.state.dog2id,
+      vote: null,
+      indifferent: "-1"
+    };
+  }
 
   handleChange = event => {
-    this.setState({ value: event.target.value });
+    console.log(event);
+    this.setState({ vote: parseInt(event.target.value) });
   };
+
+  onSubmit = () => {
+    if (this.state.vote !== null) {
+      this.sendVoteToAPI();
+    } else {
+      console.log(this.state);
+    }
+  };
+
+  sendVoteToAPI() {
+    const that = this;
+    fetch(
+      "https://us-east1-dog-project-234515.cloudfunctions.net/submit_vote",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          dog1_id: this.state.dog1id,
+          dog2_id: this.state.dog2id,
+          winner: this.state.vote,
+          voter_uuid: this.state.userId
+        })
+      }
+    ).then(function(response) {
+      if (response.status !== 200) {
+        alert(
+          "A " +
+            response.status +
+            " error occurred. Please contact us at northeasterndogproject@gmail.com"
+        );
+      } else {
+        response.json().then(function(data) {
+          if (data) {
+            that.setState({
+              dog1id: data.dog1,
+              dog2id: data.dog2,
+              vote: null
+            });
+          } else {
+            //thank you for voting
+          }
+        });
+      }
+    });
+  }
+
+  componentDidMount() {
+    window.scroll(0, 0);
+  }
 
   render() {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
         <Paper className={classes.paper}>
-          <Typography variant="h3">Vote Page</Typography>
+          <Typography variant="h3" style={{paddingBottom: "7px"}}>Vote Page</Typography>
+          <Typography variant="p">Please select the corresponding radio button for which dog you think is cuter. If you have an indifferent view of which dog is cuter, please select "I am indifferent" When you click "Submit", you will be shown a new pair of dogs. You can vote as many times as you would like until you have seen all the pairs of dogs.</Typography>
         </Paper>
-        <Grid container spacing={24} className={classes.grid}>
-          <Grid item lg={5} xs={12} className={classes.gridContent}>
-            <Card className={classes.card}>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  alt="Contemplative Reptile"
-                  className={classes.media}
-                  image={require("./dogpics/riley.jpg")}
-                  title="DogA"
-                />
+        <VoteInner
+          dog1id={this.state.dog1id}
+          dog2id={this.state.dog2id}
+          vote={this.state.vote}
+          indifferent={this.state.indifferent}
+          handleVote={this.handleChange}
+          onSubmit={() => this.onSubmit}
+        />
 
-                <CardContent>Dog A</CardContent>
-              </CardActionArea>
-            </Card>
-          </Grid>
-
-          <Grid item lg={5} xs={12} className={classes.gridContent}>
-            <Card className={classes.card}>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  alt="Contemplative Reptile"
-                  className={classes.media}
-                  image={require("./dogpics/karen.jpg")}
-                  title="DogB"
-                />
-
-                <CardContent>Dog B</CardContent>
-              </CardActionArea>
-            </Card>
-          </Grid>
-        </Grid>
-
-            <FormControl component="fieldset" className={classes.formControl}>
-              <FormLabel component="legend" className={classes.label}>
-                <Typography variant="h6">Which dog is cuter?</Typography>
-              </FormLabel>
-              <RadioGroup
-                aria-label="Which dog is cuter?"
-                name="cuteVote"
-                className={classes.group}
-                value={this.state.value}
-                onChange={this.handleChange}
+        <Paper className={classes.paper}>
+          <Grid container spacing={24}>
+            <Grid item xs={12} className={classes.shareButtons}>
+              <TwitterShareButton
+                url="https://socialchoice.nuphilosophy.com"
+                via="I just voted in The Cute Dog Project. You can too!"
               >
-                <FormControlLabel
-                  value="A"
-                  control={<Radio />}
-                  label="Dog A"
-                />
-                <FormControlLabel
-                  value="B"
-                  control={<Radio />}
-                  label="Dog B"
-                />
-                <FormControlLabel
-                  value="C"
-                  control={<Radio />}
-                  label="I am indifferent"
-                />
-              </RadioGroup>
-              <Button variant="contained" type="submit">
-                Submit
-              </Button>
-            </FormControl>
-
+                <TwitterIcon size={32} rect={true} />
+              </TwitterShareButton>
+              <FacebookShareButton
+                url="https://socialchoice.nuphilosophy.com"
+                via="I just voted in The Cute Dog Project. You can too!"
+                style={{ paddingLeft: "10px" }}
+              >
+                <FacebookIcon size={32} rect={true} />
+              </FacebookShareButton>
+            </Grid>
+          </Grid>
+        </Paper>
       </div>
     );
   }
@@ -158,4 +195,4 @@ Vote.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Vote);
+export default withRouter(withStyles(styles)(Vote));

@@ -40,8 +40,8 @@ function Home(props) {
           </p>
           <p>
             One reputable method of settling disputes is to vote. We decided
-            that a voting contest should be put in place to settle whose dog
-            is cutest in the entirety of the Philosophy & Religion Department
+            that a voting contest should be put in place to settle whose dog is
+            cutest in the entirety of the Philosophy & Religion Department
             (students, faculty and staff) at Northeastern. Eventually, we hope
             to extend this to the entire university and beyond. However,
             answering the apparently simple question of "Who has the cutest
@@ -56,43 +56,50 @@ function Home(props) {
             <li>What would our voting procedure be?</li>
             <li>How do we define cuteness and can we even define it?</li>
             <li>
-              Who would be allowed to submit photos and who would be allowed
-              to vote?
+              Who would be allowed to submit photos and who would be allowed to
+              vote?
             </li>
             <li>
               How does this question help us uncover answers about generalized
               social choice theories and voting procedures?
             </li>
             <li>How do we control for possible social and cultural biases?</li>
-            <li>How do we collect and manage voting data in ways that are secure and respect privacy?</li>
+            <li>
+              How do we collect and manage voting data in ways that are secure
+              and respect privacy?
+            </li>
           </ul>
           <p>
-            Thus, determining whose dog is the cutest has required us to design a system informed by democratic theory, social choice theory, value theory, critical theory, philosophy of science, and information ethics. It has required us to grapple with the same sorts of issues that arise in democratic practice and social decision-making in other contexts – for example, selecting a presidential candidate from a crowded primary field or selecting applicants for admission to a competitive university.
+            Thus, determining whose dog is the cutest has required us to design
+            a system informed by democratic theory, social choice theory, value
+            theory, critical theory, philosophy of science, and information
+            ethics. It has required us to grapple with the same sorts of issues
+            that arise in democratic practice and social decision-making in
+            other contexts – for example, selecting a presidential candidate
+            from a crowded primary field or selecting applicants for admission
+            to a competitive university.
           </p>
           <p>But now, it is time to launch!</p>
           <p>
-          To answer our questions, and find the cutest dog, we will run our
-          project in three phases. The first phase is "The Submit Phase" which
-          will run from Wednesday, March 20th through Sunday, March 31st, during
-           which time, we will be accepting submissions for the contest. The
-           next phase is "The Vote Phase" which will begin on April 1st. During
-           that time, you can return to the website where you may cast votes on
-           pairs of dogs to help us determine which dogs are cuter than others.
-           The final phase is "The Analysis and Interpretation Phase." During that
-            time, you can return to the website to find out the winner, learn
-            about our methodology, and see how different voting and social
-            choice methods could have generated different results.
+            To answer our questions, and find the cutest dog, we are running our
+            project in three phases. During the first phase, we collected
+            submissions for the contest. We are now in the second phase and are
+            collecting votes on which dogs are cuter than others. Click on the
+            button below to cast your vote! We will collect votes through April
+            22, after which we will begin analysis and interpretation of the
+            results. We will post the results complete with description of our
+            methodology and analysis.
           </p>
           <p>
-          Thank you for your time helping us, finally, settle a philosophers' debate.
+            Thank you for your time helping us, finally, settle a philosophers'
+            debate.
           </p>
         </Paper>
-        <Grid item xs={12} >
+        <Grid item xs={12}>
           <Paper className={classes.categoriesPaper} elevation={3}>
             <p>
-              If you came to this website and thought to yourself, "No doubt,
-              my dog is the cutest", and would like to submit your dog to our
-              contest, please visit our Submit Page!
+              If you would like to vote on our dogs, you can go to the vote page
+              here!
             </p>
             <MuiThemeProvider theme={theme}>
               <Button
@@ -100,22 +107,28 @@ function Home(props) {
                 color="primary"
                 variant="contained"
                 component={Link}
-                to="/submit"
+                to="/demographics"
                 className={classes.button}
               >
-                Submit Your Dog!
+                Vote!
               </Button>
             </MuiThemeProvider>
           </Paper>
         </Grid>
       </div>
       <div className={classes.div}>
-        <Grid item xs={12} >
+        <Grid item xs={12}>
           <Paper className={classes.categoriesPaper} elevation={2}>
             <p>
               If you have questions or would like more information about the
-              Cute Dog Project please contact
-              us via <a rel="noopener noreferrer" target="_blank" href="mailto:northeasterndogproject@gmail.com">email</a>
+              Cute Dog Project please contact us via{" "}
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href="mailto:northeasterndogproject@gmail.com"
+              >
+                email
+              </a>
             </p>
           </Paper>
         </Grid>
@@ -142,7 +155,6 @@ const styles = theme => ({
     textAlign: "center"
   },
   categoriesPaper: {
-
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,

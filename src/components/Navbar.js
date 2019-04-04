@@ -9,13 +9,13 @@ import Typography from "@material-ui/core/Typography";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { Link } from 'react-router-dom';
 
-// import DrawerNav from "./DrawerNav";
+import DrawerNav from "./DrawerNav";
 
 
 const styles = {
   root: {
     flexGrow: 1,
-    
+
   },
   grow: {
     flexGrow: 1,
@@ -25,7 +25,7 @@ const styles = {
   },
   menuButton: {
     marginLeft: -12,
-    
+
   }
 };
 
@@ -58,7 +58,7 @@ function Navbar(props) {
       <div className={classes.root}>
         <AppBar position="static">
           <Toolbar>
-            {/* <DrawerNav /> */}
+            <DrawerNav />
             <Typography variant="h6" color="inherit" className={classes.grow} component={Link} to="/">
               The Cute Dog Project
             </Typography>
