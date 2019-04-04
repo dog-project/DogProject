@@ -9,6 +9,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import MenuIcon from '@material-ui/icons/Menu';
 import HomeIcon from "@material-ui/icons/Home";
 import AssignmentIcon from "@material-ui/icons/Assignment";
+import VpnLockIcon from "@material-ui/icons/VpnLock";
 import InfoIcon from "@material-ui/icons/Info";
 import { Link } from 'react-router-dom'
 import { IconButton } from "@material-ui/core";
@@ -56,31 +57,25 @@ class DrawerNav extends React.Component {
                 <ListItemIcon>
                     <HomeIcon />
                 </ListItemIcon>
-            <ListItemText primary="Home" className={ classes.text }/>
+                <ListItemText primary="Home" className={ classes.text }/>
             </ListItem>
-            {/* <ListItem component={Link} to="/about" className={ classes.item }>
-                <ListItemIcon>
-                    <InfoIcon />
-                </ListItemIcon>
-            <ListItemText primary="About our Project" className={ classes.text }/>
-            </ListItem> */}
-            {/* <ListItem component={Link} to="/submit" className={ classes.item }>
-                <ListItemIcon>
-                    <BackupIcon />
-                </ListItemIcon>
-            <ListItemText primary="Submit Your Dog" className={ classes.text }/>
-            </ListItem> */}
             <ListItem component={Link} to="/demographics" className={ classes.item }>
                 <ListItemIcon>
                     <AssignmentIcon />
                 </ListItemIcon>
-            <ListItemText primary="Vote" />
+                <ListItemText primary="Vote" />
             </ListItem>
             <ListItem component={Link} to="/meet-the-team" className={ classes.item }>
                 <ListItemIcon>
                     <InfoIcon />
                 </ListItemIcon>
-            <ListItemText primary="Meet The Team" />
+                <ListItemText primary="Meet The Team" />
+            </ListItem>
+            <ListItem component={Link} to="/privacy-policy" className={ classes.item }>
+                <ListItemIcon>
+                    <VpnLockIcon />
+                </ListItemIcon>
+                <ListItemText primary="Privacy Policy" />
             </ListItem>
 
         </List>
