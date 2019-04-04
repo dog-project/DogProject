@@ -8,6 +8,7 @@ import {
   Typography
 } from "@material-ui/core";
 import PropTypes from "prop-types";
+import Chart from "./Chart";
 
 const styles = {
   card: {
@@ -23,6 +24,8 @@ const styles = {
 class DogCard extends Component {
   render() {
     const { classes } = this.props;
+    const dogData = [this.props.dog.wins, this.props.dog.losses, this.props.dog.ties]
+
 
     return (
       <Card className={classes.card}>
@@ -37,9 +40,7 @@ class DogCard extends Component {
 
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">{this.props.id}</Typography>
-            <p>Wins Against This Dog: {this.props.dog.wins}</p>
-            <p>Losses Against This Dog: {this.props.dog.losses}</p>
-            <p>Ties Against This Dog: {this.props.dog.ties}</p>
+              <Chart results={dogData} />
           </CardContent>
         </CardActionArea>
       </Card>

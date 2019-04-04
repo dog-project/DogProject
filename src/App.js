@@ -10,6 +10,7 @@ import Results from "./Results";
 import SignUp from "./SignUp";
 import TeamPage from "./TeamPage";
 import PrivacyPolicy from "./PrivacyPolicy";
+import Chart from "./Chart";
 
 import "./App.css";
 
@@ -31,6 +32,7 @@ class App extends Component {
             <Route exact path="/privacy-policy" render={props => <PrivacyPolicy />} />
             <Route exact path="/thank-you" render={props => <ThankYou />} />
             <Route exact path="/results" render={props => <Results />} />
+            <Route exact path="/chart" render={props => <Chart />} />
             <Route component={NoMatch} />
           </Switch>
         </div>
