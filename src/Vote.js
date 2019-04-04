@@ -90,7 +90,8 @@ class Vote extends Component {
       dog1id: this.props.location.state.dog1id,
       dog2id: this.props.location.state.dog2id,
       vote: null,
-      indifferent: "-1"
+      indifferent: "-1",
+      voteCount: 0
     };
   }
 
@@ -109,6 +110,7 @@ class Vote extends Component {
 
   sendVoteToAPI() {
     const that = this;
+    const voteCount = that.state.voteCount;
     fetch(
       "https://us-east1-dog-project-234515.cloudfunctions.net/submit_vote",
       {
@@ -136,6 +138,7 @@ class Vote extends Component {
             that.setState({
               dog1id: data.dog1,
               dog2id: data.dog2,
+              voteCount: voteCount + 1,
               vote: null
             });
           } else {
@@ -152,11 +155,17 @@ class Vote extends Component {
 
   render() {
     const { classes } = this.props;
+    const voteCount = this.state.voteCount;
+
     return (
       <div className={classes.root}>
         <Paper className={classes.paper}>
           <Typography variant="h3" style={{paddingBottom: "7px"}}>Vote Page</Typography>
-          <Typography variant="p">Please select the corresponding radio button for which dog you think is cuter. If you have an indifferent view of which dog is cuter, please select "I am indifferent" When you click "Submit", you will be shown a new pair of dogs. You can vote as many times as you would like until you have seen all the pairs of dogs.</Typography>
+          <p>Please select the corresponding radio button for which dog you think is cuter. If you have an indifferent view of which dog is cuter, please select "I am indifferent".</p>
+          <p>When you click "Submit", you will be shown a new pair of dogs. You can vote as many times as you would like until you have seen all 325 possible pairing of the 26 dogs.</p>
+        </Paper>
+        <Paper className={classes.paper}>
+          <p>{voteCount}/325</p>
         </Paper>
         <VoteInner
           dog1id={this.state.dog1id}
