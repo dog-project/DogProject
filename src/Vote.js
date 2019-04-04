@@ -164,10 +164,10 @@ class Vote extends Component {
         <Paper className={classes.paper}>
           <Typography variant="h3" style={{paddingBottom: "7px"}}>Vote Page</Typography>
           <p>Please select the corresponding radio button for which dog you think is cuter. If you have an indifferent view of which dog is cuter, please select "I am indifferent".</p>
-          <p>When you click "Submit", you will be shown a new pair of dogs. You can vote as many times as you would like until you have seen all 325 possible pairings of the 26 dogs.</p>
+          <p>When you click "Submit", you will be shown a new pair of dogs.</p>
         </Paper>
         <Paper className={classes.paper}>
-          <p>{voteCount}/325</p>
+          <p>You have voted on <strong>{voteCount}/325</strong> pairings. You can stop voting at any time.</p>
         </Paper>
         <VoteInner
           dog1id={this.state.dog1id}
@@ -182,8 +182,9 @@ class Vote extends Component {
           <Grid container spacing={24}>
             <Grid item xs={12} className={classes.shareButtons}>
               <TwitterShareButton
-                url="https://socialchoice.nuphilosophy.com"
-                via="I just voted in The Cute Dog Project. You can too!"
+                title= "I just voted in The Cute Dog Project. You can too!"
+                url="I just voted in The Cute Dog Project. You can too!"
+                via=" https://socialchoice.nuphilosophy.com"
               >
                 <TwitterIcon size={32} rect={true} />
               </TwitterShareButton>
