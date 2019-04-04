@@ -125,15 +125,6 @@ class Results extends Component {
             :
             null }
         </Grid>
-        <Grid item s={6} md={3}>
-          <Paper elevation={3} className={classes.root}>
-            <Typography variant="h6">
-              The Cute Dog Project was supported by the Rossetti Family
-              Program for the Advancement of Humanities and the Ethics
-              Institute.
-            </Typography>
-          </Paper>
-        </Grid>
       </div>
     );
   }
