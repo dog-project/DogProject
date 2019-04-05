@@ -20,6 +20,7 @@ function Home(props) {
     <MuiThemeProvider theme={theme}>
       <div className={classes.div}>
         <Paper className={classes.root} elevation={6} color="secondary">
+          <img src={"/images/husky.jpg"} className={classes.husky} />
           <Typography
             variant="h3"
             color="primary"
@@ -27,7 +28,6 @@ function Home(props) {
           >
             Welcome to The Cute Dog Project
           </Typography>
-          <img src={"/images/husky.jpg"} className={ classes.husky }/>
 
           <p>
             We are a student research group within the Philosophy & Religion
@@ -169,11 +169,10 @@ const styles = theme => ({
     }
   },
   husky: {
-
     [theme.breakpoints.up("sm")]: {
       paddingLeft: "41%",
       maxHeight: "200px",
-      maxWidth: "200px",
+      maxWidth: "200px"
     },
     [theme.breakpoints.down("sm")]: {
       paddingTop: "10px",
