@@ -1,6 +1,15 @@
 import React, { Component } from "react";
 import DogCard from "./DogCard";
-import { Grid, Paper, Typography, MenuItem } from "@material-ui/core";
+import {
+  Grid,
+  Paper,
+  Typography,
+  MenuItem,
+  Card,
+  CardMedia,
+  CardContent,
+  CardActionArea
+} from "@material-ui/core";
 import Select from "@material-ui/core/Select";
 import { withStyles } from "@material-ui/core/styles";
 import PropTypes from "prop-types";
@@ -26,6 +35,23 @@ const styles = theme => ({
     },
     [theme.breakpoints.down("sm")]: {
       marginTop: "30px"
+    }
+  },
+  card: {
+    maxHeight: "250px",
+    maxWidth: "200px"
+  },
+  media: {
+    maxHeight: "200px",
+    maxWidth: "200px"
+  },
+  selectedDog: {
+    paddingTop: "20px",
+    [theme.breakpoints.up("sm")]: {
+      paddingLeft: "43%"
+    },
+    [theme.breakpoints.down("sm")]: {
+      paddingLeft: "20%"
     }
   }
 });
@@ -66,24 +92,21 @@ class Results extends Component {
       dogId: null,
       voteData: null
     };
-  };
+  }
 
   getVoteData() {
     const that = this;
-    fetch(
-      "https://us-east1-dog-project-234515.cloudfunctions.net/get_votes",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          id: this.state.dogId
-        })
-      }
-    ).then(function(response) {
+    fetch("https://us-east1-dog-project-234515.cloudfunctions.net/get_votes", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        id: this.state.dogId
+      })
+    }).then(function(response) {
       response.json().then(function(data) {
-        that.setState({voteData: data})
+        that.setState({ voteData: data });
       });
     });
   }
@@ -91,13 +114,15 @@ class Results extends Component {
   handleChange = event => {
     event.persist();
     console.log(event);
-    this.setState({ dogId: parseInt(event.target.value) }, () => { this.getVoteData(); })
-  }
+    this.setState({ dogId: parseInt(event.target.value) }, () => {
+      this.getVoteData();
+    });
+  };
 
   render() {
     const { classes } = this.props;
     const voteData = this.state.voteData;
-    console.log(voteData)
+    console.log(voteData);
     return (
       <div className={classes.root}>
         <Paper className={classes.header}>
@@ -108,22 +133,38 @@ class Results extends Component {
             Select a Dog to Compare:
             <select onChange={this.handleChange}>
               {possibleIds.map(id => {
-                return(<option value={id}>{id}</option>);
+                return <option value={id}>{id}</option>;
               })}
             </select>
           </Typography>
         </Paper>
+
+        <div className={classes.selectedDog}>
+          <Card className={classes.card}>
+            <CardActionArea>
+              <CardMedia
+                component="img"
+                alt="Selected Dog"
+                className={classes.media}
+                src={"/images/dogs/" + this.state.dogId + ".png"}
+                title="Selected Dog"
+              />
+              <CardContent>You selected: {this.state.dogId}</CardContent>
+            </CardActionArea>
+          </Card>
+        </div>
+
         <Grid container spacing={24} className={classes.grid}>
           {voteData
-            ?
-            Object.keys(voteData).map(id => {
-              console.log('in loop, ' + id + ' ' + voteData[id]);
-              return(<Grid item s={6} md={3}>
-                      <DogCard id={id} dog={voteData[id]} />
-                     </Grid>);
-            })
-            :
-            null }
+            ? Object.keys(voteData).map(id => {
+                console.log("in loop, " + id + " " + voteData[id]);
+                return (
+                  <Grid item s={6} md={3}>
+                    <DogCard id={id} dog={voteData[id]} />
+                  </Grid>
+                );
+              })
+            : null}
         </Grid>
       </div>
     );
