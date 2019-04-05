@@ -143,6 +143,7 @@ class Vote extends Component {
               voteCount: voteCount + 1,
               vote: null
             });
+            window.scroll(0, 0);
           } else {
             //thank you for voting
           }
@@ -162,12 +163,21 @@ class Vote extends Component {
     return (
       <div className={classes.root}>
         <Paper className={classes.paper}>
-          <Typography variant="h3" style={{paddingBottom: "7px"}}>Vote Page</Typography>
-          <p>Please select the corresponding radio button for which dog you think is cuter. If you have an indifferent view of which dog is cuter, please select "I am indifferent".</p>
+          <Typography variant="h3" style={{ paddingBottom: "7px" }}>
+            Vote Page
+          </Typography>
+          <p>
+            Please select the corresponding radio button for which dog you think
+            is cuter. If you have an indifferent view of which dog is cuter,
+            please select "I am indifferent".
+          </p>
           <p>When you click "Submit", you will be shown a new pair of dogs.</p>
         </Paper>
         <Paper className={classes.paper}>
-          <p>You have voted on <strong>{voteCount}/325</strong> pairings. You can stop voting at any time.</p>
+          <p>
+            You have voted on <strong>{voteCount}/325</strong> pairings. You can
+            stop voting at any time.
+          </p>
         </Paper>
         <VoteInner
           dog1id={this.state.dog1id}
@@ -182,7 +192,7 @@ class Vote extends Component {
           <Grid container spacing={24}>
             <Grid item xs={12} className={classes.shareButtons}>
               <TwitterShareButton
-                title= "I just voted in The Cute Dog Project. You can too!"
+                title="I just voted in The Cute Dog Project. You can too!"
                 url="I just voted in The Cute Dog Project. You can too!"
                 via=" https://socialchoice.nuphilosophy.com"
               >
