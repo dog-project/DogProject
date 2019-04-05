@@ -27,6 +27,7 @@ function Home(props) {
           >
             Welcome to The Cute Dog Project
           </Typography>
+          <img src={"/images/husky.jpg"} className={ classes.husky }/>
 
           <p>
             We are a student research group within the Philosophy & Religion
@@ -165,6 +166,20 @@ const styles = theme => ({
     marginBottom: "10px",
     "&:hover": {
       backgroundColor: grey[900]
+    }
+  },
+  husky: {
+
+    [theme.breakpoints.up("sm")]: {
+      paddingLeft: "41%",
+      maxHeight: "200px",
+      maxWidth: "200px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      paddingTop: "10px",
+      paddingLeft: "32%",
+      maxHeight: "100px",
+      maxWidth: "100px"
     }
   }
 });
