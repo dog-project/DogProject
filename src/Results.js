@@ -157,7 +157,6 @@ class Results extends Component {
         <Grid container spacing={24} className={classes.grid}>
           {voteData
             ? Object.keys(voteData).map(id => {
-                console.log("in loop, " + id + " " + voteData[id]);
                 return (
                   <Grid item s={6} md={3}>
                     <DogCard id={id} dog={voteData[id]} />

@@ -24,7 +24,8 @@ const styles = {
 class DogCard extends Component {
   render() {
     const { classes } = this.props;
-    const dogData = [this.props.dog.wins, this.props.dog.losses, this.props.dog.ties]
+    const dogData = [this.props.dog.wins, this.props.dog.losses, this.props.dog.ties];
+    const winPercent = parseFloat((this.props.dog.wins / (this.props.dog.wins + this.props.dog.losses + this.props.dog.ties)) * 100).toFixed(0)+"%";
 
 
     return (
@@ -40,7 +41,8 @@ class DogCard extends Component {
 
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">{this.props.id}</Typography>
-              <Chart results={dogData} />
+            <Chart results={dogData} />
+            <Typography gutterBottom variant="h6" component="h6">Win % over {this.props.id}: {winPercent}</Typography>
           </CardContent>
         </CardActionArea>
       </Card>
