@@ -6,7 +6,6 @@ import Home from "./Home";
 
 import Demographics from "./Demographics";
 import Vote from "./Vote";
-
 import SignUp from "./SignUp";
 import TeamPage from "./TeamPage";
 import PrivacyPolicy from "./PrivacyPolicy";

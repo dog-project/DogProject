@@ -20,6 +20,7 @@ function Home(props) {
     <MuiThemeProvider theme={theme}>
       <div className={classes.div}>
         <Paper className={classes.root} elevation={6} color="secondary">
+          <img src={"/images/husky.jpg"} className={classes.husky} alt={'NU Husky'}/>
           <Typography
             variant="h3"
             color="primary"
@@ -165,6 +166,19 @@ const styles = theme => ({
     marginBottom: "10px",
     "&:hover": {
       backgroundColor: grey[900]
+    }
+  },
+  husky: {
+    [theme.breakpoints.up("sm")]: {
+      paddingLeft: "41%",
+      maxHeight: "200px",
+      maxWidth: "200px"
+    },
+    [theme.breakpoints.down("sm")]: {
+      paddingTop: "10px",
+      paddingLeft: "32%",
+      maxHeight: "100px",
+      maxWidth: "100px"
     }
   }
 });

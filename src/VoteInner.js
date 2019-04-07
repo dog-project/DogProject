@@ -83,6 +83,9 @@ const styles = theme => ({
 });
 
 class VoteInner extends Component {
+
+
+
   render() {
     const { classes } = this.props;
     return (
