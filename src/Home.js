@@ -20,7 +20,7 @@ function Home(props) {
     <MuiThemeProvider theme={theme}>
       <div className={classes.div}>
         <Paper className={classes.root} elevation={6} color="secondary">
-          <img src={"/images/husky.jpg"} className={classes.husky} />
+          <img src={"/images/husky.jpg"} className={classes.husky} alt={'NU Husky'}/>
           <Typography
             variant="h3"
             color="primary"

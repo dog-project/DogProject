@@ -9,7 +9,6 @@ import Vote from "./Vote";
 import SignUp from "./SignUp";
 import TeamPage from "./TeamPage";
 import PrivacyPolicy from "./PrivacyPolicy";
-import Chart from "./Chart";
 
 import "./App.css";
 
@@ -30,7 +29,6 @@ class App extends Component {
             <Route exact path="/meet-the-team" render={props => <TeamPage />} />
             <Route exact path="/privacy-policy" render={props => <PrivacyPolicy />} />
             <Route exact path="/thank-you" render={props => <ThankYou />} />
-            <Route exact path="/chart" render={props => <Chart />} />
             <Route component={NoMatch} />
           </Switch>
         </div>
