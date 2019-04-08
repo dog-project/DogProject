@@ -137,6 +137,8 @@ class Results extends Component {
           </Typography>
         </Paper>
 
+        {this.state.dogId
+        ? 
         <div className={classes.selectedDog}>
           <Card className={classes.card}>
             <CardActionArea>
@@ -151,6 +153,8 @@ class Results extends Component {
             </CardActionArea>
           </Card>
         </div>
+        :
+        null}
 
         <Grid container spacing={24} className={classes.grid}>
           {voteData
