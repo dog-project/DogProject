@@ -5,11 +5,11 @@ script:
  - npm run build
 branches:
   only:
-    - master
+    - development
 install:
   - npm install
   - npm install -g firebase-tools
 after_success:
-  - firebase deploy --project the-dog-project --token $FIREBASE_TOKEN
+  - firebase deploy --project the-dog-project-staging --token $FIREBASE_TOKEN
 notifications:
   slack: nuphilosophy:DF9RFkQP3ojK6NqRPY0FOOSk
