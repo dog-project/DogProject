@@ -126,7 +126,7 @@ class Vote extends Component {
         })
       }
     ).then(function(response) {
-      if (response.status >= 500 && this.state.voteCount > 320) {
+      if (parseInt(response.status) >= 500 && this.state.voteCount > 320) {
         that.props.history.push("/thank-you");
       } else if (response.status !== 200) {
         alert(
@@ -143,7 +143,6 @@ class Vote extends Component {
               voteCount: voteCount + 1,
               vote: null
             });
-            window.scroll(0, 0);
           } else {
             //thank you for voting
           }
