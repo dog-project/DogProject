@@ -4,13 +4,11 @@ import {
   Grid,
   Paper,
   Typography,
-  MenuItem,
   Card,
   CardMedia,
   CardContent,
   CardActionArea
 } from "@material-ui/core";
-import Select from "@material-ui/core/Select";
 import { withStyles } from "@material-ui/core/styles";
 import PropTypes from "prop-types";
 
