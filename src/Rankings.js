@@ -132,10 +132,40 @@ const eloRankingOrder = [
   [69, -6201.240093560765]
 ];
 
+const winRatioOrder = [
+    [57, 0.69],
+    [20, 0.68],
+    [65, 0.63],
+    [40, 0.62],
+    [70, 0.59],
+    [35, 0.55],
+    [37, 0.54],
+    [43, 0.54],
+    [45, 0.52],
+    [34, 0.48],
+    [25, 0.47],
+    [52, 0.47],
+    [28, 0.44],
+    [54, 0.43], 
+    [24, 0.41], 
+    [51, 0.41],
+    [27, 0.4],
+    [44, 0.38],
+    [48, 0.34],
+    [56, 0.34],
+    [74, 0.32], 
+    [26, 0.3], 
+    [38, 0.3],
+    [72, 0.3],
+    [68, 0.23],
+    [69, 0.22]
+]
+
 class Rankings extends Component {
   state = {
     rankedPairs: false,
     eloRanking: false,
+    winRatio: false,
     method: null
   };
 
@@ -163,12 +193,19 @@ class Rankings extends Component {
       if (this.state.method === "rp") {
         this.setState({ rankedPairs: true });
         this.setState({ eloRanking: false });
+        this.setState({ winRatio: false});
       } else if (this.state.method === "elo") {
         this.setState({ eloRanking: true });
+        this.setState({ rankedPairs: false });
+        this.setState({ winRatio: false});
+      } else if (this.state.method === "wr") {
+        this.setState({ winRatio: true});
+        this.setState({ eloRanking: false });
         this.setState({ rankedPairs: false });
       } else {
         this.setState({ eloRanking: false });
         this.setState({ rankedPairs: false });
+        this.setState({ winRatio: false});
       }
     });
   };
@@ -189,6 +226,7 @@ class Rankings extends Component {
               <option value="">Select an option</option>
               <option value="rp">Ranked Pairs</option>
               <option value="elo">Elo Ranking</option>
+              <option value="wr">Win Ratio</option>
             </select>
           </Typography>
         </Paper>
@@ -242,6 +280,37 @@ class Rankings extends Component {
                         <Typography variant="h4">{place}</Typography>
                         <Typography variant="p" style={{marginBottom: "10px"}}>
                           Elo Score: {pair[1]}
+                        </Typography>
+                      </CardActionArea>
+                    </Card>
+                  </Grid>
+                );
+              })}
+            </Grid>
+          </div>
+        ) : null}
+        {this.state.winRatio ? (
+          <div>
+            <h1>Win Ratio</h1>
+            <Grid container spacing={24} className={classes.grid}>
+              {winRatioOrder.map(pair => {
+                place += 1;
+                return (
+                  <Grid item s={6} md={3}>
+                    <Card className={classes.card}>
+                      <CardActionArea>
+                        <CardMedia
+                          component="img"
+                          alt="Team Member"
+                          className={classes.media}
+                          src={"/images/dogs/" + pair[0] + ".png"}
+                          title="Team Member"
+                        />
+                      </CardActionArea>
+                      <CardActionArea>
+                        <Typography variant="h4">{place}</Typography>
+                        <Typography variant="p" style={{marginBottom: "10px"}}>
+                          Win ratio: {pair[1]}
                         </Typography>
                       </CardActionArea>
                     </Card>

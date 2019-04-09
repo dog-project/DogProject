@@ -13,6 +13,7 @@ import PrivacyPolicy from "./PrivacyPolicy";
 import Rankings from "./Rankings";
 
 import "./App.css";
+import Philosophy from "./Philosophy";
 
 
 
@@ -34,6 +35,7 @@ class App extends Component {
             <Route exact path="/thank-you" render={props => <ThankYou />} />
             <Route exact path="/results" render={props => <Results />} />
             <Route exact path="/rankings" render={props => <Rankings />} />
+            <Route exact path="/philosophy" render={props => <Philosophy />} />
             <Route component={NoMatch} />
           </Switch>
         </div>
