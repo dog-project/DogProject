@@ -14,6 +14,7 @@ import Rankings from "./Rankings";
 
 import "./App.css";
 import Philosophy from "./Philosophy";
+import CriticalTheory from "./CriticalTheory";
 
 
 
@@ -36,6 +37,7 @@ class App extends Component {
             <Route exact path="/results" render={props => <Results />} />
             <Route exact path="/rankings" render={props => <Rankings />} />
             <Route exact path="/philosophy" render={props => <Philosophy />} />
+            <Route exact path="/critical-theory" render={props => <CriticalTheory />} />
             <Route component={NoMatch} />
           </Switch>
         </div>

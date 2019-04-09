@@ -216,7 +216,7 @@ class Rankings extends Component {
     return (
       <div className={classes.root}>
         <Paper className={classes.header}>
-          <Typography variant="h2">Voting Results</Typography>
+          <Typography variant="h2">Rankings</Typography>
         </Paper>
         <Paper className={classes.header}>
           <Typography variant="h4">
@@ -232,6 +232,7 @@ class Rankings extends Component {
         {this.state.rankedPairs ? (
           <div>
             <h1>Ranked Pairs</h1>
+            <p>Explanation</p>
             <Grid container spacing={24} className={classes.grid}>
               {rankedPairOrder.map(id => {
                 place += 1;
@@ -260,6 +261,7 @@ class Rankings extends Component {
         {this.state.eloRanking ? (
           <div>
             <h1>Elo Ranking</h1>
+            <p>Explanation</p>
             <Grid container spacing={24} className={classes.grid}>
               {eloRankingOrder.map(pair => {
                 place += 1;
@@ -294,6 +296,7 @@ class Rankings extends Component {
         {this.state.winRatio ? (
           <div>
             <h1>Win Ratio</h1>
+            <p>Explanation</p>
             <Grid container spacing={24} className={classes.grid}>
               {winRatioOrder.map(pair => {
                 place += 1;

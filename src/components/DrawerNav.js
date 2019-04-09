@@ -6,12 +6,12 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import MenuIcon from '@material-ui/icons/Menu';
+import MenuIcon from "@material-ui/icons/Menu";
 import HomeIcon from "@material-ui/icons/Home";
 import AssignmentIcon from "@material-ui/icons/Assignment";
 import VpnLockIcon from "@material-ui/icons/VpnLock";
 import InfoIcon from "@material-ui/icons/Info";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import { IconButton } from "@material-ui/core";
 
 const styles = {
@@ -22,15 +22,11 @@ const styles = {
     color: "#ffffff"
   },
   item: {
-    '&:hover': {
-      backgroundColor: '#bdbdbd',
-
+    "&:hover": {
+      backgroundColor: "#bdbdbd"
     }
   },
-  text: {
-
-  }
-
+  text: {}
 };
 
 class DrawerNav extends React.Component {
@@ -53,61 +49,79 @@ class DrawerNav extends React.Component {
     const sideList = (
       <div className={classes.list}>
         <List>
-            <ListItem component={Link} to="/" className={ classes.item }>
-                <ListItemIcon>
-                    <HomeIcon />
-                </ListItemIcon>
-                <ListItemText primary="Home" className={ classes.text }/>
-            </ListItem>
-            <ListItem component={Link} to="/demographics" className={ classes.item }>
-                <ListItemIcon>
-                    <AssignmentIcon />
-                </ListItemIcon>
-                <ListItemText primary="Vote" />
-            </ListItem>
-            <ListItem component={Link} to="/meet-the-team" className={ classes.item }>
-                <ListItemIcon>
-                    <InfoIcon />
-                </ListItemIcon>
-                <ListItemText primary="Meet The Team" />
-            </ListItem>
-            <ListItem component={Link} to="/results" className={ classes.item }>
-                <ListItemIcon>
-                    <InfoIcon />
-                </ListItemIcon>
-                <ListItemText primary="Voting Results" />
-            </ListItem>
-            <ListItem component={Link} to="/rankings" className={ classes.item }>
-                <ListItemIcon>
-                    <InfoIcon />
-                </ListItemIcon>
-                <ListItemText primary="Rankings" />
-            </ListItem>
-            <ListItem component={Link} to="/philosophy" className={ classes.item }>
-                <ListItemIcon>
-                    <InfoIcon />
-                </ListItemIcon>
-                <ListItemText primary="Philosophy" />
-            </ListItem>
-            <ListItem component={Link} to="/privacy-policy" className={ classes.item }>
-                <ListItemIcon>
-                    <VpnLockIcon />
-                </ListItemIcon>
-                <ListItemText primary="Privacy Policy" />
-            </ListItem>
+          <ListItem component={Link} to="/" className={classes.item}>
+            <ListItemIcon>
+              <HomeIcon />
+            </ListItemIcon>
+            <ListItemText primary="Home" className={classes.text} />
+          </ListItem>
+          <ListItem
+            component={Link}
+            to="/demographics"
+            className={classes.item}
+          >
+            <ListItemIcon>
+              <AssignmentIcon />
+            </ListItemIcon>
+            <ListItemText primary="Vote" />
+          </ListItem>
+          <ListItem
+            component={Link}
+            to="/meet-the-team"
+            className={classes.item}
+          >
+            <ListItemIcon>
+              <InfoIcon />
+            </ListItemIcon>
+            <ListItemText primary="Meet The Team" />
+          </ListItem>
+          <ListItem component={Link} to="/rankings" className={classes.item}>
+            <ListItemIcon>
+              <InfoIcon />
+            </ListItemIcon>
+            <ListItemText primary="Rankings" />
+          </ListItem>
+          <ListItem component={Link} to="/results" className={classes.item}>
+            <ListItemIcon>
+              <InfoIcon />
+            </ListItemIcon>
+            <ListItemText primary="Voting Data" />
+          </ListItem>
 
+          <ListItem component={Link} to="/philosophy" className={classes.item}>
+            <ListItemIcon>
+              <InfoIcon />
+            </ListItemIcon>
+            <ListItemText primary="Philosophy of Cuteness" />
+          </ListItem>
+          <ListItem component={Link} to="/critical-theory" className={classes.item}>
+            <ListItemIcon>
+              <InfoIcon />
+            </ListItemIcon>
+            <ListItemText primary="Cutness across Cultures" />
+          </ListItem>
+          <ListItem
+            component={Link}
+            to="/privacy-policy"
+            className={classes.item}
+          >
+            <ListItemIcon>
+              <VpnLockIcon />
+            </ListItemIcon>
+            <ListItemText primary="Privacy Policy" />
+          </ListItem>
         </List>
       </div>
     );
 
-
-
     return (
       <div>
-        <IconButton onClick={this.toggleDrawer("left", true)} style={classes.icon} color="alternative">
-
-            <MenuIcon color="alternative" />
-
+        <IconButton
+          onClick={this.toggleDrawer("left", true)}
+          style={classes.icon}
+          color="alternative"
+        >
+          <MenuIcon color="alternative" />
         </IconButton>
         <Drawer
           open={this.state.left}
