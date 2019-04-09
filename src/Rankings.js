@@ -103,63 +103,62 @@ const rankedPairOrder = [
   "69"
 ];
 
-const eloRankingOrder = [
-  [20, 9604.881600034192],
-  [57, 9367.600436063756],
-  [40, 7677.683554040141],
-  [65, 7484.835501131847],
-  [70, 6081.226164901027],
-  [37, 4819.1382133343395],
-  [35, 4594.979610264548],
-  [43, 4243.842031767465],
-  [45, 3495.954469393671],
-  [34, 2945.379838010046],
-  [28, 1865.5124614860101],
-  [52, 1815.2774533347392],
-  [25, 1656.3875048204663],
-  [54, 1422.434074316493],
-  [51, 74.38433605413864],
-  [24, -257.1165151839793],
-  [27, -277.19257523378053],
-  [44, -1456.1051117165114],
-  [48, -2125.896470098761],
-  [74, -2904.2127797859794],
-  [56, -3278.3761377161823],
-  [38, -3371.91244629555],
-  [26, -3672.9653394708957],
-  [72, -4013.34252610956],
-  [68, -6186.219789013056],
-  [69, -6201.240093560765]
-];
+const eloRankingOrder = 
+[[20, 1415.269999999993],
+ [57, 1362.1600000000026],
+ [70, 1343.6699999999973],
+ [35, 1335.989999999999],
+ [65, 1298.7200000000066],
+ [43, 1285.7399999999996],
+ [40, 1276.4999999999986],
+ [45, 1271.0400000000059],
+ [37, 1229.3799999999947],
+ [34, 1220.62],
+ [25, 1209.5599999999977],
+ [52, 1205.0800000000065],
+ [51, 1191.7200000000014],
+ [54, 1191.359999999997],
+ [24, 1184.7499999999984],
+ [28, 1160.2000000000048],
+ [44, 1153.7100000000041],
+ [27, 1138.3099999999965],
+ [38, 1128.2799999999982],
+ [56, 1123.910000000001],
+ [26, 1103.8400000000051],
+ [48, 1098.2300000000027],
+ [72, 1092.549999999996],
+ [74, 1065.6099999999976],
+ [68, 1057.6499999999992],
+ [69, 1056.149999999998]]
 
 const winRatioOrder = [
-    [57, 0.69],
-    [20, 0.68],
-    [65, 0.63],
-    [40, 0.62],
-    [70, 0.59],
-    [35, 0.55],
-    [37, 0.54],
-    [43, 0.54],
-    [45, 0.52],
-    [34, 0.48],
-    [25, 0.47],
-    [52, 0.47],
-    [28, 0.44],
-    [54, 0.43], 
-    [24, 0.41], 
-    [51, 0.41],
-    [27, 0.4],
-    [44, 0.38],
-    [48, 0.34],
-    [56, 0.34],
-    [74, 0.32], 
-    [26, 0.3], 
-    [38, 0.3],
-    [72, 0.3],
-    [68, 0.23],
-    [69, 0.22]
-]
+  [57, 0.69],
+  [20, 0.68],
+  [65, 0.63],
+  [40, 0.62],
+  [70, 0.59],
+  [35, 0.55],
+  [37, 0.54],
+  [43, 0.54],
+  [45, 0.52],
+  [34, 0.48],
+  [25, 0.47],
+  [52, 0.47],
+  [28, 0.44],
+  [54, 0.43],
+  [24, 0.41],
+  [51, 0.41],
+  [27, 0.4],
+  [44, 0.38],
+  [48, 0.34],
+  [56, 0.34],
+  [74, 0.32],
+  [26, 0.3],
+  [38, 0.3],
+  [72, 0.3],
+  [68, 0.23],
+  [69, 0.22]
+];
 
 class Rankings extends Component {
   state = {
@@ -193,19 +192,19 @@ class Rankings extends Component {
       if (this.state.method === "rp") {
         this.setState({ rankedPairs: true });
         this.setState({ eloRanking: false });
-        this.setState({ winRatio: false});
+        this.setState({ winRatio: false });
       } else if (this.state.method === "elo") {
         this.setState({ eloRanking: true });
         this.setState({ rankedPairs: false });
-        this.setState({ winRatio: false});
+        this.setState({ winRatio: false });
       } else if (this.state.method === "wr") {
-        this.setState({ winRatio: true});
+        this.setState({ winRatio: true });
         this.setState({ eloRanking: false });
         this.setState({ rankedPairs: false });
       } else {
         this.setState({ eloRanking: false });
         this.setState({ rankedPairs: false });
-        this.setState({ winRatio: false});
+        this.setState({ winRatio: false });
       }
     });
   };
@@ -278,7 +277,10 @@ class Rankings extends Component {
                       </CardActionArea>
                       <CardActionArea>
                         <Typography variant="h4">{place}</Typography>
-                        <Typography variant="p" style={{marginBottom: "10px"}}>
+                        <Typography
+                          variant="p"
+                          style={{ marginBottom: "10px" }}
+                        >
                           Elo Score: {pair[1]}
                         </Typography>
                       </CardActionArea>
@@ -309,7 +311,10 @@ class Rankings extends Component {
                       </CardActionArea>
                       <CardActionArea>
                         <Typography variant="h4">{place}</Typography>
-                        <Typography variant="p" style={{marginBottom: "10px"}}>
+                        <Typography
+                          variant="p"
+                          style={{ marginBottom: "10px" }}
+                        >
                           Win ratio: {pair[1]}
                         </Typography>
                       </CardActionArea>
