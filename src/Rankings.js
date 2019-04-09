@@ -9,7 +9,6 @@ import {
 } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 
-import DogCard from "./DogCard";
 import PropTypes from "prop-types";
 
 const styles = theme => ({
@@ -46,34 +45,34 @@ const styles = theme => ({
   }
 });
 
-const possibleIds = [
-  20,
-  24,
-  25,
-  26,
-  27,
-  28,
-  34,
-  35,
-  37,
-  38,
-  40,
-  43,
-  44,
-  45,
-  48,
-  51,
-  52,
-  54,
-  56,
-  57,
-  65,
-  68,
-  69,
-  70,
-  72,
-  74
-];
+// const possibleIds = [
+//   20,
+//   24,
+//   25,
+//   26,
+//   27,
+//   28,
+//   34,
+//   35,
+//   37,
+//   38,
+//   40,
+//   43,
+//   44,
+//   45,
+//   48,
+//   51,
+//   52,
+//   54,
+//   56,
+//   57,
+//   65,
+//   68,
+//   69,
+//   70,
+//   72,
+//   74
+// ];
 
 const rankedPairOrder = [
   "57",
@@ -148,8 +147,6 @@ class Rankings extends Component {
 
   render() {
     const { classes } = this.props;
-    const rp = this.state.rankedPairs;
-    const elo = this.state.eloRanking;
     var place = 0;
 
     return (
