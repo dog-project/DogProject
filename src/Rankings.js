@@ -103,6 +103,34 @@ const rankedPairOrder = [
   "69"
 ];
 
+const eloRankingOrder = [
+  [20, 9604.881600034192],
+  [57, 9367.600436063756],
+  [40, 7677.683554040141],
+  [65, 7484.835501131847],
+  [70, 6081.226164901027],
+  [37, 4819.1382133343395],
+  [35, 4594.979610264548],
+  [43, 4243.842031767465],
+  [45, 3495.954469393671],
+  [34, 2945.379838010046],
+  [28, 1865.5124614860101],
+  [52, 1815.2774533347392],
+  [25, 1656.3875048204663],
+  [54, 1422.434074316493],
+  [51, 74.38433605413864],
+  [24, -257.1165151839793],
+  [27, -277.19257523378053],
+  [44, -1456.1051117165114],
+  [48, -2125.896470098761],
+  [74, -2904.2127797859794],
+  [56, -3278.3761377161823],
+  [38, -3371.91244629555],
+  [26, -3672.9653394708957],
+  [72, -4013.34252610956],
+  [68, -6186.219789013056],
+  [69, -6201.240093560765]
+];
 
 class Rankings extends Component {
   state = {
@@ -183,7 +211,7 @@ class Rankings extends Component {
                         />
                       </CardActionArea>
                       <CardActionArea>
-                        <Typography variant="p">{place}</Typography>
+                        <Typography variant="h4">{place}</Typography>
                       </CardActionArea>
                     </Card>
                   </Grid>
@@ -192,7 +220,37 @@ class Rankings extends Component {
             </Grid>
           </div>
         ) : null}
-        {this.state.eloRanking ? <h1>Elo Ranking</h1> : null}
+        {this.state.eloRanking ? (
+          <div>
+            <h1>Elo Ranking</h1>
+            <Grid container spacing={24} className={classes.grid}>
+              {eloRankingOrder.map(pair => {
+                place += 1;
+                return (
+                  <Grid item s={6} md={3}>
+                    <Card className={classes.card}>
+                      <CardActionArea>
+                        <CardMedia
+                          component="img"
+                          alt="Team Member"
+                          className={classes.media}
+                          src={"/images/dogs/" + pair[0] + ".png"}
+                          title="Team Member"
+                        />
+                      </CardActionArea>
+                      <CardActionArea>
+                        <Typography variant="h4">{place}</Typography>
+                        <Typography variant="p" style={{marginBottom: "10px"}}>
+                          Elo Score: {pair[1]}
+                        </Typography>
+                      </CardActionArea>
+                    </Card>
+                  </Grid>
+                );
+              })}
+            </Grid>
+          </div>
+        ) : null}
       </div>
     );
   }
