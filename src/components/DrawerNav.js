@@ -77,6 +77,12 @@ class DrawerNav extends React.Component {
                 </ListItemIcon>
                 <ListItemText primary="Voting Results" />
             </ListItem>
+            <ListItem component={Link} to="/rankings" className={ classes.item }>
+                <ListItemIcon>
+                    <InfoIcon />
+                </ListItemIcon>
+                <ListItemText primary="Rankings" />
+            </ListItem>
             <ListItem component={Link} to="/privacy-policy" className={ classes.item }>
                 <ListItemIcon>
                     <VpnLockIcon />

@@ -137,24 +137,22 @@ class Results extends Component {
           </Typography>
         </Paper>
 
-        {this.state.dogId
-        ? 
-        <div className={classes.selectedDog}>
-          <Card className={classes.card}>
-            <CardActionArea>
-              <CardMedia
-                component="img"
-                alt="Selected Dog"
-                className={classes.media}
-                src={"/images/dogs/" + this.state.dogId + ".png"}
-                title="Selected Dog"
-              />
-              <CardContent>You selected: {this.state.dogId}</CardContent>
-            </CardActionArea>
-          </Card>
-        </div>
-        :
-        null}
+        {this.state.dogId ? (
+          <div className={classes.selectedDog}>
+            <Card className={classes.card}>
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  alt="Selected Dog"
+                  className={classes.media}
+                  src={"/images/dogs/" + this.state.dogId + ".png"}
+                  title="Selected Dog"
+                />
+                <CardContent>You selected: {this.state.dogId}</CardContent>
+              </CardActionArea>
+            </Card>
+          </div>
+        ) : null}
 
         <Grid container spacing={24} className={classes.grid}>
           {voteData
