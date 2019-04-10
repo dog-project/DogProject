@@ -232,7 +232,7 @@ class Rankings extends Component {
         {this.state.rankedPairs ? (
           <div>
             <h1>Ranked Pairs</h1>
-            <p>The Ranked Pairs Voting system is tallies the votes between each pair of dogs and then sorts each pair by the "strength of victory" from first to last. Strength of victory is determined by the largest number of winning votes. </p>
+            <p>The Ranked Pairs Voting system tallies the votes between each pair of dogs and then sorts each pair by the "strength of victory" from first to last. Strength of victory is determined by the number of winning votes for the dog for each pair. </p>
             <Grid container spacing={24} className={classes.grid}>
               {rankedPairOrder.map(id => {
                 place += 1;
@@ -261,7 +261,7 @@ class Rankings extends Component {
         {this.state.eloRanking ? (
           <div>
             <h1>Elo Ranking</h1>
-            <p>For the Elo Ranking method, after every pairwise vote, the winning dog steals points from the losing dog. Each dog's rating is determined by the amounts of wins/losses they accrue. If a high rated player beats a low rated players, few points are transferred to the winning dog as that is the expected outcome, but if a low rated player beats a high rated player, then more points are transferred to the lower rated winning dog. </p>
+            <p>For the Elo Ranking method, after every pairwise vote, the winning dog steals points from the losing dog. Each dog's rating is determined by the amounts of wins/losses they accrue. If a high rated player beats a low rated player, fewer points are transferred to the winning dog as that is the expected outcome, but if a low rated player beats a high rated player, then more points are transferred to the lower rated winning dog. </p>
             <Grid container spacing={24} className={classes.grid}>
               {eloRankingOrder.map(pair => {
                 place += 1;
@@ -314,7 +314,7 @@ class Rankings extends Component {
                       </CardActionArea>
                       <CardActionArea>
                         <Typography variant="h4">{place}</Typography>
-                        <Typography
+                        <Typography 
                           variant="p"
                           style={{ marginBottom: "10px" }}
                         >
