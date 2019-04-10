@@ -5,7 +5,8 @@ import { withStyles } from "@material-ui/core/styles";
 const styles = theme => ({
   root: {
     paddingLeft: "30px",
-    paddingRight: "30px"
+    paddingRight: "30px",
+    textIndent: "2em"
   },
   header: {
     marginTop: "20px",
@@ -54,11 +55,15 @@ class CriticalTheory extends Component {
             dear, beloved or, something lovely, pleasing, or charming.
             <br />
             <br />
+          </Typography>
+          <Typography variant="p">
             The root for this is “प्यार”, which is a direct translation of love.
             So, it can be used exactly in the way love or lovable is used in
             English.
-            <br />
-            <br />
+          </Typography>
+          <br />
+          <br />
+          <Typography variant="p">
             Because Hindi has different adjective forms for different genders,
             there is a slight difference in describing a male or female (of any
             species) as lovable (or loving). Things that count as male gendered
@@ -213,6 +218,8 @@ class CriticalTheory extends Component {
           </a>
           <br />
           <br />
+        </Typography>
+        <Typography variant="p">
           An interesting fact is that in modern Chinese “cute” means something
           different in ancient Chinese. In ancient Chinese, “cute” is more
           accurate to translate it into “可怜 (ke-lián)”. According to

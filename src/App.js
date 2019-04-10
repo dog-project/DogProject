@@ -11,10 +11,13 @@ import SignUp from "./SignUp";
 import TeamPage from "./TeamPage";
 import PrivacyPolicy from "./PrivacyPolicy";
 import Rankings from "./Rankings";
-
-import "./App.css";
 import Philosophy from "./Philosophy";
 import CriticalTheory from "./CriticalTheory";
+import SocialChoice from "./SocialChoice";
+import Governance from "./Governance";
+
+import "./App.css";
+
 
 
 
@@ -38,6 +41,8 @@ class App extends Component {
             <Route exact path="/rankings" render={props => <Rankings />} />
             <Route exact path="/philosophy" render={props => <Philosophy />} />
             <Route exact path="/critical-theory" render={props => <CriticalTheory />} />
+            <Route exact path="/social-choice" render={props=> <SocialChoice />} />
+            <Route exact path="/governance" render={props=> <Governance />} />
             <Route component={NoMatch} />
           </Switch>
         </div>
