@@ -227,10 +227,12 @@ class Rankings extends Component {
                   adding that preference creates a cycle A > B > C > A), ignore
                   the preferences expressed for the pair.
                 </li>
-                Find the dog that did not lose in any relationships considered,
-                and add that dog to the next available spot in the ranking. No
-                longer have to consider relationships with that dog.
-                <li />
+                <li>
+                  Find the dog that did not lose in any relationships
+                  considered, and add that dog to the next available spot in the
+                  ranking. No longer have to consider relationships with that
+                  dog.
+                </li>
                 <li>
                   Repeat steps 2-3 until there are no more dogs left to
                   consider.
