@@ -101,7 +101,19 @@ class DrawerNav extends React.Component {
             <ListItemIcon>
               <InfoIcon />
             </ListItemIcon>
-            <ListItemText primary="Cutness across Cultures" />
+            <ListItemText primary="Cuteness across Cultures" />
+          </ListItem>
+          <ListItem component={Link} to="/social-choice" className={classes.item}>
+            <ListItemIcon>
+              <InfoIcon />
+            </ListItemIcon>
+            <ListItemText primary="Social Choice Theory" />
+          </ListItem>
+          <ListItem component={Link} to="/governance" className={classes.item}>
+            <ListItemIcon>
+              <InfoIcon />
+            </ListItemIcon>
+            <ListItemText primary="Lessons For Democracy and Governance" />
           </ListItem>
           <ListItem
             component={Link}
