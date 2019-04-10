@@ -44,8 +44,6 @@ const styles = theme => ({
   }
 });
 
-
-
 const rankedPairOrder = [
   "57",
   "20",
@@ -220,21 +218,22 @@ class Rankings extends Component {
               the relationship. It’s computed as follows:
               <ol>
                 <li>
-                  Sort each pair of dogs by the the largest win ratio (win -
-                  loss) / total.
+                  Sort each pair of dogs by the win ratio (win - loss) / total.
                 </li>
                 <li>
-                  Go through all the dog pairs. If the relationship is
-                  transitive with the other relationships already considered
-                  (ϱ), consider the relationship in the ranking. If it is not
-                  transitive, ignore the preferences expressed for the pair.
+                  Go through all the dog pairs. If a given relationship is
+                  transitive to relationships already considered, consider the
+                  relationship preference. If it is not transitive (so that
+                  adding that preference creates a cycle A > B > C > A), ignore
+                  the preferences expressed for the pair.
                 </li>
                 Find the dog that did not lose in any relationships considered,
-                and add that dog to the next available spot in the ranking.
-                Remove that dog from ϱ.
+                and add that dog to the next available spot in the ranking. No
+                longer have to consider relationships with that dog.
                 <li />
                 <li>
-                  Repeat steps 2-3 until there are no more dogs left in ϱ.
+                  Repeat steps 2-3 until there are no more dogs left to
+                  consider.
                 </li>
               </ol>{" "}
             </p>
@@ -253,7 +252,7 @@ class Rankings extends Component {
                           title="Team Member"
                         />
                       </CardActionArea>
-                      <CardActionArea style={{ textAlign: "center"}}>
+                      <CardActionArea style={{ textAlign: "center" }}>
                         <Typography variant="h4">{place}</Typography>
                       </CardActionArea>
                     </Card>
@@ -280,12 +279,16 @@ class Rankings extends Component {
               player (Alice) and a lower ranked player (Bob) corresponds to the
               likelihood that the Alice wins in a match between her and Bob. If
               Alice has a score 400 points higher than Bob, then Alice has a 10
-              to 1 chance of winning a match. If Alice wins the match, her score
-              will increase a little and Bob’s will decrease a little since the
-              result is expected. Conversely, if Bob wins the match, his score
-              will increase a lot and Alice’s will decrease a lot. Applied to
-              our dogs, the `chess match` is one comparison between two dogs.
-              The difference in ranks between two dogs in a comparison
+              to 1 chance of winning a match (if Alice were to have a score 800
+              points higher, she would have a 100 to 1 chance of winning). If
+              Alice wins the match, her score will increase a little and Bob’s
+              will decrease a little since the result is expected. Conversely,
+              if Bob wins the match, his score will increase a lot and Alice’s
+              will decrease a lot.
+              <br />
+              <br />
+              Applied to our dogs, the ‘chess match’ is one comparison between
+              two dogs. The difference in ranks between two dogs in a comparison
               corresponds to the likelihood higher ranked dog is chosen for as
               cuter in a given vote. The more votes we get, the more accurate
               the dogs Elo scores become.
@@ -305,7 +308,7 @@ class Rankings extends Component {
                           title="Team Member"
                         />
                       </CardActionArea>
-                      <CardActionArea style={{ textAlign: "center"}}>
+                      <CardActionArea style={{ textAlign: "center" }}>
                         <Typography variant="h4">{place}</Typography>
                         <Typography
                           variant="p"
@@ -342,7 +345,7 @@ class Rankings extends Component {
                           title="Team Member"
                         />
                       </CardActionArea>
-                      <CardActionArea style={{ textAlign: "center"}}>
+                      <CardActionArea style={{ textAlign: "center" }}>
                         <Typography variant="h4">{place}</Typography>
                         <Typography
                           variant="p"
