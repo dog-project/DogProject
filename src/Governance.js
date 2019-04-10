@@ -65,13 +65,24 @@ class Governance extends Component {
                 That said, submitters were required to provide certain
                 identifying information, increasing our privacy and security
                 efforts. We expect this to lead to a lower rate of
-                participation.
+                participation. While in elections for the President, there are
+                never too few potential candidates there are regulatory bodies
+                that ensure that candidates reveal information that might
+                compromise their ability to perform fairly in the election
+                process. In our context, we needed an equivalent to the U.S.
+                Federal Election Commission to make sure that every submission
+                we received was going to be able to fairly compete.
               </li>
               <li>
                 Conversely, we do not collect any identifying information on
                 voters, decreasing the need for information privacy and making
                 it more difficult to detect “fraudulent” activity. Therefore, we
-                expect relatively higher voter participation rates.
+                expect relatively higher voter participation rates. In the 2018
+                Georgia Secretary of State election, this discussion of how to
+                incentivize participation while maintaining the integrity of the
+                election was hotly debated because controversial security
+                concerns were considered especially likely to discourage
+                opposition to the incumbent.
               </li>
             </ul>
           </Typography>
@@ -93,9 +104,30 @@ class Governance extends Component {
                 reverse-search for images, scrubbed photograph metadata.
               </li>
               <li>
-                We have procedures in place to prevent and detect voter fraud
-                including a required captcha and the ability to analyze vote
-                patterns (vote speed).
+                We discussed several procedures to prevent and detect voter
+                fraud including a captcha and the use of vote pattern analytics
+                (vote speed). A captcha is a digital verification tool which
+                presents the user with a task that would be easy for a human to
+                complete but should be excessively difficult for a bot or
+                computer program to solve. Ultimately, we decided against
+                implementing the captcha in order to maximize the number of
+                votes during the competition (some voters would opt out of
+                participating when presented with a captcha). We have the means
+                to retroactively exclude voter sets if they follow suspicious
+                patterns (i.e. each vote is inputted after exactly 0.75 seconds)
+                and will take this into account as we parse through the data.
+              </li>
+              <li>
+                This ties into how difficult it is to modernize federal and
+                state voting systems. Preventing voter fraud is of the utmost
+                importance in government elections. It is common to think that
+                digital transactions are more secure, traceable, and efficient
+                as compared to “pen and paper” transactions. Ironically, voting
+                on pen and paper and in-person verification efforts are more
+                effective fraud detectors and deterrents when compared to their
+                digital counterparts. We needed to consider the digital tools
+                (captcha, data analytics) for this exact reason; our voting
+                procedure was less secure because it was entirely digital.
               </li>
             </ul>
           </Typography>
@@ -105,7 +137,6 @@ class Governance extends Component {
         <Typography variant="h4" className={classes.header}>
           Governance
         </Typography>
-
 
         <div className={classes.separation}>
           <Typography variant="h5">
