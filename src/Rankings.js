@@ -232,7 +232,7 @@ class Rankings extends Component {
         {this.state.rankedPairs ? (
           <div>
             <h1>Ranked Pairs</h1>
-            <p>Explanation</p>
+            <p>The Ranked Pairs Voting system is tallies the votes between each pair of dogs and then sorts each pair by the "strength of victory" from first to last. Strength of victory is determined by the largest number of winning votes. </p>
             <Grid container spacing={24} className={classes.grid}>
               {rankedPairOrder.map(id => {
                 place += 1;
@@ -261,7 +261,7 @@ class Rankings extends Component {
         {this.state.eloRanking ? (
           <div>
             <h1>Elo Ranking</h1>
-            <p>Explanation</p>
+            <p>For the Elo Ranking method, after every pairwise vote, the winning dog steals points from the losing dog. Each dog's rating is determined by the amounts of wins/losses they accrue. If a high rated player beats a low rated players, few points are transferred to the winning dog as that is the expected outcome, but if a low rated player beats a high rated player, then more points are transferred to the lower rated winning dog. </p>
             <Grid container spacing={24} className={classes.grid}>
               {eloRankingOrder.map(pair => {
                 place += 1;
@@ -296,7 +296,7 @@ class Rankings extends Component {
         {this.state.winRatio ? (
           <div>
             <h1>Win Ratio</h1>
-            <p>Explanation</p>
+            <p>This is calculated simply by by calculating how many wins each dog got per voting matchup.</p>
             <Grid container spacing={24} className={classes.grid}>
               {winRatioOrder.map(pair => {
                 place += 1;
