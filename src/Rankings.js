@@ -16,8 +16,7 @@ const styles = theme => ({
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
-    marginBottom: "10px",
-    textAlign: "center"
+    marginBottom: "10px"
   },
   header: {
     marginTop: "25px",
@@ -103,33 +102,34 @@ const rankedPairOrder = [
   "69"
 ];
 
-const eloRankingOrder =
-[[20, 1415],
- [57, 1362],
- [70, 1344],
- [35, 1336],
- [65, 1299],
- [43, 1286],
- [40, 1276],
- [45, 1271],
- [37, 1229],
- [34, 1221],
- [25, 1210],
- [52, 1205],
- [51, 1192],
- [54, 1191],
- [24, 1185],
- [28, 1160],
- [44, 1154],
- [27, 1138],
- [38, 1128],
- [56, 1124],
- [26, 1104],
- [48, 1098],
- [72, 1093],
- [74, 1066],
- [68, 1058],
- [69, 1056]]
+const eloRankingOrder = [
+  [20, 1415],
+  [57, 1362],
+  [70, 1344],
+  [35, 1336],
+  [65, 1299],
+  [43, 1286],
+  [40, 1276],
+  [45, 1271],
+  [37, 1229],
+  [34, 1221],
+  [25, 1210],
+  [52, 1205],
+  [51, 1192],
+  [54, 1191],
+  [24, 1185],
+  [28, 1160],
+  [44, 1154],
+  [27, 1138],
+  [38, 1128],
+  [56, 1124],
+  [26, 1104],
+  [48, 1098],
+  [72, 1093],
+  [74, 1066],
+  [68, 1058],
+  [69, 1056]
+];
 
 const winRatioOrder = [
   [57, 0.69],
@@ -231,8 +231,40 @@ class Rankings extends Component {
         </Paper>
         {this.state.rankedPairs ? (
           <div>
-            <h1>Ranked Pairs</h1>
-            <p>The Ranked Pairs Voting system tallies the votes between each pair of dogs and then sorts each pair by the "strength of victory" from first to last. Strength of victory is determined by the number of winning votes for the dog for each pair. </p>
+            <h1 className={classes.header}>Ranked Pairs</h1>
+            <p>
+              The{" "}
+              <a
+                href="https://en.wikipedia.org/wiki/Ranked_pairs"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ranked Pair
+              </a>{" "}
+              method finds a winner who is preferred over all the other dogs if
+              that dog exists. If that dog does not exist, then all the
+              intransitive relationships are removed in order of the strength of
+              the relationship. It’s computed as follows:
+              <ol>
+                <li>
+                  Sort each pair of dogs by the the largest win ratio (win -
+                  loss) / total.
+                </li>
+                <li>
+                  Go through all the dog pairs. If the relationship is
+                  transitive with the other relationships already considered
+                  (ϱ), consider the relationship in the ranking. If it is not
+                  transitive, ignore the preferences expressed for the pair.
+                </li>
+                Find the dog that did not lose in any relationships considered,
+                and add that dog to the next available spot in the ranking.
+                Remove that dog from ϱ.
+                <li />
+                <li>
+                  Repeat steps 2-3 until there are no more dogs left in ϱ.
+                </li>
+              </ol>{" "}
+            </p>
             <Grid container spacing={24} className={classes.grid}>
               {rankedPairOrder.map(id => {
                 place += 1;
@@ -248,7 +280,7 @@ class Rankings extends Component {
                           title="Team Member"
                         />
                       </CardActionArea>
-                      <CardActionArea>
+                      <CardActionArea style={{ textAlign: "center"}}>
                         <Typography variant="h4">{place}</Typography>
                       </CardActionArea>
                     </Card>
@@ -260,8 +292,31 @@ class Rankings extends Component {
         ) : null}
         {this.state.eloRanking ? (
           <div>
-            <h1>Elo Ranking</h1>
-            <p>For the Elo Ranking method, after every pairwise vote, the winning dog steals points from the losing dog. Each dog's rating is determined by the amounts of wins/losses they accrue. If a high rated player beats a low rated player, fewer points are transferred to the winning dog as that is the expected outcome, but if a low rated player beats a high rated player, then more points are transferred to the lower rated winning dog. </p>
+            <h1 className={classes.header}>Elo Ranking</h1>
+            <p>
+              The{" "}
+              <a
+                href="https://en.wikipedia.org/wiki/Elo_rating_system)"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Elo
+              </a>{" "}
+              rating system is most well known for its usage in chess rankings.
+              The difference in the Elo scores assigned to a higher ranked
+              player (Alice) and a lower ranked player (Bob) corresponds to the
+              likelihood that the Alice wins in a match between her and Bob. If
+              Alice has a score 400 points higher than Bob, then Alice has a 10
+              to 1 chance of winning a match. If Alice wins the match, her score
+              will increase a little and Bob’s will decrease a little since the
+              result is expected. Conversely, if Bob wins the match, his score
+              will increase a lot and Alice’s will decrease a lot. Applied to
+              our dogs, the `chess match` is one comparison between two dogs.
+              The difference in ranks between two dogs in a comparison
+              corresponds to the likelihood higher ranked dog is chosen for as
+              cuter in a given vote. The more votes we get, the more accurate
+              the dogs Elo scores become.
+            </p>
             <Grid container spacing={24} className={classes.grid}>
               {eloRankingOrder.map(pair => {
                 place += 1;
@@ -277,7 +332,7 @@ class Rankings extends Component {
                           title="Team Member"
                         />
                       </CardActionArea>
-                      <CardActionArea>
+                      <CardActionArea style={{ textAlign: "center"}}>
                         <Typography variant="h4">{place}</Typography>
                         <Typography
                           variant="p"
@@ -295,8 +350,10 @@ class Rankings extends Component {
         ) : null}
         {this.state.winRatio ? (
           <div>
-            <h1>Win Ratio</h1>
-            <p>This is calculated simply by by calculating how many wins each dog got per voting matchup.</p>
+            <h1 className={classes.header}>Win Ratio</h1>
+            <p className={classes.header}>
+              This is is a simple calculation of (wins - losses)/total.
+            </p>
             <Grid container spacing={24} className={classes.grid}>
               {winRatioOrder.map(pair => {
                 place += 1;
@@ -312,9 +369,9 @@ class Rankings extends Component {
                           title="Team Member"
                         />
                       </CardActionArea>
-                      <CardActionArea>
+                      <CardActionArea style={{ textAlign: "center"}}>
                         <Typography variant="h4">{place}</Typography>
-                        <Typography 
+                        <Typography
                           variant="p"
                           style={{ marginBottom: "10px" }}
                         >
