@@ -35,7 +35,7 @@ class Philosophy extends Component {
     return (
       <div className={classes.root}>
         <Typography variant="h4" className={classes.header}>
-          METAPHYSICS in <i>The Dog Project</i>
+          Philosophical Questions
         </Typography>
 
         <Grid container spacing={24}>
