@@ -5,13 +5,13 @@ import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
-import FormatListNumberedIcon from "@material-ui/icons/FormatListNumbered";
+//import FormatListNumberedIcon from "@material-ui/icons/FormatListNumbered";
 import ListItemText from "@material-ui/core/ListItemText";
 import MenuIcon from "@material-ui/icons/Menu";
 import HomeIcon from "@material-ui/icons/Home";
 import PersonIcon from "@material-ui/icons/Person";
 import HowToVoteIcon from "@material-ui/icons/HowToVote";
-import AssignmentIcon from "@material-ui/icons/Assignment";
+//import AssignmentIcon from "@material-ui/icons/Assignment";
 import VpnLockIcon from "@material-ui/icons/VpnLock";
 import InfoIcon from "@material-ui/icons/Info";
 import { Link } from "react-router-dom";
@@ -78,7 +78,7 @@ class DrawerNav extends React.Component {
             </ListItemIcon>
             <ListItemText primary="Meet The Team" />
           </ListItem>
-          <ListItem component={Link} to="/rankings" className={classes.item}>
+          {/* <ListItem component={Link} to="/rankings" className={classes.item}>
             <ListItemIcon>
               <FormatListNumberedIcon />
             </ListItemIcon>
@@ -89,7 +89,7 @@ class DrawerNav extends React.Component {
               <AssignmentIcon />
             </ListItemIcon>
             <ListItemText primary="Voting Data" />
-          </ListItem>
+          </ListItem> */}
 
           <ListItem component={Link} to="/philosophy" className={classes.item}>
             <ListItemIcon>
