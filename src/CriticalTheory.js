@@ -26,7 +26,7 @@ class CriticalTheory extends Component {
     return (
       <div className={classes.root}>
         <Typography variant="h4" className={classes.header}>
-          "Cuteness" across Cultures
+          "Cuteness" Across Cultures
         </Typography>
         <Typography variant="p">
           It is important to recognize that our project is essentially focused
