@@ -17,6 +17,7 @@ import SocialChoice from "./SocialChoice";
 import Governance from "./Governance";
 
 import "./App.css";
+import Lessons from "./Lessons";
 
 
 
@@ -43,6 +44,7 @@ class App extends Component {
             <Route exact path="/critical-theory" render={props => <CriticalTheory />} />
             <Route exact path="/social-choice" render={props=> <SocialChoice />} />
             <Route exact path="/governance" render={props=> <Governance />} />
+            <Route exact path="/lessons-for-democracy" render={props=> <Lessons />} />
             <Route component={NoMatch} />
           </Switch>
         </div>
