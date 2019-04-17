@@ -207,12 +207,12 @@ const miniMaxRanking = [
 [27, 0.534],
 [24, 0.526],
 [51, 0.513],
-[44, 0.5],
+[44, 0.500],
 [48, 0.494],
-[74, 0.46],
+[74, 0.460],
 [72, 0.453],
 [56, 0.451],
-[38, 0.45],
+[38, 0.450],
 [26, 0.443],
 [68, 0.393],
 [69, 0.383]
@@ -223,6 +223,8 @@ class Rankings extends Component {
     rankedPairs: false,
     eloRanking: false,
     winRatio: false,
+    copelandsRanking: false,
+    miniMaxRanking: false,
     method: null
   };
 
@@ -251,18 +253,38 @@ class Rankings extends Component {
         this.setState({ rankedPairs: true });
         this.setState({ eloRanking: false });
         this.setState({ winRatio: false });
+        this.setState({ copelandsRanking: false });
+        this.setState({ miniMaxRanking: false });
       } else if (this.state.method === "elo") {
         this.setState({ eloRanking: true });
         this.setState({ rankedPairs: false });
         this.setState({ winRatio: false });
+        this.setState({ copelandsRanking: false });
+        this.setState({ miniMaxRanking: false });
       } else if (this.state.method === "wr") {
         this.setState({ winRatio: true });
         this.setState({ eloRanking: false });
         this.setState({ rankedPairs: false });
+        this.setState({ copelandsRanking: false });
+        this.setState({ miniMaxRanking: false });
+      }  else if (this.state.method === "cop") {
+        this.setState({ winRatio: false });
+        this.setState({ eloRanking: false });
+        this.setState({ rankedPairs: false });
+        this.setState({ copelandsRanking: true });
+        this.setState({ miniMaxRanking: false });
+      } else if (this.state.method === "mini") {
+        this.setState({ winRatio: false });
+        this.setState({ eloRanking: false });
+        this.setState({ rankedPairs: false });
+        this.setState({ copelandsRanking: false });
+        this.setState({ miniMaxRanking: true });
       } else {
         this.setState({ eloRanking: false });
         this.setState({ rankedPairs: false });
         this.setState({ winRatio: false });
+        this.setState({ copelandsRanking: false });
+        this.setState({ miniMaxRanking: false });
       }
     });
   };
@@ -283,6 +305,8 @@ class Rankings extends Component {
               <option value="">Select an option</option>
               <option value="rp">Ranked Pairs</option>
               <option value="elo">Elo Ranking</option>
+              <option value="cop">Copeland's Ranking</option>
+              <option value="mini">MiniMax Ranking</option>
               <option value="wr">Win Ratio</option>
             </select>
           </Typography>
@@ -407,6 +431,87 @@ class Rankings extends Component {
             </Grid>
           </div>
         ) : null}
+        {this.state.copelandsRanking ? (
+          <div>
+            <h1 className={classes.header}>Copeland's Ranking</h1>
+            <p>
+              The{" "}
+              <a
+                href="https://en.wikipedia.org/wiki/Copeland%27s_method"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Copeland's Ranking
+              </a>{" "} method...
+            </p>
+            <Grid container spacing={24} className={classes.grid}>
+              {copelandsRanking.map(pair => {
+                place += 1;
+                return (
+                  <Grid item s={6} md={3}>
+                    <Card className={classes.card}>
+                      <CardActionArea>
+                        <CardMedia
+                          component="img"
+                          alt="Team Member"
+                          className={classes.media}
+                          src={"/images/dogs/" + pair[0] + ".png"}
+                          title="Team Member"
+                        />
+                      </CardActionArea>
+                      <CardActionArea style={{ textAlign: "center"}}>
+                        <Typography variant="h4">{place}</Typography>
+                        <Typography
+                          variant="p"
+                          style={{ marginBottom: "10px" }}
+                        >
+                          Score: {pair[1]}
+                        </Typography>
+                      </CardActionArea>
+                    </Card>
+                  </Grid>
+                );
+              })}
+            </Grid>
+          </div>
+        ) : null}
+        {this.state.miniMaxRanking ? (
+          <div>
+            <h1 className={classes.header}>MiniMax Ranking</h1>
+            <p>
+              The MiniMax rating system...
+            </p>
+            <Grid container spacing={24} className={classes.grid}>
+              {miniMaxRanking.map(pair => {
+                place += 1;
+                return (
+                  <Grid item s={6} md={3}>
+                    <Card className={classes.card}>
+                      <CardActionArea>
+                        <CardMedia
+                          component="img"
+                          alt="Team Member"
+                          className={classes.media}
+                          src={"/images/dogs/" + pair[0] + ".png"}
+                          title="Team Member"
+                        />
+                      </CardActionArea>
+                      <CardActionArea style={{ textAlign: "center"}}>
+                        <Typography variant="h4">{place}</Typography>
+                        <Typography
+                          variant="p"
+                          style={{ marginBottom: "10px" }}
+                        >
+                          Win/Tie Percentage: {(pair[1]*100).toFixed(1)}%
+                        </Typography>
+                      </CardActionArea>
+                    </Card>
+                  </Grid>
+                );
+              })}
+            </Grid>
+          </div>
+        ) : null}
         {this.state.winRatio ? (
           <div>
             <h1 className={classes.header}>Win Ratio</h1>
@@ -434,7 +539,7 @@ class Rankings extends Component {
                           variant="p"
                           style={{ marginBottom: "10px" }}
                         >
-                          Win ratio: {pair[1]}
+                          Win Ratio: {pair[1]}
                         </Typography>
                       </CardActionArea>
                     </Card>
