@@ -160,6 +160,64 @@ const winRatioOrder = [
   [69, 0.22]
 ];
 
+const copelandsRanking = [
+  [57, 25],
+  [20, 23],
+  [65, 21],
+  [40, 17],
+  [70, 17],
+  [35, 15],
+  [37, 13],
+  [43, 13],
+  [45, 9],
+  [28, 7],
+  [34, 5],
+  [52, 3],
+  [25, -1],
+  [27, -1],
+  [54, -1],
+  [24, -5],
+  [51, -7],
+  [44, -9],
+  [48, -11],
+  [74, -13],
+  [26, -17],
+  [56, -17],
+  [38, -19],
+  [72, -19],
+  [68, -23],
+  [69, -25]
+];
+
+const miniMaxRanking = [
+[20, 0.757],
+[57, 0.755],
+[40, 0.713],
+[65, 0.709],
+[70, 0.661],
+[37, 0.655],
+[35, 0.641],
+[43, 0.639],
+[45, 0.612],
+[34, 0.584],
+[52, 0.581],
+[25, 0.573],
+[28, 0.567],
+[54, 0.554],
+[27, 0.534],
+[24, 0.526],
+[51, 0.513],
+[44, 0.5],
+[48, 0.494],
+[74, 0.46],
+[72, 0.453],
+[56, 0.451],
+[38, 0.45],
+[26, 0.443],
+[68, 0.393],
+[69, 0.383]
+];
+
 class Rankings extends Component {
   state = {
     rankedPairs: false,
@@ -256,10 +314,11 @@ class Rankings extends Component {
                   (ϱ), consider the relationship in the ranking. If it is not
                   transitive, ignore the preferences expressed for the pair.
                 </li>
-                Find the dog that did not lose in any relationships considered,
-                and add that dog to the next available spot in the ranking.
-                Remove that dog from ϱ.
-                <li />
+                <li>
+                  Find the dog that did not lose in any relationships considered,
+                  and add that dog to the next available spot in the ranking.
+                  Remove that dog from ϱ.
+                </li>
                 <li>
                   Repeat steps 2-3 until there are no more dogs left in ϱ.
                 </li>
