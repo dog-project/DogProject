@@ -9,6 +9,7 @@ import FormatListNumberedIcon from "@material-ui/icons/FormatListNumbered";
 import ListItemText from "@material-ui/core/ListItemText";
 import MenuIcon from "@material-ui/icons/Menu";
 import HomeIcon from "@material-ui/icons/Home";
+import SchoolIcon from "@material-ui/icons/School";
 import PersonIcon from "@material-ui/icons/Person";
 import HowToVoteIcon from "@material-ui/icons/HowToVote";
 import AssignmentIcon from "@material-ui/icons/Assignment";
@@ -58,21 +59,13 @@ class DrawerNav extends React.Component {
             </ListItemIcon>
             <ListItemText primary="Home" className={classes.text} />
           </ListItem>
-          <ListItem
-            component={Link}
-            to="/demographics"
-            className={classes.item}
-          >
+          <ListItem component={Link} to="/demographics" className={classes.item}>
             <ListItemIcon>
               <HowToVoteIcon />
             </ListItemIcon>
             <ListItemText primary="Vote" />
           </ListItem>
-          <ListItem
-            component={Link}
-            to="/meet-the-team"
-            className={classes.item}
-          >
+          <ListItem component={Link} to="/meet-the-team" className={classes.item}>
             <ListItemIcon>
               <PersonIcon />
             </ListItemIcon>
@@ -90,36 +83,19 @@ class DrawerNav extends React.Component {
             </ListItemIcon>
             <ListItemText primary="Voting Data" />
           </ListItem>
-
           <ListItem component={Link} to="/philosophy" className={classes.item}>
             <ListItemIcon>
-              <InfoIcon />
+              <AssignmentIcon />
             </ListItemIcon>
-            <ListItemText primary="Philosophy of Cuteness" />
+            <ListItemText primary="Philosophy" />
           </ListItem>
-          <ListItem component={Link} to="/critical-theory" className={classes.item}>
+          <ListItem component={Link} to="/lessons-for-democracy" className={classes.item}>
             <ListItemIcon>
-              <InfoIcon />
+              <SchoolIcon />
             </ListItemIcon>
-            <ListItemText primary="Cuteness across Cultures" />
+            <ListItemText primary="Lessons For Democracy" />
           </ListItem>
-          <ListItem component={Link} to="/social-choice" className={classes.item}>
-            <ListItemIcon>
-              <InfoIcon />
-            </ListItemIcon>
-            <ListItemText primary="Social Choice Theory" />
-          </ListItem>
-          <ListItem component={Link} to="/governance" className={classes.item}>
-            <ListItemIcon>
-              <InfoIcon />
-            </ListItemIcon>
-            <ListItemText primary="Lessons For Democracy and Governance" />
-          </ListItem>
-          <ListItem
-            component={Link}
-            to="/privacy-policy"
-            className={classes.item}
-          >
+          <ListItem component={Link} to="/privacy-policy" className={classes.item}>
             <ListItemIcon>
               <VpnLockIcon />
             </ListItemIcon>
