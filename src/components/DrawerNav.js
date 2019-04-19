@@ -85,7 +85,7 @@ class DrawerNav extends React.Component {
           </ListItem>
           <ListItem component={Link} to="/philosophy" className={classes.item}>
             <ListItemIcon>
-              <AssignmentIcon />
+              <InfoIcon />
             </ListItemIcon>
             <ListItemText primary="Philosophy" />
           </ListItem>

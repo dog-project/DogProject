@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { Typography, Grid } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
-import ViewsTable from "./components/ViewsTable";
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
