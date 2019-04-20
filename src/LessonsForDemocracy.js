@@ -7,13 +7,9 @@ import Tab from '@material-ui/core/Tab';
 import PropTypes from "prop-types";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
-import PhilOfCuteness from "./components/PhilOfCuteness"
-import CuteAcrossCultures from "./components/CuteAcrossCultures"
-import SocialChoice from "./components/SocialChoice"
-
 function TabContainer(props) {
   return (
-    <Typography component="div" >
+    <Typography component="div" style={{ padding: 8 * 3 }}>
       {props.children}
     </Typography>
   );
@@ -25,7 +21,8 @@ TabContainer.propTypes = {
 
 const styles = theme => ({
   root: {
-
+    paddingLeft: "30px",
+    paddingRight: "30px",
     textIndent: "2em"
   },
   header: {
@@ -47,7 +44,6 @@ const styles = theme => ({
     marginBottom: "30px"
   }
 });
-
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -68,8 +64,7 @@ const theme = createMuiTheme({
     // error: will use the default color
   }
 });
-
-class Philosophy extends Component {
+class LessonsForDemocracy extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -87,30 +82,26 @@ class Philosophy extends Component {
 
     return (
       <div className={classes.root}>
-
+        <Typography variant="h4" className={classes.header}>
+          Lessons For Democracy
+        </Typography>
         <MuiThemeProvider theme={theme}>
           <div className={classes.root}>
             <AppBar position="static">
               <Tabs value={value} onChange={this.handleChange} variant="scrollable" scrollButtons="auto">
-                <Tab label="What is Cuteness?" />
-                <Tab label="Cuteness Across Cultures" />
-                <Tab label="Social Choice Theory" />
-                {/* <Tab label="Ethics and Governance" />
+                <Tab label="Ethics and Governance" />
                 <Tab label="Voting Systems" />
-                <Tab label="Democracy" /> */}
+                <Tab label="Democracy" />
               </Tabs>
             </AppBar>
-            {value === 0 && <TabContainer><PhilOfCuteness /></TabContainer>}
-            {value === 1 && <TabContainer><CuteAcrossCultures /></TabContainer>}
-            {value === 2 && <TabContainer><SocialChoice /></TabContainer>}
-            {/* {value === 3 && <TabContainer>Ethics and Governance</TabContainer>}
-            {value === 4 && <TabContainer>Voting Systems</TabContainer>}
-            {value === 5 && <TabContainer>Democracy</TabContainer>} */}
+            {value === 0 && <TabContainer>Ethics and Governance</TabContainer>}
+            {value === 1 && <TabContainer>Voting Systems</TabContainer>}
+            {value === 2 && <TabContainer>Democracy</TabContainer>}
           </div>
         </MuiThemeProvider>
       </div>
-    )
+    );
   }
 }
 
-export default withStyles(styles)(Philosophy);
+export default withStyles(styles)(LessonsForDemocracy);

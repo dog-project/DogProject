@@ -94,6 +94,7 @@ class Results extends Component {
 
   getVoteData() {
     const that = this;
+
     fetch("https://us-east1-dog-project-234515.cloudfunctions.net/get_votes", {
       method: "POST",
       headers: {
@@ -112,9 +113,15 @@ class Results extends Component {
   handleChange = event => {
     event.persist();
     console.log(event);
-    this.setState({ dogId: parseInt(event.target.value) }, () => {
-      this.getVoteData();
-    });
+    if (event.target.value !== "") {
+      this.setState({ dogId: parseInt(event.target.value) }, () => {
+        this.getVoteData();
+      });
+    }
+    else {
+      this.setState({ dogId: event.target.value});
+      this.setState({ voteData: null });
+    }
   };
 
   render() {
@@ -130,6 +137,7 @@ class Results extends Component {
           <Typography variant="h4">
             Select a Dog to Compare:
             <select onChange={this.handleChange}>
+              <option value="">Select a Dog</option>
               {possibleIds.map(id => {
                 return <option value={id}>{id}</option>;
               })}

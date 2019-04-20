@@ -1,23 +1,19 @@
 import React, { Component } from "react";
 import Navbar from "./components/Navbar";
-import ThankYou from "./components/ThankYou";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./Home";
-
 import Demographics from "./Demographics";
 import Vote from "./Vote";
-//import Results from "./Results";
-import SignUp from "./SignUp";
 import TeamPage from "./TeamPage";
 import PrivacyPolicy from "./PrivacyPolicy";
+import ThankYou from "./components/ThankYou";
+//import Results from "./Results";
 //import Rankings from "./Rankings";
 import Philosophy from "./Philosophy";
-import CriticalTheory from "./CriticalTheory";
-import SocialChoice from "./SocialChoice";
-import Governance from "./Governance";
+//import LessonsForDemocracy from "./LessonsForDemocracy";
 
 import "./App.css";
-import Lessons from "./Lessons";
+
 
 
 
@@ -32,7 +28,6 @@ class App extends Component {
           <Navbar />
           <Switch>
             <Route exact path="/" render={props => (<div><Home /></div>)} />
-            <Route exact path="/sign-up" render={props => <SignUp />} />
             <Route exact path="/demographics" render={props => <Demographics />} />
             <Route exact path="/vote" render={props => <Vote />} />
             <Route exact path="/meet-the-team" render={props => <TeamPage />} />
@@ -41,10 +36,8 @@ class App extends Component {
             {/* <Route exact path="/results" render={props => <Results />} />
             <Route exact path="/rankings" render={props => <Rankings />} /> */}
             <Route exact path="/philosophy" render={props => <Philosophy />} />
-            <Route exact path="/critical-theory" render={props => <CriticalTheory />} />
-            <Route exact path="/social-choice" render={props=> <SocialChoice />} />
-            <Route exact path="/governance" render={props=> <Governance />} />
-            <Route exact path="/lessons-for-democracy" render={props=> <Lessons />} />
+            
+            
             <Route component={NoMatch} />
           </Switch>
         </div>

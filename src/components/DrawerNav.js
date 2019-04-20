@@ -9,11 +9,12 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import MenuIcon from "@material-ui/icons/Menu";
 import HomeIcon from "@material-ui/icons/Home";
+import SchoolIcon from "@material-ui/icons/School";
 import PersonIcon from "@material-ui/icons/Person";
 import HowToVoteIcon from "@material-ui/icons/HowToVote";
 //import AssignmentIcon from "@material-ui/icons/Assignment";
 import VpnLockIcon from "@material-ui/icons/VpnLock";
-import InfoIcon from "@material-ui/icons/Info";
+// import InfoIcon from "@material-ui/icons/Info";
 import { Link } from "react-router-dom";
 import { IconButton } from "@material-ui/core";
 
@@ -90,36 +91,11 @@ class DrawerNav extends React.Component {
             </ListItemIcon>
             <ListItemText primary="Voting Data" />
           </ListItem> */}
-
           <ListItem component={Link} to="/philosophy" className={classes.item}>
             <ListItemIcon>
-              <InfoIcon />
+              <SchoolIcon />
             </ListItemIcon>
-            <ListItemText primary="Philosophy of Cuteness" />
-          </ListItem>
-          <ListItem component={Link} to="/critical-theory" className={classes.item}>
-            <ListItemIcon>
-              <InfoIcon />
-            </ListItemIcon>
-            <ListItemText primary="Cuteness across Cultures" />
-          </ListItem>
-          <ListItem component={Link} to="/social-choice" className={classes.item}>
-            <ListItemIcon>
-              <InfoIcon />
-            </ListItemIcon>
-            <ListItemText primary="Social Choice Theory" />
-          </ListItem>
-          <ListItem component={Link} to="/governance" className={classes.item}>
-            <ListItemIcon>
-              <InfoIcon />
-            </ListItemIcon>
-            <ListItemText primary="Ethics and Governance" />
-          </ListItem>
-          <ListItem component={Link} to="/lessons-for-democracy" className={classes.item}>
-            <ListItemIcon>
-              <InfoIcon />
-            </ListItemIcon>
-            <ListItemText primary="Lessons For Democracy" />
+            <ListItemText primary="Lessons From The Project" />
           </ListItem>
           <ListItem
             component={Link}

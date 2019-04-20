@@ -4,13 +4,8 @@ import { withStyles } from "@material-ui/core/styles";
 
 const styles = theme => ({
   root: {
-    [theme.breakpoints.up("sm")]: {
-      paddingLeft: "30px",
-      paddingRight: "50px",
-    },
-    [theme.breakpoints.down("sm")]: {
-
-    },
+    paddingLeft: "30px",
+    paddingRight: "30px",
     textIndent: "2em"
   },
   header: {
@@ -25,18 +20,18 @@ const styles = theme => ({
   }
 });
 
-class CriticalTheory extends Component {
+class CuteAcrossCultures extends Component {
   render() {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
         <Typography variant="h4" className={classes.header}>
-          "Cuteness" Across Cultures
+          "Cuteness" across Cultures
         </Typography>
         <Typography variant="p">
           It is important to recognize that our project is essentially focused
           on the English-language sense of “cuteness” and “cute dog”, which has
-          its own <a href="/philosophy">philosophical problems</a>. There are
+          its own <a href="/philosophy">philosophical problem</a>. There are
           other languages around the world that have similar terms. But, these
           other terms are also importantly different from the way we understand
           “cute” in English. Below is an explanation of the closest translation
@@ -45,16 +40,6 @@ class CriticalTheory extends Component {
           native English speakers may have different interpretations of
           cuteness---there may be a Texas “cute” that differs from a New England
           “cute”.
-        </Typography>
-        <br />
-        <Typography variant="p">
-          <a
-            href="https://www.google.com/search?tbm=isch&source=hp&biw=1440&bih=814&ei=GmKvXLanAeKyggeYooSACA&q=cute+dog&oq=cute+dog&gs_l=img.3..0l10.2240.2884..3017...0.0..1.60.454.8......2....1..gws-wiz-img.....0.KkLa9oHmYxc"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Google Image Search for "cute dog" in English
-          </a>
         </Typography>
 
         <div className={classes.separation}>
@@ -76,6 +61,7 @@ class CriticalTheory extends Component {
             So, it can be used exactly in the way love or lovable is used in
             English.
           </Typography>
+          <br />
           <br />
           <Typography variant="p">
             Because Hindi has different adjective forms for different genders,
@@ -221,7 +207,15 @@ class CriticalTheory extends Component {
           example the Chinese phrase “...add exact phrase here…” translates
           literally to “her grandma is cute”. In describing non-human objects;
           Chinese cute is more relevant to small and fluffy things, which tends
-          to imply a certain kind of dog.
+          to imply a certain kind of dog. For example, see the Google image
+          search for{" "}
+          <a
+            href="https://www.google.com/search?biw=1194&bih=698&tbm=isch&sa=1&ei=u4p-XPPmMqa2ggf02pz4Cg&q=可爱+狗&oq=可爱+狗&gs_l=img.3..0i12l10.6670.7749..7970...0.0..0.61.291.5......1....1..gws-wiz-img.c4AfZrXbGUs"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            “可爱 狗” (cute dog) in Chinese.
+          </a>
           <br />
           <br />
         </Typography>
@@ -239,15 +233,6 @@ class CriticalTheory extends Component {
         </Typography>
         <br />
         <br />
-        <Typography variant="p">
-          <a
-            href="https://www.google.com/search?biw=1194&bih=698&tbm=isch&sa=1&ei=u4p-XPPmMqa2ggf02pz4Cg&q=可爱+狗&oq=可爱+狗&gs_l=img.3..0i12l10.6670.7749..7970...0.0..0.61.291.5......1....1..gws-wiz-img.c4AfZrXbGUs"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Google Image Search for “可爱 狗” (cute dog) in Chinese.
-          </a>
-        </Typography>
         <br />
         <br />
       </div>
@@ -255,4 +240,4 @@ class CriticalTheory extends Component {
   }
 }
 
-export default withStyles(styles)(CriticalTheory);
+export default withStyles(styles)(CuteAcrossCultures);
