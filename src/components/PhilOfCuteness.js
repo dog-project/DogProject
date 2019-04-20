@@ -40,9 +40,7 @@ class PhilOfCuteness extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        <Typography variant="h4" className={classes.header}>
-          METAPHYSICS in <i>The Dog Project</i>
-        </Typography>
+
 
         <Grid container spacing={24}>
           <Grid item sm={12} md={6}>
