@@ -12,7 +12,7 @@ import ThankYou from "./components/ThankYou";
 import Results from "./Results";
 import Rankings from "./Rankings";
 import Philosophy from "./Philosophy";
-import LessonsForDemocracy from "./LessonsForDemocracy";
+//import LessonsForDemocracy from "./LessonsForDemocracy";
 
 import "./App.css";
 
@@ -37,7 +37,7 @@ class App extends Component {
             <Route exact path="/results" render={props => <Results />} />
             <Route exact path="/rankings" render={props => <Rankings />} />
             <Route exact path="/philosophy" render={props => <Philosophy />} />
-            <Route exact path="/lessons-for-democracy" render={props => <LessonsForDemocracy />} />
+            {/* <Route exact path="/lessons-for-democracy" render={props => <LessonsForDemocracy />} /> */}
             <Route component={NoMatch} />
           </Switch>
         </div>

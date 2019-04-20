@@ -5,8 +5,14 @@ import ViewsTable from "./ViewsTable";
 
 const styles = theme => ({
   root: {
-    paddingLeft: "30px",
-    paddingRight: "30px",
+    [theme.breakpoints.up("sm")]: {
+      paddingLeft: "30px",
+      paddingRight: "50px",
+    },
+    [theme.breakpoints.down("sm")]: {
+
+    },
+
     textIndent: "2em"
   },
   header: {
@@ -18,8 +24,8 @@ const styles = theme => ({
     padding: "20px"
   },
   cute1pic: {
-    maxHeight: "100%",
-    maxWidth: "100%"
+    height: "auto",
+    width: "100%"
   },
 
   separation: {

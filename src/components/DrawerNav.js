@@ -14,7 +14,7 @@ import PersonIcon from "@material-ui/icons/Person";
 import HowToVoteIcon from "@material-ui/icons/HowToVote";
 import AssignmentIcon from "@material-ui/icons/Assignment";
 import VpnLockIcon from "@material-ui/icons/VpnLock";
-import InfoIcon from "@material-ui/icons/Info";
+// import InfoIcon from "@material-ui/icons/Info";
 import { Link } from "react-router-dom";
 import { IconButton } from "@material-ui/core";
 
@@ -59,13 +59,21 @@ class DrawerNav extends React.Component {
             </ListItemIcon>
             <ListItemText primary="Home" className={classes.text} />
           </ListItem>
-          <ListItem component={Link} to="/demographics" className={classes.item}>
+          <ListItem
+            component={Link}
+            to="/demographics"
+            className={classes.item}
+          >
             <ListItemIcon>
               <HowToVoteIcon />
             </ListItemIcon>
             <ListItemText primary="Vote" />
           </ListItem>
-          <ListItem component={Link} to="/meet-the-team" className={classes.item}>
+          <ListItem
+            component={Link}
+            to="/meet-the-team"
+            className={classes.item}
+          >
             <ListItemIcon>
               <PersonIcon />
             </ListItemIcon>
@@ -85,17 +93,15 @@ class DrawerNav extends React.Component {
           </ListItem>
           <ListItem component={Link} to="/philosophy" className={classes.item}>
             <ListItemIcon>
-              <InfoIcon />
-            </ListItemIcon>
-            <ListItemText primary="Philosophy" />
-          </ListItem>
-          <ListItem component={Link} to="/lessons-for-democracy" className={classes.item}>
-            <ListItemIcon>
               <SchoolIcon />
             </ListItemIcon>
-            <ListItemText primary="Lessons For Democracy" />
+            <ListItemText primary="Lessons From The Project" />
           </ListItem>
-          <ListItem component={Link} to="/privacy-policy" className={classes.item}>
+          <ListItem
+            component={Link}
+            to="/privacy-policy"
+            className={classes.item}
+          >
             <ListItemIcon>
               <VpnLockIcon />
             </ListItemIcon>

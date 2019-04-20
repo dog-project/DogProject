@@ -13,7 +13,7 @@ import SocialChoice from "./components/SocialChoice"
 
 function TabContainer(props) {
   return (
-    <Typography component="div" style={{ padding: 8 * 3 }}>
+    <Typography component="div" >
       {props.children}
     </Typography>
   );
@@ -25,8 +25,7 @@ TabContainer.propTypes = {
 
 const styles = theme => ({
   root: {
-    paddingLeft: "30px",
-    paddingRight: "30px",
+
     textIndent: "2em"
   },
   header: {
@@ -88,9 +87,7 @@ class Philosophy extends Component {
 
     return (
       <div className={classes.root}>
-        <Typography variant="h4" className={classes.header}>
-          Philosophy
-        </Typography>
+
         <MuiThemeProvider theme={theme}>
           <div className={classes.root}>
             <AppBar position="static">
@@ -98,11 +95,17 @@ class Philosophy extends Component {
                 <Tab label="What is Cuteness?" />
                 <Tab label="Cuteness Across Cultures" />
                 <Tab label="Social Choice Theory" />
+                <Tab label="Ethics and Governance" />
+                <Tab label="Voting Systems" />
+                <Tab label="Democracy" />
               </Tabs>
             </AppBar>
             {value === 0 && <TabContainer><PhilOfCuteness /></TabContainer>}
             {value === 1 && <TabContainer><CuteAcrossCultures /></TabContainer>}
             {value === 2 && <TabContainer><SocialChoice /></TabContainer>}
+            {value === 3 && <TabContainer>Ethics and Governance</TabContainer>}
+            {value === 4 && <TabContainer>Voting Systems</TabContainer>}
+            {value === 5 && <TabContainer>Democracy</TabContainer>}
           </div>
         </MuiThemeProvider>
       </div>

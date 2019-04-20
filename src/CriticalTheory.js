@@ -4,8 +4,13 @@ import { withStyles } from "@material-ui/core/styles";
 
 const styles = theme => ({
   root: {
-    paddingLeft: "30px",
-    paddingRight: "30px",
+    [theme.breakpoints.up("sm")]: {
+      paddingLeft: "30px",
+      paddingRight: "50px",
+    },
+    [theme.breakpoints.down("sm")]: {
+
+    },
     textIndent: "2em"
   },
   header: {
