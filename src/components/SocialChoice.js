@@ -24,6 +24,14 @@ const styles = theme => ({
   socialPic: {
     height: "auto",
     width: "100%"
+  },
+  doubleVid: {
+    [theme.breakpoints.up("sm")]: {
+      height: "415px"
+    },
+    [theme.breakpoints.down("sm")]: {
+      height: "auto"
+    },
   }
 });
 
@@ -123,7 +131,7 @@ class SocialChoice extends Component {
             <Grid item sm={12} md={6}>
               <iframe
                 width="100%"
-                height="auto"
+                height="100%"
                 src="https://www.youtube.com/embed/HCo5ZX0G5ls"
                 frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -177,7 +185,7 @@ class SocialChoice extends Component {
               <br />
               <iframe
                 width="100%"
-                height="auto"
+                height="100%"
                 src="https://www.youtube.com/embed/EaE9ihpHEI8"
                 frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -279,20 +287,20 @@ class SocialChoice extends Component {
             </Grid>
           </Grid>
           <Grid container spacing={24}>
-            <Grid item sm={12} md={6}>
+            <Grid item sm={12} md={6} className={classes.doubleVid}>
               <Typography variant="p">
                 <b>Explanation of Arrow’s Theorem</b>
               </Typography>
               <br />
               <iframe
                 width="100%"
-                height="auto"
+                height="100%"
                 src="https://www.youtube.com/embed/Q60ZXoXP6Hg"
                 frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
                 title="hello"
-                style={{ alignItems: "center" }}
+                
               />
             </Grid>
             <Grid item sm={12} md={6}>
@@ -302,13 +310,13 @@ class SocialChoice extends Component {
               <br />
               <iframe
                 width="100%"
-                height="auto"
+                height="100%"
                 src="https://www.youtube.com/embed/BldRtik-r-o"
                 frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
                 title="hello"
-                style={{ alignItems: "center" }}
+                
               />
             </Grid>
           </Grid>
