@@ -12,7 +12,7 @@ const styles = theme => ({
     [theme.breakpoints.down("sm")]: {
 
     },
-
+    paddingTop: "30px",
     textIndent: "2em"
   },
   header: {
