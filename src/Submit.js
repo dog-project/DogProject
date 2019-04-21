@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 //import classNames from "classnames";
 import {
   withStyles,
-
+  MuiThemeProvider,
+  createMuiTheme
 } from "@material-ui/core/styles";
 //import MenuItem from "@material-ui/core/MenuItem";
 
@@ -21,7 +22,7 @@ import FormLabel from "@material-ui/core/FormLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
-
+import red from "@material-ui/core/colors/red";
 import grey from "@material-ui/core/colors/grey";
 
 const styles = theme => ({
@@ -74,7 +75,14 @@ const styles = theme => ({
   }
 });
 
-
+const theme = createMuiTheme({
+  palette: {
+    primary: red
+  },
+  typography: {
+    useNextVariants: true
+  }
+});
 
 export class Submit extends Component {
   state = {
@@ -156,7 +164,8 @@ export class Submit extends Component {
   render() {
     const { classes } = this.props;
     return (
-        <Grid container className={classes.wrapper}>
+      <MuiThemeProvider theme={theme}>
+        <Grid container className={ classes.wrapper }>
           <List>
             <h2>Dog Submission</h2>
             <ListItem>
@@ -236,7 +245,7 @@ export class Submit extends Component {
               </ListItemText>
             </ListItem>
             <Divider />
-            <form onSubmit={this.onSubmit.bind(this)} action="/thank-you">
+            <form >
               <h3>Your Information</h3>
               <ListItem className={classes.container}>
                 <Input
@@ -290,7 +299,7 @@ export class Submit extends Component {
                   margin="normal"
                   variant="outlined"
                   placeholder="Dog Breed"
-                  //onChange={this.onChange}
+                  // onChange={this.onChange}
                   disabled
                 />
               </ListItem>
@@ -312,22 +321,22 @@ export class Submit extends Component {
                   />
                   <FormControlLabel
                     value="1"
-                    control={<Radio />}
+                    control={<Radio disabled />}
                     label="13-25"
                   />
                   <FormControlLabel
                     value="2"
-                    control={<Radio />}
+                    control={<Radio disabled />}
                     label="26-50"
                   />
                   <FormControlLabel
                     value="3"
-                    control={<Radio />}
+                    control={<Radio disabled />}
                     label="51-100"
                   />
                   <FormControlLabel
                     value="4"
-                    control={<Radio />}
+                    control={<Radio disabled />}
                     label="100+"
                   />
                 </RadioGroup>
@@ -377,7 +386,7 @@ export class Submit extends Component {
                 <FormControlLabel
                   control={
                     <Checkbox
-                      //checked={this.state.checked1}
+                      checked={this.state.checked1}
                       //onChange={this.onCheck("checked1")}
                       value="checked1"
                       disabled
@@ -388,7 +397,7 @@ export class Submit extends Component {
                 <FormControlLabel
                   control={
                     <Checkbox
-                      //checked={this.state.checked2}
+                      checked={this.state.checked2}
                       //onChange={this.onCheck("checked2")}
                       value="checked2"
                       disabled
@@ -400,7 +409,7 @@ export class Submit extends Component {
                 <FormControlLabel
                   control={
                     <Checkbox
-                      //checked={this.state.checked3}
+                      checked={this.state.checked3}
                       //onChange={this.onCheck("checked3")}
                       value="checked4"
                       disabled
@@ -412,7 +421,7 @@ export class Submit extends Component {
                 <FormControlLabel
                   control={
                     <Checkbox
-                      //checked={this.state.checked4}
+                      checked={this.state.checked4}
                       //onChange={this.onCheck("checked4")}
                       value="checked5"
                       disabled
@@ -424,7 +433,7 @@ export class Submit extends Component {
                 <FormControlLabel
                   control={
                     <Checkbox
-                      //checked={this.state.checked5}
+                      checked={this.state.checked5}
                       //onChange={this.onCheck("checked5")}
                       value="checked5"
                       disabled
@@ -444,16 +453,17 @@ export class Submit extends Component {
               <Button
                 variant="contained"
                 type="submit"
-                disabled
+                //onSubmit={this.onSubmit}
                 color="primary"
                 className={classes.button}
+                disabled
               >
                 Submit
               </Button>
             </form>
           </List>
         </Grid>
-
+      </MuiThemeProvider>
     );
   }
 }

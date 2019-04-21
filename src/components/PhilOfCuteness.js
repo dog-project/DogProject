@@ -7,11 +7,9 @@ const styles = theme => ({
   root: {
     [theme.breakpoints.up("sm")]: {
       paddingLeft: "30px",
-      paddingRight: "50px",
+      paddingRight: "50px"
     },
-    [theme.breakpoints.down("sm")]: {
-
-    },
+    [theme.breakpoints.down("sm")]: {},
     marginTop: "30px",
 
     textIndent: "0em"
@@ -22,7 +20,7 @@ const styles = theme => ({
     textAlign: "center"
   },
   whatIs: {
-    padding: "20px"
+    //padding: "20px"
   },
   cute1pic: {
     height: "auto",
@@ -41,8 +39,6 @@ class PhilOfCuteness extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-
-
         <Grid container spacing={24}>
           <Grid item sm={12} md={6}>
             <div className={classes.whatIs}>

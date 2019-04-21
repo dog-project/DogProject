@@ -5,8 +5,9 @@ import { withStyles } from "@material-ui/core/styles";
 const styles = theme => ({
   root: {
     paddingLeft: "30px",
-    paddingRight: "30px"
-    //textIndent: "2em"
+    paddingRight: "30px",
+    //textIndent: "2em",
+    marginTop: "30px"
   },
   header: {
     marginTop: "20px",
@@ -25,9 +26,7 @@ class Governance extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        <Typography variant="h4" className={classes.header}>
-          Ethics and Governance
-        </Typography>
+
         <p>
           In a democracy, elections have to be governed. There have to be
           rules put into place regarding such things as when voting occurs,

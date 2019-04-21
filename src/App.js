@@ -15,7 +15,7 @@ import Philosophy from "./Philosophy";
 //import LessonsForDemocracy from "./LessonsForDemocracy";
 
 import "./App.css";
-import { Submit } from "./Submit";
+import Submit from "./Submit";
 
 
 

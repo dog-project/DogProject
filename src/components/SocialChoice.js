@@ -9,7 +9,8 @@ const styles = theme => ({
       paddingRight: "50px"
     },
     [theme.breakpoints.down("sm")]: {},
-    textIndent: "0em"
+    textIndent: "0em",
+    marginTop: "30px"
   },
   header: {
     marginTop: "20px",
@@ -40,9 +41,6 @@ class SocialChoice extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        <Typography variant="h4" className={classes.header}>
-          Social Choice Theory
-        </Typography>
 
         <Grid container spacing={24}>
           <Grid item sm={12} md={6}>

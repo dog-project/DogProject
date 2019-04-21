@@ -20,7 +20,8 @@ const styles = theme => ({
   root: {
     paddingLeft: "30px",
     paddingRight: "30px",
-    textIndent: "0em"
+    textIndent: "0em",
+    marginTop: "30px"
   },
   header: {
     marginTop: "20px",
@@ -68,17 +69,14 @@ class LessonsForDemocracy extends Component {
 
     return (
       <div className={classes.root}>
-        <Typography variant="h4" className={classes.header}>
-          Lessons For Democracy
-        </Typography>
 
         <Grid container spacing={24}>
           <Grid item sm={12} md={6}>
             <p>
-              There is a simple view about democracy that goes something like this,
-              'In a real democracy, everyone can vote, everyone's vote counts the
-              same, and the winner is the person (or ballot measure) that gets the
-              most votes.'
+              There is a simple view about democracy that goes something like
+              this, 'In a real democracy, everyone can vote, everyone's vote
+              counts the same, and the winner is the person (or ballot measure)
+              that gets the most votes.''
             </p>
             <p>
               In actuality, democracy is not so simple. Even if we agree that
@@ -90,7 +88,10 @@ class LessonsForDemocracy extends Component {
               <ul>
                 <li>Who is eligible to vote?</li>
                 <li>How to we make sure that only eligible voters vote?</li>
-                <li>What should we do to make sure that all eligible voters can vote?</li>
+                <li>
+                  What should we do to make sure that all eligible voters can
+                  vote?
+                </li>
                 <li>Who is eligible to be a candidate?</li>
                 <li>What is the structure of the voting?</li>
                 <li>What do people get to vote on?</li>
@@ -99,17 +100,16 @@ class LessonsForDemocracy extends Component {
               </ul>
             </p>
             <p>
-              What is more, there can be several reasonable and
-              democratic answers to each of these questions, and which answer
-              we go with enormously impacts outcomes. Voting procedures matter,
-              voting governance matters, and social choice mechanisms matter.
-              In our project we had to make a lot of governance and social
-              choice decisions that are analogous to the kinds of choices
-              about democratic practice that societies committed to democratic
-              voting have to make in their elections. Many of these decisions
-              can be contentious. Here we describe the decision about
-              governance and social choice that we made,
-              and why we made them.
+              What is more, there can be several reasonable and democratic
+              answers to each of these questions, and which answer we go with
+              enormously impacts outcomes. Voting procedures matter, voting
+              governance matters, and social choice mechanisms matter. In our
+              project we had to make a lot of governance and social choice
+              decisions that are analogous to the kinds of choices about
+              democratic practice that societies committed to democratic voting
+              have to make in their elections. Many of these decisions can be
+              contentious. Here we describe the decision about governance and
+              social choice that we made, and why we made them.
             </p>
           </Grid>
           <Grid item sm={12} md={6}>
@@ -162,6 +162,22 @@ class LessonsForDemocracy extends Component {
               </a>{" "}
               (as we used), there are a multitude of methods to compile results
               that need to be considered and carefully weighed.
+              <br />
+              <br />
+              In a recent election,{" "}
+              <a
+                href="https://www.washingtonpost.com/politics/democrat-prevails-in-maine-congressional-race-that-used-ranked-choice-voting-system/2018/11/15/e8d81cae-e8ff-11e8-a939-9469f1166f9d_story.html?noredirect=on&utm_term=.6ca611712cc1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Maine's 2nd congressional district
+              </a>{" "}
+              was the first to use ranked-choice voting in an election. In this
+              race, the winning candidate would not have won using only
+              first-choice voting. This shows that as the preferences collected
+              get more sophisticated - in this case allowing voters to give
+              preference orderings rather than just their first preference -
+              outcomes can change.
             </Typography>
           </Grid>
 
@@ -386,7 +402,8 @@ class LessonsForDemocracy extends Component {
                 <li>Who should be allowed to vote?</li>
                 <li>What information should we collect about our voters?</li>
               </ul>
-              For more information on Governance, please check out our Ethics and Governance Tab.
+              For more information on Governance, please check out our Ethics
+              and Governance Tab.
             </Typography>
           </Grid>
           <Grid item sm={12} md={6}>
