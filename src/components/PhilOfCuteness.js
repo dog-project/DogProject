@@ -12,8 +12,9 @@ const styles = theme => ({
     [theme.breakpoints.down("sm")]: {
 
     },
+    marginTop: "30px",
 
-    textIndent: "2em"
+    textIndent: "0em"
   },
   header: {
     marginTop: "20px",

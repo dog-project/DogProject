@@ -9,7 +9,7 @@ const styles = theme => ({
       paddingRight: "50px"
     },
     [theme.breakpoints.down("sm")]: {},
-    textIndent: "2em"
+    textIndent: "0em"
   },
   header: {
     marginTop: "20px",

@@ -15,6 +15,7 @@ import Philosophy from "./Philosophy";
 //import LessonsForDemocracy from "./LessonsForDemocracy";
 
 import "./App.css";
+import { Submit } from "./Submit";
 
 
 
@@ -37,7 +38,7 @@ class App extends Component {
             <Route exact path="/results" render={props => <Results />} />
             <Route exact path="/rankings" render={props => <Rankings />} />
             <Route exact path="/philosophy" render={props => <Philosophy />} />
-            {/* <Route exact path="/lessons-for-democracy" render={props => <LessonsForDemocracy />} /> */}
+            <Route exact path="/submission-guidelines" render={props => <Submit />} />
             <Route component={NoMatch} />
           </Switch>
         </div>
