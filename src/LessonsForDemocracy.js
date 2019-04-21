@@ -74,21 +74,43 @@ class LessonsForDemocracy extends Component {
 
         <Grid container spacing={24}>
           <Grid item sm={12} md={6}>
-            <Typography variant="p">
-              The choice of method for determining a ranking (check out the
-              Social Choice Tab) based on votes is crucially important.
-              Different methods of putting votes together --- collecting,
-              counting, and aggregating --- will produce different results even
-              with the same votes. This is true in both our project as well as
-              democratic elections in the real world.
-              <br />
-              <br />
-              The voting procedure is just as important as the votes.
-              <br />
-              <br />
-              In considering these questions, the Cute Dog Project revealed
-              several important lessons for democracy.
-            </Typography>
+            <p>
+              There is a simple view about democracy that goes something like this,
+              'In a real democracy, everyone can vote, everyone's vote counts the
+              same, and the winner is the person (or ballot measure) that gets the
+              most votes.'
+            </p>
+            <p>
+              In actuality, democracy is not so simple. Even if we agree that
+              everyone who is eligible should be able to vote and everyone's
+              votes should be considered equally there are A LOT of questions
+              left to answer. Here are just a few:
+            </p>
+            <p>
+              <ul>
+                <li>Who is eligible to vote?</li>
+                <li>How to we make sure that only eligible voters vote?</li>
+                <li>What should we do to make sure that all eligible voters can vote?</li>
+                <li>Who is eligible to be a candidate?</li>
+                <li>What is the structure of the voting?</li>
+                <li>What do people get to vote on?</li>
+                <li>How are votes collected?</li>
+                <li>How do votes translate into outcomes?</li>
+              </ul>
+            </p>
+            <p>
+              What is more, there can be several reasonable and
+              democratic answers to each of these questions, and which answer
+              we go with enormously impacts outcomes. Voting procedures matter,
+              voting governance matters, and social choice mechanisms matter.
+              In our project we had to make a lot of governance and social
+              choice decisions that are analogous to the kinds of choices
+              about democratic practice that societies committed to democratic
+              voting have to make in their elections. Many of these decisions
+              can be contentious. Here we describe the decision about
+              governance and social choice that we made,
+              and why we made them.
+            </p>
           </Grid>
           <Grid item sm={12} md={6}>
             <img

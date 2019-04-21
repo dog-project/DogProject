@@ -242,12 +242,12 @@ export class Demographics extends Component {
                   <FormControlLabel
                     value="Masculine"
                     control={<Radio /*required*/ />}
-                    label="Male"
+                    label="Masculine"
                   />
                   <FormControlLabel
                     value="Feminine"
                     control={<Radio />}
-                    label="Female"
+                    label="Feminine"
                   />
 
                   <Input

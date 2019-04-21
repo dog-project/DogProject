@@ -28,7 +28,21 @@ class Governance extends Component {
         <Typography variant="h4" className={classes.header}>
           Ethics and Governance
         </Typography>
-
+        <p>
+          In a democracy, elections have to be governed. There have to be
+          rules put into place regarding such things as when voting occurs,
+          how it occurs, who can vote, who is eligible, how the votes are
+          tallied, and many many other things. Moreover, those rules have to
+          be enforced to ensure that they are followed. What is more,
+          situations come up for which its not clear how the rules apply (or
+          whether any rules apply) and then there needs to be a process for
+          determining what to do.
+        </p>
+        <p>
+          We faced decisions about all these issues of governance in our
+          project: What should the rules be? How should the rules be enforced?
+          And what do we do when something unexpected comes up?
+        </p>
         <div className={classes.separation}>
           <Typography variant="h5">
             <b>
@@ -113,8 +127,9 @@ class Governance extends Component {
                 (reverse-search, metadata analysis, etc.).
               </li>
               <li>
-                We implemented a “captcha”, which we are using to prevent
-                non-human voter fraud.
+                We discussed the implementation of a “captcha”, which would help
+                prevent non-human voter fraud by confusing "bots" and preventing
+                them from voting.
               </li>
             </ul>
           </Typography>
@@ -162,9 +177,9 @@ class Governance extends Component {
                 For example, with respect to photo editing (which was not
                 stipulated in our initial submission guidelines), we have since
                 added a “no external photo editing” rule to distinguish between
-                the “editing” a camera’s software will automatically produce
-                versus an external editing application such as Photoshop or
-                equivalent software.
+                the “editing” a camera’s software will automatically perform,
+                versus that done with an external editing application (such as
+                Photoshop).
               </li>
             </ul>
           </Typography>
