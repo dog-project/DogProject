@@ -4,6 +4,7 @@ import { Grid, Paper, Typography } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import PropTypes from "prop-types";
 
+
 const styles = theme => ({
   root: {
     ...theme.mixins.gutters(),
@@ -80,7 +81,7 @@ const dan = {
 const jackie = {
   name: "Jackson Reimer",
   bio:
-    "Jackson Reimer is a 4th year Politics, Philosophy and Economics major. As teaching assistant for the Cute Dog Project, he has been primarily involved in project management tasks ensuring that different teams are communicating with one another and working towards aligned goals. Jackson owns a 10 year old mini-golden doodle puppy named Chester who’s loving zeal and polite demeanor leave him second to none in the city of Los Angeles."
+    "Jackson Reimer is a 4th year Politics, Philosophy and Economics major. As teaching assistant for the Cute Dog Project, he has been primarily involved in project management tasks ensuring that different teams are communicating with one another and working towards aligned goals. Jackson owns a 10 year old mini-golden doodle puppy named Chester who’s loving zeal and polite demeanor leave him second to none."
 };
 
 const keshav = {

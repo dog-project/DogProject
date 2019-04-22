@@ -9,14 +9,13 @@ import React, { Component } from "react";
 //   CardContent,
 //   CardActionArea
 // } from "@material-ui/core";
-import {
-  
-  Paper,
-  Typography,
-
-} from "@material-ui/core";
-import { withStyles } from "@material-ui/core/styles";
+import { Paper, Typography } from "@material-ui/core";
+import { withStyles, MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import PropTypes from "prop-types";
+import { Button } from "@material-ui/core";
+import { Link } from "react-router-dom";
+import red from "@material-ui/core/colors/red";
+import grey from "@material-ui/core/colors/grey";
 
 const styles = theme => ({
   root: {
@@ -57,6 +56,22 @@ const styles = theme => ({
     [theme.breakpoints.down("sm")]: {
       paddingLeft: "20%"
     }
+  },
+  button: {
+    marginTop: "20px",
+    marginBottom: "10px",
+    "&:hover": {
+      backgroundColor: grey[900]
+    }
+  }
+});
+
+const theme = createMuiTheme({
+  palette: {
+    primary: red
+  },
+  typography: {
+    useNextVariants: true
   }
 });
 
@@ -140,6 +155,18 @@ class Results extends Component {
             Votes are still being accepted through 4/22, please check back later
             this week to see the results.
           </Typography>
+          <MuiThemeProvider theme={theme}>
+            <Button
+              size="large"
+              color="primary"
+              variant="contained"
+              component={Link}
+              to="/demographics"
+              className={classes.button}
+            >
+              Vote!
+            </Button>
+          </MuiThemeProvider>
         </Paper>
         {/* <Paper className={classes.header}>
           <Typography variant="h4">
