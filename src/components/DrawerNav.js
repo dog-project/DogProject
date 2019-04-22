@@ -12,7 +12,7 @@ import HomeIcon from "@material-ui/icons/Home";
 import SchoolIcon from "@material-ui/icons/School";
 import PersonIcon from "@material-ui/icons/Person";
 import HowToVoteIcon from "@material-ui/icons/HowToVote";
-//import AssignmentIcon from "@material-ui/icons/Assignment";
+import AssignmentIcon from "@material-ui/icons/Assignment";
 import VpnLockIcon from "@material-ui/icons/VpnLock";
 // import InfoIcon from "@material-ui/icons/Info";
 import { Link } from "react-router-dom";
