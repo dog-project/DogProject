@@ -1,13 +1,19 @@
 import React, { Component } from "react";
-import DogCard from "./DogCard";
+//import DogCard from "./DogCard";
+// import {
+//   Grid,
+//   Paper,
+//   Typography,
+//   Card,
+//   CardMedia,
+//   CardContent,
+//   CardActionArea
+// } from "@material-ui/core";
 import {
-  Grid,
+  
   Paper,
   Typography,
-  Card,
-  CardMedia,
-  CardContent,
-  CardActionArea
+
 } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import PropTypes from "prop-types";
@@ -54,34 +60,34 @@ const styles = theme => ({
   }
 });
 
-const possibleIds = [
-  20,
-  24,
-  25,
-  26,
-  27,
-  28,
-  34,
-  35,
-  37,
-  38,
-  40,
-  43,
-  44,
-  45,
-  48,
-  51,
-  52,
-  54,
-  56,
-  57,
-  65,
-  68,
-  69,
-  70,
-  72,
-  74
-];
+// const possibleIds = [
+//   20,
+//   24,
+//   25,
+//   26,
+//   27,
+//   28,
+//   34,
+//   35,
+//   37,
+//   38,
+//   40,
+//   43,
+//   44,
+//   45,
+//   48,
+//   51,
+//   52,
+//   54,
+//   56,
+//   57,
+//   65,
+//   68,
+//   69,
+//   70,
+//   72,
+//   74
+// ];
 
 class Results extends Component {
   constructor(props) {
