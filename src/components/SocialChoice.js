@@ -32,7 +32,7 @@ const styles = theme => ({
     },
     [theme.breakpoints.down("sm")]: {
       height: "auto"
-    },
+    }
   }
 });
 
@@ -41,7 +41,6 @@ class SocialChoice extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-
         <Grid container spacing={24}>
           <Grid item sm={12} md={6}>
             <Typography variant="p">
@@ -54,10 +53,17 @@ class SocialChoice extends Component {
               </a>{" "}
               is the study of how diverse individual preferences can be put
               together to form a single societal decision. There is no uniquely
-              correct social choice voting method. You can collect different
-              data, or collect it in different ways. Even with the same data, we
-              can have different winners depending on the social choice
-              mechanism used!
+              correct social choice{" "}
+              <a
+                href="https://plato.stanford.edu/entries/voting-methods/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                voting method
+              </a>
+              . You can collect different data, or collect it in different ways.
+              Even with the same data, we can have different winners depending
+              on the social choice mechanism used!
             </Typography>
             <p>
               Social choice problems come up all the time. They arise whenever
@@ -131,7 +137,7 @@ class SocialChoice extends Component {
                 tradeoffs between participation, privacy and security.
                 <br />
                 <br />
-                Short Lecture on Condorcet’s Jury Theorem from Eric Pacuit:
+                Eric Pacuit Condorcet’s Jury Theorem
               </Typography>
             </Grid>
 
@@ -187,7 +193,7 @@ class SocialChoice extends Component {
 
             <Grid item sm={12} md={6}>
               <Typography variant="p">
-                <b>Here is Eric Pacuit on the Condorcet Paradox</b>
+                <b>Eric Pacuit on the Condorcet Paradox</b>
               </Typography>
               <br />
               <iframe
@@ -307,7 +313,6 @@ class SocialChoice extends Component {
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
                 title="hello"
-
               />
             </Grid>
             <Grid item sm={12} md={6}>
@@ -323,7 +328,6 @@ class SocialChoice extends Component {
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
                 title="hello"
-
               />
             </Grid>
           </Grid>
@@ -349,16 +353,7 @@ class SocialChoice extends Component {
 
         <div className={classes.separation}>
           <Typography variant="h4">
-            <b>
-              Our{" "}
-              <a
-                href="https://en.wikipedia.org/wiki/Ranked_pairs"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Voting System
-              </a>
-            </b>
+            <b>Our Voting System</b>
           </Typography>
           <br />
           <Typography variant="h5">
@@ -368,13 +363,20 @@ class SocialChoice extends Component {
           <Grid container spacing={24}>
             <Grid item sm={12} md={6}>
               <Typography variant="p">
-                We chose to use a ranked pair method for counting the votes.
-                This method first considers all head-to-head results between
-                candidates. It then ranks each head-to-head result by margin of
-                victory, treating results with larger margins as “more
-                definitive”. If and when a ‘rock-paper-scissors’ type loop is
-                found, the ranking system ignores the result with the smallest
-                margin of victory.
+                We chose to use a{" "}
+                <a
+                  href="https://en.wikipedia.org/wiki/Ranked_pairs"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  ranked pair
+                </a>{" "}
+                method for counting the votes. This method first considers all
+                head-to-head results between candidates. It then ranks each
+                head-to-head result by margin of victory, treating results with
+                larger margins as “more definitive”. If and when a
+                ‘rock-paper-scissors’ type loop is found, the ranking system
+                ignores the result with the smallest margin of victory.
                 <br />
                 <br />
                 This method satisfies four of Arrow’s conditions, failing only
