@@ -84,13 +84,13 @@ class DrawerNav extends React.Component {
               <FormatListNumberedIcon />
             </ListItemIcon>
             <ListItemText primary="Rankings" />
-          </ListItem>
+          </ListItem> */}
           <ListItem component={Link} to="/results" className={classes.item}>
             <ListItemIcon>
               <AssignmentIcon />
             </ListItemIcon>
             <ListItemText primary="Voting Data" />
-          </ListItem> */}
+          </ListItem>
           <ListItem component={Link} to="/philosophy" className={classes.item}>
             <ListItemIcon>
               <SchoolIcon />
