@@ -100,72 +100,72 @@ export class Submit extends Component {
     checked5: false
   };
 
-  sendToAPI = e => {
-    const redirect = this.props;
-    fetch("https://us-east1-dog-project-234515.cloudfunctions.net/submit_dog", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        user_email: e.user_email,
-        dog_age: e.dog_age,
-        dog_breed: e.dog_breed,
-        dog_weight: e.dog_weight,
-        image: e.image
-      })
-    }).then(function(response) {
-      console.log(response);
-      if (response.status !== 200) {
-        alert(
-          "A " +
-            response.status +
-            " error occurred. Please try again or contact us at northeasterndogproject@gmail.com"
-        );
-      } else {
-        redirect.history.push("/thank-you");
-      }
-    });
-  };
+  // sendToAPI = e => {
+  //   const redirect = this.props;
+  //   fetch("https://us-east1-dog-project-234515.cloudfunctions.net/submit_dog", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json"
+  //     },
+  //     body: JSON.stringify({
+  //       user_email: e.user_email,
+  //       dog_age: e.dog_age,
+  //       dog_breed: e.dog_breed,
+  //       dog_weight: e.dog_weight,
+  //       image: e.image
+  //     })
+  //   }).then(function(response) {
+  //     console.log(response);
+  //     if (response.status !== 200) {
+  //       alert(
+  //         "A " +
+  //           response.status +
+  //           " error occurred. Please try again or contact us at northeasterndogproject@gmail.com"
+  //       );
+  //     } else {
+  //       redirect.history.push("/thank-you");
+  //     }
+  //   });
+  // };
 
-  onChange = e => {
-    e.preventDefault();
-    this.setState({ [e.target.name]: e.target.value });
-  };
+  // onChange = e => {
+  //   e.preventDefault();
+  //   this.setState({ [e.target.name]: e.target.value });
+  // };
 
-  onCheck = name => event => {
-    this.setState({ [name]: event.target.checked });
-  };
+  // onCheck = name => event => {
+  //   this.setState({ [name]: event.target.checked });
+  // };
 
-  onSubmit = e => {
-    e.preventDefault();
-    this.setState({ submit_pending: true });
-    var file = e.target.pic.files[0];
-    this.getBase64(file).then(data => {
-      this.sendToAPI({
-        user_email: this.state.email,
-        dog_age: parseInt(this.state.dog_years) * 12 + parseInt(this.state.dog_months),
-        dog_weight: parseInt(this.state.dog_weight),
-        dog_breed: this.state.dog_breed,
-        image: data
-      });
-    });
-  };
+  // onSubmit = e => {
+  //   e.preventDefault();
+  //   this.setState({ submit_pending: true });
+  //   var file = e.target.pic.files[0];
+  //   this.getBase64(file).then(data => {
+  //     this.sendToAPI({
+  //       user_email: this.state.email,
+  //       dog_age: parseInt(this.state.dog_years) * 12 + parseInt(this.state.dog_months),
+  //       dog_weight: parseInt(this.state.dog_weight),
+  //       dog_breed: this.state.dog_breed,
+  //       image: data
+  //     });
+  //   });
+  // };
 
-  getBase64(file) {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = error => reject(error);
-    });
-  }
+  // getBase64(file) {
+  //   return new Promise((resolve, reject) => {
+  //     const reader = new FileReader();
+  //     reader.readAsDataURL(file);
+  //     reader.onload = () => resolve(reader.result);
+  //     reader.onerror = error => reject(error);
+  //   });
+  // }
 
   render() {
     const { classes } = this.props;
     return (
       <MuiThemeProvider theme={theme}>
-        <Grid container className={classes.wrapper}>
+        <Grid container className={ classes.wrapper }>
           <List>
             <h2>Dog Submission</h2>
             <ListItem>
@@ -245,7 +245,7 @@ export class Submit extends Component {
               </ListItemText>
             </ListItem>
             <Divider />
-            <form onSubmit={this.onSubmit.bind(this)} action="/thank-you">
+            <form >
               <h3>Your Information</h3>
               <ListItem className={classes.container}>
                 <Input
@@ -258,8 +258,8 @@ export class Submit extends Component {
                   margin="normal"
                   variant="outlined"
                   placeholder="Northeastern Email"
-                  onChange={this.onChange}
-                  required
+                  //onChange={this.onChange}
+                  disabled
                 />
               </ListItem>
               <h3>Your Dog's Information</h3>
@@ -273,8 +273,8 @@ export class Submit extends Component {
                   margin="normal"
                   variant="outlined"
                   placeholder="Years Old"
-                  onChange={this.onChange}
-                  required
+                  //onChange={this.onChange}
+                  disabled
                 />
                 <Input
                   id="outlined-age-input"
@@ -285,8 +285,8 @@ export class Submit extends Component {
                   margin="normal"
                   variant="outlined"
                   placeholder="Months Old"
-                  onChange={this.onChange}
-                  required
+                  //onChange={this.onChange}
+                  disabled
                 />
               </ListItem>
               <ListItem>
@@ -299,8 +299,8 @@ export class Submit extends Component {
                   margin="normal"
                   variant="outlined"
                   placeholder="Dog Breed"
-                  onChange={this.onChange}
-                  required
+                  // onChange={this.onChange}
+                  disabled
                 />
               </ListItem>
               <FormLabel style={{ textAlign: "left" }}>
@@ -311,32 +311,32 @@ export class Submit extends Component {
                   aria-label="Dog's Weight Range (Lbs)"
                   name="dog_weight"
                   className={classes.group}
-                  onChange={this.onChange}
+                  //onChange={this.onChange}
                   style={{ display: "inline", margin: "auto" }}
                 >
                   <FormControlLabel
                     value="0"
-                    control={<Radio required />}
+                    control={<Radio disabled />}
                     label="0-12"
                   />
                   <FormControlLabel
                     value="1"
-                    control={<Radio />}
+                    control={<Radio disabled />}
                     label="13-25"
                   />
                   <FormControlLabel
                     value="2"
-                    control={<Radio />}
+                    control={<Radio disabled />}
                     label="26-50"
                   />
                   <FormControlLabel
                     value="3"
-                    control={<Radio />}
+                    control={<Radio disabled />}
                     label="51-100"
                   />
                   <FormControlLabel
                     value="4"
-                    control={<Radio />}
+                    control={<Radio disabled />}
                     label="100+"
                   />
                 </RadioGroup>
@@ -372,8 +372,8 @@ export class Submit extends Component {
                   name="pic"
                   margin="normal"
                   variant="outlined"
-                  onChange={this.onChange}
-                  required
+                  //onChange={this.onChange}
+                  disabled
                 />
               </ListItem>
               <ListItem style={{ textAlign: "left", paddingLeft: "25px" }}>
@@ -387,9 +387,9 @@ export class Submit extends Component {
                   control={
                     <Checkbox
                       checked={this.state.checked1}
-                      onChange={this.onCheck("checked1")}
+                      //onChange={this.onCheck("checked1")}
                       value="checked1"
-                      required
+                      disabled
                     />
                   }
                   label="I certify that this dog is owned by me or my direct family, or that I live with this dog"
@@ -398,9 +398,9 @@ export class Submit extends Component {
                   control={
                     <Checkbox
                       checked={this.state.checked2}
-                      onChange={this.onCheck("checked2")}
+                      //onChange={this.onCheck("checked2")}
                       value="checked2"
-                      required
+                      disabled
                     />
                   }
                   label="I certify that I own the image, submitted above, of my dog, and I grant the runners of this contest the rights described in the privacy policy"
@@ -410,9 +410,9 @@ export class Submit extends Component {
                   control={
                     <Checkbox
                       checked={this.state.checked3}
-                      onChange={this.onCheck("checked3")}
+                      //onChange={this.onCheck("checked3")}
                       value="checked4"
-                      required
+                      disabled
                     />
                   }
                   label="I certify that I meet all the criteria for submission outlined above"
@@ -422,9 +422,9 @@ export class Submit extends Component {
                   control={
                     <Checkbox
                       checked={this.state.checked4}
-                      onChange={this.onCheck("checked4")}
+                      //onChange={this.onCheck("checked4")}
                       value="checked5"
-                      required
+                      disabled
                     />
                   }
                   label="I certify that I am 18 years of age or older"
@@ -434,9 +434,9 @@ export class Submit extends Component {
                   control={
                     <Checkbox
                       checked={this.state.checked5}
-                      onChange={this.onCheck("checked5")}
+                      //onChange={this.onCheck("checked5")}
                       value="checked5"
-                      required
+                      disabled
                     />
                   }
                   style={{ marginRight: "3px" }}
@@ -453,9 +453,10 @@ export class Submit extends Component {
               <Button
                 variant="contained"
                 type="submit"
-                onSubmit={this.onSubmit}
+                //onSubmit={this.onSubmit}
                 color="primary"
                 className={classes.button}
+                disabled
               >
                 Submit
               </Button>

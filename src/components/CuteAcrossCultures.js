@@ -6,7 +6,7 @@ const styles = theme => ({
   root: {
     paddingLeft: "30px",
     paddingRight: "30px",
-    textIndent: "2em"
+    marginTop: "30px"
   },
   header: {
     marginTop: "20px",
@@ -25,9 +25,7 @@ class CuteAcrossCultures extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        <Typography variant="h4" className={classes.header}>
-          "Cuteness" across Cultures
-        </Typography>
+
         <Typography variant="p">
           It is important to recognize that our project is essentially focused
           on the English-language sense of “cuteness” and “cute dog”, which has
