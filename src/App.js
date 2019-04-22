@@ -7,7 +7,7 @@ import Vote from "./Vote";
 import TeamPage from "./TeamPage";
 import PrivacyPolicy from "./PrivacyPolicy";
 import ThankYou from "./components/ThankYou";
-//import Results from "./Results";
+import Results from "./Results";
 //import Rankings from "./Rankings";
 import Philosophy from "./Philosophy";
 //import LessonsForDemocracy from "./LessonsForDemocracy";
