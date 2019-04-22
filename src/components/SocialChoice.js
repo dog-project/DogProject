@@ -137,7 +137,7 @@ class SocialChoice extends Component {
                 tradeoffs between participation, privacy and security.
                 <br />
                 <br />
-                Eric Pacuit Condorcet’s Jury Theorem
+                Eric Pacuit Condorcet’s Jury Theorem: 
               </Typography>
             </Grid>
 

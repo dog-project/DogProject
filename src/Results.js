@@ -117,9 +117,8 @@ class Results extends Component {
       this.setState({ dogId: parseInt(event.target.value) }, () => {
         this.getVoteData();
       });
-    }
-    else {
-      this.setState({ dogId: event.target.value});
+    } else {
+      this.setState({ dogId: event.target.value });
       this.setState({ voteData: null });
     }
   };
@@ -131,9 +130,12 @@ class Results extends Component {
     return (
       <div className={classes.root}>
         <Paper className={classes.header}>
-          <Typography variant="h2">Voting Results</Typography>
+          <Typography variant="h2">
+            Votes are still being accepted through 4/22, please check back later
+            this week to see the results.
+          </Typography>
         </Paper>
-        <Paper className={classes.header}>
+        {/* <Paper className={classes.header}>
           <Typography variant="h4">
             Select a Dog to Compare:
             <select onChange={this.handleChange}>
@@ -172,7 +174,7 @@ class Results extends Component {
                 );
               })
             : null}
-        </Grid>
+        </Grid> */}
       </div>
     );
   }
