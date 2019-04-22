@@ -10,6 +10,8 @@ import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import PhilOfCuteness from "./components/PhilOfCuteness"
 import CuteAcrossCultures from "./components/CuteAcrossCultures"
 import SocialChoice from "./components/SocialChoice"
+import LessonsForDemocracy from "./LessonsForDemocracy";
+import Governance from "./Governance";
 
 function TabContainer(props) {
   return (
@@ -26,7 +28,7 @@ TabContainer.propTypes = {
 const styles = theme => ({
   root: {
 
-    textIndent: "2em"
+    textIndent: "0em"
   },
   header: {
     marginTop: "20px",
@@ -95,17 +97,17 @@ class Philosophy extends Component {
                 <Tab label="What is Cuteness?" />
                 <Tab label="Cuteness Across Cultures" />
                 <Tab label="Social Choice Theory" />
-                {/* <Tab label="Ethics and Governance" />
-                <Tab label="Voting Systems" />
-                <Tab label="Democracy" /> */}
+                <Tab label="Lessons for Democracy" />
+                <Tab label="Ethics and Governance" />
+
               </Tabs>
             </AppBar>
             {value === 0 && <TabContainer><PhilOfCuteness /></TabContainer>}
             {value === 1 && <TabContainer><CuteAcrossCultures /></TabContainer>}
             {value === 2 && <TabContainer><SocialChoice /></TabContainer>}
-            {/* {value === 3 && <TabContainer>Ethics and Governance</TabContainer>}
-            {value === 4 && <TabContainer>Voting Systems</TabContainer>}
-            {value === 5 && <TabContainer>Democracy</TabContainer>} */}
+            {value === 3 && <TabContainer><LessonsForDemocracy /></TabContainer>}
+            {value === 4 && <TabContainer><Governance /></TabContainer>}
+            
           </div>
         </MuiThemeProvider>
       </div>

@@ -9,7 +9,8 @@ const styles = theme => ({
       paddingRight: "50px"
     },
     [theme.breakpoints.down("sm")]: {},
-    textIndent: "2em"
+    textIndent: "0em",
+    marginTop: "30px"
   },
   header: {
     marginTop: "20px",
@@ -40,9 +41,6 @@ class SocialChoice extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        <Typography variant="h4" className={classes.header}>
-          Social Choice Theory
-        </Typography>
 
         <Grid container spacing={24}>
           <Grid item sm={12} md={6}>
@@ -61,6 +59,15 @@ class SocialChoice extends Component {
               can have different winners depending on the social choice
               mechanism used!
             </Typography>
+            <p>
+              Social choice problems come up all the time. They arise whenever
+              people try to aggregate preferences to make a decision. They come
+              up when a group of people is trying to choose what restaurant to
+              go to. They come up when an admissions committee is trying to make
+              a decision about who should be admitted to a program. They come up
+              in democratic practice when choosing elected officials. And they
+              come up when trying to decide which dog is the cutest.
+            </p>
           </Grid>
 
           <Grid item sm={12} md={6}>
@@ -300,7 +307,7 @@ class SocialChoice extends Component {
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
                 title="hello"
-                
+
               />
             </Grid>
             <Grid item sm={12} md={6}>
@@ -316,7 +323,7 @@ class SocialChoice extends Component {
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
                 title="hello"
-                
+
               />
             </Grid>
           </Grid>

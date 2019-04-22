@@ -5,8 +5,9 @@ import { withStyles } from "@material-ui/core/styles";
 const styles = theme => ({
   root: {
     paddingLeft: "30px",
-    paddingRight: "30px"
-    //textIndent: "2em"
+    paddingRight: "30px",
+    //textIndent: "2em",
+    marginTop: "30px"
   },
   header: {
     marginTop: "20px",
@@ -25,22 +26,43 @@ class Governance extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        <Typography variant="h4" className={classes.header}>
-          Ethics and Governance
-        </Typography>
 
+        <p>
+          In a democracy, elections have to be governed. There have to be
+          rules put into place regarding such things as when voting occurs,
+          how it occurs, who can vote, who is eligible, how the votes are
+          tallied, and many many other things. Moreover, those rules have to
+          be enforced to ensure that they are followed. What is more,
+          situations come up for which its not clear how the rules apply (or
+          whether any rules apply) and then there needs to be a process for
+          determining what to do.
+        </p>
+        <p>
+          We faced decisions about all these issues of governance in our
+          project: What should the rules be? How should the rules be enforced?
+          And what do we do when something unexpected comes up?
+        </p>
         <div className={classes.separation}>
           <Typography variant="h5">
-            <b>Submission Guidelines</b>
+            <b>
+              <a
+                href="submission-guidelines"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Submission Guidelines
+              </a>
+            </b>
           </Typography>
           <Typography variant="p">
             <ul>
               <li>
                 Our guidelines for dog submissions were designed to isolate the
-                dogs’ aesthetics as much as possible to minimize the possibility
-                of non-aesthetic or non-dog related variables influencing voter
-                judgement. Put simply, our submission guidelines were designed
-                to accurately represent each dog’s cuteness.
+                dogs’ aesthetics as much as possible and to minimize the
+                possibility of non-aesthetic or non-dog related variables
+                influencing voter judgement. Put simply, our submission
+                guidelines were designed to accurately represent each dog’s
+                cuteness.
               </li>
               <li>
                 With respect to photographs, our guidelines required all photos
@@ -55,40 +77,20 @@ class Governance extends Component {
         </div>
         <div className={classes.separation}>
           <Typography variant="h5">
-            <b>"The Baseball Problem"</b>
-          </Typography>
-          <Typography variant="p">
-            <ul>
-              <li>
-                While working though governance issues with respect to
-                submissions, voting population, and data privacy, we continually
-                discovered unprecedented situations which were not covered by
-                our rules. In the event of one of these “Baseball” problems
-                (named because it is common for a situation to arise in baseball
-                not covered by its extensive rulebook), the governance team
-                worked to put in place a rule that could address the problem in
-                the future regardless of the scale of the project.
-              </li>
-              <li>
-                For example, with respect to photo editing (which was not
-                stipulated in our initial submission guidelines), we have since
-                added a “no external photo editing” rule to distinguish between
-                the “editing” a camera’s software will automatically produce
-                versus an external editing application such as Photoshop or
-                equivalent software.
-              </li>
-            </ul>
-          </Typography>
-        </div>
-        <div className={classes.separation}>
-          <Typography variant="h5">
             <b>Privacy</b>
           </Typography>
           <Typography variant="p">
             <ul>
               <li>
-                In designing our <a href="/privacy-policy">privacy policy</a> ,
-                our goal was to protect all data stored on our website and to
+                In designing our{" "}
+                <a
+                  href="privacy-policy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  privacy policy
+                </a>
+                , our goal was to protect all data stored on our website and to
                 minimize the need for personally identifying information.
               </li>
               <li>
@@ -111,7 +113,7 @@ class Governance extends Component {
         </div>
         <div className={classes.separation}>
           <Typography variant="h5">
-            <b>Anti-Fraud Measures</b>
+            <b>Anti-fraud measures</b>
           </Typography>
           <Typography variant="p">
             <ul>
@@ -124,23 +126,59 @@ class Governance extends Component {
                 (reverse-search, metadata analysis, etc.).
               </li>
               <li>
-                We implemented a “captcha”, which we are using to prevent
-                non-human voter fraud.
+                We discussed the implementation of a “captcha”, which would help
+                prevent non-human voter fraud by confusing "bots" and preventing
+                them from voting.
+              </li>
+            </ul>
+          </Typography>
+        </div>
+
+        <div className={classes.separation}>
+          <Typography variant="h5">
+            <b>Intellectual property</b>
+          </Typography>
+          <Typography variant="p">
+            <ul>
+              <li>
+                Our discussion of intellectual property is discussed in our{" "}
+                <a
+                  href="privacy-policy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  privacy policy
+                </a>
+                . Our goal is to treat all submitter and voter intellectual
+                property with the utmost respect and ethical consideration,
+                using only IP when necessary.
               </li>
             </ul>
           </Typography>
         </div>
         <div className={classes.separation}>
           <Typography variant="h5">
-            <b>Intellectual Property</b>
+            <b>"The Baseball Problem"</b>
           </Typography>
           <Typography variant="p">
             <ul>
               <li>
-                Our discussion of intellectual property is discussed in our
-                privacy policy [hyperlink?]. Our goal is to treat all submitter
-                and voter intellectual property with the utmost respect and
-                ethical consideration, using only IP when necessary.
+                While working though governance issues with respect to
+                submissions, voting population, and data privacy, we continually
+                discovered unprecedented situations which were not covered by
+                our rules. In the event of one of these “Baseball” problems
+                (named because it is common for a situation to arise in baseball
+                not covered by its extensive rulebook), the governance team
+                worked to put in place a procedure that could address the
+                problem in the future regardless of the scale of the project.
+              </li>
+              <li>
+                For example, with respect to photo editing (which was not
+                stipulated in our initial submission guidelines), we have since
+                added a “no external photo editing” rule to distinguish between
+                the “editing” a camera’s software will automatically perform,
+                versus that done with an external editing application (such as
+                Photoshop).
               </li>
             </ul>
           </Typography>
