@@ -45,148 +45,148 @@ const styles = theme => ({
 });
 
 const rankedPairOrder = [
-  "57",
-  "20",
-  "65",
-  "40",
-  "37",
-  "70",
-  "35",
-  "43",
-  "45",
-  "28",
-  "34",
-  "25",
-  "52",
-  "54",
-  "27",
-  "24",
-  "51",
-  "44",
-  "48",
-  "56",
-  "74",
-  "38",
-  "72",
-  "26",
-  "68",
-  "69"
+  57,
+  20,
+  65,
+  40,
+  37,
+  35,
+  70,
+  43,
+  45,
+  28,
+  34,
+  52,
+  54,
+  27,
+  24,
+  25,
+  51,
+  44,
+  48,
+  74,
+  56,
+  38,
+  72,
+  26,
+  68,
+  69
 ];
 
 const eloRankingOrder = [
-  [20, 1415],
-  [57, 1362],
-  [70, 1344],
-  [35, 1336],
-  [65, 1299],
-  [43, 1286],
-  [40, 1276],
-  [45, 1271],
-  [37, 1229],
-  [34, 1221],
-  [25, 1210],
-  [52, 1205],
-  [51, 1192],
-  [54, 1191],
-  [24, 1185],
-  [28, 1160],
-  [44, 1154],
-  [27, 1138],
-  [38, 1128],
-  [56, 1124],
-  [26, 1104],
-  [48, 1098],
-  [72, 1093],
-  [74, 1066],
-  [68, 1058],
-  [69, 1056]
+  [20, 1392.65],
+  [57, 1343.56],
+  [40, 1312.11],
+  [65, 1282.92],
+  [35, 1280.68],
+  [37, 1272.4],
+  [70, 1256.35],
+  [28, 1251.82],
+  [43, 1250.59],
+  [45, 1243.6],
+  [52, 1204.85],
+  [24, 1198.14],
+  [34, 1197.21],
+  [51, 1191.98],
+  [44, 1179.87],
+  [54, 1179.45],
+  [27, 1170.96],
+  [25, 1163.58],
+  [56, 1139.58],
+  [48, 1134.25],
+  [38, 1115.66],
+  [74, 1106.68],
+  [68, 1091.54],
+  [26, 1083.8],
+  [69, 1078.12],
+  [72, 1077.65]
 ];
 
 const winRatioOrder = [
-  [57, 0.69],
-  [20, 0.68],
-  [65, 0.63],
-  [40, 0.62],
-  [70, 0.59],
-  [35, 0.55],
-  [37, 0.54],
-  [43, 0.54],
-  [45, 0.52],
-  [34, 0.48],
-  [25, 0.47],
-  [52, 0.47],
-  [28, 0.44],
-  [54, 0.43],
-  [24, 0.41],
-  [51, 0.41],
-  [27, 0.4],
-  [44, 0.38],
-  [48, 0.34],
-  [56, 0.34],
-  [74, 0.32],
-  [26, 0.3],
-  [38, 0.3],
-  [72, 0.3],
-  [68, 0.23],
-  [69, 0.22]
+  [57, 0.73],
+  [20, 0.73],
+  [65, 0.68],
+  [40, 0.68],
+  [70, 0.62],
+  [37, 0.61],
+  [35, 0.6],
+  [43, 0.59],
+  [45, 0.56],
+  [34, 0.54],
+  [52, 0.53],
+  [28, 0.52],
+  [25, 0.5],
+  [54, 0.49],
+  [27, 0.47],
+  [24, 0.46],
+  [51, 0.45],
+  [44, 0.42],
+  [48, 0.41],
+  [38, 0.36],
+  [56, 0.36],
+  [74, 0.36],
+  [72, 0.35],
+  [26, 0.34],
+  [68, 0.27],
+  [69, 0.25]
 ];
 
 const copelandsRanking = [
   [57, 25],
   [20, 23],
   [65, 21],
-  [40, 17],
-  [70, 17],
+  [40, 19],
+  [37, 16],
   [35, 15],
-  [37, 13],
-  [43, 13],
+  [70, 13],
+  [43, 12],
   [45, 9],
-  [28, 7],
+  [28, 6],
   [34, 5],
-  [52, 3],
+  [52, 2],
   [25, -1],
   [27, -1],
   [54, -1],
-  [24, -5],
+  [24, -3],
   [51, -7],
   [44, -9],
   [48, -11],
   [74, -13],
-  [26, -17],
-  [56, -17],
-  [38, -19],
+  [56, -15],
+  [38, -17],
   [72, -19],
+  [26, -21],
   [68, -23],
   [69, -25]
 ];
 
 const miniMaxRanking = [
-[20, 0.757],
-[57, 0.755],
-[40, 0.713],
-[65, 0.709],
-[70, 0.661],
-[37, 0.655],
-[35, 0.641],
-[43, 0.639],
-[45, 0.612],
-[34, 0.584],
-[52, 0.581],
-[25, 0.573],
-[28, 0.567],
-[54, 0.554],
-[27, 0.534],
-[24, 0.526],
-[51, 0.513],
-[44, 0.500],
-[48, 0.494],
-[74, 0.460],
-[72, 0.453],
-[56, 0.451],
-[38, 0.450],
-[26, 0.443],
-[68, 0.393],
-[69, 0.383]
+  57,
+  20,
+  65,
+  40,
+  37,
+  70,
+  45,
+  43,
+  52,
+  35,
+  28,
+  54,
+  34,
+  44,
+  24,
+  25,
+  51,
+  27,
+  26,
+  48,
+  56,
+  38,
+  74,
+  68,
+  72,
+  69
 ];
 
 class Rankings extends Component {
@@ -238,7 +238,7 @@ class Rankings extends Component {
         this.setState({ rankedPairs: false });
         this.setState({ copelandsRanking: false });
         this.setState({ miniMaxRanking: false });
-      }  else if (this.state.method === "cop") {
+      } else if (this.state.method === "cop") {
         this.setState({ winRatio: false });
         this.setState({ eloRanking: false });
         this.setState({ rankedPairs: false });
@@ -268,6 +268,12 @@ class Rankings extends Component {
       <div className={classes.root}>
         <Paper className={classes.header}>
           <Typography variant="h2">Rankings</Typography>
+          <Typography variant="p" style={{ marginTop: "15px" }}>
+            We were able to analyze our voting data using a variety of different
+            ranking methods. Choose one from the drop down menu below to see the
+            rankings according to that method and a description of the ranking
+            method.
+          </Typography>
         </Paper>
         <Paper className={classes.header}>
           <Typography variant="h4">
@@ -316,9 +322,9 @@ class Rankings extends Component {
                   dog.
                 </li>
                 <li>
-                  Find the dog that did not lose in any relationships considered,
-                  and add that dog to the next available spot in the ranking.
-                  Remove that dog from ϱ.
+                  Find the dog that did not lose in any relationships
+                  considered, and add that dog to the next available spot in the
+                  ranking. Remove that dog from ϱ.
                 </li>
                 <li>
                   Repeat steps 2-3 until there are no more dogs left to
@@ -424,7 +430,8 @@ class Rankings extends Component {
                 rel="noopener noreferrer"
               >
                 Copeland's Ranking
-              </a>{" "} method...
+              </a>{" "}
+              method...
             </p>
             <Grid container spacing={24} className={classes.grid}>
               {copelandsRanking.map(pair => {
@@ -441,7 +448,7 @@ class Rankings extends Component {
                           title="Team Member"
                         />
                       </CardActionArea>
-                      <CardActionArea style={{ textAlign: "center"}}>
+                      <CardActionArea style={{ textAlign: "center" }}>
                         <Typography variant="h4">{place}</Typography>
                         <Typography
                           variant="p"
@@ -461,7 +468,15 @@ class Rankings extends Component {
           <div>
             <h1 className={classes.header}>MiniMax Ranking</h1>
             <p>
-              The MiniMax rating system...
+              The{" "}
+              <a
+                href="https://en.wikipedia.org/wiki/Minimax"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                MiniMax Ranking
+              </a>{" "}
+              system ...
             </p>
             <Grid container spacing={24} className={classes.grid}>
               {miniMaxRanking.map(pair => {
@@ -474,18 +489,18 @@ class Rankings extends Component {
                           component="img"
                           alt="Team Member"
                           className={classes.media}
-                          src={"/images/dogs/" + pair[0] + ".png"}
+                          src={"/images/dogs/" + pair + ".png"}
                           title="Team Member"
                         />
                       </CardActionArea>
-                      <CardActionArea style={{ textAlign: "center"}}>
+                      <CardActionArea style={{ textAlign: "center" }}>
                         <Typography variant="h4">{place}</Typography>
-                        <Typography
+                        {/* <Typography
                           variant="p"
                           style={{ marginBottom: "10px" }}
                         >
-                          Win/Tie Percentage: {(pair[1]*100).toFixed(1)}%
-                        </Typography>
+                          Win/Tie Percentage: {(pair[1] * 100).toFixed(1)}%
+                        </Typography> */}
                       </CardActionArea>
                     </Card>
                   </Grid>
@@ -498,7 +513,10 @@ class Rankings extends Component {
           <div>
             <h1 className={classes.header}>Win Ratio</h1>
             <p className={classes.header}>
-              This is is a simple calculation of (wins - losses)/total.
+              This is is a simple calculation of (wins - losses)/total votes.
+              It's important to note that in cases where a dog received a vote
+              of indifference, then their vote total increases but the ratio of
+              (wins-losses)/total votes decreases.
             </p>
             <Grid container spacing={24} className={classes.grid}>
               {winRatioOrder.map(pair => {

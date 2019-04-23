@@ -1,20 +1,19 @@
 import React, { Component } from "react";
-//import DogCard from "./DogCard";
-// import {
-//   Grid,
-//   Paper,
-//   Typography,
-//   Card,
-//   CardMedia,
-//   CardContent,
-//   CardActionArea
-// } from "@material-ui/core";
-import { Paper, Typography } from "@material-ui/core";
-import { withStyles, MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import DogCard from "./DogCard";
+import {
+  Grid,
+  Paper,
+  Typography,
+  Card,
+  CardMedia,
+  CardContent,
+  CardActionArea
+} from "@material-ui/core";
+
+import { withStyles } from "@material-ui/core/styles";
 import PropTypes from "prop-types";
-import { Button } from "@material-ui/core";
-import { Link } from "react-router-dom";
-import red from "@material-ui/core/colors/red";
+
+
 import grey from "@material-ui/core/colors/grey";
 
 const styles = theme => ({
@@ -66,43 +65,36 @@ const styles = theme => ({
   }
 });
 
-const theme = createMuiTheme({
-  palette: {
-    primary: red
-  },
-  typography: {
-    useNextVariants: true
-  }
-});
 
-// const possibleIds = [
-//   20,
-//   24,
-//   25,
-//   26,
-//   27,
-//   28,
-//   34,
-//   35,
-//   37,
-//   38,
-//   40,
-//   43,
-//   44,
-//   45,
-//   48,
-//   51,
-//   52,
-//   54,
-//   56,
-//   57,
-//   65,
-//   68,
-//   69,
-//   70,
-//   72,
-//   74
-// ];
+
+const possibleIds = [
+  20,
+  24,
+  25,
+  26,
+  27,
+  28,
+  34,
+  35,
+  37,
+  38,
+  40,
+  43,
+  44,
+  45,
+  48,
+  51,
+  52,
+  54,
+  56,
+  57,
+  65,
+  68,
+  69,
+  70,
+  72,
+  74
+];
 
 class Results extends Component {
   constructor(props) {
@@ -152,23 +144,14 @@ class Results extends Component {
       <div className={classes.root}>
         <Paper className={classes.header}>
           <Typography variant="h2">
-            Votes are still being accepted through 4/22, please check back later
-            this week to see the results.
+            Voting Results by Dog
           </Typography>
-          <MuiThemeProvider theme={theme}>
-            <Button
-              size="large"
-              color="primary"
-              variant="contained"
-              component={Link}
-              to="/demographics"
-              className={classes.button}
-            >
-              Vote!
-            </Button>
-          </MuiThemeProvider>
+          <Typography variant="p" style={{ marginTop: "15px"}}>
+            We assigned each dog an ID for easy data analysis. You can select a dog ID from the drop down menu below to see how they stacked against every other dog in the contest. 
+          </Typography>
+
         </Paper>
-        {/* <Paper className={classes.header}>
+        <Paper className={classes.header}>
           <Typography variant="h4">
             Select a Dog to Compare:
             <select onChange={this.handleChange}>
@@ -207,7 +190,7 @@ class Results extends Component {
                 );
               })
             : null}
-        </Grid> */}
+        </Grid>
       </div>
     );
   }

@@ -335,7 +335,7 @@ class SocialChoice extends Component {
 
         <div className={classes.separation}>
           <Typography variant="h5">
-            <b>Independent of Irrelevant Alternatives</b>
+            <b>Independence of Irrelevant Alternatives</b>
           </Typography>
           <br />
 
