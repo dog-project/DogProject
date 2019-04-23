@@ -20,7 +20,11 @@ function Home(props) {
     <MuiThemeProvider theme={theme}>
       <div className={classes.div}>
         <Paper className={classes.root} elevation={6} color="secondary">
-          <img src={"/images/husky.jpg"} className={classes.husky} alt={'NU Husky'}/>
+          <img
+            src={"/images/husky.jpg"}
+            className={classes.husky}
+            alt={"NU Husky"}
+          />
           <Typography
             variant="h3"
             color="primary"
@@ -85,37 +89,24 @@ function Home(props) {
             To answer our questions, and find the cutest dog, we are running our
             project in three phases. During the first phase, we collected
             submissions for the contest. We are now in the second phase and are
-            collecting votes on which dogs are cuter than others. Click on the
-            button below to cast your vote! We will collect votes through April
-            22, after which we will begin analysis and interpretation of the
-            results. We will post the results complete with description of our
-            methodology and analysis.
+            collecting votes on which dogs are cuter than others. We have closed
+            our voting and have posted our results.
           </p>
-          <p>
-            Thank you for your time helping us, finally, settle a philosophers'
-            debate.
-          </p>
-        </Paper>
-        <Grid item xs={12}>
-          <Paper className={classes.categoriesPaper} elevation={3}>
-            <p>
-              If you would like to vote on our dogs, you can go to the vote page
-              here!
-            </p>
+          <div className={classes.categoriesPaper}>
             <MuiThemeProvider theme={theme}>
               <Button
                 size="large"
                 color="primary"
                 variant="contained"
                 component={Link}
-                to="/demographics"
+                to="/results"
                 className={classes.button}
               >
-                Vote!
+                See the Results!
               </Button>
             </MuiThemeProvider>
-          </Paper>
-        </Grid>
+          </div>
+        </Paper>
       </div>
       <div className={classes.div}>
         <Grid item xs={12}>
