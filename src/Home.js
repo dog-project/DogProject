@@ -88,9 +88,8 @@ function Home(props) {
           <p>
             To answer our questions, and find the cutest dog, we are running our
             project in three phases. During the first phase, we collected
-            submissions for the contest. We are now in the second phase and are
-            collecting votes on which dogs are cuter than others. We have closed
-            our voting and have posted our results.
+            submissions for the contest. In the second phase we collected votes on our dogs using a pairwising voting system. We have closed
+            our voting and anaylzyed our results using a variety of different methods. Please explore the site to learn more about our project and see the results of our contest!
           </p>
           <div className={classes.categoriesPaper}>
             <MuiThemeProvider theme={theme}>
