@@ -620,7 +620,7 @@ class Rankings extends Component {
                           variant="p"
                           style={{ marginBottom: "10px" }}
                         >
-                          Win Ratio: {pair[1]}
+                          Win-Tie Ratio: {pair[1]}
                         </Typography>
                       </CardActionArea>
                     </Card>
