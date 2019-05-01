@@ -44,178 +44,178 @@ const styles = theme => ({
   }
 });
 
-// const possibleIds = [
-//   20,
-//   24,
-//   25,
-//   26,
-//   27,
-//   28,
-//   34,
-//   35,
-//   37,
-//   38,
-//   40,
-//   43,
-//   44,
-//   45,
-//   48,
-//   51,
-//   52,
-//   54,
-//   56,
-//   57,
-//   65,
-//   68,
-//   69,
-//   70,
-//   72,
-//   74
-// ];
-
 const rankedPairOrder = [
-  "57",
-  "20",
-  "65",
-  "40",
-  "37",
-  "70",
-  "35",
-  "43",
-  "45",
-  "28",
-  "34",
-  "25",
-  "52",
-  "54",
-  "27",
-  "24",
-  "51",
-  "44",
-  "48",
-  "56",
-  "74",
-  "38",
-  "72",
-  "26",
-  "68",
-  "69"
+  57,
+  20,
+  65,
+  40,
+  37,
+  35,
+  70,
+  43,
+  45,
+  28,
+  34,
+  52,
+  54,
+  27,
+  24,
+  25,
+  51,
+  44,
+  48,
+  74,
+  56,
+  38,
+  72,
+  26,
+  68,
+  69
 ];
 
 const eloRankingOrder = [
-  [20, 1415],
-  [57, 1362],
-  [70, 1344],
-  [35, 1336],
-  [65, 1299],
-  [43, 1286],
-  [40, 1276],
-  [45, 1271],
-  [37, 1229],
-  [34, 1221],
-  [25, 1210],
-  [52, 1205],
-  [51, 1192],
-  [54, 1191],
-  [24, 1185],
-  [28, 1160],
-  [44, 1154],
-  [27, 1138],
-  [38, 1128],
-  [56, 1124],
-  [26, 1104],
-  [48, 1098],
-  [72, 1093],
-  [74, 1066],
-  [68, 1058],
-  [69, 1056]
+  [20, 1392.65],
+  [57, 1343.56],
+  [40, 1312.11],
+  [65, 1282.92],
+  [35, 1280.68],
+  [37, 1272.4],
+  [70, 1256.35],
+  [28, 1251.82],
+  [43, 1250.59],
+  [45, 1243.6],
+  [52, 1204.85],
+  [24, 1198.14],
+  [34, 1197.21],
+  [51, 1191.98],
+  [44, 1179.87],
+  [54, 1179.45],
+  [27, 1170.96],
+  [25, 1163.58],
+  [56, 1139.58],
+  [48, 1134.25],
+  [38, 1115.66],
+  [74, 1106.68],
+  [68, 1091.54],
+  [26, 1083.8],
+  [69, 1078.12],
+  [72, 1077.65]
 ];
 
 const winRatioOrder = [
-  [57, 0.69],
-  [20, 0.68],
-  [65, 0.63],
-  [40, 0.62],
-  [70, 0.59],
-  [35, 0.55],
-  [37, 0.54],
-  [43, 0.54],
-  [45, 0.52],
-  [34, 0.48],
-  [25, 0.47],
-  [52, 0.47],
-  [28, 0.44],
-  [54, 0.43],
-  [24, 0.41],
-  [51, 0.41],
-  [27, 0.4],
-  [44, 0.38],
-  [48, 0.34],
-  [56, 0.34],
-  [74, 0.32],
-  [26, 0.3],
-  [38, 0.3],
-  [72, 0.3],
-  [68, 0.23],
-  [69, 0.22]
+  [57, 0.73],
+  [20, 0.73],
+  [65, 0.68],
+  [40, 0.68],
+  [70, 0.62],
+  [37, 0.61],
+  [35, 0.6],
+  [43, 0.59],
+  [45, 0.56],
+  [34, 0.54],
+  [52, 0.53],
+  [28, 0.52],
+  [25, 0.5],
+  [54, 0.49],
+  [27, 0.47],
+  [24, 0.46],
+  [51, 0.45],
+  [44, 0.42],
+  [48, 0.41],
+  [38, 0.36],
+  [56, 0.36],
+  [74, 0.36],
+  [72, 0.35],
+  [26, 0.34],
+  [68, 0.27],
+  [69, 0.25]
 ];
 
 const copelandsRanking = [
   [57, 25],
   [20, 23],
   [65, 21],
-  [40, 17],
-  [70, 17],
+  [40, 19],
+  [37, 16],
   [35, 15],
-  [37, 13],
-  [43, 13],
+  [70, 13],
+  [43, 12],
   [45, 9],
-  [28, 7],
+  [28, 6],
   [34, 5],
-  [52, 3],
+  [52, 2],
   [25, -1],
   [27, -1],
   [54, -1],
-  [24, -5],
+  [24, -3],
   [51, -7],
   [44, -9],
   [48, -11],
   [74, -13],
-  [26, -17],
-  [56, -17],
-  [38, -19],
+  [56, -15],
+  [38, -17],
   [72, -19],
+  [26, -21],
   [68, -23],
   [69, -25]
 ];
 
 const miniMaxRanking = [
-[20, 0.757],
-[57, 0.755],
-[40, 0.713],
-[65, 0.709],
-[70, 0.661],
-[37, 0.655],
-[35, 0.641],
-[43, 0.639],
-[45, 0.612],
-[34, 0.584],
-[52, 0.581],
-[25, 0.573],
-[28, 0.567],
-[54, 0.554],
-[27, 0.534],
-[24, 0.526],
-[51, 0.513],
-[44, 0.500],
-[48, 0.494],
-[74, 0.460],
-[72, 0.453],
-[56, 0.451],
-[38, 0.450],
-[26, 0.443],
-[68, 0.393],
-[69, 0.383]
+  57,
+  20,
+  65,
+  40,
+  37,
+  70,
+  45,
+  43,
+  52,
+  35,
+  28,
+  54,
+  34,
+  44,
+  24,
+  25,
+  51,
+  27,
+  26,
+  48,
+  56,
+  38,
+  74,
+  68,
+  72,
+  69
+];
+
+const winTieRatio = [
+  [20, 0.76],
+  [57, 0.75],
+  [65, 0.71],
+  [40, 0.71],
+  [70, 0.66],
+  [37, 0.65],
+  [35, 0.64],
+  [43, 0.63],
+  [45, 0.61],
+  [34, 0.59],
+  [52, 0.58],
+  [28, 0.57],
+  [25, 0.57],
+  [54, 0.56],
+  [27, 0.54],
+  [24, 0.53],
+  [51, 0.52],
+  [44, 0.50],
+  [48, 0.49],
+  [74, 0.46],
+  [38, 0.45],
+  [72, 0.45],
+  [56, 0.45],
+  [26, 0.44],
+  [68, 0.39],
+  [69, 0.38]
 ];
 
 class Rankings extends Component {
@@ -225,6 +225,7 @@ class Rankings extends Component {
     winRatio: false,
     copelandsRanking: false,
     miniMaxRanking: false,
+    winTieRank: false,
     method: null
   };
 
@@ -255,31 +256,44 @@ class Rankings extends Component {
         this.setState({ winRatio: false });
         this.setState({ copelandsRanking: false });
         this.setState({ miniMaxRanking: false });
+        this.setState({ winTieRank: false });
       } else if (this.state.method === "elo") {
         this.setState({ eloRanking: true });
         this.setState({ rankedPairs: false });
         this.setState({ winRatio: false });
         this.setState({ copelandsRanking: false });
         this.setState({ miniMaxRanking: false });
+        this.setState({ winTieRank: false });
       } else if (this.state.method === "wr") {
         this.setState({ winRatio: true });
         this.setState({ eloRanking: false });
         this.setState({ rankedPairs: false });
         this.setState({ copelandsRanking: false });
         this.setState({ miniMaxRanking: false });
-      }  else if (this.state.method === "cop") {
+        this.setState({ winTieRank: false });
+      } else if (this.state.method === "cop") {
         this.setState({ winRatio: false });
         this.setState({ eloRanking: false });
         this.setState({ rankedPairs: false });
         this.setState({ copelandsRanking: true });
         this.setState({ miniMaxRanking: false });
+        this.setState({ winTieRank: false });
       } else if (this.state.method === "mini") {
         this.setState({ winRatio: false });
         this.setState({ eloRanking: false });
         this.setState({ rankedPairs: false });
         this.setState({ copelandsRanking: false });
         this.setState({ miniMaxRanking: true });
-      } else {
+        this.setState({ winTieRank: false });
+      } else if (this.state.method === "wtr") {
+        this.setState({ winRatio: false });
+        this.setState({ eloRanking: false });
+        this.setState({ rankedPairs: false });
+        this.setState({ copelandsRanking: false });
+        this.setState({ miniMaxRanking: false });
+        this.setState({ winTieRank: true });
+      }
+      else {
         this.setState({ eloRanking: false });
         this.setState({ rankedPairs: false });
         this.setState({ winRatio: false });
@@ -297,6 +311,12 @@ class Rankings extends Component {
       <div className={classes.root}>
         <Paper className={classes.header}>
           <Typography variant="h2">Rankings</Typography>
+          <Typography variant="p" style={{ marginTop: "15px" }}>
+            We were able to analyze our voting data using a variety of different
+            ranking methods. Choose one from the drop down menu below to see the
+            rankings according to that method and a description of the ranking
+            method.
+          </Typography>
         </Paper>
         <Paper className={classes.header}>
           <Typography variant="h4">
@@ -308,6 +328,7 @@ class Rankings extends Component {
               <option value="cop">Copeland's Ranking</option>
               <option value="mini">MiniMax Ranking</option>
               <option value="wr">Win Ratio</option>
+              <option value="wtr">Win-Tie Ratio</option>
             </select>
           </Typography>
         </Paper>
@@ -329,22 +350,29 @@ class Rankings extends Component {
               the relationship. It’s computed as follows:
               <ol>
                 <li>
-                  Sort each pair of dogs by the the largest win ratio (win -
-                  loss) / total.
+                  Sort each pair of dogs by the win ratio (win - loss) / total.
                 </li>
                 <li>
-                  Go through all the dog pairs. If the relationship is
-                  transitive with the other relationships already considered
-                  (ϱ), consider the relationship in the ranking. If it is not
-                  transitive, ignore the preferences expressed for the pair.
+                  Go through all the dog pairs. If a given relationship is
+                  transitive to relationships already considered, consider the
+                  relationship preference. If it is not transitive (so that
+                  adding that preference creates a cycle A > B > C > A), ignore
+                  the preferences expressed for the pair.
                 </li>
                 <li>
-                  Find the dog that did not lose in any relationships considered,
-                  and add that dog to the next available spot in the ranking.
-                  Remove that dog from ϱ.
+                  Find the dog that did not lose in any relationships
+                  considered, and add that dog to the next available spot in the
+                  ranking. No longer have to consider relationships with that
+                  dog.
                 </li>
                 <li>
-                  Repeat steps 2-3 until there are no more dogs left in ϱ.
+                  Find the dog that did not lose in any relationships
+                  considered, and add that dog to the next available spot in the
+                  ranking. Remove that dog from ϱ.
+                </li>
+                <li>
+                  Repeat steps 2-3 until there are no more dogs left to
+                  consider.
                 </li>
               </ol>{" "}
             </p>
@@ -363,7 +391,7 @@ class Rankings extends Component {
                           title="Team Member"
                         />
                       </CardActionArea>
-                      <CardActionArea style={{ textAlign: "center"}}>
+                      <CardActionArea style={{ textAlign: "center" }}>
                         <Typography variant="h4">{place}</Typography>
                       </CardActionArea>
                     </Card>
@@ -390,12 +418,16 @@ class Rankings extends Component {
               player (Alice) and a lower ranked player (Bob) corresponds to the
               likelihood that the Alice wins in a match between her and Bob. If
               Alice has a score 400 points higher than Bob, then Alice has a 10
-              to 1 chance of winning a match. If Alice wins the match, her score
-              will increase a little and Bob’s will decrease a little since the
-              result is expected. Conversely, if Bob wins the match, his score
-              will increase a lot and Alice’s will decrease a lot. Applied to
-              our dogs, the `chess match` is one comparison between two dogs.
-              The difference in ranks between two dogs in a comparison
+              to 1 chance of winning a match (if Alice were to have a score 800
+              points higher, she would have a 100 to 1 chance of winning). If
+              Alice wins the match, her score will increase a little and Bob’s
+              will decrease a little since the result is expected. Conversely,
+              if Bob wins the match, his score will increase a lot and Alice’s
+              will decrease a lot.
+              <br />
+              <br />
+              Applied to our dogs, the ‘chess match’ is one comparison between
+              two dogs. The difference in ranks between two dogs in a comparison
               corresponds to the likelihood higher ranked dog is chosen for as
               cuter in a given vote. The more votes we get, the more accurate
               the dogs Elo scores become.
@@ -415,7 +447,7 @@ class Rankings extends Component {
                           title="Team Member"
                         />
                       </CardActionArea>
-                      <CardActionArea style={{ textAlign: "center"}}>
+                      <CardActionArea style={{ textAlign: "center" }}>
                         <Typography variant="h4">{place}</Typography>
                         <Typography
                           variant="p"
@@ -442,7 +474,8 @@ class Rankings extends Component {
                 rel="noopener noreferrer"
               >
                 Copeland's Ranking
-              </a>{" "} method...
+              </a>{" "}
+              method...
             </p>
             <Grid container spacing={24} className={classes.grid}>
               {copelandsRanking.map(pair => {
@@ -459,7 +492,7 @@ class Rankings extends Component {
                           title="Team Member"
                         />
                       </CardActionArea>
-                      <CardActionArea style={{ textAlign: "center"}}>
+                      <CardActionArea style={{ textAlign: "center" }}>
                         <Typography variant="h4">{place}</Typography>
                         <Typography
                           variant="p"
@@ -479,7 +512,15 @@ class Rankings extends Component {
           <div>
             <h1 className={classes.header}>MiniMax Ranking</h1>
             <p>
-              The MiniMax rating system...
+              The{" "}
+              <a
+                href="https://en.wikipedia.org/wiki/Minimax"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                MiniMax Ranking
+              </a>{" "}
+              system ...
             </p>
             <Grid container spacing={24} className={classes.grid}>
               {miniMaxRanking.map(pair => {
@@ -492,18 +533,18 @@ class Rankings extends Component {
                           component="img"
                           alt="Team Member"
                           className={classes.media}
-                          src={"/images/dogs/" + pair[0] + ".png"}
+                          src={"/images/dogs/" + pair + ".png"}
                           title="Team Member"
                         />
                       </CardActionArea>
-                      <CardActionArea style={{ textAlign: "center"}}>
+                      <CardActionArea style={{ textAlign: "center" }}>
                         <Typography variant="h4">{place}</Typography>
-                        <Typography
+                        {/* <Typography
                           variant="p"
                           style={{ marginBottom: "10px" }}
                         >
-                          Win/Tie Percentage: {(pair[1]*100).toFixed(1)}%
-                        </Typography>
+                          Win/Tie Percentage: {(pair[1] * 100).toFixed(1)}%
+                        </Typography> */}
                       </CardActionArea>
                     </Card>
                   </Grid>
@@ -516,7 +557,10 @@ class Rankings extends Component {
           <div>
             <h1 className={classes.header}>Win Ratio</h1>
             <p className={classes.header}>
-              This is is a simple calculation of (wins - losses)/total.
+              This is is a simple calculation of (wins - losses)/total votes.
+              It's important to note that in cases where a dog received a vote
+              of indifference, then their vote total increases but the ratio of
+              (wins-losses)/total votes decreases.
             </p>
             <Grid container spacing={24} className={classes.grid}>
               {winRatioOrder.map(pair => {
@@ -533,7 +577,44 @@ class Rankings extends Component {
                           title="Team Member"
                         />
                       </CardActionArea>
-                      <CardActionArea style={{ textAlign: "center"}}>
+                      <CardActionArea style={{ textAlign: "center" }}>
+                        <Typography variant="h4">{place}</Typography>
+                        <Typography
+                          variant="p"
+                          style={{ marginBottom: "10px" }}
+                        >
+                          Win Ratio: {pair[1]}
+                        </Typography>
+                      </CardActionArea>
+                    </Card>
+                  </Grid>
+                );
+              })}
+            </Grid>
+          </div>
+        ) : null}
+        {this.state.winTieRank ? (
+          <div>
+            <h1 className={classes.header}>Win-Tie Ratio</h1>
+            <p className={classes.header}>
+              Description of method
+            </p>
+            <Grid container spacing={24} className={classes.grid}>
+              {winTieRatio.map(pair => {
+                place += 1;
+                return (
+                  <Grid item s={6} md={3}>
+                    <Card className={classes.card}>
+                      <CardActionArea>
+                        <CardMedia
+                          component="img"
+                          alt="Team Member"
+                          className={classes.media}
+                          src={"/images/dogs/" + pair[0] + ".png"}
+                          title="Team Member"
+                        />
+                      </CardActionArea>
+                      <CardActionArea style={{ textAlign: "center" }}>
                         <Typography variant="h4">{place}</Typography>
                         <Typography
                           variant="p"
