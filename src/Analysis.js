@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Grid, Typography } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
-import ModalImage from 'react-modal-image';
+import ModalImage from "react-modal-image";
 
 import PropTypes from "prop-types";
 
@@ -155,7 +155,7 @@ export class Analysis extends Component {
                   small="images/misc/DogBeatGraph-1.png"
                   large="images/misc/DogBeatGraph-1.png"
                   alt="graph"
-                  className={ classes.mobileGraph }
+                  className={classes.mobileGraph}
                 />
               </Grid>
 
@@ -205,7 +205,7 @@ export class Analysis extends Component {
                   when we take all of the dogs into account. Selecting the
                   win-or-tie ratio method on our{" "}
                   <a href="/rankings">rankings page</a> shows that Tatum is the
-                  winner on the basis of fewest lost votes.'
+                  winner on the basis of fewest lost votes.
                 </Typography>
               </Grid>
 
@@ -227,8 +227,8 @@ export class Analysis extends Component {
                   ranking dogs on how many overall votes they win compared those
                   they lose. Again, Pearl is the winner and Tatum the runner-up.
                   However, if we remove some other dog from consideration such
-                  as Arya (shown here) who is ranked 11th in win-ratio,{" "}
-                  <i>Tatum is now the winner and Pearl the runner-up!</i>
+                  as Arya (shown here) who is ranked 11th in win-ratio, {" "}<i>Tatum is
+                  now the winner and Pearl the runner-up!</i>
                   <br />
                   <br />
                   The fact that on many rankings, removing a mid-ranked dog can
@@ -284,9 +284,9 @@ export class Analysis extends Component {
                   sizable number of voters (244) submitted votes that were
                   intransitive: Dog A is cuter than Dog B, Dog B cuter than Dog
                   C, and Dog C cuter than Dog A. This suggests that either
-                  individuals made mistakes in their voting, or that judging
-                  “cuteness” is difficult even for individual voters to put into
-                  a linear ranking.
+                  individuals made mistakes in their voting, or that when
+                  judging “cuteness” it is difficult even for individual voters
+                  to put into a linear ranking.
                 </Typography>
               </Grid>
             </Grid>
