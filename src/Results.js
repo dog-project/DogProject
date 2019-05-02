@@ -7,7 +7,8 @@ import {
   Card,
   CardMedia,
   CardContent,
-  CardActionArea
+  CardActionArea,
+  Select, MenuItem
 } from "@material-ui/core";
 
 import { withStyles } from "@material-ui/core/styles";
@@ -153,13 +154,19 @@ class Results extends Component {
         </Paper>
         <Paper className={classes.header}>
           <Typography variant="h4">
-            Select a Dog to Compare:
-            <select onChange={this.handleChange}>
+            Select a Dog to Compare:{"   "}
+            {/* <select onChange={this.handleChange}>
               <option value="">Select a Dog</option>
               {possibleIds.map(id => {
                 return <option value={id}>{id}</option>;
               })}
-            </select>
+            </select> */}
+            <Select value={this.state.dogId} onChange={this.handleChange}>
+              <MenuItem value=""><em>Select a Dog</em></MenuItem>
+              {possibleIds.map(id => {
+                return <MenuItem value={id}>{id}</MenuItem>;
+              })}
+            </Select>
           </Typography>
         </Paper>
 

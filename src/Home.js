@@ -8,8 +8,6 @@ import {
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
-import { Button } from "@material-ui/core";
-import { Link } from "react-router-dom";
 import red from "@material-ui/core/colors/red";
 import grey from "@material-ui/core/colors/grey";
 
@@ -29,13 +27,21 @@ function Home(props) {
             variant="h3"
             color="primary"
             style={{ textAlign: "center" }}
+            className={classes.logo}
           >
             Welcome to The Cute Dog Project
           </Typography>
+          <Typography
+            variant="h5"
+            color="primary"
+            style={{ textAlign: "center", paddingTop: "15px" }}
+          >
+            Using Cute Dogs to Explore Democracy and Social Choice
+          </Typography>
 
           <p>
-            We are a student research group within the Philosophy & Religion
-            Department at Northeastern University conducting a project to
+            We are a student research group in the Philosophy & Religion
+            Department at Northeastern University that conducted a project to
             determine who in the Department has the cutest dog, a topic about
             which there has been long-standing and passionate disagreement.
             Instead of arguing until the end of time (as philosophers will do),
@@ -74,55 +80,57 @@ function Home(props) {
               and respect privacy?
             </li>
           </ul>
-          <p>
-            Thus, determining whose dog is the cutest has required us to design
-            a system informed by democratic theory, social choice theory, value
-            theory, critical theory, philosophy of science, and information
-            ethics. It has required us to grapple with the same sorts of issues
-            that arise in democratic practice and social decision-making in
-            other contexts – for example, selecting a presidential candidate
-            from a crowded primary field or selecting applicants for admission
-            to a competitive university.
-          </p>
-          <p>But now, it is time to launch!</p>
-          <p>
-            To answer our questions, and find the cutest dog, we are running our
-            project in three phases. During the first phase, we collected
-            submissions for the contest. In the second phase we collected votes on our dogs using a pairwising voting system. We have closed
-            our voting and anaylzyed our results using a variety of different methods. Please explore the site to learn more about our project and see the results of our contest!
-          </p>
-          <div className={classes.categoriesPaper}>
-            <MuiThemeProvider theme={theme}>
-              <Button
-                size="large"
-                color="primary"
-                variant="contained"
-                component={Link}
-                to="/results"
-                className={classes.button}
-              >
-                See the Results!
-              </Button>
-            </MuiThemeProvider>
-          </div>
+          <Grid container spacing={24}>
+            <Grid item sm={12} md={6}>
+              <p>
+                Determining whose dog is the cutest required us to design a
+                system informed by democratic theory, social choice theory,
+                value theory, critical theory, philosophy of science, and
+                information ethics. We had to grapple with the same sorts of
+                issues that arise in democratic practice and social
+                decision-making in other contexts – for example, selecting a
+                presidential candidate from a crowded primary field or selecting
+                applicants for admission to a competitive university.
+              </p>
+              <p>
+                We have learned alot along the way, but have now completed the
+                contest. The winner of the contest was Pearl!
+              </p>
+            </Grid>
+            <Grid sm={12} md={6} >
+              <img
+                src="images/dogs/57.png"
+                className={ classes.winner }
+                alt="winner"
+              />
+              <Typography variant="p" style={{ textAlign: "center" }}>
+                The Winner, Pearl
+              </Typography>
+            </Grid>
+            <Grid item sm={12}>
+            <Typography variant="p">
+              This website details our contest, our methods, results, and the
+              many lessons we've learned along the way. Please explore the site
+              to learn more about or project, see the full results, and see what
+              cute dogs can teach us about democracy.
+            </Typography>
+            </Grid>
+          </Grid>
         </Paper>
-      </div>
-      <div className={classes.div}>
-        <Grid item xs={12}>
-          <Paper className={classes.categoriesPaper} elevation={2}>
-            <p>
-              If you have questions or would like more information about the
-              Cute Dog Project please contact us via{" "}
-              <a
-                rel="noopener noreferrer"
-                target="_blank"
-                href="mailto:northeasterndogproject@gmail.com"
-              >
-                email
-              </a>
-            </p>
-          </Paper>
-        </Grid>
+
+        <Paper className={classes.categoriesPaper} elevation={2}>
+          <p>
+            If you have questions or would like more information about the Cute
+            Dog Project please contact us via{" "}
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="mailto:northeasterndogproject@gmail.com"
+            >
+              email
+            </a>
+          </p>
+        </Paper>
       </div>
     </MuiThemeProvider>
   );
@@ -169,6 +177,22 @@ const styles = theme => ({
       paddingLeft: "32%",
       maxHeight: "100px",
       maxWidth: "100px"
+    }
+  },
+  logo: {
+    fontFamily: "Pacifico"
+  },
+  winner: {
+    [theme.breakpoints.up("sm")]: {
+      maxHeight: "200px",
+      maxWidth: "200px",
+      paddingLeft: "36%"
+    },
+    [theme.breakpoints.down("sm")]: {
+      paddingTop: "10px",
+      paddingLeft: "40%",
+      maxHeight: "150px",
+      maxWidth: "150px"
     }
   }
 });
