@@ -222,13 +222,13 @@ const winTieRatio = [
 
 class Rankings extends Component {
   state = {
-    rankedPairs: false,
+    rankedPairs: true,
     eloRanking: false,
     winRatio: false,
     copelandsRanking: false,
     miniMaxRanking: false,
     winTieRank: false,
-    method: null
+    method: "rp"
   };
 
   getVoteData() {
@@ -470,7 +470,15 @@ class Rankings extends Component {
         ) : null}
         {this.state.copelandsRanking ? (
           <div>
-            <h1 className={classes.header}>Copeland's Ranking</h1>
+            <h1 className={classes.header}>
+              <a
+                href="https://en.wikipedia.org/wiki/Copeland%27s_method"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Copeland's Ranking
+              </a>
+            </h1>
             <p>
               This method ranks the dogs based on the difference between their
               pairwise wins and pairwise losses. Dogs with higher net pairwise
@@ -494,7 +502,7 @@ class Rankings extends Component {
                 rel="noopener noreferrer"
               >
                 Consistency Criterion
-              </a>
+              </a>{" "}
               which can be upheld in some scoring systems.
             </p>
             <Grid container spacing={24} className={classes.grid}>
