@@ -137,7 +137,7 @@ class SocialChoice extends Component {
                 tradeoffs between participation, privacy and security.
                 <br />
                 <br />
-                Eric Pacuit Condorcet’s Jury Theorem: 
+                Eric Pacuit Condorcet’s Jury Theorem:
               </Typography>
             </Grid>
 
@@ -429,20 +429,38 @@ class SocialChoice extends Component {
           <Typography variant="p">
             This method simply ranks the dogs based on the total proportion of
             “cuter” votes the dog receives across all of the comparisons made.
-            This method satisfies the same four criteria that Ranked Pairs does,
-            but does not satisfy other criteria such as the condorcet criterion.
+            In other words, a candidate’s win-loss ratio can be derived by the
+            number of votes placed in favor of a candidate plus half of the
+            votes where the voter was indifferent between the two dogs being
+            compared. All of this is then divided by the total number of votes
+            placed against the dog.
+            <br />
+            <br />
+            This method satisfies the same four criteria that Ranked Pairs, but
+            does not satisfy other criteria such as the{" "}
+            <a
+              href="https://en.wikipedia.org/wiki/Condorcet_criterion"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              condorcet criterion
+            </a>{" "}
+            which holds that the in order for one dog to be considered
+            preferable to all other dogs, it must clearly win in a one-on-one
+            plurality vote with every other candidate.
             <br />
             <br />
           </Typography>
           <Typography variant="h6">
-            <b>Least-Losses Ratio</b>
+            <b>Win-Tie Ratio or Least-Losses Ratio</b>
           </Typography>
           <br />
           <Typography variant="p">
             This method ranks the dogs based on the fewest proportion of lost
-            cuteness votes across all comparisons. Such a method is similar to
-            the win-ratio method but seeks to minimize disagreement rather than
-            maximize agreement.
+            cuteness votes across all comparisons. Win-Tie Ratio is similar to
+            the Win-Ratio method but seeks to minimize the number of unfavorable
+            votes for a given candidate rather than maximize the number of
+            favorable votes.
             <br />
             <br />
           </Typography>
@@ -459,10 +477,18 @@ class SocialChoice extends Component {
           </Typography>
           <br />
           <Typography variant="p">
-            This method ranks the dogs based on their losing margin against
-            other dogs in pairwise comparisons, where smaller losing margins are
-            considered an indication of cuteness. In particular, dogs whose
-            largest loss is relatively small are ranked higher.
+            This method, also referred to as the Simpson-Kramer method, tries to
+            minimize the maximum amount of loss that is observed by a given
+            candidate. So when comparing two dogs that win and lose on a regular
+            basis, the dog whose worst loss is by very close margin is going to
+            be more highly ranked by this system than the dog that might be more
+            controversial and loses by higher margins.
+            <br />
+            <br />
+            This decision rule meets the Condorcet and Majority criteria but
+            fails the Independence criterion and Condorcet loser criterion
+            whereby it is possible for a dog to win even if that dog loses in a
+            plurality vote against any one-on-one match up with the other dogs.
             <br />
             <br />
           </Typography>
@@ -481,7 +507,28 @@ class SocialChoice extends Component {
           <Typography variant="p">
             This method ranks the dogs based on the difference between their
             pairwise wins and pairwise losses. Dogs with higher net pairwise
-            wins will be ranked higher.
+            wins will be ranked more favorably. This method meets the Majority
+            and Concercet criteria but fails the Independence of Irrelevant
+            Alternatives.
+            <br />
+            <br />
+            Copeland also allows for strategic omission of votes whereby to make
+            no decision or to claim indifference between two candidates is to
+            make a decision. Furthermore, the Copeland method, like nearly every
+            other method here, is susceptible to inconsistencies. Ideally, we
+            would like a method of aggregating votes where if the voters were
+            arbitrarily divided into groups and several elections were held, the
+            Copeland winners of the subsets would be the same as the Copeland
+            winner of the entire voting population. This is often referred to as
+            the{" "}
+            <a
+              href="https://en.wikipedia.org/wiki/Comparison_of_electoral_systems"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Consistency Criterion
+            </a>{" "}
+            which can be upheld in some scoring systems.
             <br />
             <br />
           </Typography>
@@ -495,15 +542,29 @@ class SocialChoice extends Component {
               target="_blank"
               rel="noopener noreferrer"
             >
-              The Elo rating
+              The Elo scoring
             </a>{" "}
             system is most well known for its usage in chess rankings. Each
-            contestant is assigned a “score” on the basis of the results. In our
-            case, the difference in the Elo scores assigned to a higher ranked
-            player corresponds to a probability that the higher ranked player
-            will be judged as “cuter” by the next voter As more votes are taken
-            in, the score is adjusted to reflect the results and the more votes
-            we get, the more accurate the dogs Elo scores become.
+            contestant is assigned a “score” upon introduction. This score is
+            consistent across all candidates prior to competition and then as
+            comparisons are made, scores are adjusted according to the scores of
+            the winners and losers prior to the comparison. If two dogs, each
+            with high scores, are compared, then the outcome of the comparison
+            will not drastically affect their scores. If two dogs are compared,
+            but one with a much higher score is ranked less cute than a dog with
+            a much lower score, then the score of the loser will go down by a
+            large amount and vice verse for the winner.
+            <br />
+            <br />
+            In our case, it is very important to interpret a dog’s Elo score as
+            a probability rather than a value. The Elo scores assigned to higher
+            ranked dogs correspond to a higher probability that the dog will be
+            judged as “cuter” by the next voter. This not only means that Elo
+            rankings do not satisfy the Independence condition but also means
+            that the sequence in which votes are collected has an effect on the
+            final rankings. This makes sense in a sports context where games are
+            continuously played but poses potential concerns for discrete
+            elections.
             <br />
             <br />
           </Typography>
