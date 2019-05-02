@@ -13,9 +13,12 @@ import Results from "./Results";
 import Rankings from "./Rankings";
 import Philosophy from "./Philosophy";
 //import LessonsForDemocracy from "./LessonsForDemocracy";
+import Analysis from "./Analysis";
+import Submit from "./Submit";
+
 
 import "./App.css";
-import Submit from "./Submit";
+
 
 
 
@@ -39,6 +42,7 @@ class App extends Component {
             <Route exact path="/rankings" render={props => <Rankings />} />
             <Route exact path="/philosophy" render={props => <Philosophy />} />
             <Route exact path="/submission-guidelines" render={props => <Submit />} />
+            <Route exact path="/results-and-analysis" render={props => <Analysis />} />
             <Route component={NoMatch} />
           </Switch>
         </div>
