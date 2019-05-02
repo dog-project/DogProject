@@ -29,8 +29,8 @@ const styles = theme => ({
     textAlign: "center"
   },
   graph: {
-    height: "1375px",
-    width: "300px",
+    height: "1500px",
+    width: "255px",
     [theme.breakpoints.down("sm")]: {
       display: "none"
     }

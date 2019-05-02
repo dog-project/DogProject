@@ -367,11 +367,6 @@ class Rankings extends Component {
                   dog.
                 </li>
                 <li>
-                  Find the dog that did not lose in any relationships
-                  considered, and add that dog to the next available spot in the
-                  ranking. Remove that dog from ϱ.
-                </li>
-                <li>
                   Repeat steps 2-3 until there are no more dogs left to
                   consider.
                 </li>
@@ -579,12 +574,6 @@ class Rankings extends Component {
                       </CardActionArea>
                       <CardActionArea style={{ textAlign: "center" }}>
                         <Typography variant="h4">{place}</Typography>
-                        {/* <Typography
-                          variant="p"
-                          style={{ marginBottom: "10px" }}
-                        >
-                          Win/Tie Percentage: {(pair[1] * 100).toFixed(1)}%
-                        </Typography> */}
                       </CardActionArea>
                     </Card>
                   </Grid>
@@ -653,7 +642,7 @@ class Rankings extends Component {
         {this.state.winTieRank ? (
           <div>
             <h1 className={classes.header}>Win-Tie Ratio (Least-losses)</h1>
-            <p className={classes.header}>
+            <p>
               This method ranks the dogs based on the fewest proportion of lost
               cuteness votes across all comparisons. Win-Tie Ratio is similar to
               the Win-Ratio method but seeks to minimize the number of
