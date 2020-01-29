@@ -11,13 +11,17 @@ import MenuIcon from "@material-ui/icons/Menu";
 import HomeIcon from "@material-ui/icons/Home";
 import SchoolIcon from "@material-ui/icons/School";
 import PersonIcon from "@material-ui/icons/Person";
-//import HowToVoteIcon from "@material-ui/icons/HowToVote";
+import PetsIcon from '@material-ui/icons/Pets';
+import HowToVoteIcon from '@material-ui/icons/HowToVote';
 import AssignmentIcon from "@material-ui/icons/Assignment";
 import VpnLockIcon from "@material-ui/icons/VpnLock";
 import AssessmentIcon from "@material-ui/icons/Assessment"
 // import InfoIcon from "@material-ui/icons/Info";
 import { Link } from "react-router-dom";
 import { IconButton } from "@material-ui/core";
+import Collapse from '@material-ui/core/Collapse';
+import ExpandLess from '@material-ui/icons/ExpandLess';
+import ExpandMore from '@material-ui/icons/ExpandMore';
 
 const styles = {
   list: {
@@ -31,7 +35,10 @@ const styles = {
       backgroundColor: "#bdbdbd"
     }
   },
-  text: {}
+  text: {},
+  nested: {
+    paddingLeft: '32px',
+  }
 };
 
 class DrawerNav extends React.Component {
@@ -39,7 +46,9 @@ class DrawerNav extends React.Component {
     top: false,
     left: false,
     bottom: false,
-    right: false
+    right: false,
+    openDog: false,
+    openPrimaries: false
   };
 
   toggleDrawer = (side, open) => () => {
@@ -48,13 +57,34 @@ class DrawerNav extends React.Component {
     });
   };
 
+  handleDogClick = () => {
+    this.setState({openDog: !this.state.openDog});
+  };
+
+  handlePrimariesClick = () => {
+    this.setState({openPrimaries: !this.state.openPrimaries});
+  };
+
   render() {
     const { classes } = this.props;
 
-    const sideList = (
-      <div className={classes.list}>
-        <List>
-          <ListItem component={Link} to="/" className={classes.item}>
+    const primaries = (
+      <Collapse in={this.state.openPrimaries} timeout="auto" unmountOnExit>
+        <List disablePadding>
+          <ListItem component={Link} to="/primaries/" className={classes.nested}>
+            <ListItemIcon>
+              <HomeIcon />
+            </ListItemIcon>
+            <ListItemText primary="Home" className={classes.text} />
+          </ListItem>
+        </List>
+      </Collapse>
+    )
+
+    const dogProject = (
+      <Collapse in={this.state.openDog} timeout="auto" unmountOnExit>
+        <List disablePadding>
+          <ListItem component={Link} to="/dogproject/" className={classes.nested}>
             <ListItemIcon>
               <HomeIcon />
             </ListItemIcon>
@@ -72,33 +102,33 @@ class DrawerNav extends React.Component {
           </ListItem> */}
           <ListItem
             component={Link}
-            to="/meet-the-team"
-            className={classes.item}
+            to="/dogproject/meet-the-team"
+            className={classes.nested}
           >
             <ListItemIcon>
               <PersonIcon />
             </ListItemIcon>
             <ListItemText primary="Meet The Team" />
           </ListItem>
-          <ListItem component={Link} to="/rankings" className={classes.item}>
+          <ListItem component={Link} to="/dogproject/rankings" className={classes.nested}>
             <ListItemIcon>
               <FormatListNumberedIcon />
             </ListItemIcon>
             <ListItemText primary="Rankings" />
           </ListItem>
-          <ListItem component={Link} to="/results" className={classes.item}>
+          <ListItem component={Link} to="/dogproject/results" className={classes.nested}>
             <ListItemIcon>
               <AssignmentIcon />
             </ListItemIcon>
             <ListItemText primary="Voting Data" />
           </ListItem>
-          <ListItem component={Link} to="/results-and-analysis" className={classes.item}>
+          <ListItem component={Link} to="/dogproject/results-and-analysis" className={classes.nested}>
             <ListItemIcon>
               <AssessmentIcon />
             </ListItemIcon>
             <ListItemText primary="Results & Analysis" />
           </ListItem>
-          <ListItem component={Link} to="/philosophy" className={classes.item}>
+          <ListItem component={Link} to="/dogproject/philosophy" className={classes.nested}>
             <ListItemIcon>
               <SchoolIcon />
             </ListItemIcon>
@@ -106,14 +136,43 @@ class DrawerNav extends React.Component {
           </ListItem>
           <ListItem
             component={Link}
-            to="/privacy-policy"
-            className={classes.item}
+            to="/dogproject/privacy-policy"
+            className={classes.nested}
           >
             <ListItemIcon>
               <VpnLockIcon />
             </ListItemIcon>
             <ListItemText primary="Privacy Policy" />
           </ListItem>
+        </List>
+      </Collapse>
+    );
+
+    const sideList = (
+      <div className={classes.list}>
+        <List>
+          <ListItem component={Link} to="/" className={classes.item}>
+            <ListItemIcon>
+              <HomeIcon />
+            </ListItemIcon>
+            <ListItemText primary="Home" className={classes.text} />
+          </ListItem>
+          <ListItem button onClick={this.handlePrimariesClick}>
+            <ListItemIcon>
+              <HowToVoteIcon />
+            </ListItemIcon>
+            <ListItemText primary="Primaries Project" />
+            {this.state.openPrimaries ? <ExpandLess /> : <ExpandMore />}
+          </ListItem>
+          {primaries}
+          <ListItem button onClick={this.handleDogClick}>
+            <ListItemIcon>
+              <PetsIcon />
+            </ListItemIcon>
+            <ListItemText primary="Dog Project" />
+            {this.state.openDog ? <ExpandLess /> : <ExpandMore />}
+          </ListItem>
+          {dogProject}
         </List>
       </div>
     );
@@ -134,7 +193,6 @@ class DrawerNav extends React.Component {
           <div
             tabIndex={0}
             role="button"
-            onClick={this.toggleDrawer("left", false)}
             onKeyDown={this.toggleDrawer("left", false)}
           >
             {sideList}
