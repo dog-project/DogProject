@@ -7,7 +7,6 @@ import {
 } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
 import red from "@material-ui/core/colors/red";
 import grey from "@material-ui/core/colors/grey";
 
