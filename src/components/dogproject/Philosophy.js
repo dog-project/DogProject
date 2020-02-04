@@ -7,9 +7,9 @@ import Tab from '@material-ui/core/Tab';
 import PropTypes from "prop-types";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
-import PhilOfCuteness from "./components/PhilOfCuteness"
-import CuteAcrossCultures from "./components/CuteAcrossCultures"
-import SocialChoice from "./components/SocialChoice"
+import PhilOfCuteness from "./PhilOfCuteness"
+import CuteAcrossCultures from "./CuteAcrossCultures"
+import SocialChoice from "./SocialChoice"
 import LessonsForDemocracy from "./LessonsForDemocracy";
 import Governance from "./Governance";
 

@@ -1,18 +1,20 @@
 import React, { Component } from "react";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/dogproject/Navbar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./Home";
+import DogProjectHome from "./components/dogproject/Home";
+import PrimariesHome from "./components/primaries/Home";
+import Home from "./components/Home"
 //import Demographics from "./Demographics";
 //import Vote from "./Vote";
-import TeamPage from "./TeamPage";
-import PrivacyPolicy from "./PrivacyPolicy";
-import ThankYou from "./components/ThankYou";
-import Results from "./Results";
-import Rankings from "./Rankings";
-import Philosophy from "./Philosophy";
+import TeamPage from "./components/dogproject/TeamPage";
+import PrivacyPolicy from "./components/dogproject/PrivacyPolicy";
+import ThankYou from "./components/dogproject/ThankYou";
+import Results from "./components/dogproject/Results";
+import Rankings from "./components/dogproject/Rankings";
+import Philosophy from "./components/dogproject/Philosophy";
 //import LessonsForDemocracy from "./LessonsForDemocracy";
-import Analysis from "./Analysis";
-import Submit from "./Submit";
+import Analysis from "./components/dogproject/Analysis";
+import Submit from "./components/dogproject/Submit";
 
 
 import "./App.css";
@@ -32,16 +34,18 @@ class App extends Component {
           <Navbar />
           <Switch>
             <Route exact path="/" render={props => (<div><Home /></div>)} />
+            <Route exact path="/dogproject" render={props => (<div><DogProjectHome /></div>)} />
             {/* <Route exact path="/demographics" render={props => <Demographics />} />
             <Route exact path="/vote" render={props => <Vote />} /> */}
-            <Route exact path="/meet-the-team" render={props => <TeamPage />} />
-            <Route exact path="/privacy-policy" render={props => <PrivacyPolicy />} />
-            <Route exact path="/thank-you" render={props => <ThankYou />} />
-            <Route exact path="/results" render={props => <Results />} />
-            <Route exact path="/rankings" render={props => <Rankings />} />
-            <Route exact path="/philosophy" render={props => <Philosophy />} />
-            <Route exact path="/submission-guidelines" render={props => <Submit />} />
-            <Route exact path="/results-and-analysis" render={props => <Analysis />} />
+            <Route exact path="/dogproject/meet-the-team" render={props => <TeamPage />} />
+            <Route exact path="/dogproject/privacy-policy" render={props => <PrivacyPolicy />} />
+            <Route exact path="/dogproject/thank-you" render={props => <ThankYou />} />
+            <Route exact path="/dogproject/results" render={props => <Results />} />
+            <Route exact path="/dogproject/rankings" render={props => <Rankings />} />
+            <Route exact path="/dogproject/philosophy" render={props => <Philosophy />} />
+            <Route exact path="/dogproject/submission-guidelines" render={props => <Submit />} />
+            <Route exact path="/dogproject/results-and-analysis" render={props => <Analysis />} />
+            <Route exact path="/primaries" render={props => (<div><PrimariesHome /></div>)} />
             <Route component={NoMatch} />
           </Switch>
         </div>
