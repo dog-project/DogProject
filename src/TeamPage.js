@@ -158,7 +158,6 @@ class TeamPage extends Component {
         </Paper>
         <Grid container spacing={24} className={classes.grid}>
           {team.map(member => {
-            console.log('hello')
             return (
               <Grid item s={6} md={3}>
                 <BioCard
