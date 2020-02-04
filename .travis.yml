@@ -1,15 +1,18 @@
 language: node_js
 node_js:
-  - "stable"
+- stable
 script:
- - npm run build
+- npm run build
 branches:
   only:
-    - development
+  - development
 install:
-  - npm install
-  - npm install -g firebase-tools
-after_success:
-  - firebase deploy --project the-dog-project-staging --token $FIREBASE_TOKEN
+- npm install
+- npm install -g firebase-tools
+deploy:
+  provider: firebase
+  token:
+    secure: $FIREBASE_2020
+  project: "the-dog-project-staging"
 notifications:
   slack: nuphilosophy:DF9RFkQP3ojK6NqRPY0FOOSk
