@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Navbar from "./components/dogproject/Navbar";
+import Navbar from "./components/home/Navbar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import DogProjectHome from "./components/dogproject/Home";
 import PrimariesHome from "./components/primaries/Home";
-import Home from "./components/Home"
+import Home from "./components/home/Home"
 //import Demographics from "./Demographics";
 //import Vote from "./Vote";
 import TeamPage from "./components/dogproject/TeamPage";

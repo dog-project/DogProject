@@ -60,7 +60,7 @@ function Navbar(props) {
           <Toolbar>
             <DrawerNav />
             <Typography variant="h6" color="inherit" className={classes.grow} component={Link} to="/" style={{fontFamily: "Pacifico"}}>
-              The Cute Dog Project
+              The Social Choice and Democracy Group
             </Typography>
           </Toolbar>
         </AppBar>
