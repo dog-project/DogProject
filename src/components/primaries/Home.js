@@ -42,7 +42,7 @@ function Home(props) {
             We are an undergraduate student research group in the Philosophy &
             Religion Department at Northeastern University that conducted a
             project to determine how election systems can impact the results of the
-            Democratic Presedential Primaries
+            Democratic Presidential Primaries
           </p>
         </Paper>
 
