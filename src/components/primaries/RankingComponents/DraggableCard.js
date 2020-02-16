@@ -19,9 +19,8 @@ export default class DraggableCard extends React.Component {
                             {...provided.dragHandleProps}
                             style = {{
                                 userSelect: 'none',
-                                display: 'flex',
                                 justifyContent: 'center',
-                                margin: '10px 10px 10px 10px',
+                                margin: '5px',
                                 ...provided.draggableProps.style
                             }}
                         >

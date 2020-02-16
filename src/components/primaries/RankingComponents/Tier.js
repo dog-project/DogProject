@@ -2,6 +2,7 @@ import React from 'react';
 import {Droppable} from 'react-beautiful-dnd';
 import DraggableCard from "./DraggableCard";
 import Box from '@material-ui/core/Box';
+import Grid from '@material-ui/core/Grid'
 
 
 export default class Tier extends React.Component {
@@ -10,23 +11,22 @@ export default class Tier extends React.Component {
         const id = this.props.id;
         return (
 
-            <div style={{margin: 8, display: 'flex', flexDirection: 'column'}}>
+            <Grid item xs={12}>
                 <Droppable droppableId={id} direction="horizontal">
                     {(provided, snapshot) => {
                         return (
-                            <Box
-                                borderRadius={16}
+                            <Grid
                                 {...provided.droppableProps}
                                 ref={provided.innerRef}
                                 style={{
                                     background: snapshot.isDraggingOver ? 'lightblue' : 'lightgrey',
+                                    borderRadius: 16,
                                     padding: 4,
-                                    width: '100%',
-                                    minWidth: 800,
-                                    minHeight: 100,
                                     display: 'flex',
-                                    flexDirection: 'row'
-
+                                    flexDirection: 'row',
+                                    width: "90%",
+                                    margin: "auto",
+                                    minHeight: "90px"
                                 }}>
 
                                 {tier.items.map((item, index) => {
@@ -36,11 +36,11 @@ export default class Tier extends React.Component {
                                 })
                                 }
                                 {provided.placeholder}
-                            </Box>
+                            </Grid>
                         )
                     }}
                 </Droppable>
-            </div>
+            </Grid>
         )
     }
 }

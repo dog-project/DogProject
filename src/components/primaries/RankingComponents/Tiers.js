@@ -2,34 +2,34 @@ import { Candidates } from './Candidates'
 import uuid from "uuid/v4";
 
 export const Tiers =  {
-    [uuid()] : {
+    [0] : {
         rank: "landing",
         items: Candidates
     },
 
-    [uuid()]: {
+    [1]: {
         name: 1,
         items: []
     },
 
-    [uuid()]: {
+    [2]: {
         name: 2,
         items: []
     },
-    [uuid()]: {
+    [3]: {
         name: 3,
         items: []
     },
-    [uuid()]: {
+    [4]: {
         name: 4,
         items: []
     },
-    [uuid()]: {
+    [5]: {
         name: 5,
         items: []
     },
 
-    [uuid()]: {
+    [6]: {
         name: 6,
         items: []
     }

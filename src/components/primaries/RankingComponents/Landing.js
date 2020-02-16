@@ -1,6 +1,6 @@
 import React from "react";
 import {Droppable} from "react-beautiful-dnd";
-import Box from "@material-ui/core/Box";
+import Grid from "@material-ui/core/Grid"
 import DraggableCard from "./DraggableCard";
 
 export default class Landing extends React.Component {
@@ -8,33 +8,38 @@ export default class Landing extends React.Component {
         const column = this.props.items;
         const id = this.props.id;
         return (
-            <Droppable droppableId={id} direction="vertical" style = {{minWidth:'100%'}}>
-                {(provided, snapshot) => {
-                    return (
-                        <Box
-                            borderRadius={16}
-                            {...provided.droppableProps}
-                            ref={provided.innerRef}
-                            style={{
-                                background: snapshot.isDraggingOver ? 'lightblue' : 'lightgrey',
-                                borderColor: 'black',
-                                width: 185,
-                                height: 715,
-                                padding: 4,
-
-                            }}>
-                            {column.items.map((item, index) => {
-                                return (
-                                    <DraggableCard item={item} index={index} key={'item'}/>
-                                )
-                            })
-                            }
-                            {provided.placeholder}
-                        </Box>
-                    )
-                }
-                }
-            </Droppable>
+            <Grid item xs={12}>
+                <Droppable droppableId={id} direction="horizontal" style = {{minWidth:'100%'}}>
+                    {(provided, snapshot) => {
+                        return (
+                            <Grid container 
+                                {...provided.droppableProps}
+                                ref={provided.innerRef}
+                                style={{
+                                    background: snapshot.isDraggingOver ? 'lightblue' : 'black',
+                                    borderRadius: 16,
+                                    borderColor: 'black',
+                                    padding: 4,
+                                    display: 'flex',
+                                    flexDirection: 'row',
+                                    width: "90%",
+                                    margin: "auto",
+                                    minHeight: "90px"
+                                }}>
+                                {column.items.map((item, index) => {
+                                    return (
+                                        <DraggableCard item={item} index={index} key={index + 6}/>
+                                    )
+                                })
+                                }
+                                {provided.placeholder}
+                            </Grid>
+                        )
+                    }
+                    }
+                </Droppable>
+            </Grid>
+            
         )
     }
 }
