@@ -15,7 +15,6 @@ import Philosophy from "./components/dogproject/Philosophy";
 //import LessonsForDemocracy from "./LessonsForDemocracy";
 import Analysis from "./components/dogproject/Analysis";
 import Submit from "./components/dogproject/Submit";
-import BasicInfo from "./components/primaries/BasicInfo"
 import Voting from "./components/primaries/Voting"
 
 

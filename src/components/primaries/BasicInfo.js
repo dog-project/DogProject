@@ -1,8 +1,7 @@
 import React from 'react';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
-import { Paper, Typography, FormGroup, FormControlLabel, Checkbox, FormControl, Button, Select, MenuItem, 
-    InputLabel, FormLabel, RadioGroup, Radio, Dialog, DialogTitle, DialogActions, DialogContent, DialogContentText } from '@material-ui/core'
+import { Paper, Typography, FormGroup, FormControlLabel, FormControl, Button, Select, MenuItem, FormLabel, RadioGroup, Radio, Dialog, DialogTitle, DialogActions, DialogContent, DialogContentText } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
     formControl: {

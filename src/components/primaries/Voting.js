@@ -7,15 +7,6 @@ import Rankings from './RankingComponents/Rankings'
 import Demographics from './Demographics';
 import ThankYou from './ThankYou';
 
-const useStyles = makeStyles(theme => ({
-    formControl: {
-      margin: theme.spacing(1),
-      minWidth: 120,
-      maxWidth: 300,
-      justifyContent: 'flex-end'
-    },
-  }));
-
 
 export default function Voting() {
     const [state, setState] = React.useState({
@@ -65,7 +56,7 @@ export default function Voting() {
         });
 
     const handleBasicSubmit = ({eighteen, votingState, eligible, topCandidate}) => {
-        setState({...state, eighteen: eighteen, votingState, votingState, eligible: eligible, topCandidate: topCandidate, page: 2});
+        setState({...state, eighteen: eighteen, votingState: votingState, eligible: eligible, topCandidate: topCandidate, page: 2});
     };
 
     const handleTierSubmit = tiers => {
