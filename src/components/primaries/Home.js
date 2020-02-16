@@ -35,21 +35,33 @@ function Home(props) {
             color="primary"
             style={{ textAlign: "center", paddingTop: "15px" }}
           >
-            Using the Democratic Primaries to Explore Democracy and Social Choice
+            Using the Democratic Primaries to Explore Democracy and Social
+            Choice
           </Typography>
 
           <p>
             We are an undergraduate student research group in the Philosophy &
             Religion Department at Northeastern University that conducted a
-            project to determine how election systems can impact the results of the
-            Democratic Presedential Primaries
+            project to determine how election systems can impact the results of
+            the Democratic Presidential Primaries
+          </p>
+          <p>
+            Democracy is supposed to be based on the will of the people, but
+            what is the best way to interpret their will? Our current voting
+            system, which is based on plurality, produces unsatisfactory results
+            when there are more than two candidates in the race, but no system
+            is without its flaws. The purpose of our research is to identify
+            which candidates would benefit from the use of different voting
+            systems, all of which are supposed to identify the will of the
+            people. In this research we are inspecting plurality, ranked choice,
+            ranked pairs, and other lesser known voting methods.
           </p>
         </Paper>
 
         <Paper className={classes.categoriesPaper} elevation={2}>
           <p>
-            If you have questions or would like more information about this project
-             please contact us via{" "}
+            If you have questions or would like more information about this
+            project please contact us via{" "}
             <a
               rel="noopener noreferrer"
               target="_blank"

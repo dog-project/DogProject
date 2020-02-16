@@ -15,6 +15,7 @@ import Philosophy from "./components/dogproject/Philosophy";
 //import LessonsForDemocracy from "./LessonsForDemocracy";
 import Analysis from "./components/dogproject/Analysis";
 import Submit from "./components/dogproject/Submit";
+import Voting from "./components/primaries/Voting"
 
 
 import "./App.css";
@@ -46,6 +47,7 @@ class App extends Component {
             <Route exact path="/dogproject/submission-guidelines" render={props => <Submit />} />
             <Route exact path="/dogproject/results-and-analysis" render={props => <Analysis />} />
             <Route exact path="/primaries" render={props => (<div><PrimariesHome /></div>)} />
+            <Route exact path="/primaries/vote" render={props => (<div><Voting /></div>)} />
             <Route component={NoMatch} />
           </Switch>
         </div>
