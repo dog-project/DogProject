@@ -15,11 +15,12 @@ const useStyles = makeStyles(theme => ({
 export default function Demographics(props) {
     const classes = useStyles();
     const [state, setState] = React.useState({
-        race: '',
-        gender: '',
-        education: '',
-        age: '',
-        politicalParty: '',
+        race: [],
+        gender: null,
+        education: null,
+        age: null,
+        politicalParty: null,
+        lgbtq: null
       });
 
     const handleChange = name => event => {
@@ -27,14 +28,7 @@ export default function Demographics(props) {
     };
 
     const handleSubmit = () => {
-        if (state.topCandidate === '') {
-            setState({...state, topError: true});
-        }
-        if (state.votingState === '') {
-            setState({...state, stateError: true});
-        } else {
-            props.callback(state);
-        }
+        props.callback(state);
     }
 
     return (
@@ -52,22 +46,11 @@ export default function Demographics(props) {
             </Button>
             <FormGroup >
                 <FormControl className={classes.formControl} error={state.error}>
-                    <FormLabel id="race-label" component="legend">With which group do you most self-identify</FormLabel>
+                    <FormLabel id="race-label" component="legend">With which group(s) do you most self-identify</FormLabel>
                     <Select
                         id="race"
                         value={state.race}
-                        onChange={handleChange('race')}
-                    >
-                        {Race()}
-                    </Select>
-                </FormControl>
-            </FormGroup>
-            <FormGroup >
-                <FormControl className={classes.formControl}>
-                    <FormLabel id="race-label" component="legend">With which group do you most self-identify</FormLabel>
-                    <Select
-                        id="race"
-                        value={state.race}
+                        multiple
                         onChange={handleChange('race')}
                     >
                         {Race()}
@@ -79,7 +62,7 @@ export default function Demographics(props) {
                     <FormLabel id="gender-label" component="legend">With which do you most self-identify?</FormLabel>
                     <Select
                         id="gender"
-                        value={state.race}
+                        value={state.gender}
                         onChange={handleChange('gender')}
                     >
                         {Gender()}
@@ -119,6 +102,18 @@ export default function Demographics(props) {
                         onChange={handleChange('politicalParty')}
                     >
                         {PoliticalParty()}
+                    </Select>
+                </FormControl>
+            </FormGroup>
+            <FormGroup >
+                <FormControl className={classes.formControl}>
+                    <FormLabel id="lgbtq-label" component="legend">Do you self-identify as LGBTQ?</FormLabel>
+                    <Select
+                        id="lgbtq"
+                        value={state.lgbtq}
+                        onChange={handleChange('lgbtq')}
+                    >
+                        {LGBTQ()}
                     </Select>
                 </FormControl>
             </FormGroup>
@@ -192,6 +187,17 @@ function PoliticalParty() {
       <MenuItem value={'Independent'}>Independent</MenuItem>,
       <MenuItem value={'Other'}>Other</MenuItem>,
       <MenuItem value={'Prefer not to say'}>Prefer not to say</MenuItem>
+    ]
+  )
+}
+
+function LGBTQ() {
+  return (
+    [
+      <MenuItem value={null}></MenuItem>,
+      <MenuItem value={true}>Yes</MenuItem>,
+      <MenuItem value={false}>No</MenuItem>,
+      <MenuItem value={null}>Prefer not to say</MenuItem>
     ]
   )
 }

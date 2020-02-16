@@ -11,15 +11,16 @@ export default function Voting() {
     const [state, setState] = React.useState({
         page: 1,
         eighteen: false,
-        votingState: '',
+        votingState: null,
         eligible: false,
-        topCandidate: '',
+        topCandidate: null,
         tier: {},
-        race: '',
-        gender: '',
-        education: '',
-        age: '',
-        politicalParty: '',
+        race: [],
+        gender: null,
+        education: null,
+        age: null,
+        politicalParty: null,
+        lgbtq: null,
         submit: false
       });
 
@@ -39,6 +40,7 @@ export default function Voting() {
                         education: state.education,
                         age: state.age,
                         party: state.politicalParty,
+                        lgbtq: state.lgbtq,
                         top_candidate: state.topCandidate,
                         tier1: state.tiers["1"].items.map(c => c.content),
                         tier2: state.tiers["2"].items.map(c => c.content),
@@ -49,13 +51,15 @@ export default function Voting() {
                         unranked: state.tiers["0"].items.map(c => c.content)
                     })
                 }).then(function() {
-                    setState({...state, page: 4})
+                    setState({...state, submit: false, page: 4})
                 });
             }
         });
 
     const handleBasicSubmit = ({eighteen, votingState, eligible, topCandidate}) => {
-        setState({...state, eighteen: eighteen, votingState: votingState, eligible: eligible, topCandidate: topCandidate, page: 2});
+        var boolEighteen = eighteen === 'yes' ? true : false;
+        var boolEligible = eligible === 'yes' ? true : false;
+        setState({...state, eighteen: boolEighteen, votingState: votingState, eligible: boolEligible, topCandidate: topCandidate, page: 2});
     };
 
     const handleTierSubmit = tiers => {

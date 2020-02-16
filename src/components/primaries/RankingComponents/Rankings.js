@@ -1,7 +1,7 @@
 import { DragDropContext } from "react-beautiful-dnd";
 import Landing from "./Landing";
 import Tier from "./Tier";
-import { Button, Grid, Dialog, DialogTitle, DialogActions, DialogContent, DialogContentText } from "@material-ui/core";
+import { Button, Grid, Dialog, DialogTitle, DialogActions, DialogContent, DialogContentText, Typography } from "@material-ui/core";
 import React, { useState } from "react";
 import { Tiers } from "./Tiers";
 
@@ -66,6 +66,12 @@ export default function Rankings(props) {
 
   return (
     <>
+      <Typography variant="h5"
+                color="primary"
+                style={{textAlign: "left", paddingTop: "15px", paddingLeft: "15px"}}>
+        Please rank the candidates from most preferred at the top to least preferred at the bottom. You can put multiple
+        candidates in the same tier.
+      </Typography>
       <DragDropContext
         onDragEnd={result => onDragEnd(result, columns, setColumns)}
         style={{

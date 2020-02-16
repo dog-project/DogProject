@@ -16,9 +16,9 @@ export default function BasicInfo(props) {
     const classes = useStyles();
     const [state, setState] = React.useState({
         eighteen: "no",
-        votingState: '',
+        votingState: null,
         eligible: "no",
-        topCandidate: '',
+        topCandidate: null,
         stateError: false,
         topError: false
       });
@@ -141,17 +141,38 @@ export default function BasicInfo(props) {
 
 function Candidates() {
     return (
+        [<MenuItem value={''}></MenuItem>,].concat(shuffle(
         [
-            <MenuItem value={''}></MenuItem>,
             <MenuItem value={'Sanders'}>Sanders</MenuItem>,
             <MenuItem value={'Warren'}>Warren</MenuItem>,
             <MenuItem value={'Biden'}>Biden</MenuItem>,
             <MenuItem value={'Buttigieg'}>Buttigieg</MenuItem>,
             <MenuItem value={'Bloomberg'}>Bloomberg</MenuItem>,
             <MenuItem value={'Klobuchar'}>Klobuchar</MenuItem>,
-        ]
+        ]))
     )
 }
+
+var shuffle = function (array) {
+
+	var currentIndex = array.length;
+	var temporaryValue, randomIndex;
+
+	// While there remain elements to shuffle...
+	while (0 !== currentIndex) {
+		// Pick a remaining element...
+		randomIndex = Math.floor(Math.random() * currentIndex);
+		currentIndex -= 1;
+
+		// And swap it with the current element.
+		temporaryValue = array[currentIndex];
+		array[currentIndex] = array[randomIndex];
+		array[randomIndex] = temporaryValue;
+	}
+
+	return array;
+
+};
 
 function States() {
     return (
