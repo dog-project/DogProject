@@ -25,18 +25,18 @@ function ThankYou(props) {
     <div>
       <Paper className={classes.root}>
         <Typography variant="h4">
-          You have finished voting! Thank you for voting in our contest!
-          In the coming weeks, we will be compiling and analyzing all our voting
-          information and will display our results on this web site. Please
-          check back in the next couple weeks to see the final results of our
-          voting contest!
+          You have finished voting! Thank you for completing our voter
+          preference survey! In the coming weeks, we will be compiling and
+          analyzing the voting data and will display our results on this web
+          site. Please check back in a couple weeks to see the results.
         </Typography>
         <br />
         <br />
       </Paper>
       <Paper className={classes.root} elevation={2}>
         <p>
-          If you have questions or would like more information about the project please contact us via{" "}
+          If you have questions or would like more information about the project
+          please contact us via{" "}
           <a
             rel="noopener noreferrer"
             target="_blank"
