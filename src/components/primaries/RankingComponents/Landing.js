@@ -8,17 +8,19 @@ export default class Landing extends React.Component {
         const column = this.props.items;
         const id = this.props.id;
         return (
-            <Grid item xs={12}>
+            <Grid container item xs={12}>
                 <Droppable droppableId={id} direction="horizontal" style = {{minWidth:'100%'}}>
                     {(provided, snapshot) => {
                         return (
-                            <Grid container 
+                            <Grid item container 
                                 {...provided.droppableProps}
                                 ref={provided.innerRef}
                                 style={{
-                                    background: snapshot.isDraggingOver ? 'lightblue' : 'black',
+                                    background: snapshot.isDraggingOver ? 'lightblue' : 'white',
                                     borderRadius: 16,
-                                    borderColor: 'black',
+                                    borderStyle: "solid",
+                                    borderColor: "black",
+                                    borderWidth: "1px",
                                     padding: 4,
                                     display: 'flex',
                                     flexDirection: 'row',
@@ -35,11 +37,9 @@ export default class Landing extends React.Component {
                                 {provided.placeholder}
                             </Grid>
                         )
-                    }
-                    }
+                    }}
                 </Droppable>
             </Grid>
-            
         )
     }
 }

@@ -78,7 +78,7 @@ export default function Demographics(props) {
         variant="contained"
         color="primary"
         size={"large"}
-        style={{ margin: "0px 0px 8px 5px" }}
+        style={{ margin: "8px auto 8px 8px" }}
         onClick={handleSubmit}
       >
         Submit
