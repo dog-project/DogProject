@@ -136,7 +136,7 @@ export default function Rankings(props) {
               style={{ margin: "8px 15px 8px auto" }}
               onClick={handleSubmit}
             >
-              Submit
+              Next
             </Button>
           </div>
         </div>

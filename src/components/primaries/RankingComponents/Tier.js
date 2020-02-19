@@ -3,18 +3,16 @@ import {Droppable} from 'react-beautiful-dnd';
 import DraggableCard from "./DraggableCard";
 import Grid from '@material-ui/core/Grid'
 
-
 export default class Tier extends React.Component {
     render() {
         const tier = this.props.tier;
         const id = this.props.id;
         return (
-
-            <Grid item xs={12}>
-                <Droppable droppableId={id} direction="horizontal">
+            <Grid container item xs={12}>
+                <Droppable droppableId={id} direction="horizontal" style = {{minWidth:'100%'}}>
                     {(provided, snapshot) => {
                         return (
-                            <Grid
+                            <Grid item container
                                 {...provided.droppableProps}
                                 ref={provided.innerRef}
                                 style={{
@@ -27,7 +25,6 @@ export default class Tier extends React.Component {
                                     margin: "auto",
                                     minHeight: "90px"
                                 }}>
-
                                 {tier.items.map((item, index) => {
                                     return (
                                         <DraggableCard item={item} index={index} key={index}/>
