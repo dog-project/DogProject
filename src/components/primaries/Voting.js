@@ -5,11 +5,12 @@ import BasicInfo from './BasicInfo';
 import Rankings from './RankingComponents/Rankings'
 import Demographics from './Demographics';
 import ThankYou from './ThankYou';
+import Consent from './Consent';
 
 
 export default function Voting() {
     const [state, setState] = React.useState({
-        page: 1,
+        page: 0,
         eighteen: false,
         votingState: null,
         eligible: false,
@@ -56,6 +57,10 @@ export default function Voting() {
             }
         });
 
+    const handleConsentSubmit = () => {
+        setState({...state, page: 1});
+    }
+
     const handleBasicSubmit = ({eighteen, votingState, eligible, topCandidate}) => {
         var boolEighteen = eighteen === 'yes' ? true : false;
         var boolEligible = eligible === 'yes' ? true : false;
@@ -72,6 +77,11 @@ export default function Voting() {
 
     return (
         <>
+            {state.page === 0 && (
+                <Paper>
+                    <Consent callback={handleConsentSubmit}/>
+                </Paper>
+            )}
             {state.page === 1 && (
                 <Paper>
                     <BasicInfo callback={handleBasicSubmit} />
