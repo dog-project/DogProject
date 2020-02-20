@@ -8,6 +8,7 @@ import Home from "./components/home/Home"
 //import Vote from "./Vote";
 import TeamPage from "./components/dogproject/TeamPage";
 import PrivacyPolicy from "./components/dogproject/PrivacyPolicy";
+import PrimariesPrivacyPolicy from "./components/primaries/PrivacyPolicy";
 import ThankYou from "./components/dogproject/ThankYou";
 import Results from "./components/dogproject/Results";
 import Rankings from "./components/dogproject/Rankings";
@@ -48,6 +49,7 @@ class App extends Component {
             <Route exact path="/dogproject/results-and-analysis" render={props => <Analysis />} />
             <Route exact path="/primaries" render={props => (<div><PrimariesHome /></div>)} />
             <Route exact path="/primaries/vote" render={props => (<div><Voting /></div>)} />
+            <Route exact path="/primaries/privacy-policy" render={props => (<div><PrimariesPrivacyPolicy /></div>)} />
             <Route component={NoMatch} />
           </Switch>
         </div>

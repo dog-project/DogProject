@@ -77,6 +77,22 @@ class DrawerNav extends React.Component {
             </ListItemIcon>
             <ListItemText primary="Home" className={classes.text} />
           </ListItem>
+          <ListItem component={Link} to="/primaries/vote" className={classes.nested}>
+            <ListItemIcon>
+              <HowToVoteIcon />
+            </ListItemIcon>
+            <ListItemText primary="Vote" />
+          </ListItem>
+          <ListItem
+            component={Link}
+            to="/primaries/privacy-policy"
+            className={classes.nested}
+          >
+            <ListItemIcon>
+              <VpnLockIcon />
+            </ListItemIcon>
+            <ListItemText primary="Privacy Policy" />
+          </ListItem>
         </List>
       </Collapse>
     )
