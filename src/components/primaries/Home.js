@@ -6,6 +6,8 @@ import {
   createMuiTheme
 } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
+import Button from "@material-ui/core/Button";
+import { Link } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
 import red from "@material-ui/core/colors/red";
 import grey from "@material-ui/core/colors/grey";
@@ -56,6 +58,16 @@ function Home(props) {
             people. In this research we are inspecting plurality, ranked choice,
             ranked pairs, and other lesser known voting methods.
           </p>
+          <Button
+            variant="contained"
+            color="primary"
+            size={"large"}
+            style={{ margin: "0px 0px 8px 5px" }}
+            component={Link} 
+            to="/primaries/vote"
+          >
+            Vote!
+          </Button>
         </Paper>
 
         <Paper className={classes.categoriesPaper} elevation={2}>
