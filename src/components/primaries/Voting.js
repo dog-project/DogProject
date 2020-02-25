@@ -49,6 +49,8 @@ export default function Voting() {
                         tier4: state.tiers["4"].items.map(c => c.content),
                         tier5: state.tiers["5"].items.map(c => c.content),
                         tier6: state.tiers["6"].items.map(c => c.content),
+                        tier7: state.tiers["7"].items.map(c => c.content),
+                        tier8: state.tiers["8"].items.map(c => c.content),
                         unranked: state.tiers["0"].items.map(c => c.content)
                     })
                 }).then(function() {
