@@ -187,8 +187,8 @@ function Candidates() {
       <MenuItem value={"Buttigieg"}>Buttigieg</MenuItem>,
       <MenuItem value={"Bloomberg"}>Bloomberg</MenuItem>,
       <MenuItem value={"Klobuchar"}>Klobuchar</MenuItem>,
-      <MenuItem value={"Gabbard"}>Klobuchar</MenuItem>,
-      <MenuItem value={"Steyer"}>Klobuchar</MenuItem>
+      <MenuItem value={"Gabbard"}>Gabbard</MenuItem>,
+      <MenuItem value={"Steyer"}>Steyer</MenuItem>
     ])
   );
 }
