@@ -102,11 +102,7 @@ function Consent(props) {
                   affiliated with this project.
                 </b>
               </p>
-              <h3>Future Use of Data</h3>
               <p>
-                Your de-identified information could be used for future research{" "}
-                <b>without additional informed consent.</b>
-                <br /><br />
                 <b>If you have any questions regarding electronic privacy, </b>
                 please feel free to contact Mark Nardone, NU’s Director of
                 Information Security via phone at 617-373-7901, or via email at
@@ -130,7 +126,7 @@ function Consent(props) {
                 <br /><br />
                 <b>
                   This study has been reviewed and approved by the Northeastern
-                  University Institutional Review Board (# xx-xx-xx).
+                  University Institutional Review Board (# 20-02-15)
                 </b>
                 <br /><br />
                 <b>
@@ -140,7 +136,7 @@ function Consent(props) {
                   consent form for your records.
                 </b>
                 <br /><br />
-                Thank you for your time.<br /> John Edwards
+                Thank you for your time,<br /> John Edwards
               </p>
               
             </ListItemText>
