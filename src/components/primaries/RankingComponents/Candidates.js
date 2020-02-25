@@ -45,5 +45,15 @@ export const Candidates = shuffle([
     {
         id: uuid(),
         content: 'Klobuchar',
+    },
+
+    {
+        id: uuid(),
+        content: 'Gabbard'
+    },
+
+    {
+      id: uuid(),
+      content: 'Steyer'
     }
 ]);

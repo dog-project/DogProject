@@ -31,5 +31,15 @@ export const Tiers =  {
     6: {
         name: 6,
         items: []
+    },
+
+    7: {
+        name: 7,
+        items: []
+    },
+
+    8: {
+        name: 8,
+        items: []
     }
 };
