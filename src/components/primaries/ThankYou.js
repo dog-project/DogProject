@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography, Paper } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
-import { Twitter, Facebook, Linkedin, Mail } from 'react-social-sharing'
+import { Twitter, Facebook, Linkedin } from 'react-social-sharing'
 
 
 const styles = theme => ({
