@@ -1,6 +1,8 @@
 import React from "react";
 import { Typography, Paper } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
+import { Twitter, Facebook, Linkedin, Mail } from 'react-social-sharing'
+
 
 const styles = theme => ({
   root: {
@@ -21,6 +23,10 @@ const styles = theme => ({
 
 function ThankYou(props) {
   const { classes } = props;
+  const link = "https://socialchoice.nuphilosophy.com/primaries/vote";
+  const message =
+    "How would Super Tuesday be different if we used different voting systems? You can help us find out! Please rank the Democratic primary candidates below.";
+
   return (
     <div>
       <Paper className={classes.root}>
@@ -32,6 +38,10 @@ function ThankYou(props) {
         </Typography>
         <br />
         <br />
+        <p>Share this project!</p>
+        <Facebook big link={link}/>
+        <Twitter solid big message={message} link={link}/>
+        <Linkedin solid big message={message} link={link}/>
       </Paper>
       <Paper className={classes.root} elevation={2}>
         <p>

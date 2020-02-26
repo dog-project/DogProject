@@ -16,8 +16,7 @@
     "react-modal-image": "^2.5.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^3.4.0",
-    "react-share": "^2.4.0",
-    "react-twitter-embed": "^2.0.8"
+    "react-social-sharing": "^3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

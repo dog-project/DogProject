@@ -11,17 +11,17 @@ import MenuIcon from "@material-ui/icons/Menu";
 import HomeIcon from "@material-ui/icons/Home";
 import SchoolIcon from "@material-ui/icons/School";
 import PersonIcon from "@material-ui/icons/Person";
-import PetsIcon from '@material-ui/icons/Pets';
-import HowToVoteIcon from '@material-ui/icons/HowToVote';
+import PetsIcon from "@material-ui/icons/Pets";
+import HowToVoteIcon from "@material-ui/icons/HowToVote";
 import AssignmentIcon from "@material-ui/icons/Assignment";
 import VpnLockIcon from "@material-ui/icons/VpnLock";
-import AssessmentIcon from "@material-ui/icons/Assessment"
+import AssessmentIcon from "@material-ui/icons/Assessment";
 // import InfoIcon from "@material-ui/icons/Info";
 import { Link } from "react-router-dom";
 import { IconButton } from "@material-ui/core";
-import Collapse from '@material-ui/core/Collapse';
-import ExpandLess from '@material-ui/icons/ExpandLess';
-import ExpandMore from '@material-ui/icons/ExpandMore';
+import Collapse from "@material-ui/core/Collapse";
+import ExpandLess from "@material-ui/icons/ExpandLess";
+import ExpandMore from "@material-ui/icons/ExpandMore";
 
 const styles = {
   list: {
@@ -37,7 +37,7 @@ const styles = {
   },
   text: {},
   nested: {
-    paddingLeft: '32px',
+    paddingLeft: "32px"
   }
 };
 
@@ -58,11 +58,11 @@ class DrawerNav extends React.Component {
   };
 
   handleDogClick = () => {
-    this.setState({openDog: !this.state.openDog});
+    this.setState({ openDog: !this.state.openDog });
   };
 
   handlePrimariesClick = () => {
-    this.setState({openPrimaries: !this.state.openPrimaries});
+    this.setState({ openPrimaries: !this.state.openPrimaries });
   };
 
   render() {
@@ -71,13 +71,21 @@ class DrawerNav extends React.Component {
     const primaries = (
       <Collapse in={this.state.openPrimaries} timeout="auto" unmountOnExit>
         <List disablePadding>
-          <ListItem component={Link} to="/primaries/" className={classes.nested}>
+          <ListItem
+            component={Link}
+            to="/primaries/"
+            className={classes.nested}
+          >
             <ListItemIcon>
               <HomeIcon />
             </ListItemIcon>
             <ListItemText primary="Home" className={classes.text} />
           </ListItem>
-          <ListItem component={Link} to="/primaries/vote" className={classes.nested}>
+          <ListItem
+            component={Link}
+            to="/primaries/vote"
+            className={classes.nested}
+          >
             <ListItemIcon>
               <HowToVoteIcon />
             </ListItemIcon>
@@ -95,12 +103,16 @@ class DrawerNav extends React.Component {
           </ListItem>
         </List>
       </Collapse>
-    )
+    );
 
     const dogProject = (
       <Collapse in={this.state.openDog} timeout="auto" unmountOnExit>
         <List disablePadding>
-          <ListItem component={Link} to="/dogproject/" className={classes.nested}>
+          <ListItem
+            component={Link}
+            to="/dogproject/"
+            className={classes.nested}
+          >
             <ListItemIcon>
               <HomeIcon />
             </ListItemIcon>
@@ -126,25 +138,41 @@ class DrawerNav extends React.Component {
             </ListItemIcon>
             <ListItemText primary="Meet The Team" />
           </ListItem>
-          <ListItem component={Link} to="/dogproject/rankings" className={classes.nested}>
+          <ListItem
+            component={Link}
+            to="/dogproject/rankings"
+            className={classes.nested}
+          >
             <ListItemIcon>
               <FormatListNumberedIcon />
             </ListItemIcon>
             <ListItemText primary="Rankings" />
           </ListItem>
-          <ListItem component={Link} to="/dogproject/results" className={classes.nested}>
+          <ListItem
+            component={Link}
+            to="/dogproject/results"
+            className={classes.nested}
+          >
             <ListItemIcon>
               <AssignmentIcon />
             </ListItemIcon>
             <ListItemText primary="Voting Data" />
           </ListItem>
-          <ListItem component={Link} to="/dogproject/results-and-analysis" className={classes.nested}>
+          <ListItem
+            component={Link}
+            to="/dogproject/results-and-analysis"
+            className={classes.nested}
+          >
             <ListItemIcon>
               <AssessmentIcon />
             </ListItemIcon>
             <ListItemText primary="Results & Analysis" />
           </ListItem>
-          <ListItem component={Link} to="/dogproject/philosophy" className={classes.nested}>
+          <ListItem
+            component={Link}
+            to="/dogproject/philosophy"
+            className={classes.nested}
+          >
             <ListItemIcon>
               <SchoolIcon />
             </ListItemIcon>
