@@ -33,7 +33,7 @@ export default function Voting() {
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify({
-                        state: state.votingState,
+                        state: state.votingState,   
                         age_above_18: state.eighteen,
                         eligible: state.eligible,
                         race: state.race,
