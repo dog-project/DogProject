@@ -58,12 +58,22 @@ function Home(props) {
             people. In this research we are inspecting plurality, ranked choice,
             ranked pairs, and other lesser known voting methods.
           </p>
+          <p>
+            How would the current Democratic primary race look if we had a
+            different voting system? We are currently conducting a voter
+            preference survey. With the data we collect, we will be able to
+            determine how alternative voting methods, such as ranked choice,
+            would impact the Democratic primary. This can be used to help assess
+            the significance and importance of different voting systems and
+            evaluate whether our current election methods really reflect the
+            will of the people. Please vote in our survey.
+          </p>
           <Button
             variant="contained"
             color="primary"
             size={"large"}
             style={{ margin: "0px 0px 8px 5px" }}
-            component={Link} 
+            component={Link}
             to="/primaries/vote"
           >
             Vote!
