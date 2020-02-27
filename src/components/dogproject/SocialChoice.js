@@ -78,7 +78,7 @@ class SocialChoice extends Component {
 
           <Grid item sm={12} md={6}>
             <img
-              src={"images/misc/social-choice-1.png"}
+              src={"/images/misc/social-choice-1.png"}
               alt="cute1"
               className={classes.socialPic}
             />
@@ -185,7 +185,7 @@ class SocialChoice extends Component {
 
             <Grid item sm={12} md={6}>
               <img
-                src={"images/misc/social-choice-2.png"}
+                src={"/images/misc/social-choice-2.png"}
                 alt="cute1"
                 className={classes.socialPic}
               />
@@ -402,7 +402,7 @@ class SocialChoice extends Component {
             </Grid>
             <Grid item sm={12} md={6}>
               <img
-                src={"images/misc/social-choice-3.png"}
+                src={"/images/misc/social-choice-3.png"}
                 alt="cute1"
                 className={classes.socialPic}
               />

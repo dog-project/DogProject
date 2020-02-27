@@ -114,7 +114,7 @@ class LessonsForDemocracy extends Component {
           </Grid>
           <Grid item sm={12} md={6}>
             <img
-              src={"images/misc/lessons-1.jpeg"}
+              src={"/images/misc/lessons-1.jpeg"}
               alt="lessons1"
               className={classes.lessonsPic}
             />
@@ -216,7 +216,7 @@ class LessonsForDemocracy extends Component {
           </Grid>
           <Grid item sm={12} md={6}>
             <img
-              src={"images/misc/lessons-2.jpg"}
+              src={"/images/misc/lessons-2.jpg"}
               alt="lessons2"
               className={classes.ballot}
             />
@@ -285,7 +285,7 @@ class LessonsForDemocracy extends Component {
           </Grid>
           <Grid item sm={12} md={6}>
             <img
-              src={"images/misc/lessons-3.png"}
+              src={"/images/misc/lessons-3.png"}
               alt="lessons3"
               className={classes.buttonPic}
             />
@@ -336,7 +336,7 @@ class LessonsForDemocracy extends Component {
 
           <Grid item sm={12} md={6}>
             <img
-              src={"images/misc/lessons-4.png"}
+              src={"/images/misc/lessons-4.png"}
               alt="lessons3"
               className={classes.buttonPic}
             />
@@ -408,7 +408,7 @@ class LessonsForDemocracy extends Component {
           </Grid>
           <Grid item sm={12} md={6}>
             <img
-              src={"images/misc/lessons-5.jpg"}
+              src={"/images/misc/lessons-5.jpg"}
               alt="lessons5"
               className={classes.lessonsPic}
             />
