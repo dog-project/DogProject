@@ -293,7 +293,7 @@ export class Analysis extends Component {
           </Grid>
           <Grid item sm={0} md={3}>
             <img
-              src="images/misc/DogBeatGraph-1.png"
+              src="/images/misc/DogBeatGraph-1.png"
               alt="graph"
               className={classes.graph}
             />
