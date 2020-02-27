@@ -29,7 +29,7 @@ class CuteAcrossCultures extends Component {
         <Typography variant="p">
           It is important to recognize that our project is essentially focused
           on the English-language sense of “cuteness” and “cute dog”, which has
-          its own <a href="/philosophy">philosophical problem</a>. There are
+          its own <a href="/dogproject/philosophy">philosophical problem</a>. There are
           other languages around the world that have similar terms. But, these
           other terms are also importantly different from the way we understand
           “cute” in English. Below is an explanation of the closest translation
