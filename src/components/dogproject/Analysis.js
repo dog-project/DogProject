@@ -75,12 +75,12 @@ export class Analysis extends Component {
                   the Ranked Pair method, which considers how each dog compares
                   against every other and weights each pair by how big the
                   difference between the dogs is. Click{" "}
-                  <a href="/philosophy">here</a> for more information on our
+                  <a href="/dogproject/philosophy">here</a> for more information on our
                   voting methods.
                   <br />
                   <br />
                   The winner was Pearl (or “Dog 57” as our{" "}
-                  <a href="/meet-the-team">team</a> called her)!
+                  <a href="/dogproject/meet-the-team">team</a> called her)!
                   <br />
                   <br />
                   Pearl won a very close contest, just edging out the runner up
@@ -130,7 +130,7 @@ export class Analysis extends Component {
                 </a>{" "}
                 used. The full rankings for our method, as well as rankings from
                 other social choice methods can be found{" "}
-                <a href="/rankings">here</a>.
+                <a href="/dogproject/rankings">here</a>.
               </Grid>
               <Grid item sm={12} className={classes.mobile}>
                 The graph below (click to enlarge) summarizes the relationships
@@ -148,7 +148,7 @@ export class Analysis extends Component {
                 </a>{" "}
                 used. The full rankings for our method, as well as rankings from
                 other social choice methods can be found{" "}
-                <a href="/rankings">here</a>.
+                <a href="/dogproject/rankings">here</a>.
               </Grid>
               <Grid item sm={12}>
                 <ModalImage
@@ -177,7 +177,7 @@ export class Analysis extends Component {
                   fully neutralize sources of potential bias, despite our best
                   efforts. Even then, whether or not you think votes indicate
                   true cuteness may depend on your{" "}
-                  <a href="/philosophy">philosophical</a> views about
+                  <a href="/dogproject/philosophy">philosophical</a> views about
                   “cuteness.”
                 </Typography>
               </Grid>
@@ -204,7 +204,7 @@ export class Analysis extends Component {
                   dissatisfied with Tatum as the winner when compared to Pearl
                   when we take all of the dogs into account. Selecting the
                   win-or-tie ratio method on our{" "}
-                  <a href="/rankings">rankings page</a> shows that Tatum is the
+                  <a href="/dogproject/rankings">rankings page</a> shows that Tatum is the
                   winner on the basis of fewest lost votes.
                 </Typography>
               </Grid>
@@ -234,7 +234,7 @@ export class Analysis extends Component {
                   The fact that on many rankings, removing a mid-ranked dog can
                   change the winner is an example of the peculiarity of many
                   voting systems and is a violation of Arrow’s{" "}
-                  <a href="/philosophy">
+                  <a href="/dogproject/philosophy">
                     Independence of Irrelevant Alternatives
                   </a>
                   . Our method (Ranked Pairs) is more resilient in this regard
@@ -262,7 +262,7 @@ export class Analysis extends Component {
                   dog does not hurt that dog when compared to the others. Not
                   all voting methods are clone-independent however. And this is
                   an important thing to consider in{" "}
-                  <a href="/philosophy">democracy</a> broadly. Introducing a
+                  <a href="/dogproject/philosophy">democracy</a> broadly. Introducing a
                   third-party candidate that is similar to one of the other
                   candidates can “split votes” and cause a different outcome in
                   an election.
@@ -279,7 +279,7 @@ export class Analysis extends Component {
                   region of the United States. Our results perhaps could have
                   been radically different with a different voting population,
                   especially when we consider that there is significant{" "}
-                  <a href="/philosophy">cultural variation</a> in what people
+                  <a href="/dogproject/philosophy">cultural variation</a> in what people
                   think is “cute.” One interesting fact we uncovered was that a
                   sizable number of voters (244) submitted votes that were
                   intransitive: Dog A is cuter than Dog B, Dog B cuter than Dog

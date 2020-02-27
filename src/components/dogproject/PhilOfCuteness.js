@@ -121,7 +121,7 @@ class PhilOfCuteness extends Component {
                   no fact of the matter, there is just cuteness for you and
                   cuteness for them. Everyone can have their own standards
                   provided they are not incoherent. On this view, a vote on{" "}
-                  <a href="/social-choice">cuteness</a> will be an indication of
+                  cuteness will be an indication of
                   how much people’s subjective views overlap, but cannot tell us
                   which dog is cutest since cuteness is determined by everyone
                   individually.
@@ -181,8 +181,7 @@ class PhilOfCuteness extends Component {
                   cannot be wrong about what their words mean while individuals
                   in those communities may be mistaken. Determining whether a
                   dog is cute, is simply a matter of figuring out what the group
-                  thinks. A vote is a reliable way to{" "}
-                  <a href="/social-choice">assess the opinion of a community</a>
+                  thinks. A vote is a reliable way to{" "}assess the opinion of a community
                   .
                 </Typography>
               </div>
@@ -215,8 +214,7 @@ class PhilOfCuteness extends Component {
                   to have a robust account of cuteness. However, there is often
                   significant agreement about cuteness and what sorts of things
                   are cute. And if people are, more often than not, accurate
-                  assessing true cuteness, then we can use{" "}
-                  <a href="/social-choice">voting</a> to get evidence of
+                  assessing true cuteness, then we can use{" "}voting to get evidence of
                   cuteness.
                 </Typography>
               </div>
@@ -252,8 +250,7 @@ class PhilOfCuteness extends Component {
                   might determine that there are facts about a dog and about
                   people that make it more or less likely to elicit an “awww”,
                   but cuteness consists of the response, not those facts. For a
-                  non-cognitivist conception of cuteness, a{" "}
-                  <a href="/social-choice">vote on cuteness</a> may tell us
+                  non-cognitivist conception of cuteness, a{" "}vote on cuteness may tell us
                   something about the tendencies of certain dogs to elicit the
                   “awww” reaction from voters, but cannot determine which dog is
                   cutest as there is no fact of the matter about this.
