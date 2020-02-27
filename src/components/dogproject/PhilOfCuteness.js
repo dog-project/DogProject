@@ -69,7 +69,7 @@ class PhilOfCuteness extends Component {
           </Grid>
           <Grid item sm={12} md={6}>
             <img
-              src={"images/misc/cute-1.png"}
+              src={"/images/misc/cute-1.png"}
               alt="cute1"
               className={classes.cute1pic}
             />
@@ -267,7 +267,7 @@ class PhilOfCuteness extends Component {
           <Grid container spacing={24}>
             <Grid item sm={12} md={6}>
               <img
-                src={"images/misc/cute-2.png"}
+                src={"/images/misc/cute-2.png"}
                 alt="cute2"
                 className={classes.cute1pic}
               />
@@ -322,7 +322,7 @@ class PhilOfCuteness extends Component {
             </Grid>
             <Grid item sm={12} md={6}>
               <img
-                src={"images/misc/cute-3.png"}
+                src={"/images/misc/cute-3.png"}
                 alt="cute3"
                 className={classes.cute1pic}
               />
