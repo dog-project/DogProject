@@ -10,6 +10,6 @@ install:
   - npm install
   - npm install -g firebase-tools
 after_success:
-  - firebase deploy --project the-dog-project-staging --token $FIREBASE_2020
+  - firebase deploy --project the-dog-project --token $FIREBASE_2020
 notifications:
   slack: nuphilosophy:DF9RFkQP3ojK6NqRPY0FOOSk
