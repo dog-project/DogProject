@@ -266,6 +266,6 @@ function States() {
     <MenuItem value={"WI"}>WI</MenuItem>,
     <MenuItem value={"WY"}>WY</MenuItem>,
     <MenuItem value={"District of Columbia"}>District of Columbia</MenuItem>,
-    <MenuItem value={"U.S. Territories"}>U.S. Territories"</MenuItem>
+    <MenuItem value={"U.S. Territories"}>U.S. Territories</MenuItem>
   ];
 }
