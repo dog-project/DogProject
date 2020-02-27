@@ -109,7 +109,7 @@ function Home(props) {
             </Grid>
             <Grid sm={12} md={6}>
               <img
-                src="images/dogs/57.png"
+                src="/images/dogs/57.png"
                 className={classes.winner}
                 alt="winner"
               />
