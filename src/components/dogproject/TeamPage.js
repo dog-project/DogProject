@@ -1,0 +1,190 @@
+import React, { Component } from "react";
+import BioCard from "./BioCard";
+import { Grid, Paper, Typography } from "@material-ui/core";
+import { withStyles } from "@material-ui/core/styles";
+import PropTypes from "prop-types";
+
+
+const styles = theme => ({
+  root: {
+    ...theme.mixins.gutters(),
+    paddingTop: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 2,
+    marginBottom: "10px",
+    textAlign: "center"
+  },
+  header: {
+    marginTop: "25px",
+    marginBoton: "40px",
+    padding: "25px",
+    textAlign: "center"
+  },
+  grid: {
+    [theme.breakpoints.up("sm")]: {
+      marginTop: "30px",
+      paddingLeft: "30px"
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "30px"
+    }
+  }
+});
+
+const sam = {
+  name: "Sam Merkovitz",
+  bio:
+    "Sam Merkovitz is a 3rd year Computer Science and Philosophy combined major. For this project, he primarily worked on front-end web development and user experience. His favorite breed of dog are Golden Doodles after getting a Golden Doodle puppy when he was in 3rd grade helped him overcome his previous fear of dogs.",
+  image: "sam-merkovitz"
+};
+
+const charlie = {
+  name: "Charlie Haviland",
+  bio:
+    "Charlie is a 5th year Computer Science & Finance Combined Major and Ethics Minor primarily involved with designing and implementing the front-end of this website, as well as solving broader issues that arise in any voting process. Despite his love for dogs he was born badly allergic to all dogs (even hypo-allergenic ones) and hopes to someday grow out of his allergy and own a dog.",
+  image: "charlie-haviland"
+};
+
+const julian = {
+  name: "Julian Zucker",
+  bio:
+    "Julian Zucker is a 3rd year Data Science major. He helped write the code for the server that receives and stores dog submissions and votes, as well as trying to solve the three-way tradeoffs between ensuring voter privacy, eliminating voter fraud, and encouraging voter participation. Miniature Australian Shepherds are his favorite breed of dog, after spending three months working on a farm with a mini named Sophie.",
+  image: "julian-zucker"
+};
+
+const danny = {
+  name: "Daniel Rassaby",
+  bio:
+    "Daniel Rassaby is a third year Computer Science student, also getting minors in math and ethics. He joined the dog project to combine a lot of the things he loves, from writing some of the backend code for this website, to discussing the mathematical representation of preferences, to philosophical reasoning about meaning and categorization. Outside of the dog project, he can often be found listening to podcasts, traveling, and trying new foods. He doesn’t have a favorite dog breed, but  likes big dogs the most.",
+  image: "danny-rassaby"
+};
+
+const mike = {
+  name: "Mike Nelson",
+  bio:
+    "Mike Nelson is a 4th-year combined Physics and Computer Science major who helped organize the RISE presentation and video. He also helped write the governance section of our website. Mike loves to spend his time skiing and his favorite dog breed is the fox red labrador retriever.",
+  image: "mike-nelson"
+};
+
+const andy = {
+  name: "Andy Aronson",
+  bio:
+    "Andy Aronson is a 5th year Finance major focusing primarily on governance, oversight, and management aspects of the Dog Project. He helped to create the dog submission guidelines, the website’s privacy policy, and is actively involved in advertising the project. As an avid dog lover, Andy believes all dog breeds are cute, but Samoyeds are the cutest.",
+  image: "andy-aronson"
+};
+
+const chris = {
+  name: "Christopher Osborne",
+  bio:
+    "Christopher is a fourth-year Philosophy and Environmental Studies Combined Major. He will be graduating in August of 2019. His primary interests in Philosophy include environmental ethics and transcendental metaphysics. His favorite dog breed is the Alaskan Malamute.",
+  image: "chris-osborne"
+};
+
+const dan = {
+  name: "Daniel O'Leary",
+  bio:
+    "Daniel O'Leary is a fifth year studying Philosophy and Political Science. After graduating he plans to attend law school. As a part of the Dog Project, Daniel has worked on understanding what type of property cuteness is, and how to design a voting system to select dogs for that property.",
+  image: "dan-o'leary"
+};
+
+const jackie = {
+  name: "Jackson Reimer",
+  bio:
+    "Jackson Reimer is a 4th year Politics, Philosophy and Economics major. As teaching assistant for the Cute Dog Project, he has been primarily involved in project management tasks ensuring that different teams are communicating with one another and working towards aligned goals. Jackson owns a 10 year old mini-golden doodle puppy named Chester who’s loving zeal and polite demeanor leave him second to none.",
+  image: "jackson-reimer"
+};
+
+const keshav = {
+  name: "Keshav Sharma",
+  bio:
+    "Keshav Sharma is a 3rd year Politics, Philosophy and Economics major  with a concentration in Logic and Game Theory from New Delhi, India. For the dog project, he mostly worked on governance related issues like writing the rules and regulations of the contest, and passionately opposing Elo counts as a method of vote aggregation. His favorite dogs is Huskies, although if he were to buy a dog he’d choose a German Shepherd first, which are a close second favorite.",
+  image: "keshav-sharma"
+};
+
+const mac = {
+  name: "Mac d’Leeuwen",
+  bio:
+    "Mac d’Leeuwen is a 2nd year Computer Science and Philosophy combined major who worked in project management and metaphysics in the Dog Project. She helped compile information and write submissions for research forums and conferences. Mac is extremely fond of most dogs (except for small fluffy ones, which she thinks are objectively not cute) but her favorite breed is a husky.",
+  image: "mac-d'leeuwen"
+};
+
+const mikaela = {
+  name: "Mikaela Gluck",
+  bio:
+    "Mikaela is a 2nd year philosophy major from Seattle. Her focus on the project was mainly in the metaphysics discussions, and her contributions include creating visuals for the RISE poster, writing the demographic questions for voters, and compiling the metaphysics page of the website. She firmly believes that her two Australian shepherd crosses are indisputably the cutest dogs.",
+  image: "mikaela-gluck"
+};
+
+const samHa = {
+  name: "Sam Haas",
+  bio:
+    "Sam Haas is a senior in the Philosophy, Political Science, and Economics program with minors in ethics and data science. He has previously worked on research projects involving artificial intelligence and data ethics, poverty alleviation, and housing policy. He doesn’t have a dog, but adopting a Golden Retriever is on his post-graduation to-do list.",
+  image: "sam-haas"
+};
+
+const yifan = {
+  name: "Yifan Wang",
+  bio: `Yifan Wang is a 5th year philosophy major. His roles focus on educating people about what is a dog and why it's cute (because it's a hard question) as well as critical theory about how different languages and culture affect people’s concept of cuteness. He insists that it would be metaphysically "healthier" for the whole project if we were to include a cat, a cartoon dog and a human wearing a dog costume in the voting pool.`,
+  image: "yifan-wang"
+};
+
+const team = [
+  andy,
+  charlie,
+  chris,
+  dan,
+  danny,
+  jackie,
+  julian,
+  keshav,
+  mac,
+  mikaela,
+  mike,
+  samHa,
+  sam,
+  yifan
+]
+
+class TeamPage extends Component {
+  componentDidMount() {
+    window.scroll(0, 0);
+  }
+
+  render() {
+    const { classes } = this.props;
+    return (
+      <div className={classes.root}>
+        <Paper className={classes.header}>
+          <Typography variant="h2">Meet The Team</Typography>
+        </Paper>
+        <Grid container spacing={24} className={classes.grid}>
+          {team.map(member => {
+            return (
+              <Grid item s={6} md={3}>
+                <BioCard
+                  name={member.name}
+                  bio={member.bio}
+                  image={member.image}
+                />
+              </Grid>
+            )
+          })}
+          <Grid>
+            <Paper elevation={3} className={classes.root}>
+              <Typography variant="h6">
+                The Cute Dog Project was supported by the Rossetti Family
+                Program for the Advancement of Humanities and the Ethics
+                Institute.
+              </Typography>
+            </Paper>
+          </Grid>
+        </Grid>
+      </div>
+    );
+  }
+}
+
+TeamPage.propTypes = {
+  classes: PropTypes.object.isRequired
+};
+
+export default withStyles(styles)(TeamPage);

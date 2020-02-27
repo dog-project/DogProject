@@ -222,86 +222,12 @@ const winTieRatio = [
 
 class Rankings extends Component {
   state = {
-    rankedPairs: true,
-    eloRanking: false,
-    winRatio: false,
-    copelandsRanking: false,
-    miniMaxRanking: false,
-    winTieRank: false,
     method: "rp"
   };
 
-  getVoteData() {
-    const that = this;
-    fetch("https://us-east1-dog-project-234515.cloudfunctions.net/get_votes", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        id: this.state.dogId
-      })
-    }).then(function(response) {
-      response.json().then(function(data) {
-        that.setState({ voteData: data });
-      });
-    });
-  }
-
   handleChange = event => {
     event.persist();
-    console.log(event.target.value);
-    this.setState({ method: event.target.value }, () => {
-      if (this.state.method === "rp") {
-        this.setState({ rankedPairs: true });
-        this.setState({ eloRanking: false });
-        this.setState({ winRatio: false });
-        this.setState({ copelandsRanking: false });
-        this.setState({ miniMaxRanking: false });
-        this.setState({ winTieRank: false });
-      } else if (this.state.method === "elo") {
-        this.setState({ eloRanking: true });
-        this.setState({ rankedPairs: false });
-        this.setState({ winRatio: false });
-        this.setState({ copelandsRanking: false });
-        this.setState({ miniMaxRanking: false });
-        this.setState({ winTieRank: false });
-      } else if (this.state.method === "wr") {
-        this.setState({ winRatio: true });
-        this.setState({ eloRanking: false });
-        this.setState({ rankedPairs: false });
-        this.setState({ copelandsRanking: false });
-        this.setState({ miniMaxRanking: false });
-        this.setState({ winTieRank: false });
-      } else if (this.state.method === "cop") {
-        this.setState({ winRatio: false });
-        this.setState({ eloRanking: false });
-        this.setState({ rankedPairs: false });
-        this.setState({ copelandsRanking: true });
-        this.setState({ miniMaxRanking: false });
-        this.setState({ winTieRank: false });
-      } else if (this.state.method === "mini") {
-        this.setState({ winRatio: false });
-        this.setState({ eloRanking: false });
-        this.setState({ rankedPairs: false });
-        this.setState({ copelandsRanking: false });
-        this.setState({ miniMaxRanking: true });
-        this.setState({ winTieRank: false });
-      } else if (this.state.method === "wtr") {
-        this.setState({ winRatio: false });
-        this.setState({ eloRanking: false });
-        this.setState({ rankedPairs: false });
-        this.setState({ copelandsRanking: false });
-        this.setState({ miniMaxRanking: false });
-        this.setState({ winTieRank: true });
-      } else {
-        this.setState({ eloRanking: false });
-        this.setState({ rankedPairs: false });
-        this.setState({ winRatio: false });
-        this.setState({ copelandsRanking: false });
-        this.setState({ miniMaxRanking: false });
-      }
-    });
+    this.setState({ method: event.target.value });
   };
 
   render() {
@@ -333,7 +259,7 @@ class Rankings extends Component {
             </Select>
           </Typography>
         </Paper>
-        {this.state.rankedPairs ? (
+        {this.state.method === "rp" ? (
           <div>
             <h1 className={classes.header}>Ranked Pairs</h1>
             <p>
@@ -397,7 +323,7 @@ class Rankings extends Component {
             </Grid>
           </div>
         ) : null}
-        {this.state.eloRanking ? (
+        {this.state.method === "elo" ? (
           <div>
             <h1 className={classes.header}>
               <a
@@ -463,7 +389,7 @@ class Rankings extends Component {
             </Grid>
           </div>
         ) : null}
-        {this.state.copelandsRanking ? (
+        {this.state.method === "cop" ? (
           <div>
             <h1 className={classes.header}>
               <a
@@ -531,7 +457,7 @@ class Rankings extends Component {
             </Grid>
           </div>
         ) : null}
-        {this.state.miniMaxRanking ? (
+        {this.state.method === "mini" ? (
           <div>
             <h1 className={classes.header}>
               <a
@@ -582,7 +508,7 @@ class Rankings extends Component {
             </Grid>
           </div>
         ) : null}
-        {this.state.winRatio ? (
+        {this.state.method === "wr" ? (
           <div>
             <h1 className={classes.header}>Win Ratio</h1>
             <p>
@@ -639,7 +565,7 @@ class Rankings extends Component {
             </Grid>
           </div>
         ) : null}
-        {this.state.winTieRank ? (
+        {this.state.method === "wtr" ? (
           <div>
             <h1 className={classes.header}>Win-Tie Ratio (Least-losses)</h1>
             <p>
